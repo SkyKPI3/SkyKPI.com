@@ -75,7 +75,7 @@ header {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-bottom: 1px solid var(--border);
-    padding: 18px 0;
+    padding: 20px 0;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -90,34 +90,23 @@ header .container {
 .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 14px;
 }
 
-.wordmark {
-    font-family: var(--font);
-    font-size: 24px;
-    letter-spacing: -0.5px;
-    line-height: 1;
-}
-
-.wordmark .sky {
-    font-weight: 300;
-    color: var(--ink);
-}
-
-.wordmark .kpi {
-    font-weight: 700;
-    color: var(--teal);
+.logo img {
+    height: 48px;
+    width: auto;
+    display: block;
 }
 
 nav {
     display: flex;
-    gap: 36px;
+    gap: 40px;
     align-items: center;
 }
 
 nav a {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
     color: var(--ink);
 }
@@ -133,9 +122,10 @@ nav a.active {
 nav a.nav-cta {
     background: var(--ink);
     color: #FFFFFF;
-    padding: 11px 22px;
+    padding: 12px 24px;
     border-radius: 4px;
     font-weight: 600;
+    font-size: 15px;
 }
 
 nav a.nav-cta:hover {
@@ -194,7 +184,7 @@ nav a.nav-cta:hover {
 }
 
 /* ============================================
-   Hero — used on home and section pages
+   Hero
    ============================================ */
 
 .hero {
@@ -253,7 +243,6 @@ nav a.nav-cta:hover {
     flex-wrap: wrap;
 }
 
-/* Hero side panel — visual element */
 .hero-visual {
     position: relative;
     aspect-ratio: 1 / 1;
@@ -282,14 +271,13 @@ nav a.nav-cta:hover {
     background: radial-gradient(circle at center, rgba(26,176,196,0.18) 0%, transparent 60%);
 }
 
-.hero-visual svg {
-    width: 60%;
-    height: 60%;
+.hero-visual img {
+    width: 70%;
+    height: auto;
     position: relative;
     z-index: 1;
 }
 
-/* Page hero (smaller, for inner pages) */
 .page-hero {
     padding: 120px 0 80px;
     background: var(--paper);
@@ -336,11 +324,11 @@ nav a.nav-cta:hover {
 }
 
 .stat-number {
-    font-size: 36px;
+    font-size: 32px;
     font-weight: 700;
     color: #FFFFFF;
     letter-spacing: -1px;
-    line-height: 1;
+    line-height: 1.1;
     margin-bottom: 6px;
 }
 
@@ -403,7 +391,7 @@ nav a.nav-cta:hover {
 }
 
 /* ============================================
-   Two-column service split
+   Split (two-column)
    ============================================ */
 
 .split {
@@ -486,7 +474,7 @@ nav a.nav-cta:hover {
 }
 
 /* ============================================
-   Service grid (detail pages)
+   Service Grid
    ============================================ */
 
 .service-grid {
@@ -523,43 +511,6 @@ nav a.nav-cta:hover {
     font-size: 15px;
     color: var(--muted);
     line-height: 1.6;
-}
-
-/* ============================================
-   Trust strip (industry credibility)
-   ============================================ */
-
-.trust-strip {
-    padding: 60px 0;
-    background: var(--paper);
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-}
-
-.trust-label {
-    font-size: 12px;
-    font-weight: 700;
-    color: var(--muted);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    text-align: center;
-    margin-bottom: 32px;
-}
-
-.trust-marks {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 64px;
-}
-
-.trust-mark {
-    font-size: 22px;
-    font-weight: 700;
-    color: var(--muted);
-    letter-spacing: 1px;
-    opacity: 0.7;
 }
 
 /* ============================================
@@ -628,7 +579,7 @@ nav a.nav-cta:hover {
 }
 
 /* ============================================
-   Long-form content (about, etc)
+   Prose (long-form content)
    ============================================ */
 
 .prose {
@@ -768,14 +719,10 @@ footer {
     margin-bottom: 64px;
 }
 
-.footer-brand .wordmark {
-    font-size: 26px;
+.footer-brand img {
+    height: 44px;
     margin-bottom: 16px;
-    display: inline-block;
-}
-
-.footer-brand .wordmark .sky {
-    color: #FFFFFF;
+    display: block;
 }
 
 .footer-brand p {
@@ -915,14 +862,6 @@ footer {
         font-size: 36px;
     }
 
-    .trust-marks {
-        gap: 32px;
-    }
-
-    .trust-mark {
-        font-size: 18px;
-    }
-
     .contact-form {
         padding: 32px 24px;
     }
@@ -931,15 +870,20 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    .logo img {
+        height: 38px;
+    }
+
     nav {
-        gap: 16px;
+        gap: 20px;
     }
 
     nav a {
-        font-size: 13px;
+        font-size: 14px;
     }
 
     nav a.nav-cta {
-        padding: 9px 16px;
+        padding: 10px 18px;
+        font-size: 13px;
     }
 }

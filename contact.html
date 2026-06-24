@@ -13,6 +13,7 @@
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://skykpi.com/contact.html">
 
+    <link rel="icon" type="image/png" href="/skykpi-logo-dark.png">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;400;500;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 
@@ -42,22 +43,7 @@
     <header>
         <div class="container">
             <a href="/" class="logo">
-                <svg viewBox="0 0 200 200" width="36" height="36">
-                    <defs>
-                        <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-                            <stop offset="0" stop-color="#1AB0C4"/>
-                            <stop offset="1" stop-color="#1296B0"/>
-                        </linearGradient>
-                    </defs>
-                    <path d="M100,100 L100,47 A53,53 0 0 1 153,100 Z" fill="url(#g)"/>
-                    <path d="M100,100 L100,153 A53,53 0 0 1 47,100 Z" fill="url(#g)"/>
-                    <circle cx="100" cy="100" r="58" fill="none" stroke="#1A2030" stroke-width="6"/>
-                    <g stroke="#1A2030" stroke-width="6" stroke-linecap="round">
-                        <line x1="100" y1="18" x2="100" y2="182"/>
-                        <line x1="18" y1="100" x2="182" y2="100"/>
-                    </g>
-                </svg>
-                <span class="wordmark"><span class="sky">Sky</span><span class="kpi">KPI</span></span>
+                <img src="/skykpi-logo-white.png" alt="SkyKPI">
             </a>
             <nav>
                 <a href="/marketing.html">Marketing</a>
@@ -122,9 +108,11 @@
                         <label for="interest">What are you interested in?</label>
                         <select id="interest" name="interest" required>
                             <option value="">Choose one</option>
-                            <option value="marketing">Marketing for a precast or AEC company</option>
+                            <option value="marketing-producer">Marketing for a precast producer</option>
+                            <option value="marketing-supplier">Marketing for a precast supplier or service provider</option>
+                            <option value="marketing-aec">Marketing for an AEC company</option>
                             <option value="association">Association management</option>
-                            <option value="both">Both</option>
+                            <option value="both">Both marketing and association management</option>
                             <option value="other">Something else</option>
                         </select>
                     </div>
@@ -144,7 +132,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-brand">
-                    <span class="wordmark"><span class="sky">Sky</span><span class="kpi">KPI</span></span>
+                    <img src="/skykpi-logo-dark.png" alt="SkyKPI">
                     <p>A marketing and association management firm built for the precast concrete and AEC industries.</p>
                 </div>
                 <div class="footer-col">
