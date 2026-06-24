@@ -3,15 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SkyKPI — Precast & AEC Marketing</title>
+    <title>SkyKPI | Marketing and Association Management for AEC and Precast</title>
+    <meta name="description" content="SkyKPI is a marketing and association management firm built for the AEC and precast concrete industries. No learning curve. We know what actually works.">
+    <meta name="keywords" content="precast marketing, AEC marketing, association management, precast concrete marketing agency, construction industry marketing">
+
+    <meta property="og:title" content="SkyKPI | Marketing and Association Management for AEC and Precast">
+    <meta property="og:description" content="A marketing and association management firm built for the AEC and precast concrete industries. No learning curve.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://skykpi.com">
+
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "SkyKPI",
+      "description": "Marketing and association management firm serving the AEC and precast concrete industries.",
+      "url": "https://skykpi.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Frankfort",
+        "addressRegion": "IL",
+        "addressCountry": "US"
+      },
+      "areaServed": "United States",
+      "serviceType": ["Marketing", "Association Management", "Precast Concrete Marketing", "AEC Marketing"]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does SkyKPI do?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "SkyKPI is a marketing and association management firm built specifically for the AEC and precast concrete industries. We handle marketing for precast producers and full operations for industry associations."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who does SkyKPI work with?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We work with precast concrete producers, AEC suppliers, and industry associations. Our clients include Advanced Formliners, Midwest Precast Concrete, PCI Illinois Wisconsin, and the Association of Licensed Architects."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is SkyKPI different from a general marketing agency?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "There is no learning curve. We already know the AEC industry, the precast industry, and how buyers make decisions in this space. We focus on putting you in front of the right people so your sales team closes more deals."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What does association management with SkyKPI look like?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Associations have outgrown the single-executive-director model. With SkyKPI you get a full team covering operations, marketing, membership, events, and member communications."
+          }
+        }
+      ]
+    }
+    </script>
 </head>
 <body>
     <header>
         <div class="container">
-            <div class="logo">
-                <svg viewBox="0 0 200 200" width="40" height="40">
+            <a href="#" class="logo">
+                <svg viewBox="0 0 200 200" width="36" height="36">
                     <defs>
                         <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
                             <stop offset="0" stop-color="#1AB0C4"/>
@@ -20,81 +87,125 @@
                     </defs>
                     <path d="M100,100 L100,47 A53,53 0 0 1 153,100 Z" fill="url(#g)"/>
                     <path d="M100,100 L100,153 A53,53 0 0 1 47,100 Z" fill="url(#g)"/>
-                    <circle cx="100" cy="100" r="58" fill="none" stroke="#E8EDF2" stroke-width="6"/>
-                    <g stroke="#E8EDF2" stroke-width="6" stroke-linecap="round">
+                    <circle cx="100" cy="100" r="58" fill="none" stroke="#1A2030" stroke-width="6"/>
+                    <g stroke="#1A2030" stroke-width="6" stroke-linecap="round">
                         <line x1="100" y1="18" x2="100" y2="182"/>
                         <line x1="18" y1="100" x2="182" y2="100"/>
                     </g>
                 </svg>
                 <span class="wordmark"><span class="sky">Sky</span><span class="kpi">KPI</span></span>
-            </div>
+            </a>
             <nav>
-                <a href="#services">Services</a>
+                <a href="#marketing">Marketing</a>
+                <a href="#associations">Associations</a>
                 <a href="#about">About</a>
-                <a href="#contact">Contact</a>
+                <a href="#contact" class="nav-cta">Contact</a>
             </nav>
         </div>
     </header>
 
     <section class="hero">
         <div class="container">
-            <h1>Your Precast Producers Get Specified.</h1>
-            <p>Spec-stage marketing strategy and content production for precast concrete and AEC. We make you the reference point architects and engineers reach for.</p>
-            <a href="#contact" class="cta">Let's Talk</a>
+            <div class="eyebrow">Marketing and Association Management for AEC</div>
+            <h1>Built for the precast and AEC industry. No learning curve.</h1>
+            <p class="lead">We know the precast industry. We know what works and what does not. A viral reel does not pay your sales team. Getting your company in front of the right people does.</p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn-primary">Start a Conversation</a>
+                <a href="#services" class="btn-secondary">See What We Do</a>
+            </div>
         </div>
     </section>
 
-    <section id="services" class="services">
+    <section id="services" class="positioning">
         <div class="container">
-            <h2>What We Do</h2>
-            <div class="service-grid">
-                <div class="service">
-                    <h3>Custom Websites</h3>
-                    <p>Fast, modern sites built to rank and convert. Spec-stage positioning baked in.</p>
+            <div class="positioning-grid">
+                <div class="positioning-item">
+                    <div class="positioning-number">01</div>
+                    <h3>Top of Mind</h3>
+                    <p>When an architect, engineer, or contractor needs precast, your company is the first one they think of.</p>
                 </div>
-                <div class="service">
-                    <h3>Social Media & Content</h3>
-                    <p>Consistent, credible presence on LinkedIn, Facebook, Instagram. Your stories, our production.</p>
+                <div class="positioning-item">
+                    <div class="positioning-number">02</div>
+                    <h3>Most Trusted</h3>
+                    <p>Buyers research before they buy. We make sure your company looks credible, qualified, and the safe choice.</p>
                 </div>
-                <div class="service">
-                    <h3>Email & Campaigns</h3>
-                    <p>Automated nurture sequences and targeted outreach to architects and engineers.</p>
+                <div class="positioning-item">
+                    <div class="positioning-number">03</div>
+                    <h3>Sales Ready</h3>
+                    <p>Your sales team gets warm prospects who already know your company. They close more deals with less friction.</p>
                 </div>
-                <div class="service">
-                    <h3>AIA/CE Administration</h3>
-                    <p>We manage your AIA CEUs, compliance, and spec-stage positioning with design professionals.</p>
-                </div>
-                <div class="service">
-                    <h3>Association Management</h3>
-                    <p>Event coordination, member communications, and growth strategy for industry chapters.</p>
-                </div>
-                <div class="service">
-                    <h3>Competitor Monitoring</h3>
-                    <p>Know who's winning the spec. Track positioning, messaging, and market moves in real time.</p>
-                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="marketing" class="service-block">
+        <div class="container">
+            <div class="service-content">
+                <div class="service-tag">Marketing</div>
+                <h2>Marketing for precast producers and AEC suppliers.</h2>
+                <p>Most marketing agencies have to learn your industry on your dime. We already know it. We know how a precast plant runs, how a spec gets written, how an architect makes a decision, and how a job gets won or lost months before the RFQ comes in.</p>
+                <p>We build websites that rank, content that gets read by buyers, and presence that puts your name in the room when it matters.</p>
+                <ul class="service-list">
+                    <li>Custom websites built for search and conversion</li>
+                    <li>Social media and content production on LinkedIn, Facebook, and Instagram</li>
+                    <li>Email marketing and lead nurture campaigns</li>
+                    <li>AIA and ALA continuing education administration</li>
+                    <li>Photo, video, and drone content production</li>
+                    <li>Spec and submittal support, ARCAT and SpecLink listings</li>
+                    <li>Competitor monitoring and market positioning</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="associations" class="service-block alt">
+        <div class="container">
+            <div class="service-content">
+                <div class="service-tag">Association Management</div>
+                <h2>Associations have outgrown the one-person model.</h2>
+                <p>The era of running an association on a single executive director is over. Member expectations have grown. Events are more complex. Communications need to be constant. Compliance and finances need real attention.</p>
+                <p>With SkyKPI, your association gets a full team. Operations, marketing, membership, event coordination, and member communications. One firm, one fee, one point of contact.</p>
+                <ul class="service-list">
+                    <li>Day to day operations and member services</li>
+                    <li>Event planning, registration, and execution</li>
+                    <li>Membership growth and retention programs</li>
+                    <li>Email, newsletter, and member communications</li>
+                    <li>Board support and governance</li>
+                    <li>Sponsorship sales and management</li>
+                    <li>Financial coordination and reporting</li>
+                </ul>
             </div>
         </div>
     </section>
 
     <section id="about" class="about">
         <div class="container">
-            <h2>About SkyKPI</h2>
-            <p>We're a boutique marketing and association management firm based in Frankfort, Illinois. We work exclusively with precast concrete producers and AEC industry associations. We don't do generic marketing. We understand spec-stage positioning, AIA relationships, PCI workflows, and the buyers who actually make decisions in this industry.</p>
-            <p>We bring professional camera work, drone content, web development, and ten years of AEC insider knowledge to every project.</p>
+            <h2>Who we work with.</h2>
+            <p>We work with precast producers, formliner manufacturers, AEC suppliers, and industry associations across the United States. Current clients include Advanced Formliners, Midwest Precast Concrete, PCI Illinois Wisconsin, and the Association of Licensed Architects.</p>
+            <p>SkyKPI is based in Frankfort, Illinois. We travel.</p>
         </div>
     </section>
 
     <section id="contact" class="contact">
         <div class="container">
-            <h2>Ready to Get Specified?</h2>
-            <p>Let's talk about what spec-stage positioning looks like for your producers.</p>
-            <a href="mailto:hello@skykpi.com" class="cta cta-secondary">Get in Touch</a>
+            <h2>Ready to talk?</h2>
+            <p>Tell us about your company, your association, or the problem you are trying to solve. We will tell you straight whether we can help.</p>
+            <a href="mailto:hello@skykpi.com" class="btn-primary btn-large">hello@skykpi.com</a>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 SkyKPI LLC. Frankfort, IL.</p>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <span class="wordmark"><span class="sky">Sky</span><span class="kpi">KPI</span></span>
+                    <p>Marketing and association management for AEC and precast.</p>
+                </div>
+                <div class="footer-meta">
+                    <p>SkyKPI LLC &middot; Frankfort, IL</p>
+                    <p>&copy; 2026 SkyKPI LLC. All rights reserved.</p>
+                </div>
+            </div>
         </div>
     </footer>
 </body>
