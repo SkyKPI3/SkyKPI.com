@@ -125,21 +125,14 @@
         </div>
     </header>
 
-    <section class="hero">
+    <section class="hero hero-centered">
         <div class="container">
-            <div class="hero-grid">
-                <div>
-                    <div class="eyebrow">Marketing and Association Management for AEC</div>
-                    <h1>We know precast. We know associations. No learning curve.</h1>
-                    <p class="lead">A boutique firm built for the precast concrete and AEC industries. We work with precast producers, the suppliers and service providers behind them, and the associations that hold the industry together.</p>
-                    <div class="hero-cta">
-                        <a href="/contact.html" class="btn btn-primary">Start a Conversation</a>
-                        <a href="/marketing.html" class="btn btn-secondary">See What We Do</a>
-                    </div>
-                </div>
-                <div class="hero-visual">
-                    <img src="/skykpi-logo-dark.png" alt="SkyKPI mark">
-                </div>
+            <div class="eyebrow">Marketing and Association Management for AEC</div>
+            <h1>We know precast. We know associations. No learning curve.</h1>
+            <p class="lead">A boutique firm built for the precast concrete and AEC industries. We work with precast producers, the suppliers and service providers behind them, and the associations that hold the industry together.</p>
+            <div class="hero-cta">
+                <a href="/contact.html" class="btn btn-primary">Start a Conversation</a>
+                <a href="/marketing.html" class="btn btn-secondary">See What We Do</a>
             </div>
         </div>
     </section>
