@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing for Precast and AEC | SkyKPI</title>
+    <meta name="description" content="Marketing services for precast concrete producers and AEC suppliers. Websites, content, AIA continuing education, photo and drone production, spec stage positioning.">
+    <meta name="keywords" content="precast marketing services, AEC marketing agency, precast website design, AIA continuing education, construction content marketing">
+    <link rel="canonical" href="https://skykpi.com/marketing.html">
+
+    <meta property="og:title" content="Marketing for Precast and AEC | SkyKPI">
+    <meta property="og:description" content="Marketing built by people who already know the precast and AEC industry. Websites, content, continuing education, and spec stage positioning.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://skykpi.com/marketing.html">
+
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@300;400;500;700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Precast and AEC Marketing",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "SkyKPI",
+        "url": "https://skykpi.com"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "description": "Marketing services for precast concrete producers and AEC suppliers including custom websites, content production, AIA continuing education administration, and spec stage positioning.",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Marketing Services",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Custom Website Design and Development"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Social Media Management"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Email Marketing"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "AIA Continuing Education Administration"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Photo and Video Production"}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Spec and Submittal Support"}}
+        ]
+      }
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What does precast marketing actually include?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Precast marketing covers everything that gets a producer in front of the right buyers. Websites, social, email, AIA continuing education, photo and video, spec and submittal support, and ongoing market positioning. The goal is to be top of mind when an architect, engineer, or contractor is making a product decision."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How is spec stage positioning different from regular marketing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most precast jobs are won or lost months before the RFQ. By the time you see the bid, the architect has often already named a basis of design and the spec has been written. Spec stage positioning is about being in front of architects and engineers during design, not at bid time."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you administer AIA continuing education?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We handle AIA CES registration, course development, presentation logistics, attendance tracking, and reporting. It is one of the most effective spec stage tools in the industry and we run it end to end."
+          }
+        }
+      ]
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="/" class="logo">
+                <svg viewBox="0 0 200 200" width="36" height="36">
+                    <defs>
+                        <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0" stop-color="#1AB0C4"/>
+                            <stop offset="1" stop-color="#1296B0"/>
+                        </linearGradient>
+                    </defs>
+                    <path d="M100,100 L100,47 A53,53 0 0 1 153,100 Z" fill="url(#g)"/>
+                    <path d="M100,100 L100,153 A53,53 0 0 1 47,100 Z" fill="url(#g)"/>
+                    <circle cx="100" cy="100" r="58" fill="none" stroke="#1A2030" stroke-width="6"/>
+                    <g stroke="#1A2030" stroke-width="6" stroke-linecap="round">
+                        <line x1="100" y1="18" x2="100" y2="182"/>
+                        <line x1="18" y1="100" x2="182" y2="100"/>
+                    </g>
+                </svg>
+                <span class="wordmark"><span class="sky">Sky</span><span class="kpi">KPI</span></span>
+            </a>
+            <nav>
+                <a href="/marketing.html" class="active">Marketing</a>
+                <a href="/associations.html">Associations</a>
+                <a href="/about.html">About</a>
+                <a href="/contact.html" class="nav-cta">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <div class="eyebrow">Marketing for Precast and AEC</div>
+            <h1>Marketing built by people who already know the industry.</h1>
+            <p class="lead">Most agencies have to learn precast on your dime. We already know it. From plant operations to spec writing to how a buyer actually picks a producer. That depth is the difference between a campaign that runs and a campaign that closes.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-title">The Problem</div>
+            <h2>Generalist marketing breaks down in AEC.</h2>
+            <p class="section-lead">Architects do not buy the same way consumers buy. Engineers do not respond to lifestyle content. Contractors do not care about your brand story unless your product solves a real problem. A generic agency runs the same playbook on your account that they run on a dentist or a restaurant. It does not work here. Buyers in this industry want competence, evidence, and a name they can trust to a deadline.</p>
+
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-card-number">01 / WEBSITES</div>
+                    <h3>Built to rank and convert.</h3>
+                    <p>Fast, modern, mobile, and engineered for SEO and AEO. Real schema markup, real meta structure, real performance scores. Architects, engineers, and contractors find you and respect what they see.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-number">02 / SOCIAL AND CONTENT</div>
+                    <h3>Presence the industry takes seriously.</h3>
+                    <p>LinkedIn, Facebook, and Instagram run with consistency, judgment, and a content calendar that prioritizes credibility over volume. No filler. No trends for the sake of trends. Posts that buyers actually stop on.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-number">03 / EMAIL AND CAMPAIGNS</div>
+                    <h3>Direct to the buyer.</h3>
+                    <p>Targeted outreach and nurture sequences built around your real sales cycle. We segment by buyer role, project type, and stage. Architects get one message. Estimators get another. Both work.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-number">04 / AIA AND ALA CE</div>
+                    <h3>The most underused spec stage tool.</h3>
+                    <p>AIA Continuing Education and ALA accreditation are the cleanest way to get face time with the architects writing your specs. We handle registration, course development, delivery logistics, and reporting end to end.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-number">05 / PHOTO, VIDEO, DRONE</div>
+                    <h3>Owned content production.</h3>
+                    <p>We bring professional camera and drone equipment to your plant and your job sites. You stop renting stock imagery. You start owning a real library of your work, ready for sales, marketing, and submittals.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-number">06 / SPEC AND SUBMITTAL</div>
+                    <h3>ARCAT, SpecLink, basis of design.</h3>
+                    <p>If you are not listed where architects look, you are not getting specified. We get your product on the platforms, in the formats, and into the specs that lead to real jobs.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-number">07 / COMPETITOR MONITORING</div>
+                    <h3>Know who is winning the spec.</h3>
+                    <p>We track competitor positioning, project wins, hiring, and messaging. You stop being surprised. You see the moves your competitors are making and you respond before the market does.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-card-number">08 / SALES SUPPORT</div>
+                    <h3>Material your sales team will actually use.</h3>
+                    <p>Capability decks, project sheets, line cards, and submittal packages built for the way your team actually sells. We work with the people in the field, not just the people in the office.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-paper">
+        <div class="container">
+            <div class="section-title">How We Work</div>
+            <h2>Senior people, monthly retainer, no juniors learning on you.</h2>
+            <p class="section-lead">Most agency retainers fund a junior team that costs the agency less than they cost you. We do not run that model. SkyKPI is boutique on purpose. You get a senior point of contact, real strategic input, and execution that does not need to be redone. The retainer covers a defined scope. Travel and out of scope work bills separately and transparently.</p>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container-narrow">
+            <div class="section-title">Marketing FAQ</div>
+            <h2>What producers ask before they hire us.</h2>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <h3>What does a typical marketing retainer cover?</h3>
+                    <p>Most full service retainers cover website management, social media across LinkedIn, Facebook, and Instagram, three monthly email campaigns, sales support materials, competitor monitoring, AIA or ALA CE administration where applicable, and reporting. Travel and major content production days bill separately.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>How fast do you get up to speed?</h3>
+                    <p>We are already up to speed on the industry. What we need from you is the specifics of your company, your products, your sales cycle, and your team. Onboarding is typically two to three weeks before content starts going out.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Do you handle our website hosting and tech?</h3>
+                    <p>Yes. We build on a modern stack with version control, automated deployment, and proper SEO foundations. We manage the technical side so your team can focus on running the business.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>Can you work with our internal marketing person?</h3>
+                    <p>Often. Many of our best engagements pair us with an internal coordinator who knows the company while we bring industry depth and production. It is a force multiplier rather than a turf issue.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>What if we only need one or two services?</h3>
+                    <p>Project work is available for the right fit. Full retainers get the best of what we do because we can build a real engine over time. Talk to us and we will tell you which makes sense.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-block">
+        <div class="container-narrow">
+            <h2>Want to see what this looks like for your company?</h2>
+            <p>A short conversation is the fastest way to find out if we are the right fit. No deck. No sales pitch. Just a real discussion about what you need.</p>
+            <a href="/contact.html" class="btn btn-teal btn-large">Start a Conversation</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <span class="wordmark"><span class="sky">Sky</span><span class="kpi">KPI</span></span>
+                    <p>A marketing and association management firm built for the precast concrete and AEC industries.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <a href="/marketing.html">Marketing</a>
+                    <a href="/associations.html">Association Management</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <a href="/about.html">About</a>
+                    <a href="/contact.html">Contact</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Contact</h4>
+                    <a href="mailto:hello@skykpi.com">hello@skykpi.com</a>
+                    <a href="#">Frankfort, IL</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 SkyKPI LLC. All rights reserved.</p>
+                <p>Frankfort, Illinois</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
