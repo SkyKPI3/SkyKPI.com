@@ -1,0 +1,49 @@
+---
+import Sheet from '../../layouts/Sheet.astro';
+import RegistrationMarks from '../../components/RegistrationMarks.astro';
+---
+
+<Sheet
+  title="Received | SkyKPI"
+  description="Your message is in. SkyKPI replies within one business day."
+  path="/contact/thanks/"
+  sheet="A-500"
+  sheetName="Contact / Received"
+  noindex={true}
+>
+  <section class="section sheet-dark thanks">
+    <RegistrationMarks />
+    <div class="container thanks__inner">
+      <p class="tag">Sheet A-500 &middot; Transmittal logged</p>
+      <h1>Received.</h1>
+      <hr class="dimline dimline--center" aria-hidden="true" />
+      <p class="lede">
+        Your note is in the set. We will get back to you within one business
+        day from hello@skykpi.com.
+      </p>
+      <a class="btn btn--ghost" href="/">Return to sheet A-100</a>
+    </div>
+  </section>
+</Sheet>
+
+<style>
+  .thanks {
+    min-height: 82svh;
+    display: flex;
+    align-items: center;
+    padding-top: var(--header-h);
+  }
+
+  .thanks__inner {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .thanks__inner .lede {
+    max-width: 30rem;
+    margin-bottom: 1.5rem;
+  }
+</style>

@@ -1,0 +1,244 @@
+---
+import { Image } from 'astro:assets';
+import Sheet from '../layouts/Sheet.astro';
+import RegistrationMarks from '../components/RegistrationMarks.astro';
+import Faq from '../components/Faq.astro';
+import { faqSchema } from '../lib/schema';
+import heroShot from '../assets/photos/arch/IMG_4808.jpeg';
+import detailShot from '../assets/photos/precast/IMG_5104.jpeg';
+
+const faqs = [
+  {
+    q: 'How do subcontractors get found by general contractors?',
+    a: 'GCs and estimators prequalify subs online before anyone calls. They search the trade and the region, then check capabilities, past projects, coverage area, and whether the outfit looks like it can carry the scope. If your site answers those questions, you make the bid list.',
+  },
+  {
+    q: 'What belongs on a capability page?',
+    a: 'The scope you self-perform, the markets and project sizes you work in, your coverage area, key equipment or crew capacity, and photos of finished work. Two clear pages beat twenty vague ones.',
+  },
+  {
+    q: 'What does marketing for a subcontractor cost?',
+    a: 'One monthly retainer scoped to what you need, and for most subs the scope is focused: a clean site, capability pages, and proof of work. No hourly billing. The number comes from a short conversation about scope.',
+  },
+];
+
+const jsonLd = [faqSchema(faqs)];
+---
+
+<Sheet
+  title="Marketing and Websites for Subcontractors | SkyKPI"
+  description="SkyKPI builds websites, marketing, and social media for trade and specialty subcontractors, with core expertise in the precast concrete industry."
+  path="/subcontractors/"
+  sheet="A-230"
+  sheetName="Subcontractors"
+  jsonLd={jsonLd}
+>
+  <section class="hero">
+    <div class="hero__media photo-treat">
+      <Image
+        src={heroShot}
+        alt="A large empty aircraft hangar with a freshly coated glossy floor and a full-width hangar door."
+        widths={[768, 1280, 1920]}
+        width={1920}
+        sizes="100vw"
+        loading="eager"
+        fetchpriority="high"
+        quality={78}
+      />
+    </div>
+    <RegistrationMarks />
+    <div class="container hero__content">
+      <p class="tag hero__kicker">Sheet A-230 &middot; Marketing / Subcontractors</p>
+      <h1>Get found before the bid list closes.</h1>
+      <hr class="dimline" aria-hidden="true" />
+      <p class="lede hero__sub">
+        SkyKPI builds websites, marketing, and social media for trade and
+        specialty subcontractors, with core expertise in the precast concrete
+        industry.
+      </p>
+    </div>
+  </section>
+
+  <section class="section sheet-dark angle">
+    <div class="container angle__grid">
+      <div>
+        <p class="tag reveal">Why us</p>
+        <h2 class="reveal">Prequalification happens online now.</h2>
+        <hr class="dimline reveal" aria-hidden="true" />
+      </div>
+      <div class="reveal">
+        <p>
+          Before a GC ever calls, someone in their office has already looked
+          you up. Subs win or lose bid-list spots on what that search turns
+          up: capabilities, project proof, and whether the outfit looks ready
+          for the scope.
+        </p>
+        <p>
+          Precast is our flagship expertise. We work around structural and
+          architectural concrete every day, and we speak the language of the
+          GCs who hire the trades.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section sheet-dark sheet-dark--deep scope">
+    <RegistrationMarks />
+    <div class="container scope__grid">
+      <div class="scope__list">
+        <p class="tag reveal">Scope of work</p>
+        <h2 class="reveal">What we build for subs</h2>
+        <hr class="dimline reveal" aria-hidden="true" />
+        <ul>
+          <li class="reveal">
+            <span class="tag tag--dim">W-1</span>
+            <h3>Clean capability pages</h3>
+            <p class="dim">
+              Your scope, your markets, your coverage area, and your crew
+              capacity, stated plainly enough for an estimator in a hurry.
+            </p>
+          </li>
+          <li class="reveal">
+            <span class="tag tag--dim">W-2</span>
+            <h3>Project proof</h3>
+            <p class="dim">
+              Finished-work photography and short project writeups that show
+              you have carried this scope before.
+            </p>
+          </li>
+          <li class="reveal">
+            <span class="tag tag--dim">W-3</span>
+            <h3>Being easy to find</h3>
+            <p class="dim">
+              A site that ranks for your trade and your region, so you are on
+              the list when the list is being built.
+            </p>
+          </li>
+        </ul>
+      </div>
+      <div class="scope__media photo-treat reveal">
+        <Image
+          src={detailShot}
+          alt="A precast wall panel with dark thin-brick facing being set by crane while a worker steadies its base."
+          widths={[480, 800, 1200]}
+          width={1200}
+          sizes="(min-width: 821px) 40vw, 100vw"
+          loading="lazy"
+          quality={72}
+        />
+      </div>
+    </div>
+  </section>
+
+  <Faq items={faqs} heading="What subs ask us" />
+
+  <section class="section sheet-dark cta">
+    <div class="container cta__inner">
+      <p class="tag reveal">Sheet A-500</p>
+      <h2 class="reveal">Make the next bid list.</h2>
+      <hr class="dimline dimline--center reveal" aria-hidden="true" />
+      <div class="reveal">
+        <a class="btn" href="/contact/">Start the conversation</a>
+      </div>
+    </div>
+  </section>
+</Sheet>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 72svh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+
+  .hero__media {
+    position: absolute;
+    inset: 0;
+  }
+
+  .hero__media :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 3;
+    padding: calc(var(--header-h) + 3rem) 0 clamp(3rem, 7vw, 5rem);
+  }
+
+  .hero__kicker {
+    margin-bottom: 1.4rem;
+  }
+
+  .hero__sub {
+    max-width: 34rem;
+  }
+
+  .angle__grid {
+    display: grid;
+    grid-template-columns: 5fr 6fr;
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: start;
+  }
+
+  .scope__grid {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+  }
+
+  .scope__list ul {
+    list-style: none;
+    margin: 2rem 0 0;
+    padding: 0;
+  }
+
+  .scope__list li {
+    border-top: 1px solid var(--hairline-on-ink);
+    padding: 1.25rem 0;
+  }
+
+  .scope__list h3 {
+    margin: 0.5rem 0;
+  }
+
+  .scope__list p {
+    margin: 0;
+  }
+
+  .scope__media {
+    aspect-ratio: 3 / 4;
+    position: sticky;
+    top: calc(var(--header-h) + 2rem);
+  }
+
+  .scope__media :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 820px) {
+    .angle__grid,
+    .scope__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .scope__media {
+      position: static;
+      aspect-ratio: 4 / 3;
+    }
+  }
+
+  .cta__inner {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+</style>

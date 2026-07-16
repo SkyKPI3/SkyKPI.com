@@ -1,0 +1,388 @@
+/* ==========================================================================
+   SkyKPI — global styles
+   Visual language: an architectural drawing set. Every page is a sheet.
+   ========================================================================== */
+
+:root {
+  /* Ink and paper */
+  --ink: #0d0f14;
+  --ink-2: #12151c;
+  --ink-3: #1a1e27;
+  --paper: #f2efe9;
+  --paper-2: #eae6dd;
+  --text-on-ink: #e8edf2;
+  --text-on-ink-dim: #a7b0bc;
+  --text-on-paper: #1c2027;
+  --text-on-paper-dim: #565e6a;
+
+  /* The only accent */
+  --teal: #1ab0c4;
+  --blue: #1296b0;
+  --accent-grad: linear-gradient(135deg, var(--teal), var(--blue));
+
+  /* Lines */
+  --hairline-on-ink: rgba(232, 237, 242, 0.14);
+  --hairline-on-paper: rgba(28, 32, 39, 0.16);
+  --grid-line: rgba(232, 237, 242, 0.035);
+
+  /* Type */
+  --font-display: 'Barlow Semi Condensed', 'Arial Narrow', sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SF Mono', Menlo, monospace;
+  --font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Rhythm */
+  --space-section: clamp(4.5rem, 10vw, 8.5rem);
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+  --measure: 38rem;
+
+  /* Header */
+  --header-h: 4rem;
+}
+
+/* --------------------------------------------------------------------------
+   Reset-ish
+   -------------------------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--text-on-ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+::selection {
+  background: var(--teal);
+  color: var(--ink);
+}
+
+/* --------------------------------------------------------------------------
+   Typography
+   -------------------------------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.05;
+  letter-spacing: 0.005em;
+  margin: 0 0 1rem;
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: clamp(2.6rem, 7vw, 5.25rem);
+}
+
+h2 {
+  font-size: clamp(1.9rem, 4.2vw, 3.1rem);
+}
+
+h3 {
+  font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+}
+
+p {
+  margin: 0 0 1rem;
+  max-width: var(--measure);
+}
+
+.lede {
+  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  line-height: 1.6;
+}
+
+.dim {
+  color: var(--text-on-ink-dim);
+}
+
+.on-paper .dim {
+  color: var(--text-on-paper-dim);
+}
+
+/* Monospace label: sheet numbers, section tags, metadata */
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
+.tag--dim {
+  color: var(--text-on-ink-dim);
+}
+
+.on-paper .tag--dim {
+  color: var(--text-on-paper-dim);
+}
+
+/* --------------------------------------------------------------------------
+   Dimension line: a horizontal line with tick ends, used under headlines
+   -------------------------------------------------------------------------- */
+
+.dimline {
+  position: relative;
+  display: block;
+  width: min(9rem, 30vw);
+  height: 1px;
+  margin: 1.4rem 0 1.6rem;
+  background: linear-gradient(90deg, var(--teal), var(--blue));
+  border: 0;
+}
+
+.dimline::before,
+.dimline::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  width: 1px;
+  height: 9px;
+  background: var(--teal);
+}
+
+.dimline::before {
+  left: 0;
+}
+
+.dimline::after {
+  right: 0;
+  background: var(--blue);
+}
+
+.dimline--center {
+  margin-inline: auto;
+}
+
+/* --------------------------------------------------------------------------
+   Sections
+   -------------------------------------------------------------------------- */
+
+.section {
+  position: relative;
+  padding: var(--space-section) 0;
+}
+
+.container {
+  width: min(72rem, 100% - 2 * var(--gutter));
+  margin-inline: auto;
+}
+
+/* Dark section with faint drafting grid */
+.sheet-dark {
+  background-color: var(--ink);
+  background-image:
+    linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+
+.sheet-dark--deep {
+  background-color: var(--ink-2);
+}
+
+/* Paper section (light) */
+.on-paper {
+  background: var(--paper);
+  color: var(--text-on-paper);
+}
+
+/* --------------------------------------------------------------------------
+   Corner registration marks
+   Applied to a positioned section via <RegistrationMarks />
+   -------------------------------------------------------------------------- */
+
+.regmark {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  color: var(--teal);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.regmark--tl { top: 14px; left: 14px; }
+.regmark--tr { top: 14px; right: 14px; }
+.regmark--bl { bottom: 14px; left: 14px; }
+.regmark--br { bottom: 14px; right: 14px; }
+
+@media (max-width: 640px) {
+  .regmark--bl,
+  .regmark--br {
+    display: none;
+  }
+  .regmark {
+    width: 14px;
+    height: 14px;
+    opacity: 0.4;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Photo treatment: dark overlay, slight desaturation, grain.
+   Applied with CSS layers only; source files are never edited.
+   -------------------------------------------------------------------------- */
+
+.photo-treat {
+  position: relative;
+  overflow: hidden;
+}
+
+.photo-treat > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(0.82) contrast(1.02);
+}
+
+.photo-treat::before {
+  /* dark wash */
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    to bottom,
+    rgba(13, 15, 20, 0.55),
+    rgba(13, 15, 20, 0.35) 45%,
+    rgba(13, 15, 20, 0.72)
+  );
+  pointer-events: none;
+}
+
+.photo-treat::after {
+  /* grain */
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  background-size: 160px 160px;
+  opacity: 0.07;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   Buttons
+   -------------------------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.85rem 1.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--accent-grad);
+  border: 0;
+  cursor: pointer;
+}
+
+.btn:hover {
+  filter: brightness(1.08);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--text-on-ink);
+  box-shadow: inset 0 0 0 1px var(--hairline-on-ink);
+}
+
+.btn--ghost:hover {
+  box-shadow: inset 0 0 0 1px var(--teal);
+  filter: none;
+  color: var(--teal);
+}
+
+.on-paper .btn--ghost {
+  color: var(--text-on-paper);
+  box-shadow: inset 0 0 0 1px var(--hairline-on-paper);
+}
+
+.on-paper .btn--ghost:hover {
+  color: var(--blue);
+  box-shadow: inset 0 0 0 1px var(--blue);
+}
+
+/* --------------------------------------------------------------------------
+   Focus states
+   -------------------------------------------------------------------------- */
+
+:focus-visible {
+  outline: 2px solid var(--teal);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 100;
+  padding: 0.75rem 1.25rem;
+  background: var(--teal);
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+.skip-link:focus {
+  left: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Scroll reveal (opt-in via .reveal; activated by tiny script in Sheet layout)
+   -------------------------------------------------------------------------- */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

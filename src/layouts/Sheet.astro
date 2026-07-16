@@ -1,0 +1,550 @@
+---
+/**
+ * Sheet: the shared page layout.
+ * Every page is a sheet in the drawing set: sheet-number tag in the header,
+ * title-block strip in the footer, drafting grid on dark sections.
+ */
+import '@fontsource/barlow-semi-condensed/500.css';
+import '@fontsource/barlow-semi-condensed/600.css';
+import '@fontsource/ibm-plex-mono/400.css';
+import '@fontsource/inter/400.css';
+import '@fontsource/inter/500.css';
+import '../styles/global.css';
+import Mark from '../components/Mark.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  path: string; // e.g. "/" or "/marketing/"
+  sheet: string; // e.g. "A-100"
+  sheetName: string; // e.g. "HOME"
+  ogImage?: string;
+  jsonLd?: object[];
+  noindex?: boolean;
+}
+
+const {
+  title,
+  description,
+  path,
+  sheet,
+  sheetName,
+  ogImage = '/og-default.png',
+  jsonLd = [],
+  noindex = false,
+} = Astro.props;
+
+const canonical = new URL(path, Astro.site).href;
+const ogImageAbs = new URL(ogImage, Astro.site).href;
+const issued = new Date().toISOString().slice(0, 10);
+const year = new Date().getFullYear();
+
+const organization = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'SkyKPI LLC',
+  url: 'https://skykpi.com',
+  logo: 'https://skykpi.com/icon-512.png',
+  email: 'hello@skykpi.com',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Frankfort',
+    addressRegion: 'IL',
+    addressCountry: 'US',
+  },
+  areaServed: 'United States',
+  sameAs: ['https://www.linkedin.com/company/skykpi/'],
+};
+
+const nav = [
+  {
+    href: '/marketing/',
+    label: 'Marketing',
+    children: [
+      { href: '/architects/', label: 'Architects' },
+      { href: '/contractors/', label: 'Contractors' },
+      { href: '/subcontractors/', label: 'Subcontractors' },
+    ],
+  },
+  { href: '/associations/', label: 'Associations' },
+  { href: '/about/', label: 'About' },
+  { href: '/contact/', label: 'Contact' },
+];
+
+const footerLinks = [
+  { href: '/marketing/', label: 'Marketing' },
+  { href: '/architects/', label: 'Architects' },
+  { href: '/contractors/', label: 'Contractors' },
+  { href: '/subcontractors/', label: 'Subcontractors' },
+  { href: '/associations/', label: 'Associations' },
+  { href: '/about/', label: 'About' },
+  { href: '/contact/', label: 'Contact' },
+  { href: '/privacy/', label: 'Privacy' },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex" />}
+    <meta name="theme-color" content="#0D0F14" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="SkyKPI" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImageAbs} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageAbs} />
+
+    <script type="application/ld+json" set:html={JSON.stringify(organization)} />
+    {jsonLd.map((block) => <script type="application/ld+json" set:html={JSON.stringify(block)} />)}
+
+    <!--
+      Analytics: none, on purpose. The privacy policy promises no tracking
+      cookies. If analytics are ever wanted, enable Netlify Analytics in the
+      Netlify dashboard (server side, cookieless). No code change is needed
+      here and the policy stays true.
+    -->
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="site-header__brand" href="/" aria-label="SkyKPI home">
+          <Mark size={30} animate={true} />
+          <span class="site-header__wordmark">Sky<span class="site-header__wordmark-kpi">KPI</span></span>
+        </a>
+
+        <nav class="site-nav" aria-label="Main">
+          <button
+            class="site-nav__toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="site-nav-list"
+          >
+            <span class="site-nav__toggle-label tag tag--dim">Menu</span>
+            <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true">
+              <line x1="1" y1="4.5" x2="15" y2="4.5" stroke="currentColor" stroke-width="1.5"></line>
+              <line x1="1" y1="11.5" x2="15" y2="11.5" stroke="currentColor" stroke-width="1.5"></line>
+            </svg>
+          </button>
+          <ul id="site-nav-list" class="site-nav__list">
+            {
+              nav.map((item) => (
+                <li class:list={{ 'has-sub': !!item.children }}>
+                  <a href={item.href} aria-current={path === item.href ? 'page' : undefined}>
+                    {item.label}
+                  </a>
+                  {item.children && (
+                    <ul class="site-nav__sub">
+                      {item.children.map((child) => (
+                        <li>
+                          <a
+                            href={child.href}
+                            aria-current={path === child.href ? 'page' : undefined}
+                          >
+                            {child.label}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+
+        <span class="site-header__sheet tag" aria-label={`Sheet ${sheet}`}>SHT&nbsp;{sheet}</span>
+      </div>
+    </header>
+
+    <main id="main">
+      <slot />
+    </main>
+
+    <footer class="titleblock">
+      <div class="container">
+        <div class="titleblock__grid" role="presentation">
+          <div class="titleblock__cell titleblock__cell--brand">
+            <Mark size={40} />
+          </div>
+          <div class="titleblock__cell">
+            <span class="tag tag--dim">Firm</span>
+            <span class="titleblock__value">SkyKPI LLC<br />Frankfort, Illinois</span>
+          </div>
+          <div class="titleblock__cell">
+            <span class="tag tag--dim">Sheet</span>
+            <span class="titleblock__value">{sheet}<br />{sheetName}</span>
+          </div>
+          <div class="titleblock__cell">
+            <span class="tag tag--dim">Issued</span>
+            <span class="titleblock__value">{issued}</span>
+          </div>
+          <div class="titleblock__cell">
+            <span class="tag tag--dim">Web</span>
+            <span class="titleblock__value">skykpi.com</span>
+          </div>
+        </div>
+
+        <div class="titleblock__sub">
+          <ul class="titleblock__links">
+            {footerLinks.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+          </ul>
+          <div class="titleblock__contact">
+            <a href="mailto:hello@skykpi.com">hello@skykpi.com</a>
+            <a href="https://www.linkedin.com/company/skykpi/" rel="noopener">LinkedIn</a>
+          </div>
+          <p class="titleblock__legal">&copy; {year} SkyKPI LLC. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile nav toggle
+      const toggle = document.querySelector('.site-nav__toggle');
+      const list = document.getElementById('site-nav-list');
+      if (toggle && list) {
+        toggle.addEventListener('click', () => {
+          const open = toggle.getAttribute('aria-expanded') === 'true';
+          toggle.setAttribute('aria-expanded', String(!open));
+          list.classList.toggle('is-open', !open);
+        });
+      }
+
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // Scroll reveal
+      const revealed = document.querySelectorAll('.reveal');
+      if (!reduced && 'IntersectionObserver' in window && revealed.length) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            for (const e of entries) {
+              if (e.isIntersecting) {
+                e.target.classList.add('is-in');
+                io.unobserve(e.target);
+              }
+            }
+          },
+          { threshold: 0.12 }
+        );
+        revealed.forEach((el) => io.observe(el));
+      } else {
+        revealed.forEach((el) => el.classList.add('is-in'));
+      }
+
+      // Slow parallax on hero imagery
+      const layers = document.querySelectorAll('[data-parallax]');
+      if (!reduced && layers.length) {
+        let ticking = false;
+        const update = () => {
+          const y = window.scrollY;
+          layers.forEach((el) => {
+            (el as HTMLElement).style.transform = `translateY(${y * 0.14}px)`;
+          });
+          ticking = false;
+        };
+        window.addEventListener(
+          'scroll',
+          () => {
+            if (!ticking) {
+              ticking = true;
+              requestAnimationFrame(update);
+            }
+          },
+          { passive: true }
+        );
+      }
+    </script>
+
+    <style>
+      /* Header */
+      .site-header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        background: rgba(13, 15, 20, 0.82);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--hairline-on-ink);
+      }
+
+      .site-header__inner {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        height: var(--header-h);
+        width: min(72rem, 100% - 2 * var(--gutter));
+        margin-inline: auto;
+      }
+
+      .site-header__brand {
+        display: flex;
+        align-items: center;
+        gap: 0.7rem;
+        text-decoration: none;
+      }
+
+      .site-header__wordmark {
+        font-family: var(--font-display);
+        font-weight: 500;
+        font-size: 1.4rem;
+        letter-spacing: 0.02em;
+      }
+
+      .site-header__wordmark-kpi {
+        font-weight: 600;
+        color: var(--teal);
+      }
+
+      .site-nav {
+        margin-left: auto;
+      }
+
+      .site-nav__toggle {
+        display: none;
+        align-items: center;
+        gap: 0.5rem;
+        background: none;
+        border: 0;
+        color: var(--text-on-ink);
+        cursor: pointer;
+        padding: 0.5rem;
+      }
+
+      .site-nav__list {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .site-nav__list a {
+        font-family: var(--font-mono);
+        font-size: 0.78rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: var(--text-on-ink-dim);
+        transition: color 0.2s ease;
+      }
+
+      .site-nav__list a:hover,
+      .site-nav__list a[aria-current='page'] {
+        color: var(--teal);
+      }
+
+      /* Marketing sub-navigation */
+      .has-sub {
+        position: relative;
+      }
+
+      .site-nav__sub {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      @media (min-width: 821px) {
+        .site-nav__sub {
+          position: absolute;
+          top: 100%;
+          left: -1.25rem;
+          min-width: 12rem;
+          padding: 0.6rem 0;
+          background: var(--ink-2);
+          border: 1px solid var(--hairline-on-ink);
+          opacity: 0;
+          visibility: hidden;
+          transform: translateY(6px);
+          transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+        }
+
+        .has-sub:hover .site-nav__sub,
+        .has-sub:focus-within .site-nav__sub {
+          opacity: 1;
+          visibility: visible;
+          transform: none;
+        }
+
+        .site-nav__sub a {
+          display: block;
+          padding: 0.55rem 1.25rem;
+        }
+
+        /* keep the dropdown reachable while moving the pointer */
+        .has-sub::after {
+          content: '';
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          height: 0.8rem;
+        }
+      }
+
+      .site-header__sheet {
+        white-space: nowrap;
+      }
+
+      @media (max-width: 820px) {
+        .site-nav__toggle {
+          display: inline-flex;
+        }
+
+        .site-nav__list {
+          display: none;
+          position: absolute;
+          top: var(--header-h);
+          left: 0;
+          right: 0;
+          flex-direction: column;
+          gap: 0;
+          background: var(--ink-2);
+          border-bottom: 1px solid var(--hairline-on-ink);
+          padding: 0.5rem 0;
+        }
+
+        .site-nav__list.is-open {
+          display: flex;
+        }
+
+        .site-nav__list a {
+          display: block;
+          padding: 0.9rem var(--gutter);
+        }
+
+        .site-nav__sub a {
+          padding-left: calc(var(--gutter) + 1.25rem);
+          font-size: 0.72rem;
+        }
+      }
+
+      /* Title block footer */
+      .titleblock {
+        background: var(--ink-2);
+        border-top: 1px solid var(--hairline-on-ink);
+        padding: 2.5rem 0 2rem;
+      }
+
+      .titleblock__grid {
+        display: grid;
+        grid-template-columns: auto repeat(4, 1fr);
+        border: 1px solid var(--hairline-on-ink);
+      }
+
+      .titleblock__cell {
+        display: flex;
+        flex-direction: column;
+        gap: 0.45rem;
+        padding: 1rem 1.25rem;
+        border-left: 1px solid var(--hairline-on-ink);
+      }
+
+      .titleblock__cell:first-child {
+        border-left: 0;
+        justify-content: center;
+      }
+
+      .titleblock__value {
+        font-family: var(--font-mono);
+        font-size: 0.8rem;
+        line-height: 1.5;
+        color: var(--text-on-ink);
+      }
+
+      .titleblock__sub {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 1.25rem 2rem;
+        margin-top: 1.5rem;
+      }
+
+      .titleblock__links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.25rem;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+      }
+
+      .titleblock__links a,
+      .titleblock__contact a {
+        font-family: var(--font-mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--text-on-ink-dim);
+        text-decoration: none;
+      }
+
+      .titleblock__links a:hover,
+      .titleblock__contact a:hover {
+        color: var(--teal);
+      }
+
+      .titleblock__contact {
+        display: flex;
+        gap: 1.5rem;
+      }
+
+      .titleblock__legal {
+        margin: 0 0 0 auto;
+        font-family: var(--font-mono);
+        font-size: 0.7rem;
+        color: var(--text-on-ink-dim);
+      }
+
+      @media (max-width: 820px) {
+        .titleblock__grid {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .titleblock__cell--brand {
+          grid-column: 1 / -1;
+          border-bottom: 1px solid var(--hairline-on-ink);
+          align-items: flex-start;
+        }
+
+        .titleblock__cell {
+          border-left: 0;
+        }
+
+        .titleblock__cell:nth-child(odd) {
+          border-left: 0;
+        }
+
+        .titleblock__cell:nth-child(2n + 1):not(.titleblock__cell--brand) {
+          border-left: 1px solid var(--hairline-on-ink);
+        }
+
+        .titleblock__cell:nth-child(n + 4) {
+          border-top: 1px solid var(--hairline-on-ink);
+        }
+
+        .titleblock__legal {
+          margin-left: 0;
+        }
+      }
+    </style>
+  </body>
+</html>

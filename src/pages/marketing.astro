@@ -1,0 +1,481 @@
+---
+import { Image } from 'astro:assets';
+import Sheet from '../layouts/Sheet.astro';
+import RegistrationMarks from '../components/RegistrationMarks.astro';
+import Faq from '../components/Faq.astro';
+import { faqSchema, serviceSchema } from '../lib/schema';
+import heroShot from '../assets/photos/precast/DJI_0010.JPG';
+import bandShot from '../assets/photos/precast/IMG_3965.jpeg';
+import webShot from '../assets/photos/precast/IMG_2417.jpeg';
+import photoShot from '../assets/photos/precast/IMG_1882.JPG';
+import emailShot from '../assets/photos/precast/IMG_5106.jpeg';
+import socialShot from '../assets/photos/precast/IMG_2703.jpeg';
+
+const faqs = [
+  {
+    q: 'What does a precast marketing firm do?',
+    a: 'We build and run the sales tools a precast producer or supplier needs: the website, email, photography, and social presence. Everything is scoped to how precast is actually specified and bought. You keep selling. We make sure what buyers find when they look you up backs you up.',
+  },
+  {
+    q: 'Do you work with suppliers or only producers?',
+    a: 'Both. We work with producers, the suppliers who sell into them, and associate members across the industry. We also serve the architects, contractors, and subcontractors around precast.',
+  },
+  {
+    q: 'What does precast marketing cost?',
+    a: 'A single monthly retainer scoped to the work. One team, no hourly billing. The number comes from a conversation about scope, so pricing starts with what you actually need.',
+  },
+  {
+    q: 'Do you show client work or results?',
+    a: 'No. Client work is confidential. We work as part of your team, your wins are yours, and we never use client names, case studies, or testimonials to sell ourselves.',
+  },
+  {
+    q: 'Do we need to teach you the industry first?',
+    a: 'No. We work in the precast industry every day. You will not pay for a ramp-up quarter or sit through glossary meetings. The first draft sounds like your industry.',
+  },
+];
+
+const jsonLd = [
+  serviceSchema({
+    name: 'Precast and AEC Marketing',
+    description:
+      'Websites, email, photography, and social media for precast concrete producers, suppliers, and the AEC firms around them.',
+    url: 'https://skykpi.com/marketing/',
+    serviceType: 'Marketing services',
+  }),
+  faqSchema(faqs),
+];
+
+const audiences = [
+  {
+    href: '/architects/',
+    sheet: 'A-210',
+    label: 'Architects',
+    copy: 'Portfolio-grade websites and marketing for firms that want their built work seen.',
+  },
+  {
+    href: '/contractors/',
+    sheet: 'A-220',
+    label: 'Contractors',
+    copy: 'Reputation and proof for general contractors, backing up the estimator after the meeting.',
+  },
+  {
+    href: '/subcontractors/',
+    sheet: 'A-230',
+    label: 'Subcontractors',
+    copy: 'Getting trade and specialty subs found and prequalified before the bid list closes.',
+  },
+];
+---
+
+<Sheet
+  title="Precast and AEC Marketing | SkyKPI"
+  description="SkyKPI builds websites, email, photography, and social media for precast producers, suppliers, and AEC firms. Sales infrastructure, not campaigns."
+  path="/marketing/"
+  sheet="A-200"
+  sheetName="Marketing"
+  jsonLd={jsonLd}
+>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__media photo-treat">
+      <div class="hero__parallax" data-parallax>
+        <Image
+          src={heroShot}
+          alt="Aerial view of snow-dusted precast double-tee members stacked in a plant storage yard."
+          widths={[768, 1280, 1920, 2400]}
+          width={1920}
+          sizes="100vw"
+          loading="eager"
+          fetchpriority="high"
+          quality={78}
+        />
+      </div>
+    </div>
+    <RegistrationMarks />
+    <div class="container hero__content">
+      <p class="tag hero__kicker">Sheet A-200 &middot; Marketing</p>
+      <h1>An extension of your sales team.</h1>
+      <hr class="dimline" aria-hidden="true" />
+      <p class="lede hero__sub">
+        Sales infrastructure for the precast concrete industry and the AEC
+        chain around it. Not campaigns. Not a rebrand every eighteen months.
+        The tools your reps need behind them.
+      </p>
+    </div>
+  </section>
+
+  <!-- THE PROBLEM -->
+  <section class="section sheet-dark problem">
+    <div class="container problem__grid">
+      <div>
+        <p class="tag reveal">The problem</p>
+        <h2 class="reveal">Great work does not sell itself.</h2>
+        <hr class="dimline reveal" aria-hidden="true" />
+      </div>
+      <div class="reveal">
+        <p>
+          Your reps shake hands, walk the plant, and leave a good impression.
+          Then the specifier looks you up from their desk. If the website is
+          ten years old and the photos are phone shots, the impression starts
+          over.
+        </p>
+        <p>
+          The lookup happens after the handshake. Our job is to make sure it
+          holds.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE BUILD -->
+  <section class="section sheet-dark sheet-dark--deep build">
+    <RegistrationMarks />
+    <div class="container">
+      <p class="tag reveal">Scope of work</p>
+      <h2 class="reveal">What we build</h2>
+      <hr class="dimline reveal" aria-hidden="true" />
+
+      <div class="build__grid">
+        <article class="build__item reveal">
+          <div class="build__media photo-treat">
+            <Image
+              src={webShot}
+              alt="Finished embedded-brick precast panel face in raking sunlight."
+              widths={[480, 800, 1200]}
+          width={1200}
+              sizes="(min-width: 821px) 50vw, 100vw"
+              loading="lazy"
+              quality={72}
+            />
+          </div>
+          <span class="tag tag--dim">W-1</span>
+          <h3>The website</h3>
+          <p class="dim">
+            The site that backs up your reps after they leave the room. Built
+            around what a specifier actually checks: capabilities, finishes,
+            typical spans, and who to call.
+          </p>
+        </article>
+
+        <article class="build__item reveal">
+          <div class="build__media photo-treat">
+            <Image
+              src={emailShot}
+              alt="Detail of a precast panel mid-lift, dark thin brick below a white fluted band."
+              widths={[480, 800, 1200]}
+          width={1200}
+              sizes="(min-width: 821px) 50vw, 100vw"
+              loading="lazy"
+              quality={72}
+            />
+          </div>
+          <span class="tag tag--dim">W-2</span>
+          <h3>Email that keeps you in the room</h3>
+          <p class="dim">
+            Specifiers forget vendors between projects. A steady, useful email
+            program keeps your name in front of them without pestering anyone.
+          </p>
+        </article>
+
+        <article class="build__item reveal">
+          <div class="build__media photo-treat">
+            <Image
+              src={photoShot}
+              alt="A curved precast shell panel hanging from crane chains above its wooden form inside the plant."
+              widths={[480, 800, 1200]}
+          width={1200}
+              sizes="(min-width: 821px) 50vw, 100vw"
+              loading="lazy"
+              quality={72}
+            />
+          </div>
+          <span class="tag tag--dim">W-3</span>
+          <h3>Photography your sales team can use</h3>
+          <p class="dim">
+            Plant, product, and jobsite photography shot for the way it gets
+            used: proposals, spec sheets, the website, and the trade-show
+            booth. Never stock.
+          </p>
+        </article>
+
+        <article class="build__item reveal">
+          <div class="build__media photo-treat">
+            <Image
+              src={socialShot}
+              alt="A concrete hopper discharging fresh concrete onto a reinforced form bed in the plant."
+              widths={[480, 800, 1200]}
+          width={1200}
+              sizes="(min-width: 821px) 50vw, 100vw"
+              loading="lazy"
+              quality={72}
+            />
+          </div>
+          <span class="tag tag--dim">W-4</span>
+          <h3>A social presence that shows the work</h3>
+          <p class="dim">
+            LinkedIn first, because that is where your buyers are. Real
+            projects and real people from your plant, posted consistently,
+            without chasing trends.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- FULL-BLEED BAND -->
+  <section class="band photo-treat">
+    <Image
+      src={bandShot}
+      alt="Twin elevated highway bridges on concrete piers receding over turquoise water."
+      widths={[768, 1280, 1920]}
+        width={1920}
+      sizes="100vw"
+      loading="lazy"
+      quality={72}
+    />
+    <div class="band__caption">
+      <span class="tag">Built once. Specified for decades.</span>
+    </div>
+  </section>
+
+  <!-- WHO IT IS FOR -->
+  <section class="section sheet-dark who">
+    <div class="container">
+      <p class="tag reveal">Who it is for</p>
+      <h2 class="reveal">Precast first. The industry around it second.</h2>
+      <hr class="dimline reveal" aria-hidden="true" />
+      <p class="reveal who__copy">
+        The core of our work is precast producers, the suppliers who sell into
+        them, and associate members across the industry. That fluency extends
+        to the people who design, bid, and build with precast.
+      </p>
+
+      <div class="who__grid">
+        {
+          audiences.map((a) => (
+            <a class="who__card reveal" href={a.href}>
+              <div class="who__head">
+                <span class="tag tag--dim">Sheet {a.sheet}</span>
+              </div>
+              <h3>{a.label}</h3>
+              <p class="dim">{a.copy}</p>
+              <span class="who__link tag">Open sheet {a.sheet} &rarr;</span>
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- ENGAGEMENT MODEL -->
+  <section class="section sheet-dark sheet-dark--deep model">
+    <RegistrationMarks />
+    <div class="container model__grid">
+      <div>
+        <p class="tag reveal">Engagement model</p>
+        <h2 class="reveal">One retainer. One team.</h2>
+        <hr class="dimline reveal" aria-hidden="true" />
+      </div>
+      <div class="reveal">
+        <p>
+          A single monthly retainer scoped to the work. No hourly meters, no
+          surprise invoices, no junior account team learning on your dime. You
+          get one team that writes, designs, shoots, and ships, and one person
+          to call.
+        </p>
+        <p>
+          Pricing comes from a conversation about scope.
+          <a class="model__cta" href="/contact/">Start it here.</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Faq items={faqs} heading="What plant owners ask us" />
+
+  <!-- CTA -->
+  <section class="section sheet-dark cta">
+    <div class="container cta__inner">
+      <p class="tag reveal">Sheet A-500</p>
+      <h2 class="reveal">Ready when your reps need backup.</h2>
+      <hr class="dimline dimline--center reveal" aria-hidden="true" />
+      <div class="reveal">
+        <a class="btn" href="/contact/">Start the conversation</a>
+      </div>
+    </div>
+  </section>
+</Sheet>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 88svh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+
+  .hero__media {
+    position: absolute;
+    inset: 0;
+  }
+
+  .hero__parallax {
+    position: absolute;
+    inset: -18% 0 0 0;
+    will-change: transform;
+  }
+
+  .hero__parallax :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: saturate(0.82) contrast(1.02);
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 3;
+    padding: calc(var(--header-h) + 3rem) 0 clamp(3rem, 7vw, 5rem);
+  }
+
+  .hero__kicker {
+    margin-bottom: 1.4rem;
+  }
+
+  .hero__sub {
+    max-width: 36rem;
+  }
+
+  .problem__grid,
+  .model__grid {
+    display: grid;
+    grid-template-columns: 5fr 6fr;
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: start;
+  }
+
+  @media (max-width: 820px) {
+    .problem__grid,
+    .model__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .build__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(1.5rem, 3.5vw, 3rem);
+    margin-top: 2.5rem;
+  }
+
+  .build__item {
+    border-top: 1px solid var(--hairline-on-ink);
+    padding-top: 1.25rem;
+  }
+
+  .build__media {
+    aspect-ratio: 16 / 9;
+    margin-bottom: 1.1rem;
+  }
+
+  .build__media :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .build__item h3 {
+    margin: 0.5rem 0;
+  }
+
+  .build__item p {
+    margin: 0;
+  }
+
+  @media (max-width: 820px) {
+    .build__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .band {
+    position: relative;
+    height: clamp(16rem, 46vh, 26rem);
+  }
+
+  .band :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .band__caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 1.5rem;
+    z-index: 3;
+    text-align: center;
+  }
+
+  .who__copy {
+    max-width: 40rem;
+  }
+
+  .who__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1.25rem, 3vw, 2rem);
+    margin-top: 2.25rem;
+  }
+
+  .who__card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding: 1.4rem 1.25rem 1.5rem;
+    border: 1px solid var(--hairline-on-ink);
+    background: var(--ink-2);
+    text-decoration: none;
+    transition: border-color 0.25s ease, transform 0.25s ease;
+  }
+
+  .who__card:hover {
+    border-color: var(--teal);
+    transform: translateY(-3px);
+  }
+
+  .who__head {
+    margin-bottom: 0.8rem;
+  }
+
+  .who__card h3 {
+    margin: 0 0 0.35rem;
+  }
+
+  .who__card p {
+    margin: 0 0 1.1rem;
+  }
+
+  .who__link {
+    margin-top: auto;
+  }
+
+  @media (max-width: 820px) {
+    .who__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .model__cta {
+    color: var(--teal);
+  }
+
+  .cta__inner {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+</style>

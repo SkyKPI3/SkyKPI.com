@@ -1,0 +1,92 @@
+---
+import Sheet from '../layouts/Sheet.astro';
+---
+
+<Sheet
+  title="Privacy Policy | SkyKPI"
+  description="SkyKPI collects only what the contact form sends, sells no data, and sets no tracking cookies. The full policy, in plain language."
+  path="/privacy/"
+  sheet="G-001"
+  sheetName="Privacy"
+>
+  <section class="section sheet-dark privacy">
+    <div class="container privacy__inner">
+      <p class="tag">Sheet G-001 &middot; General / Privacy</p>
+      <h1>Privacy policy</h1>
+      <hr class="dimline" aria-hidden="true" />
+      <p class="lede">
+        The short version: we collect only what you send us through the
+        contact form, we do not sell data, and this site sets no tracking
+        cookies.
+      </p>
+
+      <div class="privacy__body">
+        <h2>What we collect</h2>
+        <p>
+          If you submit the contact form, we receive what you typed: your
+          name, company or association, email address, and message. That is
+          the only information this site collects about you.
+        </p>
+
+        <h2>How we use it</h2>
+        <p>
+          We use it to reply to you and to carry on the conversation you
+          started. We do not add you to a mailing list, share your
+          information, or sell it to anyone.
+        </p>
+
+        <h2>Cookies and tracking</h2>
+        <p>
+          This site sets no cookies and runs no tracking or analytics
+          scripts. If we ever add analytics, it will be a cookieless,
+          server-side kind that does not identify you, and this policy will
+          say so before it happens.
+        </p>
+
+        <h2>Where the form data lives</h2>
+        <p>
+          The site is hosted on Netlify, which processes form submissions and
+          standard server logs on our behalf. Form submissions are forwarded
+          to our email and stored in Netlify's form dashboard.
+        </p>
+
+        <h2>Your choices</h2>
+        <p>
+          If you want a copy of what you sent us, or want it deleted, email
+          <a href="mailto:hello@skykpi.com">hello@skykpi.com</a> and we will
+          take care of it.
+        </p>
+
+        <p class="privacy__issued tag tag--dim">Issued 2026. Supersedes all previous revisions.</p>
+      </div>
+    </div>
+  </section>
+</Sheet>
+
+<style>
+  .privacy {
+    padding-top: calc(var(--header-h) + var(--space-section));
+  }
+
+  .privacy__inner {
+    max-width: 42rem;
+  }
+
+  .privacy__body {
+    margin-top: 2.5rem;
+  }
+
+  .privacy__body h2 {
+    font-size: 1.35rem;
+    margin: 2.25rem 0 0.6rem;
+  }
+
+  .privacy__body a {
+    color: var(--teal);
+  }
+
+  .privacy__issued {
+    display: block;
+    margin-top: 3rem;
+  }
+</style>

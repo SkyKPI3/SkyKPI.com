@@ -1,0 +1,195 @@
+---
+import Sheet from '../layouts/Sheet.astro';
+import RegistrationMarks from '../components/RegistrationMarks.astro';
+---
+
+<Sheet
+  title="About SkyKPI | Precast and AEC Marketing and Association Management"
+  description="SkyKPI LLC is a boutique marketing and association management firm serving the precast concrete and AEC industries from Frankfort, Illinois."
+  path="/about/"
+  sheet="A-400"
+  sheetName="About"
+>
+  <!-- QUIET OPEN -->
+  <section class="section sheet-dark open">
+    <RegistrationMarks />
+    <div class="container open__inner">
+      <p class="tag">Sheet A-400 &middot; About</p>
+      <h1>Industry people who happen to do marketing.</h1>
+      <hr class="dimline" aria-hidden="true" />
+      <p class="lede open__identity">
+        SkyKPI LLC is a boutique marketing and association management firm
+        serving the precast concrete and AEC industries from Frankfort,
+        Illinois.
+      </p>
+    </div>
+  </section>
+
+  <!-- THE STORY -->
+  <section class="section sheet-dark sheet-dark--deep story">
+    <div class="container story__grid">
+      <div>
+        <p class="tag reveal">The story</p>
+        <h2 class="reveal">We were in the rooms first.</h2>
+        <hr class="dimline reveal" aria-hidden="true" />
+      </div>
+      <div class="reveal">
+        <p>
+          SkyKPI was founded by people who run trade associations in the
+          precast and AEC world. We plan the annual meetings, sit with the
+          boards, and talk with producers, suppliers, architects, and
+          contractors as part of the day job.
+        </p>
+        <p>
+          The marketing practice grew out of that seat. Companies kept asking
+          the same question: who can do this work without being taught the
+          industry first? We built the firm that answers it.
+        </p>
+        <p>
+          The name comes from the two things we watch: the view from altitude
+          and the numbers on the ground.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE WILL NOT DO -->
+  <section class="section sheet-dark wont">
+    <div class="container">
+      <p class="tag reveal">General notes</p>
+      <h2 class="reveal">What we will not do</h2>
+      <hr class="dimline reveal" aria-hidden="true" />
+      <ul class="wont__list">
+        <li class="reveal">
+          <span class="tag tag--dim">G1</span>
+          <p>
+            We will not drop client names. No case studies, no testimonials,
+            no logo walls. We work as part of our clients' teams and their
+            wins stay theirs.
+          </p>
+        </li>
+        <li class="reveal">
+          <span class="tag tag--dim">G2</span>
+          <p>
+            We will not learn on your dime. If we take the work, we already
+            speak the language.
+          </p>
+        </li>
+        <li class="reveal">
+          <span class="tag tag--dim">G3</span>
+          <p>
+            We will not hand you to a junior account team. The people you
+            meet are the people who do the work.
+          </p>
+        </li>
+        <li class="reveal">
+          <span class="tag tag--dim">G4</span>
+          <p>
+            We will not take work we cannot do well. If we are the wrong fit,
+            we will say so and point you somewhere better.
+          </p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- WHERE -->
+  <section class="section sheet-dark sheet-dark--deep where">
+    <RegistrationMarks />
+    <div class="container where__grid">
+      <div>
+        <p class="tag reveal">Location</p>
+        <h2 class="reveal">Frankfort, Illinois.</h2>
+        <hr class="dimline reveal" aria-hidden="true" />
+      </div>
+      <div class="reveal">
+        <p>
+          South of Chicago, in the corridor where a lot of this country's
+          precast gets made and moved. We work with companies and associations
+          across the United States from here.
+        </p>
+        <p>
+          <a class="where__link" href="mailto:hello@skykpi.com">hello@skykpi.com</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section sheet-dark cta">
+    <div class="container cta__inner">
+      <p class="tag reveal">Sheet A-500</p>
+      <h2 class="reveal">See if we fit.</h2>
+      <hr class="dimline dimline--center reveal" aria-hidden="true" />
+      <div class="reveal">
+        <a class="btn" href="/contact/">Start the conversation</a>
+      </div>
+    </div>
+  </section>
+</Sheet>
+
+<style>
+  .open {
+    padding-top: calc(var(--header-h) + var(--space-section));
+  }
+
+  .open__inner {
+    max-width: 46rem;
+  }
+
+  .open__identity {
+    max-width: 36rem;
+  }
+
+  .story__grid,
+  .where__grid {
+    display: grid;
+    grid-template-columns: 5fr 6fr;
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: start;
+  }
+
+  @media (max-width: 820px) {
+    .story__grid,
+    .where__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .wont__list {
+    list-style: none;
+    margin: 2rem 0 0;
+    padding: 0;
+    max-width: 44rem;
+  }
+
+  .wont__list li {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: 1rem;
+    padding: 1.1rem 0;
+    border-top: 1px solid var(--hairline-on-ink);
+  }
+
+  .wont__list li:last-child {
+    border-bottom: 1px solid var(--hairline-on-ink);
+  }
+
+  .wont__list p {
+    margin: 0;
+  }
+
+  .where__link {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    letter-spacing: 0.08em;
+    color: var(--teal);
+  }
+
+  .cta__inner {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+</style>

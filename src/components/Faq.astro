@@ -1,0 +1,100 @@
+---
+/**
+ * FAQ section. Pass the same `items` array to the page's FAQPage JSON-LD
+ * (see faqSchema in src/lib/schema.ts) so the visible text and the structured
+ * data never drift apart.
+ */
+interface FaqItem {
+  q: string;
+  a: string;
+}
+
+interface Props {
+  items: FaqItem[];
+  heading?: string;
+}
+
+const { items, heading = 'Common questions' } = Astro.props;
+---
+
+<section class="section sheet-dark faq">
+  <div class="container">
+    <p class="tag reveal">Questions and answers</p>
+    <h2 class="reveal">{heading}</h2>
+    <hr class="dimline reveal" aria-hidden="true" />
+    <dl class="faq__list">
+      {
+        items.map((item, i) => (
+          <div class="faq__item reveal">
+            <dt>
+              <span class="tag tag--dim">Q{i + 1}</span>
+              <h3>{item.q}</h3>
+            </dt>
+            <dd>
+              <p>{item.a}</p>
+            </dd>
+          </div>
+        ))
+      }
+    </dl>
+  </div>
+</section>
+
+<style>
+  .faq__list {
+    margin: 2.25rem 0 0;
+    max-width: 46rem;
+  }
+
+  .faq__item {
+    padding: 1.4rem 0;
+    border-top: 1px solid var(--hairline-on-ink);
+  }
+
+  .faq__item:last-child {
+    border-bottom: 1px solid var(--hairline-on-ink);
+  }
+
+  .faq__item dt {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: 1rem;
+    align-items: baseline;
+  }
+
+  .faq__item h3 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+
+  .faq__item dd {
+    margin: 0.6rem 0 0;
+    padding-left: 4rem;
+  }
+
+  .faq__item p {
+    margin: 0;
+    color: var(--text-on-ink-dim);
+  }
+
+  @media (max-width: 640px) {
+    .faq__item dt {
+      grid-template-columns: 2.4rem 1fr;
+      gap: 0.75rem;
+    }
+
+    .faq__item dd {
+      padding-left: 3.15rem;
+    }
+  }
+
+  /* Paper variant when placed inside a light page */
+  :global(.on-paper) .faq__item,
+  :global(.on-paper) .faq__item:last-child {
+    border-color: var(--hairline-on-paper);
+  }
+
+  :global(.on-paper) .faq__item p {
+    color: var(--text-on-paper-dim);
+  }
+</style>

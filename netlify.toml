@@ -1,0 +1,60 @@
+# Netlify configuration for skykpi.com
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# www redirects to the apex domain (canonical is https://skykpi.com)
+[[redirects]]
+  from = "https://www.skykpi.com/*"
+  to = "https://skykpi.com/:splat"
+  status = 301
+  force = true
+
+# Old .html paths from the previous site (verified against the old repo:
+# index, marketing, associations, about, contact, privacy).
+[[redirects]]
+  from = "/marketing.html"
+  to = "/marketing/"
+  status = 301
+
+[[redirects]]
+  from = "/associations.html"
+  to = "/associations/"
+  status = 301
+
+[[redirects]]
+  from = "/about.html"
+  to = "/about/"
+  status = 301
+
+[[redirects]]
+  from = "/contact.html"
+  to = "/contact/"
+  status = 301
+
+[[redirects]]
+  from = "/privacy.html"
+  to = "/privacy/"
+  status = 301
+
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+
+# The old site's sitemap URL, now generated as sitemap-index.xml
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/sitemap-index.xml"
+  status = 301
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
