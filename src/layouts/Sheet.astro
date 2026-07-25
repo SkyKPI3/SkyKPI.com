@@ -11,6 +11,11 @@ import '@fontsource/inter/400.css';
 import '@fontsource/inter/500.css';
 import '../styles/global.css';
 import Mark from '../components/Mark.astro';
+import { getCollection } from 'astro:content';
+
+// Field Notes stays out of the nav until the first entry exists, so the
+// section never ships as an empty page.
+const hasFieldNotes = (await getCollection('fieldnotes')).length > 0;
 
 interface Props {
   title: string;
@@ -67,6 +72,7 @@ const nav = [
     ],
   },
   { href: '/associations/', label: 'Associations' },
+  ...(hasFieldNotes ? [{ href: '/field-notes/', label: 'Field Notes' }] : []),
   { href: '/about/', label: 'About' },
   { href: '/contact/', label: 'Contact' },
 ];
@@ -77,6 +83,7 @@ const footerLinks = [
   { href: '/contractors/', label: 'Contractors' },
   { href: '/subcontractors/', label: 'Subcontractors' },
   { href: '/associations/', label: 'Associations' },
+  ...(hasFieldNotes ? [{ href: '/field-notes/', label: 'Field Notes' }] : []),
   { href: '/about/', label: 'About' },
   { href: '/contact/', label: 'Contact' },
   { href: '/privacy/', label: 'Privacy' },

@@ -1,0 +1,155 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import Sheet from '../../layouts/Sheet.astro';
+import RegistrationMarks from '../../components/RegistrationMarks.astro';
+
+const entries = (await getCollection('fieldnotes')).sort(
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+const dateFmt = new Intl.DateTimeFormat('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  timeZone: 'UTC',
+});
+
+const collectionPage = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Field Notes',
+  url: 'https://skykpi.com/field-notes/',
+  description:
+    'Short photo-led notes from the precast plants, jobsites, and association rooms SkyKPI works in.',
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'SkyKPI',
+    url: 'https://skykpi.com',
+  },
+};
+---
+
+<Sheet
+  title="Field Notes | SkyKPI"
+  description="Short photo-led notes from the precast plants, jobsites, and association rooms SkyKPI works in."
+  path="/field-notes/"
+  sheet="A-600"
+  sheetName="Field Notes"
+  jsonLd={[collectionPage]}
+>
+  <section class="section sheet-dark notes">
+    <RegistrationMarks />
+    <div class="container">
+      <p class="tag">Sheet A-600 &middot; Field Notes</p>
+      <h1>Field notes.</h1>
+      <hr class="dimline" aria-hidden="true" />
+      <p class="lede notes__intro">
+        Short notes from the plants, jobsites, and association rooms we work
+        in.
+      </p>
+
+      {
+        entries.length === 0 ? (
+          <p class="dim notes__empty">The first notes are being logged.</p>
+        ) : (
+          <ul class="notes__grid">
+            {entries.map((entry) => (
+              <li class="reveal">
+                <a class="note" href={`/field-notes/${entry.id}/`}>
+                  <div class="note__media photo-treat">
+                    <Image
+                      src={entry.data.image}
+                      alt={entry.data.imageAlt}
+                      widths={[400, 700, 1000]}
+                      width={1000}
+                      sizes="(min-width: 1024px) 22rem, (min-width: 641px) 45vw, 100vw"
+                      loading="lazy"
+                      quality={72}
+                    />
+                  </div>
+                  <div class="note__body">
+                    <div class="note__head">
+                      <span class="tag">{entry.data.number}</span>
+                      <span class="tag tag--dim">
+                        {dateFmt.format(entry.data.date)}
+                      </span>
+                    </div>
+                    <h2>{entry.data.title}</h2>
+                  </div>
+                </a>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+    </div>
+  </section>
+</Sheet>
+
+<style>
+  .notes {
+    padding-top: calc(var(--header-h) + var(--space-section));
+    min-height: 70svh;
+  }
+
+  .notes__intro {
+    max-width: 34rem;
+  }
+
+  .notes__empty {
+    margin-top: 2.5rem;
+  }
+
+  .notes__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+    gap: clamp(1.25rem, 3vw, 2rem);
+    list-style: none;
+    margin: 3rem 0 0;
+    padding: 0;
+  }
+
+  .note {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-decoration: none;
+    border: 1px solid var(--hairline-on-ink);
+    background: var(--ink-2);
+    transition: border-color 0.25s ease, transform 0.25s ease;
+  }
+
+  .note:hover {
+    border-color: var(--teal);
+    transform: translateY(-3px);
+  }
+
+  .note__media {
+    aspect-ratio: 4 / 3;
+  }
+
+  .note__media :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .note__body {
+    padding: 1.1rem 1.25rem 1.4rem;
+  }
+
+  .note__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 1rem;
+    margin-bottom: 0.6rem;
+  }
+
+  .note__body h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    line-height: 1.15;
+  }
+</style>

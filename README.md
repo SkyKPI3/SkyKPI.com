@@ -58,10 +58,47 @@ src/
   pages/                   one file per page (index = Home A-100)
   styles/global.css        colors, type, sheet furniture
   assets/photos/           cleared photos (see PHOTOS.md for the full manifest)
+  content/fieldnotes/      Field Notes entries: one .md + one image per note
+  content.config.ts        the Field Notes file format, enforced at build time
 public/                    favicon set, robots.txt, llms.txt, OG image
 netlify.toml               build settings, redirects, security headers
 scripts/generate-assets.mjs  regenerates favicons + OG card from the mark
 ```
+
+## Adding a Field Note
+
+Field Notes (Sheet A-600) is the permanent home for the short photo-led posts SkyKPI publishes on LinkedIn. Adding one takes two files and no code.
+
+**Step 1.** Put the post image in `src/content/fieldnotes/` and name it after the sheet number, for example `a-015.jpg`.
+
+**Step 2.** In the same folder, add a markdown file with the matching name, for example `a-015.md`:
+
+```markdown
+---
+number: "A-015"
+title: "Nine panels before lunch"
+date: 2026-05-12
+image: ./a-015.jpg
+imageAlt: "A crane setting a precast wall panel on a winter jobsite."
+---
+
+The caption goes here, exactly as it was published. Write it as
+normal text. Blank lines separate paragraphs.
+```
+
+What each line does:
+
+| Field | What to put |
+| --- | --- |
+| `number` | The sheet number the post carried on LinkedIn, in quotes. This becomes the page's sheet tag. |
+| `title` | A short line, a few words, drawn from the caption. It is the page heading and the index card label. |
+| `date` | The publish date, as `YYYY-MM-DD`. Entries sort newest first. |
+| `image` | `./` plus the image filename. |
+| `imageAlt` | A plain description of what is visible, for screen readers and search. |
+
+Everything below the second `---` is the caption. It becomes real, selectable text on the page, which is the point: search engines and AI answer engines can read it, unlike text baked into an image.
+
+The new note appears at `/field-notes/a-015/`, on the A-600 index, and in the sitemap on the next deploy. **The Field Notes link only appears in the site navigation once at least one entry exists**, so the section is never live and empty.
 
 ## House rules baked into the site
 
