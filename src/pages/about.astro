@@ -5,7 +5,7 @@ import RegistrationMarks from '../components/RegistrationMarks.astro';
 
 <Sheet
   title="About SkyKPI | Precast and AEC Marketing and Association Management"
-  description="SkyKPI LLC is a boutique marketing and association management firm serving the precast concrete and AEC industries from Frankfort, Illinois."
+  description="SkyKPI is a small marketing and association management firm for the precast and AEC world. The client list stays small on purpose."
   path="/about/"
   sheet="A-400"
   sheetName="About"
@@ -15,7 +15,7 @@ import RegistrationMarks from '../components/RegistrationMarks.astro';
     <RegistrationMarks />
     <div class="container open__inner">
       <p class="tag">Sheet A-400 &middot; About</p>
-      <h1>Industry people who happen to do marketing.</h1>
+      <h1>A small firm, on purpose.</h1>
       <hr class="dimline" aria-hidden="true" />
       <p class="lede open__identity">
         SkyKPI LLC is a boutique marketing and association management firm
@@ -30,63 +30,97 @@ import RegistrationMarks from '../components/RegistrationMarks.astro';
     <div class="container story__grid">
       <div>
         <p class="tag reveal">The story</p>
-        <h2 class="reveal">We were in the rooms first.</h2>
+        <h2 class="reveal">Why this firm exists</h2>
         <hr class="dimline reveal" aria-hidden="true" />
       </div>
       <div class="reveal">
         <p>
-          SkyKPI was founded by people who run trade associations in the
-          precast and AEC world. We plan the annual meetings, sit with the
-          boards, and talk with producers, suppliers, architects, and
-          contractors as part of the day job.
+          I built SkyKPI because of two problems I kept watching from the
+          inside. Trade associations run by one overloaded director, where
+          everything lives in one person's head. And industry marketing handed
+          to outside agencies that learn precast on the client's dime. I had
+          lived both, and the fix looked the same from every angle: a small
+          team that already knows the industry.
         </p>
         <p>
-          The marketing practice grew out of that seat. Companies kept asking
-          the same question: who can do this work without being taught the
-          industry first? We built the firm that answers it.
+          We still run trade associations in the precast and AEC world today.
+          That seat is where the marketing work gets its fluency.
         </p>
         <p>
-          The name comes from the two things we watch: the view from altitude
-          and the numbers on the ground.
+          I started the firm with my wife, Caroline. She left her career as a
+          nurse to build it with me, and she has become a true professional in
+          this industry in her own right.
+        </p>
+        <p>
+          In 2026 we proudly brought on our first two employees, Beth and
+          Jackson. When you work with SkyKPI, they are the people doing the
+          work.
         </p>
       </div>
     </div>
   </section>
 
-  <!-- WHAT WE WILL NOT DO -->
-  <section class="section sheet-dark wont">
+  <!-- THE GRANDFATHER RULE -->
+  <section class="section sheet-dark creed">
+    <RegistrationMarks />
+    <div class="container creed__inner">
+      <p class="tag reveal">Standing rule</p>
+      <blockquote class="creed__quote reveal">
+        <p>&ldquo;Pigs get fat, hogs get slaughtered.&rdquo;</p>
+      </blockquote>
+      <p class="tag tag--dim reveal">My grandfather's rule</p>
+      <hr class="dimline dimline--center reveal" aria-hidden="true" />
+      <p class="dim reveal creed__meaning">
+        It is an old saying, but he is the reason it stuck with me. Appetite
+        is healthy and greed gets you killed. It still runs this firm. We
+        grow with discipline, take on work we can do well, and turn down the
+        rest.
+      </p>
+    </div>
+  </section>
+
+  <!-- HOW WE DECIDE -->
+  <section class="section sheet-dark sheet-dark--deep decide">
     <div class="container">
       <p class="tag reveal">General notes</p>
-      <h2 class="reveal">What we will not do</h2>
+      <h2 class="reveal">How we decide</h2>
       <hr class="dimline reveal" aria-hidden="true" />
-      <ul class="wont__list">
+      <ul class="decide__list">
         <li class="reveal">
           <span class="tag tag--dim">G1</span>
           <p>
-            We will not drop client names. No case studies, no testimonials,
-            no logo walls. We work as part of our clients' teams and their
-            wins stay theirs.
+            The client list stays small on purpose. We turn down work that
+            does not fit, because the right clients matter more than more
+            clients.
           </p>
         </li>
         <li class="reveal">
           <span class="tag tag--dim">G2</span>
           <p>
-            We will not learn on your dime. If we take the work, we already
-            speak the language.
+            We embed in a client's business and treat it like our own. We
+            decline engagements where marketing is treated as a box to check.
           </p>
         </li>
         <li class="reveal">
           <span class="tag tag--dim">G3</span>
           <p>
-            We will not hand you to a junior account team. The people you
-            meet are the people who do the work.
+            Relationships come first. In this industry the people are the
+            market, and the model is built on knowing them for decades, not
+            for a campaign.
           </p>
         </li>
         <li class="reveal">
           <span class="tag tag--dim">G4</span>
           <p>
-            We will not take work we cannot do well. If we are the wrong fit,
-            we will say so and point you somewhere better.
+            Quality over quantity, applied to everything: the client list,
+            the work, the pace.
+          </p>
+        </li>
+        <li class="reveal">
+          <span class="tag tag--dim">G5</span>
+          <p>
+            Client work stays confidential. No names, no case studies, no
+            borrowed credit.
           </p>
         </li>
       </ul>
@@ -94,8 +128,7 @@ import RegistrationMarks from '../components/RegistrationMarks.astro';
   </section>
 
   <!-- WHERE -->
-  <section class="section sheet-dark sheet-dark--deep where">
-    <RegistrationMarks />
+  <section class="section sheet-dark where">
     <div class="container where__grid">
       <div>
         <p class="tag reveal">Location</p>
@@ -156,14 +189,41 @@ import RegistrationMarks from '../components/RegistrationMarks.astro';
     }
   }
 
-  .wont__list {
+  /* The grandfather rule: the page's centerpiece */
+  .creed__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .creed__quote {
+    margin: 1.5rem 0 1rem;
+    max-width: 46rem;
+  }
+
+  .creed__quote p {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(1.9rem, 4.6vw, 3.4rem);
+    line-height: 1.1;
+    text-wrap: balance;
+  }
+
+  .creed__meaning {
+    max-width: 32rem;
+    margin-top: 0.5rem;
+  }
+
+  .decide__list {
     list-style: none;
     margin: 2rem 0 0;
     padding: 0;
     max-width: 44rem;
   }
 
-  .wont__list li {
+  .decide__list li {
     display: grid;
     grid-template-columns: 3rem 1fr;
     gap: 1rem;
@@ -171,11 +231,11 @@ import RegistrationMarks from '../components/RegistrationMarks.astro';
     border-top: 1px solid var(--hairline-on-ink);
   }
 
-  .wont__list li:last-child {
+  .decide__list li:last-child {
     border-bottom: 1px solid var(--hairline-on-ink);
   }
 
-  .wont__list p {
+  .decide__list p {
     margin: 0;
   }
 
