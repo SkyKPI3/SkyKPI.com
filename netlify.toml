@@ -83,6 +83,18 @@
   to = "/marketing/"
   status = 301
 
+# Old content hub, still crawled by Google as of June 2026. Field Notes is its
+# successor section, so the mapping is to A-600 rather than a service page.
+[[redirects]]
+  from = "/insights/*"
+  to = "/field-notes/"
+  status = 301
+
+[[redirects]]
+  from = "/insights"
+  to = "/field-notes/"
+  status = 301
+
 # Note on the 2018 to 2019 URLs in the Wayback index (/customer-lifetime-value-infographic,
 # /category/kpi-library, /author/adamatlaskpi and similar): this domain previously hosted an
 # unrelated medical-analytics blog. Those paths are left to 404 on purpose. Redirecting
