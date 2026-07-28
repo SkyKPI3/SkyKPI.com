@@ -59,8 +59,20 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
 
-# Legacy URL Google still references from an earlier version of the site
+# Legacy URLs Google still references from earlier versions of the site.
+# These predate the previous repo, so they are mapped by closest subject match
+# rather than guessed at the homepage.
 [[redirects]]
   from = "/pricing/*"
+  to = "/marketing/"
+  status = 301
+
+[[redirects]]
+  from = "/aec-marketing/*"
+  to = "/marketing/"
+  status = 301
+
+[[redirects]]
+  from = "/aec-marketing"
   to = "/marketing/"
   status = 301
