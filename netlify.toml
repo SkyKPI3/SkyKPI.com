@@ -76,3 +76,14 @@
   from = "/aec-marketing"
   to = "/marketing/"
   status = 301
+
+# Wix-era services page (found in the Wayback index for 2023)
+[[redirects]]
+  from = "/services-4"
+  to = "/marketing/"
+  status = 301
+
+# Note on the 2018 to 2019 URLs in the Wayback index (/customer-lifetime-value-infographic,
+# /category/kpi-library, /author/adamatlaskpi and similar): this domain previously hosted an
+# unrelated medical-analytics blog. Those paths are left to 404 on purpose. Redirecting
+# unrelated content into this site would create soft 404s and muddy the domain's topic signals.
