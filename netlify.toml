@@ -59,6 +59,13 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
 
+# Astro fingerprints everything in /_astro, so those files can be cached hard.
+# A content change produces a new filename rather than a stale hit.
+[[headers]]
+  for = "/_astro/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
 # Legacy URLs Google still references from earlier versions of the site.
 # These predate the previous repo, so they are mapped by closest subject match
 # rather than guessed at the homepage.

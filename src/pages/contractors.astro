@@ -31,6 +31,7 @@ const jsonLd = [faqSchema(faqs)];
   path="/contractors/"
   sheet="A-220"
   sheetName="Contractors"
+  parent={{ href: "/marketing/", label: "Marketing" }}
   jsonLd={jsonLd}
 >
   <section class="hero">
@@ -38,7 +39,7 @@ const jsonLd = [faqSchema(faqs)];
       <Image
         src={heroShot}
         alt="A bridge jobsite in autumn with new concrete abutments in the foreground and a crawler crane down the haul road."
-        widths={[768, 1280, 1920]}
+        widths={[480, 768, 1280, 1920]}
         width={1920}
         sizes="100vw"
         loading="eager"
@@ -119,7 +120,7 @@ const jsonLd = [faqSchema(faqs)];
         <Image
           src={detailShot}
           alt="A mobile crane hoisting rigging above a braced concrete wall panel while workers watch from below."
-          widths={[480, 800, 1200]}
+          widths={[360, 480, 800, 1200]}
           width={1200}
           sizes="(min-width: 821px) 40vw, 100vw"
           loading="lazy"

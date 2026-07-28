@@ -26,6 +26,8 @@ interface Props {
   ogImage?: string;
   jsonLd?: object[];
   noindex?: boolean;
+  // Set on sheets that sit under another sheet, e.g. Architects under Marketing.
+  parent?: { href: string; label: string };
 }
 
 const {
@@ -37,29 +39,84 @@ const {
   ogImage = '/og-default.png',
   jsonLd = [],
   noindex = false,
+  parent,
 } = Astro.props;
 
 const canonical = new URL(path, Astro.site).href;
 const ogImageAbs = new URL(ogImage, Astro.site).href;
-const issued = new Date().toISOString().slice(0, 10);
+// The title block is a drawing-set artifact, so the Issued date is the firm's
+// own date in Frankfort, Illinois. toISOString() would report UTC, which rolls
+// over to tomorrow every evening after 7pm Central.
+const issued = new Date().toLocaleDateString('en-CA', {
+  timeZone: 'America/Chicago',
+});
 const year = new Date().getFullYear();
 
+// One stable @id sitewide so search and answer engines merge every page's
+// markup into a single entity rather than treating each page as its own firm.
 const organization = {
   '@context': 'https://schema.org',
-  '@type': 'Organization',
+  '@type': 'ProfessionalService',
+  '@id': 'https://skykpi.com/#organization',
   name: 'SkyKPI LLC',
+  alternateName: 'SkyKPI',
   url: 'https://skykpi.com',
   logo: 'https://skykpi.com/icon-512.png',
+  image: 'https://skykpi.com/og-default.png',
   email: 'hello@skykpi.com',
+  description:
+    'SkyKPI is a marketing and association management firm for the precast concrete and AEC industries, based in Frankfort, Illinois.',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Frankfort',
     addressRegion: 'IL',
     addressCountry: 'US',
   },
-  areaServed: 'United States',
+  areaServed: {
+    '@type': 'Country',
+    name: 'United States',
+  },
+  knowsAbout: [
+    'Precast concrete',
+    'Precast concrete marketing',
+    'AEC marketing',
+    'Trade association management',
+    'Association management for trade associations',
+    'Marketing for architects',
+    'Marketing for general contractors',
+    'Marketing for subcontractors',
+  ],
   sameAs: ['https://www.linkedin.com/company/skykpi/'],
 };
+
+// Breadcrumbs on every sheet except the cover, so results show the sheet's
+// place in the set rather than a bare URL.
+const breadcrumb =
+  path === '/'
+    ? null
+    : {
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://skykpi.com/' },
+          ...(parent
+            ? [
+                {
+                  '@type': 'ListItem',
+                  position: 2,
+                  name: parent.label,
+                  item: new URL(parent.href, 'https://skykpi.com/').href,
+                },
+              ]
+            : []),
+          {
+            '@type': 'ListItem',
+            position: parent ? 3 : 2,
+            name: sheetName,
+            item: canonical,
+          },
+        ],
+      };
 
 const nav = [
   {
@@ -119,6 +176,7 @@ const footerLinks = [
     <meta name="twitter:image" content={ogImageAbs} />
 
     <script type="application/ld+json" set:html={JSON.stringify(organization)} />
+    {breadcrumb && <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />}
     {jsonLd.map((block) => <script type="application/ld+json" set:html={JSON.stringify(block)} />)}
 
     <!--

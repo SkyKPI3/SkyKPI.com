@@ -31,6 +31,7 @@ const jsonLd = [faqSchema(faqs)];
   path="/architects/"
   sheet="A-210"
   sheetName="Architects"
+  parent={{ href: "/marketing/", label: "Marketing" }}
   jsonLd={jsonLd}
 >
   <section class="hero">
@@ -38,7 +39,7 @@ const jsonLd = [faqSchema(faqs)];
       <Image
         src={heroShot}
         alt="A finished thin-brick precast facade with cast stone banding, receding in strong perspective under a blue sky."
-        widths={[768, 1280, 1920]}
+        widths={[480, 768, 1280, 1920]}
         width={1920}
         sizes="100vw"
         loading="eager"
@@ -118,7 +119,7 @@ const jsonLd = [faqSchema(faqs)];
         <Image
           src={detailShot}
           alt="Looking up the corner of a tower where a precast concrete fin meets a blue glass curtain wall."
-          widths={[480, 800, 1200]}
+          widths={[360, 480, 800, 1200]}
           width={1200}
           sizes="(min-width: 821px) 40vw, 100vw"
           loading="lazy"
