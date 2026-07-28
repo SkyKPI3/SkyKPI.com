@@ -1,6 +1,20 @@
 ---
 import Sheet from '../layouts/Sheet.astro';
 import RegistrationMarks from '../components/RegistrationMarks.astro';
+import Faq from '../components/Faq.astro';
+import { faqSchema } from '../lib/schema';
+
+// One question, answered at the point where someone decides whether to send.
+const faqs = [
+  {
+    q: 'What happens after I send this?',
+    a: 'One of us reads it and replies within one business day, usually with questions rather than a pitch. If we are not the right fit, we will say so and point you somewhere better.',
+  },
+  {
+    q: 'Who will I be working with?',
+    a: 'The people who answer are the people who do the work. There is no hand-off to an account team after the first conversation.',
+  },
+];
 
 const contactPage = {
   '@context': 'https://schema.org',
@@ -27,7 +41,7 @@ const contactPage = {
   path="/contact/"
   sheet="A-500"
   sheetName="Contact"
-  jsonLd={[contactPage]}
+  jsonLd={[contactPage, faqSchema(faqs)]}
 >
   <section class="section sheet-dark contact">
     <RegistrationMarks />
@@ -89,6 +103,8 @@ const contactPage = {
       </form>
     </div>
   </section>
+
+  <Faq items={faqs} heading="Before you send it" />
 </Sheet>
 
 <style>
