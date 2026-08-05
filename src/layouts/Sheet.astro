@@ -79,6 +79,7 @@ const organization = {
   knowsAbout: [
     'Precast concrete',
     'Precast concrete marketing',
+    'Architecture, engineering, and construction (AEC)',
     'AEC marketing',
     'Trade association management',
     'Association management for trade associations',
@@ -88,6 +89,20 @@ const organization = {
   ],
   sameAs: ['https://www.linkedin.com/company/skykpi/'],
 };
+
+// WebSite entity on the cover sheet only, linked to the organization by @id,
+// so engines tie the site and the firm together as one graph.
+const website =
+  path === '/'
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        '@id': 'https://skykpi.com/#website',
+        url: 'https://skykpi.com/',
+        name: 'SkyKPI',
+        publisher: { '@id': 'https://skykpi.com/#organization' },
+      }
+    : null;
 
 // Breadcrumbs on every sheet except the cover, so results show the sheet's
 // place in the set rather than a bare URL.
@@ -169,13 +184,21 @@ const footerLinks = [
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:image" content={ogImageAbs} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta
+      property="og:image:alt"
+      content="SkyKPI crosshair mark and wordmark on a dark drafting-grid card"
+    />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageAbs} />
 
     <script type="application/ld+json" set:html={JSON.stringify(organization)} />
+    {website && <script type="application/ld+json" set:html={JSON.stringify(website)} />}
     {breadcrumb && <script type="application/ld+json" set:html={JSON.stringify(breadcrumb)} />}
     {jsonLd.map((block) => <script type="application/ld+json" set:html={JSON.stringify(block)} />)}
 
