@@ -1,0 +1,119 @@
+---
+import Sheet from '../../layouts/Sheet.astro';
+import RegistrationMarks from '../../components/RegistrationMarks.astro';
+
+const guides = [
+  {
+    href: '/guides/marketing-for-architects/',
+    sheet: 'A-701',
+    title: 'Marketing for architects, graded like a submittal',
+    line: 'Why marketing decides shortlists, a 20-point self-audit, what to build at every firm size, and an honest DIY path.',
+    date: '2026-08-16',
+  },
+];
+
+const collectionPage = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'SkyKPI Guides',
+  url: 'https://skykpi.com/guides/',
+  description:
+    'Working guides on marketing and association management for the precast concrete and AEC industries, written from inside the industry.',
+  isPartOf: { '@id': 'https://skykpi.com/#website' },
+  publisher: { '@id': 'https://skykpi.com/#organization' },
+};
+---
+
+<Sheet
+  title="Guides | Marketing for Precast and AEC | SkyKPI"
+  description="Working guides on marketing and association management for precast and AEC: self-audits, checklists, and plain answers, written from inside the industry."
+  path="/guides/"
+  sheet="A-700"
+  sheetName="Guides"
+  jsonLd={[collectionPage]}
+>
+  <section class="section sheet-dark open">
+    <RegistrationMarks />
+    <div class="container">
+      <p class="tag">Sheet A-700 &middot; Guides</p>
+      <h1>Guides.</h1>
+      <hr class="dimline" aria-hidden="true" />
+      <p class="lede open__sub">
+        Working documents on marketing and association management in the
+        precast and AEC world. Each one is built to be used, with checklists
+        you can score and steps you can take without hiring anyone.
+      </p>
+
+      <ul class="guides__list">
+        {
+          guides.map((g) => (
+            <li class="reveal">
+              <a class="guides__card" href={g.href}>
+                <div class="guides__head">
+                  <span class="tag tag--dim">Sheet {g.sheet}</span>
+                  <span class="tag tag--dim">{g.date}</span>
+                </div>
+                <h2>{g.title}</h2>
+                <p class="dim">{g.line}</p>
+                <span class="tag guides__open">Open sheet {g.sheet} &rarr;</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </section>
+</Sheet>
+
+<style>
+  .open {
+    padding-top: calc(var(--header-h) + var(--space-section));
+    min-height: 80svh;
+  }
+
+  .open__sub {
+    max-width: 38rem;
+  }
+
+  .guides__list {
+    list-style: none;
+    margin: 3rem 0 0;
+    padding: 0;
+    max-width: 46rem;
+  }
+
+  .guides__card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 1.5rem 1.4rem 1.6rem;
+    border: 1px solid var(--hairline-on-ink);
+    background: var(--ink-2);
+    text-decoration: none;
+    transition: border-color 0.25s ease, transform 0.25s ease;
+  }
+
+  .guides__card:hover {
+    border-color: var(--teal);
+    transform: translateY(-3px);
+  }
+
+  .guides__head {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.6rem;
+  }
+
+  .guides__card h2 {
+    font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+    margin: 0 0 0.4rem;
+  }
+
+  .guides__card p {
+    margin: 0 0 1rem;
+  }
+
+  .guides__open {
+    margin-top: auto;
+  }
+</style>

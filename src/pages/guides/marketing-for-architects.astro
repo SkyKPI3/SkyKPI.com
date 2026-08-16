@@ -1,0 +1,761 @@
+---
+import { Image } from 'astro:assets';
+import Sheet from '../../layouts/Sheet.astro';
+import RegistrationMarks from '../../components/RegistrationMarks.astro';
+import Faq from '../../components/Faq.astro';
+import RefSheets from '../../components/RefSheets.astro';
+import { faqSchema } from '../../lib/schema';
+import heroShot from '../../assets/photos/arch/IMG_1004.jpeg';
+import towerShot from '../../assets/photos/precast/IMG_5828.jpeg';
+import houseShot from '../../assets/photos/arch/dji_fly_20230402_071840_378_1680438501102_photo.jpg';
+
+const published = '2026-08-16';
+
+const faqs = [
+  {
+    q: 'What is the most important marketing asset for an architecture firm?',
+    a: 'The portfolio website, backed by professional photography of finished work. Every other channel points back to it, and every referral gets checked against it. A firm with one excellent site and nothing else beats a firm with five neglected channels.',
+  },
+  {
+    q: 'How much should an architecture firm spend on marketing?',
+    a: 'Spend follows the goal, not a formula. A solo practice chasing its first commissions needs a good site, real photography, and time, which costs far less than people expect. A firm trying to enter a new sector needs sustained effort over quarters. The pattern that fails is spending nothing for years and then making one panic purchase before a slow winter.',
+  },
+  {
+    q: 'Do architects need social media?',
+    a: 'Need is the wrong test. If your clients are developers, institutions, and building owners, a steady LinkedIn presence earns its place. If your work is residential, Instagram is where homeowners already look at architecture. One channel posted consistently beats four channels abandoned in March.',
+  },
+  {
+    q: 'How long does marketing take to work for an architecture firm?',
+    a: 'Commissions have long cycles, so marketing works on the same clock. A better website and portfolio start working the day they launch, because they stop losing the prospects who already look you up. New demand builds over quarters as projects publish, search picks the site up, and the referral network sees the work.',
+  },
+];
+
+const article = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: 'Marketing for architects, graded like a submittal',
+  description:
+    'Why marketing decides shortlists for architecture firms, a 20-point self-audit with grades, what to build at every firm size, and an honest DIY path.',
+  datePublished: published,
+  dateModified: published,
+  url: 'https://skykpi.com/guides/marketing-for-architects/',
+  image: 'https://skykpi.com/og-default.png',
+  author: { '@type': 'Organization', name: 'SkyKPI LLC', url: 'https://skykpi.com' },
+  publisher: { '@id': 'https://skykpi.com/#organization' },
+  about: ['Marketing for architects', 'Architecture firm marketing', 'Architect website'],
+};
+
+const audit = [
+  {
+    cat: 'The website',
+    items: [
+      'Your site loads in under three seconds on a phone.',
+      'Every project page names the building type, location, size, and your scope.',
+      'A visitor can reach a project photo within two clicks of the homepage.',
+      'The contact page gives a direct email to a person, and it works.',
+      'Something on the site has changed in the last ninety days.',
+    ],
+  },
+  {
+    cat: 'The portfolio',
+    items: [
+      'Your best project has professional photography, shot after occupancy.',
+      'Each project page says who the client type was and what problem the design solved.',
+      'The strongest work appears first, and the weak work is cut.',
+      'At least one project shows process: a sketch, a model, a detail, a site photo.',
+      'Projects are dated, and the last three years are represented.',
+    ],
+  },
+  {
+    cat: 'Being findable',
+    items: [
+      'Searching your firm name brings up your site first, with correct contact information.',
+      'Your Google Business Profile is claimed, current, and shows your work.',
+      'Every page has a unique title that says what the page is in plain words.',
+      'Searching your city plus your building type surfaces your firm somewhere on page one.',
+    ],
+  },
+  {
+    cat: 'Presence and proof',
+    items: [
+      'The firm posted publicly, anywhere, in the last thirty days.',
+      'Your people are findable: names, faces, and roles.',
+      'Awards, publications, and speaking are listed somewhere current.',
+    ],
+  },
+  {
+    cat: 'Measurement',
+    items: [
+      'You know how many inquiries came through the website last quarter.',
+      'You know which project page gets the top visits.',
+      'You ask every new inquiry how they found you, and you write the answer down.',
+    ],
+  },
+];
+
+const grades = [
+  {
+    band: '17 to 20',
+    stamp: 'Approved',
+    copy: 'The machine works. Hold the cadence, keep photographing finished work, and put the spare energy into publishing and relationships.',
+  },
+  {
+    band: '12 to 16',
+    stamp: 'Approved as noted',
+    copy: 'The foundation holds but commissions are leaking through the gaps, usually in photography, findability, or measurement. Fix the noted items this quarter.',
+  },
+  {
+    band: '6 to 11',
+    stamp: 'Revise and resubmit',
+    copy: 'Prospects who hear your name are not finding proof that matches your reputation. Stop everything else and rebuild the portfolio site first.',
+  },
+  {
+    band: '0 to 5',
+    stamp: 'Rejected',
+    copy: 'The work may be excellent, but on paper the firm is invisible. Start with one page, eight projects, and a working email address. That alone changes the game.',
+  },
+];
+---
+
+<Sheet
+  title="Marketing for Architects: Self-Audit, Checklist, and DIY Guide | SkyKPI"
+  description="A field guide to marketing for architects: why it decides shortlists, a 20-point self-audit with grades, and what to build at every firm size."
+  path="/guides/marketing-for-architects/"
+  sheet="A-701"
+  sheetName="Guides / Marketing for Architects"
+  parent={{ href: '/guides/', label: 'Guides' }}
+  jsonLd={[article, faqSchema(faqs)]}
+>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero__media photo-treat">
+      <Image
+        src={heroShot}
+        alt="Golden-hour light raking across the upper floors of a dense cluster of city towers."
+        widths={[480, 768, 1280, 1920]}
+        width={1920}
+        sizes="100vw"
+        loading="eager"
+        fetchpriority="high"
+        quality={78}
+      />
+    </div>
+    <RegistrationMarks />
+    <div class="container hero__content">
+      <p class="tag hero__kicker">Sheet A-701 &middot; Guides &middot; Issued {published}</p>
+      <h1>Marketing for architects, graded like a submittal.</h1>
+      <hr class="dimline" aria-hidden="true" />
+      <p class="lede hero__sub">
+        Marketing for architects is the work of making sure the right clients
+        can find your firm, judge your work fairly, and remember you when the
+        shortlist is being written. This guide covers why it decides
+        commissions, how to score your own firm in twenty questions, and what
+        to build at your size, including the do-it-yourself path.
+      </p>
+    </div>
+  </section>
+
+  <!-- WHY IT MATTERS -->
+  <section class="section sheet-dark prose">
+    <div class="container prose__inner">
+      <p class="tag reveal">The case</p>
+      <h2 class="reveal">Why does marketing matter for an architecture firm?</h2>
+      <hr class="dimline reveal" aria-hidden="true" />
+      <div class="reveal">
+        <p>
+          Because selection happens before the interview. By the time a
+          developer, a board, or a homeowner talks to you, they have already
+          looked you up, formed a judgment from your website, and compared
+          your work to two other firms. Marketing is not what wins the
+          interview. It is what gets you into the room and what quietly
+          confirms the decision afterward.
+        </p>
+        <p>
+          Architects are referred more than searched, and that fact fools
+          firms into thinking marketing is optional. Every referral gets
+          verified. The person who heard your name at a dinner or on a
+          jobsite goes to a screen next, and what they find either backs the
+          referral up or undercuts it. A firm with excellent work and a
+          neglected site loses commissions it never knew it was considered
+          for.
+        </p>
+        <p>
+          The good news is that the bar is low. This profession markets
+          itself badly as a rule, so a firm that simply keeps its portfolio
+          current, photographs finished work properly, and stays findable is
+          ahead of the field in its region.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO BAND: the lookup -->
+  <section class="band photo-treat">
+    <Image
+      src={towerShot}
+      alt="Looking up the facade of a completed residential tower with rows of balconies against the sky."
+      widths={[480, 768, 1280, 1920]}
+      width={1920}
+      sizes="100vw"
+      loading="lazy"
+      quality={72}
+    />
+    <div class="band__caption">
+      <span class="tag">The referral gets checked against the portfolio. Every time.</span>
+    </div>
+  </section>
+
+  <!-- SELF-AUDIT -->
+  <section class="section sheet-dark sheet-dark--deep audit">
+    <RegistrationMarks />
+    <div class="container prose__inner">
+      <p class="tag reveal">Punch list</p>
+      <h2 class="reveal">The self-audit: score your firm in twenty questions</h2>
+      <hr class="dimline reveal" aria-hidden="true" />
+      <p class="reveal">
+        Answer honestly, one point for each yes. No partial credit; a half
+        yes is a no. It takes ten minutes, and the score tells you exactly
+        where the leak is.
+      </p>
+
+      {
+        audit.map((group, gi) => (
+          <div class="audit__group reveal">
+            <h3>
+            <span class="tag tag--dim">{`PL-${gi + 1}`}</span>
+            {group.cat}
+            </h3>
+            <ul class="audit__items">
+              {group.items.map((item) => (
+                <li>
+                  <span class="audit__box" aria-hidden="true" />
+                  <p>{item}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- GRADES -->
+  <section class="section sheet-dark grades">
+    <div class="container prose__inner">
+      <p class="tag reveal">Review stamp</p>
+      <h2 class="reveal">What your score means</h2>
+      <hr class="dimline reveal" aria-hidden="true" />
+
+      <div class="scale reveal" role="img" aria-label="Score scale from 0 to 20, divided into Rejected from 0 to 5, Revise and resubmit from 6 to 11, Approved as noted from 12 to 16, and Approved from 17 to 20.">
+        <div class="scale__bar">
+          <div class="scale__seg scale__seg--r" style="flex: 6"><span>0</span></div>
+          <div class="scale__seg scale__seg--rr" style="flex: 6"><span>6</span></div>
+          <div class="scale__seg scale__seg--an" style="flex: 5"><span>12</span></div>
+          <div class="scale__seg scale__seg--a" style="flex: 4"><span>17</span><span class="scale__end">20</span></div>
+        </div>
+        <div class="scale__labels">
+          <span style="flex: 6" class="tag tag--dim">Rejected</span>
+          <span style="flex: 6" class="tag tag--dim">Revise + resubmit</span>
+          <span style="flex: 5" class="tag tag--dim">As noted</span>
+          <span style="flex: 4" class="tag">Approved</span>
+        </div>
+      </div>
+
+      <dl class="grades__table">
+        {
+          grades.map((g) => (
+            <div class="grades__row reveal">
+              <dt>
+                <span class="tag tag--dim">{g.band}</span>
+                <h3 class="grades__stamp">{g.stamp}</h3>
+              </dt>
+              <dd>{g.copy}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </section>
+
+  <!-- BY SIZE -->
+  <section class="section sheet-dark sheet-dark--deep prose">
+    <RegistrationMarks />
+    <div class="container prose__inner">
+      <p class="tag reveal">Scope by firm size</p>
+      <h2 class="reveal">What should you be doing at your size?</h2>
+      <hr class="dimline reveal" aria-hidden="true" />
+      <div class="reveal">
+        <h3>Solo practice</h3>
+        <p>
+          One excellent portfolio site, a claimed Google Business Profile,
+          and the discipline to ask every inquiry where it came from. Build
+          the site yourself if the budget is tight; the section below shows
+          how. Skip paid advertising, skip the CRM, and put any spare money
+          into photographing your best built project properly.
+        </p>
+        <h3>Two to nine people</h3>
+        <p>
+          Photography becomes a budget line, and a project writeup becomes a
+          habit at every substantial completion. Pick one channel, almost
+          always LinkedIn for commercial work or Instagram for residential,
+          and post real projects on a schedule someone owns. Start a simple
+          email list of past clients, contractors, and collaborators, and
+          send something worth reading a few times a year.
+        </p>
+        <h3>Ten to forty-nine people</h3>
+        <p>
+          Marketing is now part of someone's actual job, in writing, with
+          hours attached. The website grows sector pages that mirror how you
+          pursue work: healthcare, education, multifamily, whatever the
+          strategy says. Proposals and qualification packages pull from the
+          same project library as the site, so nothing is written twice.
+          Completed projects get pitched to local and trade press.
+        </p>
+        <h3>Fifty and up</h3>
+        <p>
+          At this size the question changes from whether to market to whether
+          the marketing is coherent. One brand voice across offices, a
+          thought-leadership program with named authors, business development
+          and marketing planned together, and a recruiting story as polished
+          as the client story, because at this size the site is hiring as
+          much as it is selling.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BY GOAL -->
+  <section class="section sheet-dark prose">
+    <div class="container prose__inner">
+      <p class="tag reveal">Scope by goal</p>
+      <h2 class="reveal">Match the work to the goal</h2>
+      <hr class="dimline reveal" aria-hidden="true" />
+      <div class="reveal">
+        <p>
+          <strong>Winning first commissions.</strong> Proof and reachability
+          beat everything. Eight strong projects, honest photography, a
+          direct email, fast replies.
+        </p>
+        <p>
+          <strong>Moving up in project size.</strong> Document your largest
+          relevant work in depth, show process and delivery, and let the
+          portfolio argue you can carry more than you have been given.
+        </p>
+        <p>
+          <strong>Entering a new sector.</strong> One flagship writeup in
+          that sector, a dedicated page that speaks its language, and direct
+          outreach to the people who award that work. Do not wait until you
+          have five projects to talk about one.
+        </p>
+        <p>
+          <strong>Recruiting talent.</strong> Name your people, show the
+          studio, and write project stories that include how the work
+          actually happened. Candidates read the site harder than clients
+          do.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHOTO BAND: the proof -->
+  <section class="band photo-treat">
+    <Image
+      src={houseShot}
+      alt="A newly built farmhouse-style home on a forested ridge with layered mountain ranges behind it."
+      widths={[480, 768, 1280, 1920]}
+      width={1920}
+      sizes="100vw"
+      loading="lazy"
+      quality={72}
+    />
+    <div class="band__caption">
+      <span class="tag">Eight strong projects, photographed properly, beat forty thumbnails.</span>
+    </div>
+  </section>
+
+  <!-- DIY -->
+  <section class="section sheet-dark sheet-dark--deep prose">
+    <RegistrationMarks />
+    <div class="container prose__inner">
+      <p class="tag reveal">Means and methods</p>
+      <h2 class="reveal">Can you build the website yourself?</h2>
+      <hr class="dimline reveal" aria-hidden="true" />
+      <div class="reveal">
+        <p>
+          Yes, if you are a solo practice or a small firm with a clean body
+          of work. For an architect with little to no website experience,
+          Wix Studio is the strongest do-it-yourself platform: the templates
+          are genuinely design-forward, the editor behaves predictably, and
+          the built-in hosting, domain, and SEO settings remove the parts
+          that usually go wrong. Expect a focused weekend to stand it up and
+          an evening a month to keep it honest.
+        </p>
+        <ol class="diy__steps">
+          <li>
+            <span class="tag tag--dim">01</span>
+            <p>
+              Start from a portfolio template built for architecture or
+              photography: minimal, grid-based, image-first. Resist the
+              generic business templates with stock handshakes.
+            </p>
+          </li>
+          <li>
+            <span class="tag tag--dim">02</span>
+            <p>
+              Cut the portfolio to your best eight projects or fewer. A
+              short portfolio of strong work reads as confidence. A long one
+              reads as inventory.
+            </p>
+          </li>
+          <li>
+            <span class="tag tag--dim">03</span>
+            <p>
+              Prepare images before uploading: consistent proportions,
+              largest edge around 2500 pixels, no phone screenshots. The
+              template can only be as good as what you feed it.
+            </p>
+          </li>
+          <li>
+            <span class="tag tag--dim">04</span>
+            <p>
+              Write every project page in plain words: building type,
+              location, size, your scope, and one problem the design solved.
+              Skip the poetry. Clients are checking facts.
+            </p>
+          </li>
+          <li>
+            <span class="tag tag--dim">05</span>
+            <p>
+              Use the SEO settings on every page: a unique title in plain
+              language, a one-sentence description, alt text on every image,
+              and your own domain connected with HTTPS on.
+            </p>
+          </li>
+          <li>
+            <span class="tag tag--dim">06</span>
+            <p>
+              Publish, then test the whole site on a phone before telling
+              anyone. That is how nearly everyone will meet it.
+            </p>
+          </li>
+        </ol>
+        <p>
+          Know where the template ends. A DIY site can be clean, current,
+          and credible, and for many small firms that is enough. What a
+          template cannot do is take the photographs, keep the publishing
+          cadence when the studio gets busy, or position the firm against
+          the other names on the shortlist. When the inquiries you get stop
+          matching the inquiries you want, that is the signal the website is
+          no longer the constraint. The strategy is.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Faq items={faqs} heading="What architects ask about marketing" />
+
+  <!-- CLOSE -->
+  <section class="section sheet-dark cta">
+    <div class="container cta__inner">
+      <p class="tag reveal">Sheet A-210</p>
+      <h2 class="reveal">If the stamp came back Revise and resubmit.</h2>
+      <hr class="dimline dimline--center reveal" aria-hidden="true" />
+      <p class="dim reveal cta__copy">
+        Take the punch list and fix it yourselves; that is what it is for.
+        And if you would rather hand it to people who study how architects
+        get chosen, that is the work we do.
+      </p>
+      <div class="reveal">
+        <a class="btn" href="/architects/">See what we build for firms</a>
+      </div>
+    </div>
+  </section>
+
+  <RefSheets
+    links={[
+      {
+        href: '/architects/',
+        sheet: 'A-210',
+        label: 'Marketing and websites for architecture firms',
+      },
+      {
+        href: '/guides/',
+        sheet: 'A-700',
+        label: 'All guides',
+      },
+      {
+        href: '/contact/',
+        sheet: 'A-500',
+        label: 'Start the conversation',
+      },
+    ]}
+  />
+</Sheet>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 68svh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+
+  .hero__media {
+    position: absolute;
+    inset: 0;
+  }
+
+  .hero__media :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 3;
+    padding: calc(var(--header-h) + 3rem) 0 clamp(3rem, 7vw, 5rem);
+  }
+
+  .hero__kicker {
+    margin-bottom: 1.4rem;
+  }
+
+  .hero__sub {
+    max-width: 40rem;
+  }
+
+  .prose__inner {
+    max-width: 46rem;
+  }
+
+  .prose h3 {
+    margin-top: 2rem;
+  }
+
+  /* Photo bands */
+  .band {
+    position: relative;
+    height: clamp(15rem, 44vh, 24rem);
+  }
+
+  .band :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .band__caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 1.5rem;
+    z-index: 3;
+    text-align: center;
+    padding: 0 var(--gutter);
+  }
+
+  /* Score scale: a dimension-line reading of the four grade bands */
+  .scale {
+    margin: 2.25rem 0 0.5rem;
+  }
+
+  .scale__bar {
+    display: flex;
+    height: 2.4rem;
+    border: 1px solid var(--hairline-on-ink);
+  }
+
+  .scale__seg {
+    position: relative;
+    border-left: 1px solid var(--hairline-on-ink);
+  }
+
+  .scale__seg:first-child {
+    border-left: 0;
+  }
+
+  .scale__seg span {
+    position: absolute;
+    top: 0.35rem;
+    left: 0.45rem;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--text-on-ink-dim);
+  }
+
+  .scale__seg .scale__end {
+    left: auto;
+    right: 0.45rem;
+  }
+
+  .scale__seg--r {
+    background: repeating-linear-gradient(
+      -45deg,
+      transparent,
+      transparent 6px,
+      rgba(232, 237, 242, 0.07) 6px,
+      rgba(232, 237, 242, 0.07) 7px
+    );
+  }
+
+  .scale__seg--rr {
+    background: rgba(232, 237, 242, 0.04);
+  }
+
+  .scale__seg--an {
+    background: rgba(26, 176, 196, 0.14);
+  }
+
+  .scale__seg--a {
+    background: linear-gradient(135deg, rgba(26, 176, 196, 0.55), rgba(18, 150, 176, 0.55));
+  }
+
+  .scale__seg--a span {
+    color: var(--text-on-ink);
+  }
+
+  .scale__labels {
+    display: flex;
+    margin-top: 0.5rem;
+    gap: 0;
+  }
+
+  .scale__labels span {
+    padding-left: 0.45rem;
+    font-size: 0.6rem;
+  }
+
+  /* Review stamps: inked, boxed, slightly off-square */
+  .grades__stamp {
+    display: inline-block;
+    padding: 0.3rem 0.7rem;
+    border: 2px solid var(--teal);
+    color: var(--teal);
+    font-family: var(--font-mono);
+    font-size: 0.85rem !important;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    transform: rotate(-2deg);
+    align-self: flex-start;
+  }
+
+  /* Punch list */
+  .audit__group {
+    margin-top: 2.5rem;
+  }
+
+  .audit__group h3 {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .audit__items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .audit__items li {
+    display: grid;
+    grid-template-columns: 1.6rem 1fr;
+    gap: 0.9rem;
+    padding: 0.8rem 0;
+    border-top: 1px solid var(--hairline-on-ink);
+  }
+
+  .audit__items li:last-child {
+    border-bottom: 1px solid var(--hairline-on-ink);
+  }
+
+  .audit__box {
+    width: 1rem;
+    height: 1rem;
+    margin-top: 0.3rem;
+    border: 1.5px solid var(--teal);
+    opacity: 0.8;
+  }
+
+  .audit__items p {
+    margin: 0;
+  }
+
+  /* Grades */
+  .grades__table {
+    margin: 2.25rem 0 0;
+    border: 1px solid var(--hairline-on-ink);
+  }
+
+  .grades__row {
+    display: grid;
+    grid-template-columns: 14rem 1fr;
+    gap: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    border-top: 1px solid var(--hairline-on-ink);
+  }
+
+  .grades__row:first-child {
+    border-top: 0;
+  }
+
+  .grades__row dt {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+  }
+
+  .grades__row h3 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+
+  .grades__row dd {
+    margin: 0;
+    color: var(--text-on-ink-dim);
+  }
+
+  @media (max-width: 640px) {
+    .grades__row {
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+    }
+  }
+
+  /* DIY steps */
+  .diy__steps {
+    list-style: none;
+    margin: 2rem 0;
+    padding: 0;
+  }
+
+  .diy__steps li {
+    display: grid;
+    grid-template-columns: 3rem 1fr;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-top: 1px solid var(--hairline-on-ink);
+  }
+
+  .diy__steps li:last-child {
+    border-bottom: 1px solid var(--hairline-on-ink);
+  }
+
+  .diy__steps p {
+    margin: 0;
+  }
+
+  .cta__inner {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta__copy {
+    max-width: 34rem;
+    margin-bottom: 2rem;
+  }
+</style>
