@@ -1,0 +1,70 @@
+---
+/**
+ * Reference sheets: the cross-references at the edge of a drawing.
+ * Descriptive anchor text on purpose, so readers and crawlers both know
+ * what the linked sheet covers before they open it.
+ */
+interface RefLink {
+  href: string;
+  sheet: string;
+  label: string;
+}
+
+interface Props {
+  links: RefLink[];
+}
+
+const { links } = Astro.props;
+---
+
+<section class="section sheet-dark refs">
+  <div class="container">
+    <p class="tag reveal">Reference sheets</p>
+    <ul class="refs__list">
+      {
+        links.map((l) => (
+          <li class="reveal">
+            <span class="tag tag--dim">{l.sheet}</span>
+            <a href={l.href}>{l.label}</a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .refs {
+    padding-top: 0;
+  }
+
+  .refs__list {
+    list-style: none;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    max-width: 44rem;
+  }
+
+  .refs__list li {
+    display: grid;
+    grid-template-columns: 4.5rem 1fr;
+    gap: 1rem;
+    align-items: baseline;
+    padding: 0.85rem 0;
+    border-top: 1px solid var(--hairline-on-ink);
+  }
+
+  .refs__list li:last-child {
+    border-bottom: 1px solid var(--hairline-on-ink);
+  }
+
+  .refs__list a {
+    color: var(--text-on-ink);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+
+  .refs__list a:hover {
+    color: var(--teal);
+  }
+</style>

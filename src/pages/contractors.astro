@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import Sheet from '../layouts/Sheet.astro';
 import RegistrationMarks from '../components/RegistrationMarks.astro';
 import Faq from '../components/Faq.astro';
+import RefSheets from '../components/RefSheets.astro';
 import { faqSchema } from '../lib/schema';
 import heroShot from '../assets/photos/arch/IMG_5326.jpeg';
 import detailShot from '../assets/photos/arch/IMG_5108.jpeg';
@@ -131,6 +132,26 @@ const jsonLd = [faqSchema(faqs)];
   </section>
 
   <Faq items={faqs} heading="What GCs ask us" />
+
+  <RefSheets
+    links={[
+      {
+        href: '/marketing/',
+        sheet: 'A-200',
+        label: 'The full precast and AEC marketing scope',
+      },
+      {
+        href: '/architects/',
+        sheet: 'A-210',
+        label: 'Marketing and websites for architecture firms',
+      },
+      {
+        href: '/subcontractors/',
+        sheet: 'A-230',
+        label: 'Marketing and websites for trade and specialty subcontractors',
+      },
+    ]}
+  />
 
   <section class="section sheet-dark cta">
     <div class="container cta__inner">

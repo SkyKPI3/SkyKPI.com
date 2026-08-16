@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import Sheet from '../layouts/Sheet.astro';
 import RegistrationMarks from '../components/RegistrationMarks.astro';
 import Faq from '../components/Faq.astro';
+import RefSheets from '../components/RefSheets.astro';
 import { faqSchema, serviceSchema } from '../lib/schema';
 import bandShot from '../assets/photos/assoc/IMG_5288.jpeg';
 import galaShot from '../assets/photos/assoc/IMG_1976.jpeg';
@@ -67,7 +68,7 @@ const services = [
 ---
 
 <Sheet
-  title="Association Management for AEC Associations | SkyKPI"
+  title="Association Management Company for AEC Associations | SkyKPI"
   description="Full-team association management for AEC trade associations. Events, membership, sponsors, communications, and board support for one fee."
   path="/associations/"
   sheet="A-300"
@@ -181,6 +182,21 @@ const services = [
   </section>
 
   <Faq items={faqs} heading="What boards ask us" />
+
+  <RefSheets
+    links={[
+      {
+        href: '/marketing/',
+        sheet: 'A-200',
+        label: 'Marketing for precast producers, suppliers, and the AEC firms around them',
+      },
+      {
+        href: '/about/',
+        sheet: 'A-400',
+        label: 'How SkyKPI decides which clients to take',
+      },
+    ]}
+  />
 
   <!-- CTA -->
   <section class="section sheet-dark cta">

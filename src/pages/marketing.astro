@@ -3,6 +3,7 @@ import { Image } from 'astro:assets';
 import Sheet from '../layouts/Sheet.astro';
 import RegistrationMarks from '../components/RegistrationMarks.astro';
 import Faq from '../components/Faq.astro';
+import RefSheets from '../components/RefSheets.astro';
 import { faqSchema, serviceSchema } from '../lib/schema';
 import heroShot from '../assets/photos/precast/DJI_0010.JPG';
 import bandShot from '../assets/photos/precast/IMG_3965.jpeg';
@@ -76,8 +77,8 @@ const audiences = [
 ---
 
 <Sheet
-  title="Precast and AEC Marketing | SkyKPI"
-  description="SkyKPI builds websites, email, photography, and social media for precast producers, suppliers, and AEC firms. Sales infrastructure, not campaigns."
+  title="Precast Concrete Marketing Agency | SkyKPI"
+  description="SkyKPI is a precast concrete marketing agency serving producers, suppliers, and AEC firms: websites, email, photography, and social media."
   path="/marketing/"
   sheet="A-200"
   sheetName="Marketing"
@@ -300,6 +301,21 @@ const audiences = [
   </section>
 
   <Faq items={faqs} heading="What plant owners ask us" />
+
+  <RefSheets
+    links={[
+      {
+        href: '/associations/',
+        sheet: 'A-300',
+        label: 'Association management for AEC trade and professional associations',
+      },
+      {
+        href: '/about/',
+        sheet: 'A-400',
+        label: 'How SkyKPI decides which clients to take',
+      },
+    ]}
+  />
 
   <!-- CTA -->
   <section class="section sheet-dark cta">
