@@ -1,0 +1,40 @@
+---
+/**
+ * A prose section of a guide: tag, question-shaped H2, dimension line, and
+ * body copy in the default slot. `mist` alternates the sheet tone.
+ */
+interface Props {
+  tag: string;
+  heading: string;
+  mist?: boolean;
+  marks?: boolean;
+}
+import RegistrationMarks from '../RegistrationMarks.astro';
+const { tag, heading, mist = false, marks = false } = Astro.props;
+---
+
+<section class:list={['section', 'sheet', { 'sheet--mist': mist }]}>
+  {marks && <RegistrationMarks />}
+  <div class="container prose__inner">
+    <p class="tag reveal">{tag}</p>
+    <h2 class="reveal">{heading}</h2>
+    <hr class="dimline reveal" aria-hidden="true" />
+    <div class="reveal prose__body">
+      <slot />
+    </div>
+  </div>
+</section>
+
+<style>
+  .prose__inner {
+    max-width: 46rem;
+  }
+
+  .prose__body :global(h3) {
+    margin-top: 2rem;
+  }
+
+  .prose__body :global(strong) {
+    font-weight: 600;
+  }
+</style>

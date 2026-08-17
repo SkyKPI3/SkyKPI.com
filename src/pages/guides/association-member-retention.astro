@@ -1,0 +1,101 @@
+---
+import GuideSheet from '../../layouts/GuideSheet.astro';
+import Prose from '../../components/guides/Prose.astro';
+import SpecList from '../../components/guides/SpecList.astro';
+import heroShot from '../../assets/photos/assoc/IMG_1313.JPG';
+
+const faqs = [
+  {
+    q: "Why do members leave trade associations?",
+    a: "Rarely over a dispute. In a typical non-renewal, nobody from the company attended anything all year, the one person who used the membership left, or the company never saw what its dues funded. The invoice arrives, someone asks what the association did for them, and nobody in the room has an answer. The membership lapses quietly.",
+  },
+  {
+    q: "When should renewal outreach start?",
+    a: "In month one. Renewal is a decision the member builds all year from what they noticed, so the work starts the week they join, with onboarding that names the specific benefits their company can use. Outreach that begins when the invoice goes out is collections, not retention.",
+  },
+  {
+    q: "Who at a member company should an association engage?",
+    a: "More than one person, always. When the relationship lives with a single contact, the membership dies the day that person changes jobs, retires, or gets busy. Before renewal season the association should know at least two people at every member company, ideally in different roles, so the value survives any one departure.",
+  },
+  {
+    q: "What does association management cost?",
+    a: "We work on a single retainer scoped to the work, with no hourly billing. The number depends on member count, event load, and how much of the calendar the board wants handled versus kept in-house. That comes out of a scope conversation, not a rate sheet.",
+  },
+];
+---
+
+<GuideSheet
+  slug="association-member-retention"
+  sheet="A-706"
+  title="Association Member Retention: Why Members Leave | SkyKPI"
+  metaDescription="Members leave when dues buy nothing they noticed. The five real reasons members quit, and a twelve-month renewal calendar that keeps them."
+  h1="Why members leave associations, and the renewal calendar that keeps them."
+  lede="Members rarely quit an association in anger. They quietly conclude the dues did not buy anything they noticed, and they let the renewal lapse. Retention is a twelve-month record of noticed value, and the renewal invoice is just the final exam."
+  published="2026-09-21"
+  heroImage={heroShot}
+  heroAlt="Golfers loading silver carts staged on a path outside a clubhouse before an association outing."
+  faqs={faqs}
+  faqHeading="What boards ask us"
+  about={[
+    'Association member retention',
+    'Membership renewal calendars',
+    'Trade association management',
+  ]}
+  ctaHeading="Put the calendar on the wall."
+  ctaCopy="Run it in-house straight from this sheet, or hand membership to a team that runs calendars like this all year. Either way, start it in month one."
+  refs={[
+    { href: '/associations/', sheet: 'A-300', label: 'Full-team association management' },
+    { href: '/guides/', sheet: 'A-700', label: 'All guides' },
+    { href: '/contact/', sheet: 'A-500', label: 'Start the conversation' },
+  ]}
+>
+  <Prose tag="The pattern" heading="Why do members really leave?">
+    <p>Because the membership stopped producing anything anyone at the company noticed. Angry resignations are rare. A board fight, a bungled event, a public dispute might cost an association one member a decade. The steady losses look nothing like that. They look like an invoice sitting in an inbox while someone at the member company asks the only question that matters at renewal time: what did we get for this? If nobody in the room has an answer, the membership ends. Not with a complaint. With silence.</p>
+    <p>Five situations produce that silence, and they repeat across trade associations in the precast and AEC world. The first is the member who joined and then never showed up. Nobody from the company attended a single event, opened a single briefing, or sat on a single committee. The dues bought a listing nobody looked at. The second is the single champion. One person at the company loved the association, went to everything, and carried the whole relationship. Then that person changed jobs, and the membership walked out the door with them. The company that remains never knew what it was paying for.</p>
+    <p>The third is invisibility. The association did real work all year, advocacy, standards comments, a workforce program, but never told the members in terms a plant owner or a principal recognizes. Value that goes unreported is value that never happened, as far as the renewal decision is concerned. The fourth is the empty mailbox. The only communication the member received all year was the dues invoice. When the invoice is the whole relationship, the invoice becomes easy to decline.</p>
+    <p>The fifth is drift. The company makes a product, serves a region, or works a segment that the association gradually stopped programming for. The events all serve somebody else now. None of these five announce themselves. There is no exit interview, no warning letter. Which is why the fix cannot be a renewal-season push. It has to be a calendar.</p>
+  </Prose>
+
+  <SpecList
+    tag="Schedule of operations"
+    heading="The twelve-month renewal calendar"
+    intro="Renewal is earned in months one through ten, not in month twelve. Treat the membership year as six two-month blocks, each with one job. A member company that gets the first five blocks does not need to be sold in the sixth."
+    rows={[
+      {
+        id: 'R-1',
+        name: 'Months 1-2: Onboarding and the personal welcome',
+        copy: 'Within two weeks of joining or renewing, someone calls or writes personally and names the benefits this specific company can use. Not the full benefits list. The three things that fit their product, their region, and their people. A member who hears their own situation in the welcome believes the association actually looked at them, because it did.',
+      },
+      {
+        id: 'R-2',
+        name: 'Months 3-4: First event touch and introductions',
+        copy: 'Get somebody from the company into a room, physical or virtual, and introduce them by name to two or three members they should know. Attendance does not happen on its own. It happens because someone said, come to this one, and here is who you will meet. The first event a new member attends alone is often the last.',
+      },
+      {
+        id: 'R-3',
+        name: 'Months 5-6: The mid-year value note',
+        copy: 'A short, plain report of what the association did in the first half of the year, in the same numbers the board already reports to itself. Events held, people trained, comment letters filed, members connected. No gloss. This is the note that answers the renewal question six months before anyone asks it.',
+      },
+      {
+        id: 'R-4',
+        name: 'Months 7-8: A second person engaged',
+        copy: 'By now the association knows one person at the member company. This block exists to find the second. Invite a plant manager to the technical session, a younger hire to the emerging leaders group, the estimator to the market briefing. A membership known to two people survives a resignation. A membership known to one does not.',
+      },
+      {
+        id: 'R-5',
+        name: 'Months 9-10: The pre-renewal check-in call',
+        copy: 'A real call, before any invoice exists, that asks what the membership did for the company this year and listens to the answer. If the answer is thin, there are still two months to fix it, and the member watched you try. This call surfaces the quiet non-renewal while it is still a conversation instead of a lapsed record.',
+      },
+      {
+        id: 'R-6',
+        name: 'Months 11-12: The invoice',
+        copy: 'Now the invoice goes out, and it confirms a decision the member already made. They attended something, met people, saw the mid-year numbers, and got a call that asked their opinion. The invoice is paperwork on a relationship, not a bill for a listing. That is the whole difference between retention and collections.',
+      },
+    ]}
+  />
+
+  <Prose tag="The single-point failure" heading="Retention cannot live in one person's head" mist={true} marks={true}>
+    <p>The calendar above only works if it survives the people running it. In many associations it exists, but only as the habits of one long-tenured director who knows every member, remembers who joined when, and makes the calls because they always have. That works right up until it does not. When the calendar lives in one person's head, retention rides on their tenure, their health, and their calendar. The year they get stretched thin, the welcome calls stop, the mid-year note slips, and eighteen months later the board is staring at a retention dip nobody can explain.</p>
+    <p>The fix is the same one a good plant applies to any critical process. Document it or team it, and preferably both. Write the six blocks down with names, dates, and owners, so a new director inherits a system instead of a mystery. Or put the calendar in the hands of a team, where more than one person carries the member relationships and the schedule keeps running through a vacancy. This is much of the argument for full-team association management over the single-director model, and it is covered in depth on sheet A-300. A board does not need to outsource to solve it. It does need the calendar to exist somewhere other than memory.</p>
+  </Prose>
+</GuideSheet>

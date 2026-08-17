@@ -49,6 +49,28 @@ npm run dev        # then open http://localhost:4321
 
 `npm run build` produces the production site in `dist/` if you want to check a build locally. You never need to upload `dist/` anywhere; Netlify builds it from GitHub.
 
+## The Guides publishing calendar
+
+Guides live in `src/pages/guides/`, one file per article, and every guide has a
+row in `src/data/guides.mjs` with a `published` date. A guide whose date is in
+the future is already in the repo but invisible: held out of the Guides index,
+the sitemap, and llms.txt, and marked noindex. **Every Monday at 7:00 AM
+Central a cloud routine rebuilds the site**, and any guide whose date has
+arrived goes live everywhere at once. The routine also pings the search
+engines (IndexNow) after the rebuild.
+
+What this means in practice:
+
+- **To preview an upcoming guide**, open its URL directly (the pages exist,
+  they are just unlisted): skykpi.com/guides/its-slug/
+- **To edit an upcoming guide before it goes live**, change its file any time
+  before its Monday and push. The Monday rebuild picks up whatever is in main.
+- **To delay a guide**, change its `published` date in `src/data/guides.mjs`
+  AND in the matching `published=` line of the guide's own file, then push.
+- **To pull a guide entirely**, delete its file and its registry row, push.
+- The routine lives at claude.ai/code/routines (named `skykpi-monday-publish`).
+  Pausing it there stops all future auto-publishes; nothing else breaks.
+
 ## Project map
 
 ```

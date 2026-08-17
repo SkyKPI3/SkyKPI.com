@@ -1,0 +1,103 @@
+---
+import GuideSheet from '../../layouts/GuideSheet.astro';
+import Prose from '../../components/guides/Prose.astro';
+import Checklist from '../../components/guides/Checklist.astro';
+import heroShot from '../../assets/photos/assoc/IMG_4068.jpeg';
+
+const faqs = [
+  {
+    q: 'What is an association management company?',
+    a: "A firm that runs the day-to-day operations of a trade association under the board's direction. Staff, systems, and office infrastructure are shared across several associations instead of built from scratch for one. The board still sets policy, budget, and strategy. The firm executes it.",
+  },
+  {
+    q: 'How is full-team management different from hiring an executive director?',
+    a: 'A director is one person who has to cover administration, events, finance, communications, and membership alone. Full-team management puts a person on each of those functions, with backup when someone is out sick or leaves. Coverage stops depending on a single hire staying healthy and staying put.',
+  },
+  {
+    q: 'What happens to our identity if we hire a management firm?',
+    a: 'Nothing changes on the outside. The association keeps its name, its logo, its board, its bylaws, its member records, and its bank accounts. Members deal with the association, and the firm works in the background as its staff. If the relationship ever ends, everything the association owns leaves with it.',
+  },
+  {
+    q: 'What does association management cost?',
+    a: "It is scoped as a single retainer tied to the work the association actually needs, with no hourly billing. The retainer often compares well against a full-time director's salary, benefits, payroll taxes, and office costs, because the firm spreads its infrastructure across several clients. The specific number comes out of a scope conversation about your calendar, your member count, and your programs.",
+  },
+];
+---
+
+<GuideSheet
+  slug="association-outgrown-single-director"
+  sheet="A-703"
+  title="Association Management Company vs Executive Director | SkyKPI"
+  metaDescription="Twelve yes-or-no questions that tell a board whether its association has outgrown the single executive director model, and what to do at each score."
+  h1="Twelve signs an association has outgrown the single-director model."
+  lede="The single executive director model fails quietly, and then suddenly. Boards normalize the warning signs for years because dues still get billed and the annual meeting still happens. These twelve yes-or-no questions score how much of your association currently rides on one person."
+  published="2026-08-31"
+  heroImage={heroShot}
+  heroAlt="A packed classroom-style seminar with rows of attendees at draped tables facing screens at the far end."
+  faqs={faqs}
+  faqHeading="What boards ask us"
+  about={[
+    'Warning signs of executive director overload in trade associations',
+    'Scoring a twelve-question association health punch list',
+    'Choosing between added staff and full-team association management',
+  ]}
+  ctaHeading="Bring the punch list to your board."
+  ctaCopy="Take the list to your next board meeting and score it together. If the number says act, we will walk the board through the options without a hard sell."
+  refs={[
+    { href: '/associations/', sheet: 'A-300', label: 'Full-team association management' },
+    { href: '/guides/', sheet: 'A-700', label: 'All guides' },
+    { href: '/contact/', sheet: 'A-500', label: 'Start the conversation' },
+  ]}
+>
+  <Prose tag="The pattern" heading="Why does the single-director model break?">
+    <p>It breaks because the job description grew past one person while the org chart did not. A generation ago a director ran the annual meeting, mailed a quarterly newsletter, and kept the books. Today the same title covers a website, email marketing, social accounts, a member database, sponsor development, legislative monitoring, committee support, and the meeting. The association added work every year. It never added hands.</p>
+    <p>The failure is quiet because a good director absorbs it. They work nights. They skip the work that has no deadline, which is exactly the work that grows an association: recruiting members, developing sponsors, writing things down. The board sees events that still happen and renewals that still go out, and reads that as health. What the board cannot see from the boardroom is the lengthening list of things only one person knows how to do.</p>
+    <p>Then it is sudden. A resignation, an illness, or a retirement converts years of deferred documentation into a crisis measured in weeks. The board discovers that the passwords, the vendor relationships, the renewal timing, and the registration system all lived in one head. Associations rarely fold at this point, but they shed members, sponsors, and momentum that took a decade to earn.</p>
+    <p>None of this is a criticism of the director. Nearly every association that hits this wall hits it because the director was good enough to hold it together long past the point where one person should have. The punch list below is a way for a board to see the load before it drops.</p>
+  </Prose>
+
+  <Checklist
+    tag="Punch list"
+    heading="Score your association in twelve questions"
+    intro="Answer each one with an honest yes or no, one point per yes. Scoring is inverted here: every yes is a warning."
+    groups={[
+      {
+        id: 'W-1',
+        cat: 'Overload',
+        items: [
+          'Board packets arrive the night before the meeting, or get handed out in the room.',
+          'The director personally handles the bookkeeping, the event logistics, the newsletter, and the member phone calls.',
+          'Committee projects stop moving whenever the director is sick, traveling, or at a conference.',
+          'The director answered work email on their last vacation because nobody else could.',
+        ],
+      },
+      {
+        id: 'W-2',
+        cat: 'Stall',
+        items: [
+          'Membership has been flat or slipping for three straight years.',
+          'The sponsor list is the same names it was five years ago.',
+          'Renewal notices went out late two years running.',
+          'No new program, event, or member benefit has launched in the past two years.',
+        ],
+      },
+      {
+        id: 'W-3',
+        cat: 'Risk',
+        items: [
+          'Nobody but the director can run registration for the annual meeting.',
+          "Key passwords, vendor contacts, and the member database live on one person's laptop.",
+          'There is no written procedure for dues billing, renewals, or the annual meeting.',
+          'The board has no plan for what happens if the director resigns on a Friday.',
+        ],
+      },
+    ]}
+  />
+
+  <Prose tag="What the score means" heading="What to do at three yeses, six, or nine" mist={true} marks={true}>
+    <p>Three yeses means redistribute the work now, six means the board is one resignation from crisis, and nine means act this quarter. At zero to two, the model is holding. Run the list again at the same board meeting every year, because these numbers move in one direction when nobody is watching them.</p>
+    <p><strong>Three to five.</strong> Redistribute and document. Move at least one recurring duty off the director's desk this quarter, and put the riskiest knowledge in writing: passwords in a shared vault the officers can reach, a renewal calendar with actual dates, a step-by-step for the annual meeting from venue contract to close-out. This band is cheap to fix. The next one is not.</p>
+    <p><strong>Six to eight.</strong> Treat the situation as the crisis it is about to become. Documentation alone will not close this gap, because the problem is capacity rather than paperwork. Evaluate added staff or full-team management honestly and this year, with real scope on the table, before a two-week notice makes the decision for you. <strong>Nine or more.</strong> Act this quarter. Put a board vote on the calendar with a date attached, and assume the current arrangement has less runway than it appears to have.</p>
+    <p>There are two honest fixes, and only two. Hire more staff, which fits when the association can fund a second full salary with benefits, has work that divides cleanly into two jobs, and has a board willing to manage two employees instead of one. Or move to full-team association management, which fits when the association needs bookkeeping, events, communications, and membership covered at once without funding four hires, and wants coverage that survives any one person leaving. Neither answer is automatically right. The wrong answer is the quiet third option, which is asking the current director to keep absorbing the growth.</p>
+  </Prose>
+</GuideSheet>

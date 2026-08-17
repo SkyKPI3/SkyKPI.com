@@ -2,6 +2,11 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import { readdirSync } from 'node:fs';
+import { unpublishedSlugs } from './src/data/guides.mjs';
+
+// Future-dated guides stay out of the sitemap until a rebuild on or after
+// their publish date. The Monday morning rebuild makes them go live.
+const embargoed = unpublishedSlugs();
 
 // Field Notes stays out of both the nav and the sitemap until the first entry
 // exists, so the two never disagree about whether the section is ready.
@@ -21,7 +26,8 @@ export default defineConfig({
       filter: (page) =>
         !page.includes('/contact/thanks/') &&
         !page.includes('/404') &&
-        !(fieldNoteCount === 0 && page.includes('/field-notes')),
+        !(fieldNoteCount === 0 && page.includes('/field-notes')) &&
+        !embargoed.some((slug) => page.includes(`/guides/${slug}`)),
       serialize(item) {
         // The sheets are reference pages rather than a news feed. Weight the
         // service sheets above the legal and utility sheets.

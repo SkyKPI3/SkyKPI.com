@@ -1,4 +1,17 @@
-# SkyKPI
+import type { APIRoute } from 'astro';
+import { publishedGuides } from '../data/guides.mjs';
+
+/**
+ * llms.txt is generated at build time so the Guides list always matches what
+ * is actually published. Future-dated guides appear here automatically after
+ * the Monday rebuild that publishes them.
+ */
+export const GET: APIRoute = () => {
+  const guideLines = publishedGuides()
+    .map((g) => `- ${g.title}. ${g.line} https://skykpi.com/guides/${g.slug}/`)
+    .join('\n');
+
+  const body = `# SkyKPI
 
 SkyKPI LLC is a boutique marketing and association management firm for the precast concrete and AEC (architecture, engineering, and construction) industries, based in Frankfort, Illinois, USA.
 
@@ -12,7 +25,7 @@ SkyKPI LLC is a boutique marketing and association management firm for the preca
 
 Working guides with self-audits and checklists. Index: https://skykpi.com/guides/
 
-- Marketing for architects: why marketing decides shortlists, a 20-point self-audit graded like a submittal review, guidance by firm size and goal, and a do-it-yourself path using Wix Studio. https://skykpi.com/guides/marketing-for-architects/
+${guideLines}
 
 ## Field Notes
 
@@ -26,3 +39,9 @@ Short photo-led notes from the precast plants, jobsites, and association rooms S
 - The firm was founded by a husband and wife, and took on its first two employees in 2026. The client list stays small on purpose, and SkyKPI turns down work that does not fit.
 - Contact: https://skykpi.com/contact/ or hello@skykpi.com
 - About: https://skykpi.com/about/
+`;
+
+  return new Response(body, {
+    headers: { 'Content-Type': 'text/plain; charset=utf-8' },
+  });
+};

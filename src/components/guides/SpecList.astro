@@ -1,0 +1,90 @@
+---
+/**
+ * A spec-sheet table: labeled rows with copy, like the A-300 schedule of
+ * services. rows: [{ id, name, copy }]
+ */
+interface Row {
+  id: string;
+  name: string;
+  copy: string;
+}
+
+interface Props {
+  tag: string;
+  heading: string;
+  intro?: string;
+  rows: Row[];
+  mist?: boolean;
+}
+const { tag, heading, intro, rows, mist = false } = Astro.props;
+---
+
+<section class:list={['section', 'sheet', { 'sheet--mist': mist }]}>
+  <div class="container sl__inner">
+    <p class="tag reveal">{tag}</p>
+    <h2 class="reveal">{heading}</h2>
+    <hr class="dimline reveal" aria-hidden="true" />
+    {intro && <p class="reveal">{intro}</p>}
+
+    <dl class="sl__table">
+      {
+        rows.map((r) => (
+          <div class="sl__row reveal">
+            <dt>
+              <span class="tag tag--dim">{r.id}</span>
+              <h3>{r.name}</h3>
+            </dt>
+            <dd>{r.copy}</dd>
+          </div>
+        ))
+      }
+    </dl>
+  </div>
+</section>
+
+<style>
+  .sl__inner {
+    max-width: 52rem;
+  }
+
+  .sl__table {
+    margin: 2.25rem 0 0;
+    border: 1px solid var(--hairline-on-ink);
+    background: var(--surface);
+  }
+
+  .sl__row {
+    display: grid;
+    grid-template-columns: 15rem 1fr;
+    gap: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    border-top: 1px solid var(--hairline-on-ink);
+  }
+
+  .sl__row:first-child {
+    border-top: 0;
+  }
+
+  .sl__row dt {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+  }
+
+  .sl__row h3 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+
+  .sl__row dd {
+    margin: 0;
+    color: var(--text-dim);
+  }
+
+  @media (max-width: 640px) {
+    .sl__row {
+      grid-template-columns: 1fr;
+      gap: 0.4rem;
+    }
+  }
+</style>

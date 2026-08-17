@@ -1,0 +1,100 @@
+---
+import GuideSheet from '../../layouts/GuideSheet.astro';
+import Prose from '../../components/guides/Prose.astro';
+import Steps from '../../components/guides/Steps.astro';
+import heroShot from '../../assets/photos/precast/IMG_1497.jpeg';
+
+const faqs = [
+  {
+    q: "How often should a building products company email specifiers?",
+    a: "Monthly is the standard and every other month is the floor. Anything less frequent and the list forgets who you are between issues, which defeats the purpose. Weekly is more than a building products audience wants and more than nearly any producer can fill with useful material. Pick the cadence you can hold through busy season, then hold it.",
+  },
+  {
+    q: "What should be in the emails?",
+    a: "Notes a specifier would keep or forward. Project photos with one lesson each, a detail worth borrowing, answers to the spec questions your reps hear on repeat. Keep the whole issue short enough to read between meetings. Company news belongs in a different channel, if anywhere.",
+  },
+  {
+    q: "How do we build the list without buying one?",
+    a: "Start with the contacts your reps already have: specifiers who have called with questions, estimators who have priced your product, general contractors who keep coming back. Then add a simple signup at the natural touchpoints, such as quote responses, sample requests, trade show conversations, and your resource pages. Ask permission when you add a name and make leaving easy. The list grows slower this way and performs far better, because everyone on it chose to be there.",
+  },
+  {
+    q: "Does email actually influence specification?",
+    a: "It keeps you in the consideration set the spec starts from, which is where the influence happens. Specification begins with the products a designer already has in mind at concept stage, and the producer they remember is the one who gets the call and the basis-of-design listing. Email will not rescue a weak product and it will not replace a rep. It makes sure the rep's work is not erased by six quiet months.",
+  },
+];
+
+const refs = [
+  { href: '/marketing/', sheet: 'A-200', label: 'Email inside the marketing scope' },
+  { href: '/guides/', sheet: 'A-700', label: 'All guides' },
+  { href: '/contact/', sheet: 'A-500', label: 'Start the conversation' },
+];
+---
+
+<GuideSheet
+  slug="email-marketing-building-products"
+  sheet="A-710"
+  title="Email Marketing for Building Products | SkyKPI"
+  metaDescription="Specifiers touch your category twice a year. A short, useful email keeps you remembered when the next project lands. Build the program in five moves."
+  h1="Email for building products: staying in front of specifiers between projects."
+  lede="A specifier might touch your product category twice a year. Between those moments you are forgotten, not rejected, and the producer they remember at concept stage gets the call. A short, useful email is the lowest-cost way to be that producer when the next relevant project lands on a desk."
+  published="2026-10-19"
+  heroImage={heroShot}
+  heroAlt="Tall stacks of precast hollow-core plank on timber dunnage in a storage yard, cores facing the camera."
+  faqs={faqs}
+  faqHeading="What producers ask us"
+  about={[
+    'Email marketing for building product manufacturers',
+    'Staying in front of specifiers between projects',
+    'Building and running a specifier email list',
+  ]}
+  ctaHeading="Hold your seat."
+  ctaCopy="Move one costs nothing but an afternoon with your reps, so start the program yourself this week. If you would rather have the emails written by people who speak specifier, that is a scope conversation."
+  refs={refs}
+>
+  <Prose tag="The case" heading="Why email, in an industry that runs on relationships?">
+    <p>Because relationships have gaps, and email holds your seat between visits. Your best rep cannot call every specifier, every estimator, and every repeat contractor every month. There are too many names and too few hours, and the calls a rep does make rightly go to whoever has a live project. The email quietly covers everyone else.</p>
+    <p>Look at how your product actually gets specified. A structural engineer might detail hollow-core plank twice in a year. An architect might spec your wall panel once, then not think about the category again for eighteen months. In that gap, nothing bad happened to the relationship. Nobody rejected you. They simply stopped thinking about you, because they had four hundred other things to think about. When the next relevant project lands on their desk, they call the producer they can name without looking anything up.</p>
+    <p>Email is the lowest-cost way to be that producer. An issue takes a few hours to write and nearly nothing to send, and it reaches the whole list at once, including the contacts no rep will get to this quarter. It does not close work and should not try. Its job is to keep your name current so the call, the lunch, and the plant tour still have a door to walk through.</p>
+    <p>The condition is strict. The email earns its place only when it is expected, useful, and short. The day it turns into a newsletter about the company is the day it starts training people to delete it, and eventually to tune out your reps along with it.</p>
+  </Prose>
+
+  <Steps
+    tag="The program"
+    heading="Build the program in five moves"
+    intro="Five moves, in order. Each one is small, and the program only works with all five in place."
+    steps={[
+      {
+        id: 'E-1',
+        title: 'The list',
+        copy: "Start with the people your reps already know. Specifiers who have called with questions, estimators who have priced your product, general contractors who keep coming back. Ask each rep for their names, get permission before you add anyone, and make leaving take one click. Never buy a list. A bought list emails strangers, racks up the bounces and spam complaints that wreck your domain's sending reputation, and puts your name in front of people in the worst possible way.",
+      },
+      {
+        id: 'E-2',
+        title: 'The promise',
+        copy: "Tell a specifier what they will get and how often, then keep both promises through pour season. One line does it: a short note each month with a project worth seeing and an answer worth keeping. The promise is what separates an expected email from an interruption. Promise monthly and deliver monthly, and opening it becomes a habit. Promise monthly and go quiet, and the next send arrives as a stranger.",
+      },
+      {
+        id: 'E-3',
+        title: 'The content',
+        copy: "Send notes a specifier can use. A project photo with the one lesson it taught. A connection detail worth stealing. The spec question your reps answer every month, written down once so the whole list gets the answer. The test for every item is simple: would a specifier forward this to a colleague? If the honest answer is no, cut the item and send a shorter issue.",
+      },
+      {
+        id: 'E-4',
+        title: 'The cadence',
+        copy: "Monthly or every other month, held even in busy season. Cadence is the whole mechanism. The email works by keeping your name current, and a skipped quarter resets the forgetting clock to zero. Busy season is when the temptation to skip is strongest and when skipping costs the most, because busy season is when projects are landing on desks. Put the send date on the calendar like payroll.",
+      },
+      {
+        id: 'E-5',
+        title: 'The reply path',
+        copy: "Every issue comes from a person, and replies reach a person. Send from a name, not a no-reply address, and route replies to an inbox somebody checks daily. Replies are the point of the whole exercise. A specifier who answers an email is a specifier starting a conversation, and the speed and quality of that first answer is their first impression of what working with you is like.",
+      },
+    ]}
+  />
+
+  <Prose tag="What to skip" heading="The emails that get you deleted" mist={true} marks={true}>
+    <p>Skip anything written for the people inside your building. The new hire announcement, the anniversary issue, the booth recap, the award photo. Your team will love those issues and your list will not open them, because none of it helps a specifier do a specifier's job.</p>
+    <p>Skip the gated PDF. If the detail sheet is useful, send the detail sheet. Demanding a form before the download tells the reader the email exists to harvest contact information, and they already gave you that when they joined the list. Every gate you add subtracts trust you will want later.</p>
+    <p>Skip the blast after a year of silence. A list that has not heard from you since last winter has forgotten it signed up, so the surprise send reads as spam, collects unsubscribes, and damages the domain reputation your future issues depend on. If the program lapsed, restart it gently: one short, useful issue and a plain sentence about what to expect from here.</p>
+    <p>The test that catches all of these is a single question, asked before every send: was this written for the reader, or for your boss? Emails written to impress the owner get deleted. Notes written to help a specifier get kept, and sometimes forwarded, which is the only distribution that matters.</p>
+  </Prose>
+</GuideSheet>

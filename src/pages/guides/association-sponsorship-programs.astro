@@ -1,0 +1,95 @@
+---
+import GuideSheet from '../../layouts/GuideSheet.astro';
+import Prose from '../../components/guides/Prose.astro';
+import SpecList from '../../components/guides/SpecList.astro';
+import heroShot from '../../assets/photos/assoc/IMG_2841.jpeg';
+
+const faqs = [
+  {
+    q: "What should an association sponsorship package include?",
+    a: "Structured time with members, year-round recognition, and proof. That means a speaking slot or a hosted moment at an event, a presence in the newsletter and on stage across the whole year, and photos plus a short recap the sponsor can hand their boss. Logo placement belongs in the package, but it is the receipt for those things, never the product itself.",
+  },
+  {
+    q: "How should sponsorships be priced?",
+    a: "Price the access and standing you actually deliver, then tier it so a small supplier can enter. A tier that includes the podium and the reception should cost meaningfully more than one that includes recognition alone, because it is worth meaningfully more. The bottom tier matters as much as the top one. The small supplier you keep in the program this year is the company that grows into your top tier later.",
+  },
+  {
+    q: "Why do sponsors stop renewing?",
+    a: "Because nobody inside the sponsor company could say what the money bought. The decision happens in their budget meeting, not in a complaint to you, so the first sign is usually a quiet non-response to the renewal invoice. A sponsor whose marketing manager can point to a talk, a hosted event, and a folder of photos defends the line item without your help.",
+  },
+  {
+    q: "Who should sell sponsorships?",
+    a: "Someone who treats sponsors as members with goals, not as budget lines to fill. That person needs to know what each sponsor sells, who at the association buys it, and what the sponsor promised their own boss the money would do. In a single-director association this role is often the first thing to slip, because the director is also running events, dues, and the board. It slips quietly, and renewals follow it.",
+  },
+];
+---
+
+<GuideSheet
+  slug="association-sponsorship-programs"
+  sheet="A-709"
+  title="Association Sponsorship Programs That Renew | SkyKPI"
+  metaDescription="Sponsors stop renewing when nobody can say what the money bought. Build sponsorship tiers around access, standing, and proof, and deliver them all year."
+  h1="Sponsorship programs sponsors actually renew."
+  lede="A sponsor is a member company with a marketing budget and a boss who asks what it bought. Sponsorship programs die when they are priced like donations and delivered as logo placement. Programs that renew are built backward from what a supplier's sales team actually wants: time in front of members, standing in the industry, and proof they showed up."
+  published="2026-10-12"
+  heroImage={heroShot}
+  heroAlt="An empty big-league ballpark seen from a suite-level rail, rows of green seats stepping down toward the field."
+  faqs={faqs}
+  faqHeading="What boards ask us"
+  about={[
+    "Association sponsorship package design",
+    "Sponsor renewal and retention",
+    "Sponsorship tiers for trade associations",
+  ]}
+  ctaHeading="Rebuild the tiers."
+  ctaCopy="Take this sheet to the next sponsorship committee meeting and rebuild the tiers yourselves, or have a team that runs sponsor programs year-round build them with you."
+  refs={[
+    { href: '/associations/', sheet: 'A-300', label: 'Full-team association management' },
+    { href: '/guides/', sheet: 'A-700', label: 'All guides' },
+    { href: '/contact/', sheet: 'A-500', label: 'Start the conversation' },
+  ]}
+>
+  <Prose tag="The case" heading="Why do sponsors quietly not renew?">
+    <p>Because nobody at the sponsor company could answer what the money bought. Renewal does not die in an angry phone call to the association. It dies in the sponsor's own budget meeting, months before your invoice goes out, when a manager runs down the marketing line items and stops at yours. Someone asks what it produced. The honest answer is a logo on a banner and a listing in a program book, and the line gets cut without anyone ever telling you why.</p>
+    <p>The mistake starts with how the program was framed. When a sponsorship is pitched as support for the association, it gets treated as a donation, and donations are the softest money in any company's budget. The suppliers who sponsor your association are not donors. They are member companies trying to sell to the other members in the room. Their sponsorship check comes out of a marketing budget, and marketing budgets answer to somebody. Every year that check competes against a trade show booth, a paid campaign, and a sales trip, all of which come with a story about what happened.</p>
+    <p>So the fix is not a nicer banner or a bigger logo. The fix is a program where the sponsor's marketing person walks into their own budget meeting with a story: our regional manager spoke at the spring meeting, we hosted the reception where the producers actually were, and here are the photos. When that story exists, the renewal defends itself. When it does not, no amount of gratitude from the board will save the line item.</p>
+  </Prose>
+
+  <SpecList
+    tag="Program schedule"
+    heading="Build the tiers backward from value"
+    intro="Start from what a supplier's sales team wants out of the year, then let the tiers fall out of that. Five things belong in the schedule."
+    rows={[
+      {
+        id: 'T-1',
+        name: 'Access',
+        copy: "Structured time with members is the core product. A speaking slot on the program, a table at the plant tour, host of the reception. Unstructured access is a name tag; structured access is a role. The sponsor's people should leave your event having been somebody there, not having attended.",
+      },
+      {
+        id: 'T-2',
+        name: 'Standing',
+        copy: "Year-round recognition that reads as leadership in the industry, not as advertising. A named presence in the newsletter, a thank-you from the stage, credit on the programs members actually use. Never only a logo wall. A logo wall says the company paid. Standing says the company matters here.",
+      },
+      {
+        id: 'T-3',
+        name: 'Intelligence',
+        copy: "Where appropriate, a first look at aggregated, anonymized member survey results or program plans for the coming year. Suppliers spend real money guessing what producers need next. An association sits on that answer. Sharing it, aggregated so no member's numbers are identifiable and within the bounds the board sets, is a benefit no trade show booth can match.",
+      },
+      {
+        id: 'T-4',
+        name: 'Proof',
+        copy: "Photos of the sponsor's people doing the things above, plus a one-page summary of what the sponsorship included and delivered. This is the artifact the sponsor's marketing person hands their boss. It costs the association an afternoon. It is the single cheapest thing on this list and the one that most directly protects the renewal.",
+      },
+      {
+        id: 'T-5',
+        name: 'Fit',
+        copy: "A bottom tier a small supplier can actually afford, with real access in it, not a consolation logo. The associate member you keep at the small tier is the company that becomes your big-tier sponsor when they grow. Price them out at the door and they build those relationships somewhere else.",
+      },
+    ]}
+  />
+
+  <Prose tag="Delivery" heading="The sponsorship is delivered all year or not at all" mist={true} marks={true}>
+    <p>A sponsorship that gets delivered in one weekend was never worth what it cost. The program runs on a calendar, and the calendar mirrors what a good membership operation already does for retention. It starts the week the check clears: a confirmation of exactly what the tier includes, and a short onboarding conversation about who from the sponsor's side is speaking, hosting, or attending, and what their sales team wants from the year. Then the touchpoints land through the year as promised. The newsletter mention runs. The speaking slot gets scheduled, and the speaker gets briefed. The reception carries their name and their people are introduced from the front of the room. After the event, the photos and the recap go out within the week, while the memory is warm. And when the renewal ask comes, it opens by naming what happened: the talk, the tour, the room. A renewal letter that recites what the sponsor already got is barely a sales letter at all. It is a receipt for a good year.</p>
+    <p>One person owns the ledger of promises made and kept. Not a committee, not whoever is nearest to the printer the week before the conference. Every tier benefit for every sponsor is a line in a list, and someone checks the lines off as the year goes. This sounds like clerical work because it is. It is also the entire difference between a program that renews and one that leaks a sponsor or two every year until the board asks why revenue is down. Sponsors forgive a modest program delivered completely. They do not forgive an ambitious one delivered halfway, because the gap between the promise and the delivery is exactly the thing their boss asks about.</p>
+  </Prose>
+</GuideSheet>

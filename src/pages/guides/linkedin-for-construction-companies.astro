@@ -1,0 +1,97 @@
+---
+import GuideSheet from '../../layouts/GuideSheet.astro';
+import Prose from '../../components/guides/Prose.astro';
+import SpecList from '../../components/guides/SpecList.astro';
+import heroShot from '../../assets/photos/precast/IMG_4084.jpeg';
+
+const faqs = [
+  {
+    q: "How often should a construction company post on LinkedIn?",
+    a: "Once a week, held for a full year. Frequency matters far less than consistency, because buyers judge the pattern, and a page that posts weekly for a year reads as a company that finishes what it starts. If you want to do more, add volume after the weekly habit has survived a busy season, not before.",
+  },
+  {
+    q: "What should we post when nothing exciting is happening?",
+    a: "Post the plain explanation: how a panel gets stripped, why an embed sits where it sits, what curing means on a cold morning. This industry finds its own work interesting, and so do the people who buy from it. What feels routine inside the plant reads as substance to an estimator scrolling at a desk.",
+  },
+  {
+    q: "Should posts come from the company page or from personal profiles?",
+    a: "Both. A post shared by a person travels further than the same post from a page, so have owners and project managers reshare company posts with a sentence of their own. The company page is still the record. It is what a buyer checks during the desk review, so it needs the steady weekly history.",
+  },
+  {
+    q: "Do hashtags matter on LinkedIn?",
+    a: "No. LinkedIn's search reads the words of a post whether or not they carry a symbol in front of them, so a hashtag adds nothing a plain word does not. A pile of them reads as noise and marks the post as filler. Skip them and spend the effort on a clearer first sentence.",
+  },
+];
+---
+
+<GuideSheet
+  slug="linkedin-for-construction-companies"
+  sheet="A-708"
+  title="LinkedIn for Construction Companies | SkyKPI"
+  metaDescription="Five fixed post types, one post a week someone owns, photos collected on the job. How construction companies make LinkedIn survive busy season."
+  h1="LinkedIn for construction companies: a system that survives busy season."
+  lede="Construction LinkedIn fails the same way every time: a burst of posts in January, silence by March, because posting depended on inspiration and one busy person. The fix is a system. Five fixed post types, one post a week that a named person owns, and photos collected as a byproduct of the work."
+  published="2026-10-05"
+  heroImage={heroShot}
+  heroAlt="A yellow all-terrain crane setting bridge girders on a pier under a dramatic cloud-filled sky."
+  faqs={faqs}
+  faqHeading="What companies ask us"
+  about={[
+    'LinkedIn strategy for construction and precast companies',
+    'What to post on a construction company page',
+    'A weekly posting cadence that survives busy season',
+  ]}
+  ctaHeading="Install the system."
+  ctaCopy="Run the weekly cadence yourself straight from this sheet, or hand it to a team that posts for this industry every day."
+  refs={[
+    { href: '/marketing/', sheet: 'A-200', label: 'Social presence inside the marketing scope' },
+    { href: '/guides/', sheet: 'A-700', label: 'All guides' },
+    { href: '/contact/', sheet: 'A-500', label: 'Start the conversation' },
+  ]}
+>
+  <Prose tag="The case" heading="Does LinkedIn actually matter in construction?">
+    <p>Yes, because the people who award work are on it every day. Estimators, developers, owners&rsquo; reps, purchasing managers at general contractors: LinkedIn is the one platform where this industry shows up during business hours. When a buyer is deciding whether to prequalify you, invite you to bid, or keep you on a shortlist, a look at your company page is part of the desk check, right alongside your website and your references. A page with steady, recent activity reads as a company with steady, recent work.</p>
+    <p>Nobody awards a contract off a LinkedIn post, and the page does not have to be impressive. Its job is smaller and more important: to confirm, in about thirty seconds, that the company is active, competent, and staffed by real people who know what they are doing. A page that went dark fourteen months ago raises a small question in the buyer&rsquo;s mind. Small questions cost shortlist spots.</p>
+    <p>Know what this audience does with your posts, because it will shape how you read the results. Construction buyers almost never comment. They rarely like and almost never share. They watch, quietly, sometimes for years, and then one day they call, and the caller has read everything. Silence from the audience is not failure. It is how this audience behaves. The standard mistake is treating the lack of applause as proof the effort is wasted, and quitting in March, which is exactly when the record was starting to build.</p>
+    <p>The platform was never the problem. The problem was that posting depended on inspiration and on one busy person, and both ran out at the same time. The fix is a system with three parts: fixed post types, a fixed cadence someone owns, and photos that come out of the work itself.</p>
+  </Prose>
+
+  <SpecList
+    tag="Posting schedule"
+    heading="The weekly system"
+    intro="One post a week is a system. Five posts in January is a spasm. Pick a publishing day, hold it, and rotate these five post types in order so no single week ever requires an idea."
+    rows={[
+      {
+        id: 'P-1',
+        name: 'The project moment',
+        copy: 'Work in motion: a pick, a pour, a topping-out, a load leaving the yard at dawn. The photo is the crane mid-lift or the crew setting the piece, shot wide enough to show scale. Caption in one or two plain sentences: what is happening, where, and what the piece will carry when the job is done. No exclamation points required.',
+      },
+      {
+        id: 'P-2',
+        name: 'The person',
+        copy: 'One employee, named with their permission, doing the thing they are good at. The photo is that person at their station or on the deck, looking at the work or straight into the camera. Caption gives the name, the role, how long they have been at it, and one specific thing they did on this job. Specific beats sentimental.',
+      },
+      {
+        id: 'P-3',
+        name: 'The finished proof',
+        copy: 'The completed work: erected panels, the opened bridge, the building in service. The photo is the finished structure in good light, ideally with people or traffic using it, because use is the point. Caption states what it is and who it serves, then stops. Finished work does not need adjectives.',
+      },
+      {
+        id: 'P-4',
+        name: 'The plain explanation',
+        copy: 'How something gets made or why a detail matters: what a formliner does, why a connection sits where it sits, what a cold morning does to a cure schedule. The photo is the detail itself, close enough to actually see it. Caption explains it the way you would explain it to a sharp new hire, in plain words, no jargon left undefined.',
+      },
+      {
+        id: 'P-5',
+        name: 'The company milestone',
+        copy: 'An anniversary, a promotion, a safety record, a new piece of equipment on the floor. The photo is real people standing at the actual thing, never a graphic with a logo on it. Caption states the fact, names the people who earned it, and thanks them. Skip the fireworks and the paragraph about your values.',
+      },
+    ]}
+  />
+
+  <Prose tag="Making it survive" heading="Who posts when the work gets heavy" mist={true} marks={true}>
+    <p>One named person owns the cadence. Not the marketing committee, not whoever has a slow afternoon. One person whose Friday includes confirming the post went up, the same way it includes payroll. The owner does not have to write beautifully or take the photos. The owner has to make sure the post publishes on schedule, and the company has to treat that responsibility as a real job instead of a favor. When the cadence has an owner, busy season changes what gets posted, and never whether.</p>
+    <p>Batch a month at a time. One site visit, or one deliberate walk through the plant with a phone, can produce four or five posts in an hour: a pick in progress, a person at their station, a finished piece, a detail worth explaining. Write the captions that same afternoon, while you still remember what you saw and why it mattered. A month of posts sitting finished in drafts survives busy season. A plan to write something this week does not.</p>
+    <p>Feed the batch with the shot-list habit. Keep a shared folder crews drop photos into, and make the same short list routine on every job: the piece leaving the plant, the pick, the crew, the finished work. Photos collected as a byproduct of the work cost nothing extra and never run out. And hold the quality bar exactly where it belongs, which is honest photos and plain words. Agency polish is not the standard here. A clear phone photo of real work, captioned by someone who understands the work, beats a stock image with a slogan every time it runs.</p>
+  </Prose>
+</GuideSheet>

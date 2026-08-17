@@ -1,0 +1,102 @@
+---
+import GuideSheet from '../../layouts/GuideSheet.astro';
+import Prose from '../../components/guides/Prose.astro';
+import Checklist from '../../components/guides/Checklist.astro';
+import heroShot from '../../assets/photos/arch/IMG_8346.jpeg';
+
+const faqs = [
+  {
+    q: "What should a general contractor website include?",
+    a: "Project pages with type, size, location, and delivery method. The markets you build in, stated plainly on the homepage. Named leadership with real faces, visible safety culture, self-perform capabilities, and a direct path to a person who answers within a business day. That list covers what an owner's rep verifies before an interview; everything else on the site is secondary."
+  },
+  {
+    q: "Do general contractors need marketing if work comes from relationships?",
+    a: "Yes, because relationships get you shortlisted and the website gets you verified. By the time an owner's rep calls, they have already looked you up, read your project pages, and compared your work to two other firms. GC marketing is less about generating cold leads and more about making sure that quiet diligence pass confirms what the relationship promised."
+  },
+  {
+    q: "What photos should a construction company use?",
+    a: "Your own jobsites, your finished work, and your real crews. Never stock. Owners and their reps have seen the same stock handshake and the same clean hard hat on blueprints on a hundred contractor sites, and it reads as having nothing of your own to show. One day of professional photography on two active sites and two finished buildings outperforms any photo library."
+  },
+  {
+    q: "What does GC marketing cost?",
+    a: "We work on a single retainer scoped to the work, with no hourly billing. The number comes from a scope conversation: how many deficiencies the walk-through turned up, how fast you want them closed, and whether photography is part of the job. This checklist is the starting point for that conversation, or for doing the work in-house."
+  },
+];
+---
+
+<GuideSheet
+  slug="general-contractor-website-checklist"
+  sheet="A-704"
+  title="General Contractor Website Checklist | SkyKPI"
+  metaDescription="A fifteen-check website checklist for general contractors: what an owner's rep verifies before the interview, and the order to fix what fails."
+  h1="The general contractor website, inspected like a jobsite."
+  lede="A general contractor website checklist is a walk-through of the site an owner's representative will inspect before your interview. This one runs fifteen checks in three groups: first impression, the diligence pass, and follow-through. Score it honestly, then fix the deficiencies in priority order, the way you would work a punch list."
+  published="2026-09-07"
+  heroImage={heroShot}
+  heroAlt="A crawler crane and concrete building shell seen through the frame of a white canopy structure on a jobsite."
+  faqs={faqs}
+  faqHeading="What GCs ask us"
+  about={["General contractor websites", "Construction company marketing", "Owner and developer diligence"]}
+  ctaHeading="Punch list came back long?"
+  ctaCopy="Every check on this list can be closed in-house if you have the time and someone to own it. If you would rather hand it off, we build websites and marketing for contractors, scoped to the punch list and nothing more."
+  refs={[
+    { href: '/contractors/', sheet: 'A-220', label: 'Marketing and websites for general contractors' },
+    { href: '/guides/', sheet: 'A-700', label: 'All guides' },
+    { href: '/contact/', sheet: 'A-500', label: 'Start the conversation' },
+  ]}
+>
+  <Prose tag="The case" heading="What does an owner's rep actually check?">
+    <p>Projects, people, and signs of life. An owner's representative doing homework before an interview pulls up your site and looks for three things: work like the project at hand, the people who would actually run it, and evidence that the firm is busy and current. The whole pass takes a few minutes on a phone, between other meetings. It happens before you know you are being considered, and nobody tells you the result.</p>
+    <p>This matters because of how general contractors actually get work. You get shortlisted on relationships: a past project, a referral from an architect, a name the owner already trusts. Then, somewhere between the shortlist and the interview, someone the owner pays to be skeptical verifies you online. The website does not win the job. Its job is to survive that diligence pass without raising a question you will have to answer cold in the interview room.</p>
+    <p>A site fails quietly. No one emails to say your newest project photo is eight years old, or that the leadership page still shows a partner who retired. The firm just walks into the interview with a little less credibility than the relationship earned. Or the interview never gets scheduled, and the person who referred you hears the polite version of why.</p>
+    <p>So treat the site the way you would treat a jobsite the week before an owner walk-through. Walk it yourself first. Note the deficiencies without arguing with them. Then fix them in priority order, worst first, the same way a punch list gets worked. The fifteen checks below are the walk.</p>
+  </Prose>
+
+  <Checklist
+    tag="Inspection report"
+    heading="Walk your own site in fifteen checks"
+    intro="One point per yes. Takes ten minutes with the site open on a phone, which is where the owner's rep will open it too."
+    groups={[
+      {
+        id: 'IN-1',
+        cat: 'First impression',
+        items: [
+          "The homepage loads in under three seconds on a phone, on cell service, not office wifi.",
+          "A finished project photo sits above the fold, not a logo wall or a mission statement.",
+          "The markets you build in are stated on the homepage in plain words: healthcare, K-12, industrial, multifamily, whatever they actually are.",
+          "No stock photos anywhere. No handshakes, no hard hats resting on blueprints, no models in clean safety vests.",
+          "Something on the site has changed in the last ninety days: a project, a hire, a photo, a note from the field.",
+        ],
+      },
+      {
+        id: 'IN-2',
+        cat: 'The diligence pass',
+        items: [
+          "Every project page states type, size, location, and delivery method, so a stranger can judge fit in thirty seconds.",
+          "Leadership is named, with real faces. The people who would sit in the interview appear on the site.",
+          "The site names the person who owns safety and describes the program in specifics, not slogans.",
+          "Self-perform capabilities are stated. If you pour your own concrete or frame your own walls, the site says so.",
+          "Nothing published about bonding, capacity, or licensure is out of date.",
+        ],
+      },
+      {
+        id: 'IN-3',
+        cat: 'The follow-through',
+        items: [
+          "The contact page lists a direct email to a named person. A form feeding an unwatched info@ inbox does not count.",
+          "Someone owns that inbox and answers within one business day, and everyone in the office knows who that someone is.",
+          "The careers page is current, with real open positions. No postings that were filled a year ago.",
+          "The photography on the site comes from your own jobsites, and a superintendent could name every one of them.",
+          "A search for the firm by name finds you first, with the correct address, phone, and hours everywhere your name appears.",
+        ],
+      },
+    ]}
+  />
+
+  <Prose tag="Priority order" heading="Fix the deficiencies in this order" mist={true} marks={true}>
+    <p><strong>Photography of real work comes first.</strong> It is the single change that moves an owner's judgment the furthest, and it closes several checks at once: the photo above the fold, the stock-photo problem, and the project pages. One day with a professional photographer on two active jobsites and two finished buildings will do more for the site than a month of rewriting copy. Book it before you touch anything else.</p>
+    <p>Finished photography persuades owners in a way renderings cannot. A rendering shows what you intended; a photograph of the built thing, occupied and in use, shows what you delivered. Owners have seen too many renderings of projects that finished late to be moved by another one.</p>
+    <p><strong>Project pages come second</strong>, because they are what the diligence pass actually reads. Type, size, location, delivery method, and a few honest sentences about what was hard and how the team handled it. Write them for a skeptical reader with four minutes, and match them to the markets you want more of. <strong>People pages come third.</strong> The owner is hiring a team for two years of weekly meetings, and a team with names, faces, and project histories is easier to hire than a logo.</p>
+    <p><strong>Speed and mobile come last.</strong> Not because they are minor; a site that stalls on a phone loses the reader before any of the content matters. They come last only because the other three move the decision more, and a fast site full of stock photos still fails the walk-through. Fix what the rep is looking for first, then make it load fast.</p>
+  </Prose>
+</GuideSheet>

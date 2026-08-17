@@ -1,0 +1,101 @@
+---
+import GuideSheet from '../../layouts/GuideSheet.astro';
+import Prose from '../../components/guides/Prose.astro';
+import Steps from '../../components/guides/Steps.astro';
+import heroShot from '../../assets/photos/precast/IMG_5106.jpeg';
+
+const faqs = [
+  {
+    q: "What does it mean for precast to be specified?",
+    a: "It means precast is written into the project's construction documents as the required system, usually in a spec section such as 03 41 00 for structural precast or 03 45 00 for architectural precast. The spec may name acceptable manufacturers, name one producer as the basis of design, or set certification requirements that only some plants can meet. Once precast is in the spec, general contractors bidding the job must price it, and producers who fit the spec get to quote. Producers who were never findable during design rarely appear in that section.",
+  },
+  {
+    q: "How do architects find precast producers?",
+    a: "Early in design, they search the way anyone searches: a browser, a finish they saw on another building, a rep they already know, or a colleague's recommendation. What they land on is your website, and what they judge is your photography and your finish options. If the photos are thin or the finishes page is vague, they move to the next producer without telling you. The producers who get sampled are the ones whose built work an architect could actually see.",
+  },
+  {
+    q: "What should a precast producer put on its website?",
+    a: "Four things, in order: professional photographs of finished, installed work; a finishes and capabilities page specific enough that a specifier can shortlist you from it; typical details, span tables, and product data a designer can download without asking; and a phone number that reaches a person. Everything else is secondary. A specifier on a deadline is looking for reasons to keep you in or cut you, and the site either supplies them or it does not.",
+  },
+  {
+    q: "What does precast marketing cost?",
+    a: "We work on a single retainer scoped to the actual work, with no hourly billing. The number depends on what needs fixing: a producer who needs photography and a rebuilt finishes page is a different scope than one who needs the whole chain covered, from findability through bid-time support. The honest answer comes from a scope conversation, which costs nothing and usually tells you within an hour what the work looks like.",
+  },
+];
+---
+
+<GuideSheet
+  slug="how-precast-gets-specified"
+  sheet="A-702"
+  title="How Precast Gets Specified | SkyKPI"
+  metaDescription="Precast is specified through a chain: owner brief, architect concept, engineer selection, spec section, bid, award. Here is where producers get cut."
+  h1="How precast gets specified, and where producers fall out of the running."
+  lede="Precast concrete gets specified through a chain of decisions that starts with the owner's brief and ends at contract award. A producer can be quietly dropped at every link in that chain, usually without ever knowing they were considered. This guide maps the chain and what a producer needs in place at each step to stay in it."
+  published="2026-08-24"
+  heroImage={heroShot}
+  heroAlt="Close detail of a precast wall panel mid-lift, dark thin brick below a white fluted architectural band."
+  faqs={faqs}
+  faqHeading="What producers ask us"
+  about={[
+    "The construction specification chain for precast concrete",
+    "Marketing for precast producers and their sales teams",
+    "Selling to architects, engineers, and specifiers",
+  ]}
+  ctaHeading="Stay in the chain."
+  ctaCopy="This guide is enough to start fixing the chain yourself, one link at a time. If you would rather have people who work the specifier side of this every day look at it with you, we are easy to reach."
+  refs={[
+    { href: '/marketing/', sheet: 'A-200', label: 'Marketing for precast producers and suppliers' },
+    { href: '/guides/', sheet: 'A-700', label: 'All guides' },
+    { href: '/contact/', sheet: 'A-500', label: 'Start the conversation' },
+  ]}
+>
+  <Prose tag="The case" heading="Why do good producers lose work they never knew about?">
+    <p>Because elimination in this business is silent. Nobody calls a producer to say they were considered for a parking structure and dropped when the architect could not find span tables. Nobody sends a note explaining that the finishes page looked ten years old, so the design team sampled a competitor instead. The producer sees none of it. What they see is the work that reaches the estimating desk, and they conclude that estimating is where jobs are won and lost.</p>
+    <p>Estimating is the last link in a long chain. By the time drawings go out to bid, the big decisions are already made: whether the building uses precast at all, which system, which finishes, and often which producers are acceptable. Each of those decisions was made by someone who did a few minutes of research, found what they found, and moved on. A producer who was invisible during those few minutes was eliminated without a conversation.</p>
+    <p>This is why two plants with similar quality, similar capacity, and similar pricing can have very different backlogs. One of them keeps showing up at every link in the chain. The other keeps getting cut at links it cannot see. Marketing, for a precast producer, is the work of staying in the chain: being findable when the concept forms, handing specifiers what they need when they need it, getting named or listed in the spec, and backing the estimator when the number goes in.</p>
+  </Prose>
+
+  <Steps
+    tag="The chain"
+    heading="Where the specification decision actually happens"
+    intro="Six links, in order. At each one, someone can remove you from consideration without telling you. Each step below names the link and what a producer needs in place to survive it."
+    steps={[
+      {
+        id: "S-1",
+        title: "Owner brief",
+        copy: "The owner sets budget, schedule, and durability expectations, and often leans on what worked last time. You cannot pitch this step, but you can be part of its memory. Producers survive it by having built work the owner's rep has seen, a name that comes up when the team lists regional options, and a reputation for hitting schedule. If nobody in the room has ever heard of you, the chain starts without you.",
+      },
+      {
+        id: "S-2",
+        title: "Architect concept",
+        copy: "The architect starts shaping the building and searching for materials and finishes. This is where findability decides your fate. You need a website that appears when they search, a finishes page with real photographs of installed work, and physical samples you can ship within days. An architect who cannot see your finishes will design around a competitor's, and the spec will follow the design.",
+      },
+      {
+        id: "S-3",
+        title: "Engineer system selection",
+        copy: "The structural engineer tests whether precast carries the loads and spans the bays. You need published span and load tables, typical details and load tables an engineer can reference without calling you, with your specialty engineer ready where connection design is delegated, and a person on your staff who answers technical calls the same day. Engineers default to systems they can verify quickly. Make verification easy and you stay in; make them dig and they stop digging.",
+      },
+      {
+        id: "S-4",
+        title: "The spec section",
+        copy: "The spec writer drafts section 03 41 00 or its architectural cousin, naming acceptable manufacturers or a basis of design and setting certification requirements. You need to be on that list, or to clearly meet the certifications it cites, with plant certification current and documentation ready. A producer named in the spec starts the bid phase ahead. A producer absent from it needs an approved substitution just to compete.",
+      },
+      {
+        id: "S-5",
+        title: "GC bid",
+        copy: "General contractors price the job and send the precast scope to producers they trust to respond. You need an estimating operation that returns complete, clearly scoped quotes on time, and standing relationships with the GCs who build in your region. A late or vague quote gets set aside, and the GC carries someone else's number. This is the one link producers watch, and even here the deciding work happened earlier.",
+      },
+      {
+        id: "S-6",
+        title: "Award and buyout",
+        copy: "The job is awarded and the GC buys out the precast package, which is when value engineering and substitution requests appear. You need to defend your number with facts, turn submittals and shop drawings fast, and produce mockups and samples on schedule. A producer who goes quiet after bid day invites the swap. A producer who keeps the design team supplied is expensive to replace, and everyone at the table knows it.",
+      },
+    ]}
+  />
+
+  <Prose tag="Field notes" heading="What to fix first" mist={true} marks={true}>
+    <p>Photography of finished work comes first. It is the single strongest signal a specifier gets, and it is the one thing you cannot fake or write around. Hire a photographer, shoot your best installed projects in good light, and get the images everywhere a specifier might look: your site, your sample boxes, your sales decks. A plant with ordinary marketing and excellent photographs will outperform a plant with the reverse.</p>
+    <p>Second, rebuild the pages a specifier actually checks: finishes and capabilities. List the finishes you produce with a photograph of each, installed, at building scale. State your panel sizes, spans, colors, and textures in plain terms. This is not brochure writing. It is reference material, and it should read like reference material, because the person using it is deciding whether to keep you on a shortlist.</p>
+    <p>Third, make sure a human answers. A specifier with a question on a Tuesday afternoon needs a phone number that reaches a person and an email that gets a same-day reply from someone technical. Fourth, and only after those three, build an email presence: a short, occasional note to the architects and engineers in your region showing new work and new finishes. It keeps you in the memory that step one runs on. Fix them in that order. The photography feeds everything after it.</p>
+  </Prose>
+</GuideSheet>

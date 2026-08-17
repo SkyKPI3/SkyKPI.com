@@ -1,0 +1,184 @@
+---
+/**
+ * GuideSheet: the shared frame for Guides articles (A-70x).
+ * Wraps Sheet with the guide hero, Article + FAQ schema, the closing CTA,
+ * and reference sheets. The article body flows in through the default slot
+ * using the shared device components.
+ *
+ * A guide dated in the future is buildable and previewable at its URL but
+ * carries noindex until the rebuild on or after its publish date.
+ */
+import { Image } from 'astro:assets';
+import Sheet from './Sheet.astro';
+import RegistrationMarks from '../components/RegistrationMarks.astro';
+import Faq from '../components/Faq.astro';
+import RefSheets from '../components/RefSheets.astro';
+import { faqSchema, type FaqItem } from '../lib/schema';
+
+interface RefLink {
+  href: string;
+  sheet: string;
+  label: string;
+}
+
+interface Props {
+  slug: string;
+  sheet: string; // e.g. "A-702"
+  title: string; // page <title>, keyword-first
+  metaDescription: string;
+  h1: string;
+  lede: string;
+  published: string; // YYYY-MM-DD
+  heroImage: ImageMetadata;
+  heroAlt: string;
+  faqs: FaqItem[];
+  faqHeading: string;
+  about: string[]; // Article schema topics
+  ctaHeading: string;
+  ctaCopy: string;
+  ctaHref?: string;
+  ctaLabel?: string;
+  refs: RefLink[];
+}
+
+const {
+  slug,
+  sheet,
+  title,
+  metaDescription,
+  h1,
+  lede,
+  published,
+  heroImage,
+  heroAlt,
+  faqs,
+  faqHeading,
+  about,
+  ctaHeading,
+  ctaCopy,
+  ctaHref = '/contact/',
+  ctaLabel = 'Start the conversation',
+  refs,
+} = Astro.props;
+
+const url = `https://skykpi.com/guides/${slug}/`;
+const isEmbargoed = published > new Date().toISOString().slice(0, 10);
+
+const article = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: h1,
+  description: metaDescription,
+  datePublished: published,
+  dateModified: published,
+  url,
+  image: 'https://skykpi.com/og-default.png',
+  author: { '@type': 'Organization', name: 'SkyKPI LLC', url: 'https://skykpi.com' },
+  publisher: { '@id': 'https://skykpi.com/#organization' },
+  about,
+};
+---
+
+<Sheet
+  title={title}
+  description={metaDescription}
+  path={`/guides/${slug}/`}
+  sheet={sheet}
+  sheetName={`Guides / ${h1.split(',')[0].split(':')[0]}`}
+  parent={{ href: '/guides/', label: 'Guides' }}
+  jsonLd={[article, faqSchema(faqs)]}
+  noindex={isEmbargoed}
+>
+  <section class="ghero">
+    <div class="ghero__media photo-treat">
+      <Image
+        src={heroImage}
+        alt={heroAlt}
+        widths={[480, 768, 1280, 1920]}
+        width={1920}
+        sizes="100vw"
+        loading="eager"
+        fetchpriority="high"
+        quality={78}
+      />
+    </div>
+    <RegistrationMarks />
+    <div class="container ghero__content">
+      <p class="tag ghero__kicker">Sheet {sheet} &middot; Guides &middot; Issued {published}</p>
+      <h1>{h1}</h1>
+      <hr class="dimline" aria-hidden="true" />
+      <p class="lede ghero__sub">{lede}</p>
+    </div>
+  </section>
+
+  <slot />
+
+  <Faq items={faqs} heading={faqHeading} />
+
+  <section class="section sheet gcta">
+    <div class="container gcta__inner">
+      <p class="tag reveal">Sheet A-500</p>
+      <h2 class="reveal">{ctaHeading}</h2>
+      <hr class="dimline dimline--center reveal" aria-hidden="true" />
+      <p class="dim reveal gcta__copy">{ctaCopy}</p>
+      <div class="reveal">
+        <a class="btn" href={ctaHref}>{ctaLabel}</a>
+      </div>
+    </div>
+  </section>
+
+  <RefSheets links={refs} />
+</Sheet>
+
+<style>
+  .ghero {
+    position: relative;
+    min-height: 64svh;
+    display: flex;
+    align-items: flex-end;
+    overflow: hidden;
+  }
+
+  .ghero__media {
+    position: absolute;
+    inset: 0;
+  }
+
+  .ghero__media :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .ghero__content {
+    position: relative;
+    z-index: 3;
+    padding: calc(var(--header-h) + 3rem) 0 clamp(3rem, 7vw, 5rem);
+    color: var(--text-on-photo);
+  }
+
+  .ghero__content :global(h1) {
+    font-size: clamp(2.2rem, 5.4vw, 4.2rem);
+  }
+
+  .ghero__kicker {
+    margin-bottom: 1.4rem;
+    color: var(--teal);
+  }
+
+  .ghero__sub {
+    max-width: 40rem;
+  }
+
+  .gcta__inner {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gcta__copy {
+    max-width: 34rem;
+    margin-bottom: 2rem;
+  }
+</style>

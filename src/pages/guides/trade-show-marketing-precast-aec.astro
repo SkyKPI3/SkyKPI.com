@@ -1,0 +1,88 @@
+---
+import GuideSheet from '../../layouts/GuideSheet.astro';
+import Prose from '../../components/guides/Prose.astro';
+import Steps from '../../components/guides/Steps.astro';
+import heroShot from '../../assets/photos/assoc/IMG_5288.jpeg';
+
+const faqs = [
+  {
+    q: "How do you prepare for a trade show?",
+    a: "Start six weeks out, and start with the attendee list rather than the booth. Book meetings with the specific people you want to meet, announce where you will be in your email program and on LinkedIn, and build the booth around one thing worth stopping for. Then brief the crew on who you are trying to meet and what to ask them. The booth itself is the easiest part to get right and the least decisive."
+  },
+  {
+    q: "How fast should trade show follow-up happen?",
+    a: "Inside five business days. Figure you have about a week while a prospect can still put a face to your company name, and after that you are one badge scan among dozens. Send whatever you promised at the booth first, before anything promotional, then sort the rest of the contacts into now, later, and never."
+  },
+  {
+    q: "What should a small booth do differently from a big one?",
+    a: "Stop trying to win on square footage, because you cannot. One clear thing worth stopping for beats a large empty backdrop, and the meetings you book before the show matter more than where your booth sits on the floor plan. A ten-by-ten with eight booked meetings will outperform an island booth running on walk-up traffic."
+  },
+  {
+    q: "Are trade shows worth it for precast and AEC companies?",
+    a: "Yes, when they are treated as a campaign instead of a three-day event. The precast and AEC world still decides a great deal of its business in rooms like these, face to face, near a product you can touch. A booth that stands alone, with no work before or after it, is hard to defend. The same booth in the middle of an eight-week campaign usually is not."
+  }
+];
+---
+
+<GuideSheet
+  slug="trade-show-marketing-precast-aec"
+  sheet="A-711"
+  title="Trade Show Marketing Plan for Precast and AEC | SkyKPI"
+  metaDescription="A trade show pays back when you run it as a campaign: book meetings six weeks out, work the list for three days, follow up within five business days."
+  h1="Trade show marketing: the six weeks before, the three days there, the week after."
+  lede="A trade show booth buys three days in a room with the people you spend the rest of the year trying to reach. Whether it pays back is decided mostly outside those three days, in the six weeks before the show and the week after it. This sheet lays out the whole campaign for precast producers, suppliers, and AEC firms that exhibit."
+  published="2026-10-26"
+  heroImage={heroShot}
+  heroAlt="A soaring convention center concourse with a curved white ribbed ceiling and attendees walking in the distance."
+  faqs={faqs}
+  faqHeading="What exhibitors ask us"
+  about={[
+    "Trade show marketing for precast and AEC exhibitors",
+    "Pre-show meeting booking and promotion",
+    "Post-show follow-up and lead sorting"
+  ]}
+  ctaHeading="Run the full campaign."
+  ctaCopy="This sheet is enough to run the campaign in-house. If the before and after phases are the work your team cannot staff, that is work we carry."
+  refs={[
+    { href: '/marketing/', sheet: 'A-200', label: 'The full precast and AEC marketing scope' },
+    { href: '/guides/', sheet: 'A-700', label: 'All guides' },
+    { href: '/contact/', sheet: 'A-500', label: 'Start the conversation' }
+  ]}
+>
+  <Prose tag="The case" heading="Why do most booths not pay back?">
+    <p>Booths fail to pay back for a reason that has nothing to do with the booth. The spend concentrates on the three days of the show, while the work that decides the outcome sits on either side of them. The registration, the space, the drayage, the hotel rooms, the crew's week: all of it buys the same thing, which is access to a room full of the right people for three days. Access is not a result. The result comes from what happened before those people arrived and what happens after they go home.</p>
+    <p>Look at what the fee actually purchases. For three days, the producers, specifiers, engineers, and owners you spend the rest of the year trying to reach are walking a single concrete floor, wearing name tags, expecting to be talked to. That concentration is the entire value of the event. It is also perishable. It exists for three days and then it scatters back across the country.</p>
+    <p>An exhibitor who shows up without appointments is betting the whole spend on aisle traffic and a nice backdrop. Some of that bet pays. A few good walk-ups happen at every show. But walk-ups are luck, meetings booked in advance are not, and the difference between the two is six weeks of unglamorous work with an attendee list and a phone.</p>
+    <p>The quieter failure is the week after. The badge scans land in a spreadsheet, everyone digs out from the work that piled up while they were gone, and ten days pass. The prospect who asked a real question at your booth has since talked to a dozen other vendors and can no longer place your face. Exhibitors let the follow-up die exactly this way, year after year, which is why the few who move fast look so good by comparison. The show itself is the middle of the campaign, never the campaign.</p>
+  </Prose>
+
+  <Steps
+    tag="Sequence of operations"
+    heading="The campaign in three phases"
+    intro="Three phases, one campaign. The middle phase gets nearly all the budget and attention. The outer two decide the return."
+    wide={true}
+    steps={[
+      {
+        id: 'BEFORE',
+        title: "Six weeks out",
+        copy: "Pull the attendee and exhibitor lists and book meetings with the people you already want to know: the specifier you have been chasing, the producer who buys what you sell, the engineer who called once and went quiet. Announce where you will be in your email program and on LinkedIn, with your booth number, so the people who already know you can find you. Build the booth around one thing worth stopping for, a real product, a cutaway, a working demonstration, something a visitor cannot see on a website. Then brief the crew in writing: who we want to meet, what we ask them, and what we hand them."
+      },
+      {
+        id: 'DURING',
+        title: "The three days",
+        copy: "Work the list, not the aisle traffic. The meetings you booked are the show, and the walk-ups are a bonus on top. Capture every real conversation in writing the same day, while you still remember what the person asked and what you promised, because by the last morning the badges blur together. Photograph the booth and the people in it, with their permission, since those photos feed a month of posts afterward. And give one crew member an hour to walk the floor with no agenda except listening, because the aisles are where you hear what the industry is worried about this year."
+      },
+      {
+        id: 'AFTER',
+        title: "The week after",
+        copy: "Follow up inside five business days, while they can still put a face to your company name. Sort every contact into three piles, now, later, and never, and be honest about the never pile so it does not clog the other two. Send the thing you promised first, the drawing, the sample, the introduction, before anything promotional goes out. Then move the later pile into your email program, so the show keeps paying for months instead of ending when the carpet comes up."
+      }
+    ]}
+  />
+
+  <Prose tag="Field notes" heading="The one-metric test" mist={true} marks={true}>
+    <p>Before you book next year's space, count one number: the conversations from this year's show that turned into a meeting, a quote, or a spec discussion. Not badge scans. Not booth traffic. Not how busy the crew felt on day two. Conversations that went somewhere.</p>
+    <p>Count them because memory inflates. A crowded booth feels like a good show six months later even when nothing came of the crowd, and a slow booth that produced three serious quote conversations was probably worth the trip. The number is the only honest witness, and it is worth writing down within a month of the show, while the trail from conversation to outcome is still visible.</p>
+    <p>If the number is low, the instinct is to blame the booth and buy a bigger one next year. Resist that. A low number almost always points at the phases on either side: no meetings booked going in, no follow-up going out inside the week. Fix those two things and run the same booth again before you spend more on square footage.</p>
+  </Prose>
+</GuideSheet>

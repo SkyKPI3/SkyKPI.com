@@ -1,16 +1,18 @@
 ---
 import Sheet from '../../layouts/Sheet.astro';
 import RegistrationMarks from '../../components/RegistrationMarks.astro';
+import { publishedGuides } from '../../data/guides.mjs';
 
-const guides = [
-  {
-    href: '/guides/marketing-for-architects/',
-    sheet: 'A-701',
-    title: 'Marketing for architects, graded like a submittal',
-    line: 'Why marketing decides shortlists, a 20-point self-audit, what to build at every firm size, and an honest DIY path.',
-    date: '2026-08-16',
-  },
-];
+// Newest first; the registry gates anything future-dated until its Monday.
+const guides = publishedGuides()
+  .map((g) => ({
+    href: `/guides/${g.slug}/`,
+    sheet: g.sheet,
+    title: g.title,
+    line: g.line,
+    date: g.published,
+  }))
+  .reverse();
 
 const collectionPage = {
   '@context': 'https://schema.org',

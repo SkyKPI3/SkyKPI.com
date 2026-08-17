@@ -1,0 +1,93 @@
+---
+import GuideSheet from '../../layouts/GuideSheet.astro';
+import Prose from '../../components/guides/Prose.astro';
+import Steps from '../../components/guides/Steps.astro';
+import heroShot from '../../assets/photos/precast/IMG_8350.jpeg';
+
+const faqs = [
+  {
+    q: "How do general contractors find subcontractors?",
+    a: "At a desk, in roughly this order: the subs the firm already uses, the internal prequalification database, a question asked across the office, and then a search for the trade plus the region. Phone calls come after the draft list exists, not before. A sub who is invisible to those four moves never gets the invitation, no matter how good the crews are.",
+  },
+  {
+    q: "What should a subcontractor capability page include?",
+    a: "The scope you self-perform, named the way an estimator names it. Then the markets and project types you work in, the geographic area you cover, crew count and key equipment, and the contract size you typically carry. Add bonding and insurance basics and the name and direct line of the person who handles bids. One page, kept current, no filler.",
+  },
+  {
+    q: "Do small subs need marketing at all?",
+    a: "At desk-check scale, yes. At billboard scale, no. A small sub does not need campaigns, ads, or a thirty-page website. It needs to be findable, believable, and reachable when an estimator goes looking, which comes down to two good pages and a habit of answering the phone. That is marketing even if nobody at the shop calls it that.",
+  },
+  {
+    q: "What does subcontractor marketing cost?",
+    a: "SkyKPI works on a single retainer scoped to the work, with no hourly billing. For the majority of subs the scope is deliberately narrow: the capability page, the proof page, and the basics that make the company findable, all kept current. The number comes out of a scope conversation about your trade, your market, and what you already have in place.",
+  },
+];
+---
+
+<GuideSheet
+  slug="subcontractor-marketing-bid-list"
+  sheet="A-705"
+  title="How Subcontractors Get on GC Bid Lists | SkyKPI"
+  metaDescription="Bid lists are built at a desk from searches, prequal databases, and office asks. Five gates decide whether a sub makes the list. Here is what to have at each one."
+  h1="How subcontractors get on the bid list."
+  lede="A bid list is built at a desk, from searches, prequalification databases, and asks around the office, before anyone picks up a phone. A subcontractor's marketing is the paper trail that survives that desk check. There are five gates between your company and the list, and you can be dropped at any one of them without ever knowing a bid went out."
+  published="2026-09-14"
+  heroImage={heroShot}
+  heroAlt="A total-precast building under erection seen from above, wall panels braced with rakers beside a stair core."
+  faqs={faqs}
+  faqHeading="What subs ask us"
+  about={["Subcontractor marketing", "General contractor bid lists", "Construction prequalification"]}
+  ctaHeading="Make the next list."
+  ctaCopy="Build the two pages yourself from this guide, or have them built by people who talk to GCs every week. Either path beats waiting for the phone to ring."
+  refs={[
+    { href: '/subcontractors/', sheet: 'A-230', label: 'Marketing and websites for subcontractors' },
+    { href: '/guides/', sheet: 'A-700', label: 'All guides' },
+    { href: '/contact/', sheet: 'A-500', label: 'Start the conversation' },
+  ]}
+>
+  <Prose tag="The case" heading="Who actually builds the bid list?">
+    <p>An estimator or a preconstruction coordinator, working at a desk, under time pressure. Not the GC's owner, not a marketing person, and usually not anyone who has ever met you. When a general contractor decides to pursue a project, someone in precon has days, sometimes hours, to line up coverage for every trade on the job. They start with the subs the firm already knows and trusts. Then they fill the gaps.</p>
+    <p>Filling a gap looks like this. They check the firm's prequalification database for anyone tagged with your trade in that region. They ask across the office, has anybody worked with a good framer down there. They search the trade plus the city and skim whatever comes up. They pull a name from a plan room or a directory. Every one of those moves happens on a screen or across a cubicle wall. The phone comes out only after a draft list exists, and by then the deciding has mostly been done.</p>
+    <p>That person is not grading your craftsmanship. They cannot see it. They are grading what they can verify in about ten minutes: does this company exist, does it do this scope, has it done work like this before, and will someone answer if I call. Whatever they can find in those ten minutes is your marketing, whether you built it on purpose or not. A sub with excellent crews and an empty search result loses to a sub with average crews and a clear paper trail, because the desk check never sees the crews.</p>
+    <p>The good news is that the desk check is a fixed course. It has five gates, they come in a predictable order, and each one can be prepared for with ordinary effort. None of them requires an ad budget.</p>
+  </Prose>
+
+  <Steps
+    tag="The path"
+    heading="Five gates between you and the bid list"
+    intro="Each gate is a point where an estimator either keeps your name on the draft list or moves on to the next one. You only find out about the gates you passed."
+    steps={[
+      {
+        id: 'G-1',
+        title: 'Found',
+        copy: "A search for your trade plus your region has to turn you up. That takes a website that states your trade, scope, and coverage area in plain words, a current Google Business Profile, and listings in the prequal databases and plan rooms the GCs in your market actually use. If the search comes up empty, the check ends here and you never hear about the job.",
+      },
+      {
+        id: 'G-2',
+        title: 'Believed',
+        copy: "The estimator clicks through with one question: does this company do the scope I am bidding? Your capability page has to answer it on the first screen, with the scope named the way an estimator names it, the markets you serve, and the size of work you carry. A homepage of general promises about quality and service fails this gate quietly.",
+      },
+      {
+        id: 'G-3',
+        title: 'Verified',
+        copy: "Believing is not verifying. The estimator wants evidence you have carried this scope at this size before, which means finished projects listed with the scope, the market, and a rough size, a line or two each. Photos of completed work with plain factual captions do more here than any paragraph of copy could.",
+      },
+      {
+        id: 'G-4',
+        title: 'Reachable',
+        copy: "A sub who cannot be reached the same day gets replaced by one who can. Publish a phone number a person answers, an email someone actually monitors, and the name of whoever handles bids. Estimators are working against a bid date. Silence reads as too busy, too small, or gone.",
+      },
+      {
+        id: 'G-5',
+        title: 'Remembered',
+        copy: "The next list is often built from memory, with no search at all. Staying visible between bids, through a short project update, a jobsite photo posted where GCs will see it, or a periodic check-in with the precon desk, puts your name in the room before anyone opens a browser. This is the cheapest gate to hold and the easiest one to lose.",
+      },
+    ]}
+  />
+
+  <Prose tag="Field notes" heading="The two-page website that survives the desk check" mist={true} marks={true}>
+    <p>For many subcontractors, two excellent pages beat a big site. The first is a <strong>capability page</strong>: the scope you self-perform, the markets and project types you work in, the counties or metro areas you cover, crew count, key equipment, and the contract size you are built to carry. Write it the way you would answer an estimator on the phone, in nouns and numbers, not adjectives. This is the page that gets you believed at G-2, and it is the page that gets your prequal packet invited in the first place. The packet, with its financials, safety record, and bonding letters, decides prequalification; the website decides whether anyone asks for the packet.</p>
+    <p>The second is a <strong>proof page</strong>: finished work, photographed cleanly, each project carrying one line of fact. What it was, where it was, what scope you carried, roughly how big. No stories, no adjectives, no stock photos. Ten real projects with honest captions verify more at G-3 than a hundred paragraphs about commitment to excellence. If a project shows a scope or a size you want more of, put it first.</p>
+    <p>Keeping both current matters more than making them fancy. Set a standing habit: when a job closes out, the foreman sends three photos and the office adds one line to the proof page the same week. Once a year, read the capability page out loud and fix anything that is no longer true, the coverage area, the crew count, the person named for bids. A page that says 2019 at the bottom tells an estimator exactly one thing, and it is not the thing you want.</p>
+  </Prose>
+</GuideSheet>

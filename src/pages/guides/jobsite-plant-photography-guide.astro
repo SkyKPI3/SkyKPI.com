@@ -1,0 +1,73 @@
+---
+import GuideSheet from '../../layouts/GuideSheet.astro';
+import Prose from '../../components/guides/Prose.astro';
+import Checklist from '../../components/guides/Checklist.astro';
+import heroShot from '../../assets/photos/precast/IMG_1882.JPG';
+
+const faqs = [
+  { q: "What makes a good construction photo?", a: "People, scale, and clean light. A person in the frame gives the work size and proves a crew did it, and PPE worn correctly is what makes the photo publishable. Shoot in morning or late afternoon light, clear the trash and loose gear out of the frame first, and get close enough that the subject fills the shot. A photo of a specific moment, a pick, a pour, a panel being set, will always beat a wide shot of a site where nothing is happening." },
+  { q: "Can we just use phone photos?", a: "Yes, for most of what marketing actually needs. A current phone in good light, held level and framed clean, is plenty for your website, social posts, proposals, and internal recruiting. It falls short for large-format printing, trade-show graphics, dim plant interiors, and any image that has to hold up at full-bleed on a homepage. Use the phone for the running record of every project, and bring in a professional for the handful of images that have to carry real weight." },
+  { q: "When should we photograph a project?", a: "During construction at the milestones: mobilization, first pick, topping out, enclosure. Then again after occupancy, once the fence is gone, the landscaping is in, and people are using the building. The finished shot sells hardest, because owners and developers are buying a finished building, not a jobsite. The milestone shots prove you did the work, and the finished shot proves the work was worth buying." },
+  { q: "Who owns the photos a photographer takes?", a: "In general the photographer holds the copyright unless your agreement says otherwise, so settle usage before the shoot, not after. Ask for written rights covering the uses you actually have: website, proposals, social, trade-show graphics, recruiting. Some photographers license images by use and others will transfer broad rights for a higher fee, and both arrangements are normal. Whatever you agree to, get it in writing before anyone raises a camera." },
+];
+---
+
+<GuideSheet
+  slug="jobsite-plant-photography-guide"
+  sheet="A-707"
+  title="Construction Photography Guide for Jobsites and Plants | SkyKPI"
+  metaDescription="How to get usable photos from the jobsite and the plant: a standing shot list, timing rules, and when hiring a professional photographer pays off."
+  h1="A field guide to jobsite and plant photography."
+  lede="Construction companies stand next to the most photogenic subject matter in business and still come away with nothing usable. This guide covers how to get marketing-grade photos from the jobsite and the plant with the phone already in your pocket, and when to bring in a professional instead. The difference is intent, not equipment."
+  published="2026-09-28"
+  heroImage={heroShot}
+  heroAlt="A curved precast shell panel hanging from crane chains above its wooden form inside the plant."
+  faqs={faqs}
+  faqHeading="What crews ask us"
+  about={['Construction and jobsite photography', 'Precast plant photography', 'Hiring an architectural photographer']}
+  ctaHeading="Print the shot list."
+  ctaCopy="Tape it in the truck and the plant office and you are most of the way there. When the signature project deserves better than a phone, we shoot for the industry we work in."
+  refs={[{ href: '/marketing/', sheet: 'A-200', label: 'Photography inside the marketing scope' }, { href: '/guides/', sheet: 'A-700', label: 'All guides' }, { href: '/contact/', sheet: 'A-500', label: 'Start the conversation' }]}
+>
+  <Prose tag="The case" heading="Why does construction photography usually fail?">
+    <p>Because the photos get taken for documentation, not for selling. The camera comes out when something needs to be recorded: a punch list item, a damaged panel, rebar spacing before a cover-up, a trench before backfill. Those photos do their job, and then they are worthless for anything else. A year later, when someone asks for project photos for the website or a proposal, the folder holds four hundred images of mud, conduit, and the backs of hard hats, all shot at noon under a gray sky.</p>
+    <p>This is a strange failure, because construction sits on the best raw material in business. A crane pick against a morning sky. A crew setting a forty-foot panel. Steel, concrete, height, weather, and scale. Software companies pay agencies to fake this kind of drama with stock imagery and staged laptops. You have the real thing on site every week, and the record of it dies in a documentation folder nobody will ever open for marketing.</p>
+    <p>A usable photo was planned before it was taken. Someone knew the pick was happening at nine, knew where the sun would be, walked the loose gear and trash out of the frame, and stood in the right spot with a clean lens. None of that requires equipment. A phone in the right hands at the right moment beats an expensive camera at the wrong one, and a professional photographer at substantial completion beats both.</p>
+    <p>So the fix is a habit, not a purchase. Keep a standing shot list that never changes from project to project. Tie it to milestones so nobody has to remember to shoot, because the schedule remembers for them. Assign it to one person by name on every job, since a photo that is everyone's responsibility is no one's. The list below is the one to start with.</p>
+  </Prose>
+
+  <Checklist
+    tag="Shot list"
+    heading="The standing shot list"
+    intro="Print this and give it to whoever is on site. Ten minutes at the right moment covers a project for a year of marketing."
+    groups={[
+      { id: 'SL-1', cat: 'On the jobsite', items: [
+        'The crane pick at its highest moment',
+        'Crews working, faces visible, PPE on and worn right',
+        'The scale shot with a person in frame for size',
+        'The before and after from the same standing spot',
+        'The detail that proves craft: a connection, a joint, a finish',
+      ]},
+      { id: 'SL-2', cat: 'In the plant', items: [
+        'The pour',
+        'The form with rebar or strand in place before concrete',
+        'Product staged in the yard in rows',
+        'The lift or the load-out',
+        'Hands doing finish work',
+      ]},
+      { id: 'SL-3', cat: 'Rules that save the shot', items: [
+        'Clean the frame of trash and loose gear first',
+        'Shoot morning or late afternoon light when you can',
+        'Hold the phone level and step closer instead of zooming',
+        'Take ten so one survives',
+        "Get panels, trucks, and vests without other companies' names in frame",
+      ]},
+    ]}
+  />
+
+  <Prose tag="When to hire it" heading="When a professional is worth it" mist={true} marks={true}>
+    <p>Hire one for the projects that will carry your marketing for years. Substantial completion of signature work is the clearest case. The finished building, the finished parking structure, the finished plant expansion: these are the images that end up on the homepage, on the proposal cover, and on the trade-show wall, and they have to stay sharp at large sizes in light a phone cannot flatter. An aerial day is the second case, because an FAA-certificated drone pilot working under Part 107 gets angles nothing on the ground can, and the airspace authorizations are their problem instead of yours. A recruiting shoot is the third, because photos of your real people doing real work outperform anything staged, and a good photographer gets them without stopping production.</p>
+    <p>What you hand the photographer matters as much as who you hire. Give them the shot list from this page, plus whatever is specific to the project. Tell them exactly where the images will live: website, proposals, trade-show graphics, recruiting pages. A photographer who knows the end use frames for it, leaving room for a headline on one shot and shooting vertical for another. And give them access at the right phase. A building photographs best when the finishes are in, before the fence comes down and the lot fills with other people's trucks. Book the photographer when you schedule the milestone, not after it has passed and the moment is gone.</p>
+    <p>One note on scope. A single professional day at completion, layered on a season of milestone phone photos from the standing list, covers nearly every marketing need a producer or contractor has. You do not need a photographer on retainer. You need one good day, on the right day, with clear instructions in hand.</p>
+  </Prose>
+</GuideSheet>

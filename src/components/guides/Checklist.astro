@@ -1,0 +1,99 @@
+---
+/**
+ * A punch-list style checklist with empty boxes, grouped or flat.
+ * groups: [{ id, cat, items: [string] }]
+ */
+interface Group {
+  id: string;
+  cat: string;
+  items: string[];
+}
+
+interface Props {
+  tag: string;
+  heading: string;
+  intro?: string;
+  groups: Group[];
+  mist?: boolean;
+}
+import RegistrationMarks from '../RegistrationMarks.astro';
+const { tag, heading, intro, groups, mist = true } = Astro.props;
+---
+
+<section class:list={['section', 'sheet', { 'sheet--mist': mist }]}>
+  <RegistrationMarks />
+  <div class="container cl__inner">
+    <p class="tag reveal">{tag}</p>
+    <h2 class="reveal">{heading}</h2>
+    <hr class="dimline reveal" aria-hidden="true" />
+    {intro && <p class="reveal">{intro}</p>}
+
+    {
+      groups.map((group) => (
+        <div class="cl__group reveal">
+          {group.cat && (
+            <h3>
+              <span class="tag tag--dim">{group.id}</span>
+              {group.cat}
+            </h3>
+          )}
+          <ul class="cl__items">
+            {group.items.map((item) => (
+              <li>
+                <span class="cl__box" aria-hidden="true" />
+                <p>{item}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .cl__inner {
+    max-width: 46rem;
+  }
+
+  .cl__group {
+    margin-top: 2.5rem;
+  }
+
+  .cl__group h3 {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .cl__items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .cl__items li {
+    display: grid;
+    grid-template-columns: 1.6rem 1fr;
+    gap: 0.9rem;
+    padding: 0.8rem 0;
+    border-top: 1px solid var(--hairline-on-ink);
+  }
+
+  .cl__items li:last-child {
+    border-bottom: 1px solid var(--hairline-on-ink);
+  }
+
+  .cl__box {
+    width: 1rem;
+    height: 1rem;
+    margin-top: 0.3rem;
+    border: 1.5px solid var(--teal);
+    background: var(--surface);
+  }
+
+  .cl__items p {
+    margin: 0;
+  }
+</style>

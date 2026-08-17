@@ -1,0 +1,98 @@
+---
+/**
+ * Numbered steps or phases. steps: [{ id, title, copy }]
+ * `wide` renders three-up on desktop for phase timelines.
+ */
+interface Step {
+  id: string;
+  title: string;
+  copy: string;
+}
+
+interface Props {
+  tag: string;
+  heading: string;
+  intro?: string;
+  steps: Step[];
+  wide?: boolean;
+  mist?: boolean;
+  marks?: boolean;
+}
+import RegistrationMarks from '../RegistrationMarks.astro';
+const { tag, heading, intro, steps, wide = false, mist = false, marks = false } = Astro.props;
+---
+
+<section class:list={['section', 'sheet', { 'sheet--mist': mist }]}>
+  {marks && <RegistrationMarks />}
+  <div class:list={['container', { 'st__inner--narrow': !wide }]}>
+    <p class="tag reveal">{tag}</p>
+    <h2 class="reveal">{heading}</h2>
+    <hr class="dimline reveal" aria-hidden="true" />
+    {intro && <p class="reveal st__intro">{intro}</p>}
+
+    <ol class:list={['st__list', { 'st__list--wide': wide }]}>
+      {
+        steps.map((s) => (
+          <li class="reveal">
+            <span class="tag tag--dim">{s.id}</span>
+            <h3>{s.title}</h3>
+            <p class="dim">{s.copy}</p>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
+
+<style>
+  .st__inner--narrow {
+    max-width: 46rem;
+  }
+
+  .st__intro {
+    max-width: 42rem;
+  }
+
+  .st__list {
+    list-style: none;
+    margin: 2.25rem 0 0;
+    padding: 0;
+  }
+
+  .st__list li {
+    border-top: 1px solid var(--hairline-on-ink);
+    padding: 1.25rem 0;
+  }
+
+  .st__list li:last-child {
+    border-bottom: 1px solid var(--hairline-on-ink);
+  }
+
+  .st__list h3 {
+    margin: 0.4rem 0 0.5rem;
+  }
+
+  .st__list p {
+    margin: 0;
+  }
+
+  .st__list--wide {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+  }
+
+  .st__list--wide li:last-child {
+    border-bottom: 0;
+  }
+
+  @media (max-width: 820px) {
+    .st__list--wide {
+      grid-template-columns: 1fr;
+    }
+
+    .st__list--wide li:last-child {
+      border-bottom: 1px solid var(--hairline-on-ink);
+    }
+  }
+</style>
