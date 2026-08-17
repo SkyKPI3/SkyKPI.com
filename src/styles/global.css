@@ -1,34 +1,43 @@
 /* ==========================================================================
-   SkyKPI global styles
+   SkyKPI — global styles
    Visual language: an architectural drawing set. Every page is a sheet.
+   Light theme per the August 2026 brand standards: ink on white paper,
+   teal as the only accent, slate for secondary text, mist for surfaces.
    ========================================================================== */
 
 :root {
-  /* Ink and paper */
-  --ink: #0d0f14;
-  --ink-2: #12151c;
-  --ink-3: #1a1e27;
-  --paper: #f2efe9;
-  --paper-2: #eae6dd;
-  --text-on-ink: #e8edf2;
-  --text-on-ink-dim: #a7b0bc;
-  --text-on-paper: #1c2027;
-  --text-on-paper-dim: #565e6a;
+  /* Brand palette (August 2026 standards) */
+  --ink: #0d1b24;
+  --teal: #2abfb8;
+  --slate: #5c6b75;
+  --mist: #eef2f3;
 
-  /* The only accent */
-  --teal: #1ab0c4;
-  --blue: #1296b0;
-  --accent-grad: linear-gradient(135deg, var(--teal), var(--blue));
+  /* Surfaces */
+  --paper: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #f7fafa;
 
-  /* Lines */
-  --hairline-on-ink: rgba(232, 237, 242, 0.14);
-  --hairline-on-paper: rgba(28, 32, 39, 0.16);
-  --grid-line: rgba(232, 237, 242, 0.035);
+  /* Text */
+  --text: var(--ink);
+  --text-dim: var(--slate);
+  --text-on-photo: #f6f9fa;
+  --text-on-photo-dim: #cfd9dd;
 
-  /* Type */
+  /* Compatibility aliases: components written against the original dark
+     theme read these tokens. They now resolve to the light equivalents. */
+  --text-on-ink: var(--ink);
+  --text-on-ink-dim: var(--slate);
+  --text-on-paper: var(--ink);
+  --text-on-paper-dim: var(--slate);
+  --hairline-on-ink: rgba(13, 27, 36, 0.16);
+  --hairline-on-paper: rgba(13, 27, 36, 0.16);
+  --grid-line: rgba(13, 27, 36, 0.045);
+
+  /* Type: Barlow Semi Condensed carries headlines and body per standards.
+     IBM Plex Mono remains for sheet annotations only (tags, title block). */
   --font-display: 'Barlow Semi Condensed', 'Arial Narrow', sans-serif;
   --font-mono: 'IBM Plex Mono', 'SF Mono', Menlo, monospace;
-  --font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+  --font-body: 'Barlow Semi Condensed', 'Helvetica Neue', Arial, sans-serif;
 
   /* Rhythm */
   --space-section: clamp(4.5rem, 10vw, 8.5rem);
@@ -51,10 +60,10 @@
 
 body {
   margin: 0;
-  background: var(--ink);
-  color: var(--text-on-ink);
+  background: var(--paper);
+  color: var(--text);
   font-family: var(--font-body);
-  font-size: 1rem;
+  font-size: 1.05rem;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -110,47 +119,42 @@ p {
 }
 
 .lede {
-  font-size: clamp(1.05rem, 1.6vw, 1.25rem);
+  font-size: clamp(1.1rem, 1.7vw, 1.3rem);
   line-height: 1.6;
 }
 
 .dim {
-  color: var(--text-on-ink-dim);
+  color: var(--text-dim);
 }
 
-.on-paper .dim {
-  color: var(--text-on-paper-dim);
-}
-
-/* Monospace label: sheet numbers, section tags, metadata */
+/* Monospace label: sheet numbers, section tags, metadata.
+   Slate on light backgrounds; teal fails contrast as small text on white. */
 .tag {
   font-family: var(--font-mono);
   font-size: 0.72rem;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--teal);
+  color: var(--slate);
 }
 
 .tag--dim {
-  color: var(--text-on-ink-dim);
-}
-
-.on-paper .tag--dim {
-  color: var(--text-on-paper-dim);
+  color: var(--slate);
+  font-weight: 400;
 }
 
 /* --------------------------------------------------------------------------
-   Dimension line: a horizontal line with tick ends, used under headlines
+   Dimension line: a horizontal line with tick ends, used under headlines.
+   Flat teal; the gradient is reserved for social graphics per standards.
    -------------------------------------------------------------------------- */
 
 .dimline {
   position: relative;
   display: block;
   width: min(9rem, 30vw);
-  height: 1px;
+  height: 2px;
   margin: 1.4rem 0 1.6rem;
-  background: linear-gradient(90deg, var(--teal), var(--blue));
+  background: var(--teal);
   border: 0;
 }
 
@@ -159,8 +163,8 @@ p {
   content: '';
   position: absolute;
   top: -4px;
-  width: 1px;
-  height: 9px;
+  width: 2px;
+  height: 10px;
   background: var(--teal);
 }
 
@@ -170,7 +174,6 @@ p {
 
 .dimline::after {
   right: 0;
-  background: var(--blue);
 }
 
 .dimline--center {
@@ -178,7 +181,8 @@ p {
 }
 
 /* --------------------------------------------------------------------------
-   Sections
+   Sections. The default sheet is white with a faint drafting grid; the mist
+   variant sets alternating passages apart the way a toned sheet would.
    -------------------------------------------------------------------------- */
 
 .section {
@@ -191,36 +195,35 @@ p {
   margin-inline: auto;
 }
 
-/* Dark section with faint drafting grid */
-.sheet-dark {
-  background-color: var(--ink);
+.sheet {
+  background-color: var(--paper);
   background-image:
     linear-gradient(var(--grid-line) 1px, transparent 1px),
     linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
   background-size: 72px 72px;
 }
 
-.sheet-dark--deep {
-  background-color: var(--ink-2);
+.sheet--mist {
+  background-color: var(--mist);
 }
 
-/* Paper section (light) */
+/* Legacy alias kept so nothing breaks if a page still carries it */
 .on-paper {
   background: var(--paper);
-  color: var(--text-on-paper);
+  color: var(--text);
 }
 
 /* --------------------------------------------------------------------------
-   Corner registration marks
-   Applied to a positioned section via <RegistrationMarks />
+   Corner registration marks: plain drafting crosses. The circled reticle
+   is retired with the old logo and must not reappear.
    -------------------------------------------------------------------------- */
 
 .regmark {
   position: absolute;
-  width: 18px;
-  height: 18px;
+  width: 16px;
+  height: 16px;
   color: var(--teal);
-  opacity: 0.55;
+  opacity: 0.75;
   pointer-events: none;
 }
 
@@ -235,15 +238,16 @@ p {
     display: none;
   }
   .regmark {
-    width: 14px;
-    height: 14px;
-    opacity: 0.4;
+    width: 12px;
+    height: 12px;
+    opacity: 0.55;
   }
 }
 
 /* --------------------------------------------------------------------------
    Photo treatment: dark overlay, slight desaturation, grain.
-   Applied with CSS layers only; source files are never edited.
+   Photography stays a dark surface per the standards, and anything placed
+   over it uses the reverse palette. Source files are never edited.
    -------------------------------------------------------------------------- */
 
 .photo-treat {
@@ -259,22 +263,20 @@ p {
 }
 
 .photo-treat::before {
-  /* dark wash */
   content: '';
   position: absolute;
   inset: 0;
   z-index: 1;
   background: linear-gradient(
     to bottom,
-    rgba(13, 15, 20, 0.55),
-    rgba(13, 15, 20, 0.35) 45%,
-    rgba(13, 15, 20, 0.72)
+    rgba(13, 27, 36, 0.5),
+    rgba(13, 27, 36, 0.32) 45%,
+    rgba(13, 27, 36, 0.7)
   );
   pointer-events: none;
 }
 
 .photo-treat::after {
-  /* grain */
   content: '';
   position: absolute;
   inset: 0;
@@ -286,8 +288,31 @@ p {
   pointer-events: none;
 }
 
+/* Text placed over treated photography uses the reverse palette. */
+.hero,
+.band {
+  color: var(--text-on-photo);
+}
+
+.band .tag {
+  color: var(--text-on-photo);
+}
+
+.hero .tag {
+  color: var(--teal);
+}
+
+.hero .tag--dim,
+.hero .dim {
+  color: var(--text-on-photo-dim);
+}
+
+.hero .lede {
+  color: var(--text-on-photo);
+}
+
 /* --------------------------------------------------------------------------
-   Buttons
+   Buttons. Teal carries the action; ink text keeps the contrast honest.
    -------------------------------------------------------------------------- */
 
 .btn {
@@ -297,39 +322,31 @@ p {
   padding: 0.85rem 1.6rem;
   font-family: var(--font-mono);
   font-size: 0.8rem;
+  font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   text-decoration: none;
   color: var(--ink);
-  background: var(--accent-grad);
+  background: var(--teal);
   border: 0;
   cursor: pointer;
+  transition: filter 0.2s ease, transform 0.2s ease;
 }
 
 .btn:hover {
-  filter: brightness(1.08);
+  filter: brightness(1.06);
+  transform: translateY(-1px);
 }
 
 .btn--ghost {
   background: transparent;
-  color: var(--text-on-ink);
-  box-shadow: inset 0 0 0 1px var(--hairline-on-ink);
+  color: var(--ink);
+  box-shadow: inset 0 0 0 1.5px var(--hairline-on-ink);
 }
 
 .btn--ghost:hover {
-  box-shadow: inset 0 0 0 1px var(--teal);
+  box-shadow: inset 0 0 0 1.5px var(--teal);
   filter: none;
-  color: var(--teal);
-}
-
-.on-paper .btn--ghost {
-  color: var(--text-on-paper);
-  box-shadow: inset 0 0 0 1px var(--hairline-on-paper);
-}
-
-.on-paper .btn--ghost:hover {
-  color: var(--blue);
-  box-shadow: inset 0 0 0 1px var(--blue);
 }
 
 /* --------------------------------------------------------------------------
@@ -347,8 +364,8 @@ p {
   top: 0;
   z-index: 100;
   padding: 0.75rem 1.25rem;
-  background: var(--teal);
-  color: var(--ink);
+  background: var(--ink);
+  color: #ffffff;
   font-family: var(--font-mono);
   font-size: 0.8rem;
 }

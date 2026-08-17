@@ -4,13 +4,12 @@
  * Every page is a sheet in the drawing set: sheet-number tag in the header,
  * title-block strip in the footer, drafting grid on dark sections.
  */
+import '@fontsource/barlow-semi-condensed/400.css';
 import '@fontsource/barlow-semi-condensed/500.css';
 import '@fontsource/barlow-semi-condensed/600.css';
 import '@fontsource/ibm-plex-mono/400.css';
-import '@fontsource/inter/400.css';
-import '@fontsource/inter/500.css';
+import '@fontsource/ibm-plex-mono/500.css';
 import '../styles/global.css';
-import Mark from '../components/Mark.astro';
 import { getCollection } from 'astro:content';
 
 // Field Notes stays out of the nav until the first entry exists, so the
@@ -173,7 +172,7 @@ const footerLinks = [
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
     {noindex && <meta name="robots" content="noindex" />}
-    <meta name="theme-color" content="#0D0F14" />
+    <meta name="theme-color" content="#FFFFFF" />
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
@@ -192,7 +191,7 @@ const footerLinks = [
     <meta property="og:image:height" content="630" />
     <meta
       property="og:image:alt"
-      content="SkyKPI crosshair mark and wordmark on a dark drafting-grid card"
+      content="SkyKPI wordmark on a white drafting-grid card"
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
@@ -217,8 +216,13 @@ const footerLinks = [
     <header class="site-header">
       <div class="site-header__inner">
         <a class="site-header__brand" href="/" aria-label="SkyKPI home">
-          <Mark size={30} animate={true} />
-          <span class="site-header__wordmark">Sky<span class="site-header__wordmark-kpi">KPI</span></span>
+          <img
+            class="site-header__wordmark"
+            src="/brand/skykpi-wordmark-primary.svg"
+            alt="SkyKPI"
+            width="140"
+            height="51"
+          />
         </a>
 
         <nav class="site-nav" aria-label="Main">
@@ -273,7 +277,13 @@ const footerLinks = [
       <div class="container">
         <div class="titleblock__grid" role="presentation">
           <div class="titleblock__cell titleblock__cell--brand">
-            <Mark size={40} />
+            <img
+              src="/brand/skykpi-wordmark-mono-ink.svg"
+              alt="SkyKPI"
+              width="110"
+              height="40"
+              loading="lazy"
+            />
           </div>
           <div class="titleblock__cell">
             <span class="tag tag--dim">Firm</span>
@@ -369,7 +379,7 @@ const footerLinks = [
         position: sticky;
         top: 0;
         z-index: 50;
-        background: rgba(13, 15, 20, 0.82);
+        background: rgba(255, 255, 255, 0.88);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         border-bottom: 1px solid var(--hairline-on-ink);
@@ -392,15 +402,9 @@ const footerLinks = [
       }
 
       .site-header__wordmark {
-        font-family: var(--font-display);
-        font-weight: 500;
-        font-size: 1.4rem;
-        letter-spacing: 0.02em;
-      }
-
-      .site-header__wordmark-kpi {
-        font-weight: 600;
-        color: var(--teal);
+        /* Brand minimum on screen is 140px wide */
+        width: 140px;
+        height: auto;
       }
 
       .site-nav {
@@ -429,16 +433,22 @@ const footerLinks = [
       .site-nav__list a {
         font-family: var(--font-mono);
         font-size: 0.78rem;
+        font-weight: 500;
         letter-spacing: 0.12em;
         text-transform: uppercase;
         text-decoration: none;
-        color: var(--text-on-ink-dim);
-        transition: color 0.2s ease;
+        color: var(--slate);
+        padding-bottom: 0.2rem;
+        border-bottom: 2px solid transparent;
+        transition: color 0.2s ease, border-color 0.2s ease;
       }
 
+      /* Teal fails contrast as small text on white, so the active state is
+         ink type with a teal rule, like a marked-up drawing. */
       .site-nav__list a:hover,
       .site-nav__list a[aria-current='page'] {
-        color: var(--teal);
+        color: var(--ink);
+        border-bottom-color: var(--teal);
       }
 
       /* Marketing sub-navigation */
@@ -459,8 +469,9 @@ const footerLinks = [
           left: -1.25rem;
           min-width: 12rem;
           padding: 0.6rem 0;
-          background: var(--ink-2);
+          background: var(--surface);
           border: 1px solid var(--hairline-on-ink);
+          box-shadow: 0 10px 30px rgba(13, 27, 36, 0.08);
           opacity: 0;
           visibility: hidden;
           transform: translateY(6px);
@@ -507,8 +518,9 @@ const footerLinks = [
           right: 0;
           flex-direction: column;
           gap: 0;
-          background: var(--ink-2);
+          background: var(--surface);
           border-bottom: 1px solid var(--hairline-on-ink);
+          box-shadow: 0 14px 30px rgba(13, 27, 36, 0.1);
           padding: 0.5rem 0;
         }
 
@@ -527,9 +539,9 @@ const footerLinks = [
         }
       }
 
-      /* Title block footer */
+      /* Title block footer: printed on the same sheet, like a real set */
       .titleblock {
-        background: var(--ink-2);
+        background: var(--mist);
         border-top: 1px solid var(--hairline-on-ink);
         padding: 2.5rem 0 2rem;
       }
@@ -537,7 +549,8 @@ const footerLinks = [
       .titleblock__grid {
         display: grid;
         grid-template-columns: auto repeat(4, 1fr);
-        border: 1px solid var(--hairline-on-ink);
+        border: 1.5px solid var(--ink);
+        background: var(--surface);
       }
 
       .titleblock__cell {
@@ -589,7 +602,7 @@ const footerLinks = [
 
       .titleblock__links a:hover,
       .titleblock__contact a:hover {
-        color: var(--teal);
+        color: var(--ink);
       }
 
       .titleblock__contact {

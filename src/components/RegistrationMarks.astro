@@ -1,6 +1,7 @@
 ---
 /**
- * Small teal crosshair registration marks for the corners of a key section.
+ * Small teal drafting crosses for the corners of a key section.
+ * Plain crosses only: the circled reticle is retired with the old logo.
  * Parent must be position: relative.
  */
 const corners = ['tl', 'tr', 'bl', 'br'];
@@ -8,10 +9,9 @@ const corners = ['tl', 'tr', 'bl', 'br'];
 
 {
   corners.map((c) => (
-    <svg class={`regmark regmark--${c}`} viewBox="0 0 18 18" fill="none" aria-hidden="true">
-      <line x1="9" y1="0" x2="9" y2="18" stroke="currentColor" stroke-width="1" />
-      <line x1="0" y1="9" x2="18" y2="9" stroke="currentColor" stroke-width="1" />
-      <circle cx="9" cy="9" r="4.5" stroke="currentColor" stroke-width="1" />
+    <svg class={`regmark regmark--${c}`} viewBox="0 0 16 16" fill="none" aria-hidden="true">
+      <line x1="8" y1="0" x2="8" y2="16" stroke="currentColor" stroke-width="1.5" />
+      <line x1="0" y1="8" x2="16" y2="8" stroke="currentColor" stroke-width="1.5" />
     </svg>
   ))
 }

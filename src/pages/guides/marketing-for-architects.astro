@@ -156,7 +156,7 @@ const grades = [
   </section>
 
   <!-- WHY IT MATTERS -->
-  <section class="section sheet-dark prose">
+  <section class="section sheet prose">
     <div class="container prose__inner">
       <p class="tag reveal">The case</p>
       <h2 class="reveal">Why does marketing matter for an architecture firm?</h2>
@@ -206,7 +206,7 @@ const grades = [
   </section>
 
   <!-- SELF-AUDIT -->
-  <section class="section sheet-dark sheet-dark--deep audit">
+  <section class="section sheet sheet--mist audit">
     <RegistrationMarks />
     <div class="container prose__inner">
       <p class="tag reveal">Punch list</p>
@@ -240,7 +240,7 @@ const grades = [
   </section>
 
   <!-- GRADES -->
-  <section class="section sheet-dark grades">
+  <section class="section sheet grades">
     <div class="container prose__inner">
       <p class="tag reveal">Review stamp</p>
       <h2 class="reveal">What your score means</h2>
@@ -278,7 +278,7 @@ const grades = [
   </section>
 
   <!-- BY SIZE -->
-  <section class="section sheet-dark sheet-dark--deep prose">
+  <section class="section sheet sheet--mist prose">
     <RegistrationMarks />
     <div class="container prose__inner">
       <p class="tag reveal">Scope by firm size</p>
@@ -325,7 +325,7 @@ const grades = [
   </section>
 
   <!-- BY GOAL -->
-  <section class="section sheet-dark prose">
+  <section class="section sheet prose">
     <div class="container prose__inner">
       <p class="tag reveal">Scope by goal</p>
       <h2 class="reveal">Match the work to the goal</h2>
@@ -374,7 +374,7 @@ const grades = [
   </section>
 
   <!-- DIY -->
-  <section class="section sheet-dark sheet-dark--deep prose">
+  <section class="section sheet sheet--mist prose">
     <RegistrationMarks />
     <div class="container prose__inner">
       <p class="tag reveal">Means and methods</p>
@@ -455,7 +455,7 @@ const grades = [
   <Faq items={faqs} heading="What architects ask about marketing" />
 
   <!-- CLOSE -->
-  <section class="section sheet-dark cta">
+  <section class="section sheet cta">
     <div class="container cta__inner">
       <p class="tag reveal">Sheet A-210</p>
       <h2 class="reveal">If the stamp came back Revise and resubmit.</h2>
@@ -595,25 +595,26 @@ const grades = [
       -45deg,
       transparent,
       transparent 6px,
-      rgba(232, 237, 242, 0.07) 6px,
-      rgba(232, 237, 242, 0.07) 7px
+      rgba(13, 27, 36, 0.12) 6px,
+      rgba(13, 27, 36, 0.12) 7px
     );
   }
 
   .scale__seg--rr {
-    background: rgba(232, 237, 242, 0.04);
+    background: rgba(13, 27, 36, 0.05);
   }
 
   .scale__seg--an {
-    background: rgba(26, 176, 196, 0.14);
+    background: rgba(42, 191, 184, 0.22);
   }
 
   .scale__seg--a {
-    background: linear-gradient(135deg, rgba(26, 176, 196, 0.55), rgba(18, 150, 176, 0.55));
+    background: var(--teal);
   }
 
   .scale__seg--a span {
-    color: var(--text-on-ink);
+    color: var(--ink);
+    font-weight: 500;
   }
 
   .scale__labels {
@@ -632,7 +633,7 @@ const grades = [
     display: inline-block;
     padding: 0.3rem 0.7rem;
     border: 2px solid var(--teal);
-    color: var(--teal);
+    color: var(--ink);
     font-family: var(--font-mono);
     font-size: 0.85rem !important;
     letter-spacing: 0.14em;

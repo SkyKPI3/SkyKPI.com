@@ -43,7 +43,7 @@ const contactPage = {
   sheetName="Contact"
   jsonLd={[contactPage, faqSchema(faqs)]}
 >
-  <section class="section sheet-dark contact">
+  <section class="section sheet contact">
     <RegistrationMarks />
     <div class="container contact__grid">
       <div class="contact__intro">
@@ -161,7 +161,7 @@ const contactPage = {
     gap: 1.4rem;
     padding: clamp(1.5rem, 3vw, 2.25rem);
     border: 1px solid var(--hairline-on-ink);
-    background: var(--ink-2);
+    background: var(--surface);
   }
 
   .hp {
@@ -181,9 +181,9 @@ const contactPage = {
     padding: 0.8rem 0.9rem;
     font-family: var(--font-body);
     font-size: 1rem;
-    color: var(--text-on-ink);
-    background: var(--ink);
-    border: 1px solid var(--hairline-on-ink);
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid rgba(13, 27, 36, 0.3);
     border-radius: 0;
   }
 
