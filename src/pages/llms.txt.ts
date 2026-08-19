@@ -13,7 +13,7 @@ export const GET: APIRoute = () => {
 
   const body = `# SkyKPI
 
-SkyKPI LLC is a marketing and association management firm for the precast concrete and AEC (architecture, engineering, and construction) industries, based in Frankfort, Illinois, USA. Most of the decisions that put a product on a job are made before the job goes out to bid. SkyKPI's marketing work gets precast producers and suppliers known to the people making those decisions while there is still time to shape them, with a monthly report of who found the client and what it led to.
+SkyKPI LLC is a marketing and association management firm for the precast concrete and AEC (architecture, engineering, and construction) industries, based in Frankfort, Illinois, USA. By the time a job goes out to bid, the big decisions are already made. SkyKPI's marketing work gets precast producers and suppliers known to the people making those decisions while there is still time to shape them, with a monthly report of who found the client and what it led to.
 
 ## Services
 
