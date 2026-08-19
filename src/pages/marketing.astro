@@ -14,6 +14,10 @@ import socialShot from '../assets/photos/precast/IMG_2703.jpeg';
 
 const faqs = [
   {
+    q: 'Can you get us specified?',
+    a: "Producers mostly don't get specified by name. They get certified, prequalified, and invited to bid, and the structure gets drawn around precast, or around somebody else's product, long before bid day. Our work is making sure the people drawing it know your plant and what it can do while that is still being decided. We don't guarantee a spec, a bid win, or a ranking for anyone. The monthly report shows what the work produced: who found you, where they came from, and what it led to.",
+  },
+  {
     q: 'What does a precast marketing firm do?',
     a: 'We build and run the sales tools a precast producer or supplier needs: the website, email, photography, and social presence. Everything is scoped to how precast is actually specified and bought. You keep selling. We make sure what buyers find when they look you up backs you up.',
   },
@@ -47,7 +51,7 @@ const jsonLd = [
   serviceSchema({
     name: 'Precast and AEC Marketing',
     description:
-      'Websites, email, photography, and social media for precast concrete producers, suppliers, and the AEC firms around them.',
+      'Websites, email, photography, and social media that get precast concrete producers and suppliers known to specifiers and buyers before jobs go out to bid, with a monthly report of who found the client and what it led to.',
     url: 'https://skykpi.com/marketing/',
     serviceType: 'Marketing services',
   }),
@@ -78,7 +82,7 @@ const audiences = [
 
 <Sheet
   title="Precast Concrete Marketing Agency | SkyKPI"
-  description="SkyKPI is a precast concrete marketing agency serving producers, suppliers, and AEC firms: websites, email, photography, and social media."
+  description="SkyKPI gets precast producers and suppliers known to specifiers and buyers before bid day. Websites, email, photography, and a monthly report."
   path="/marketing/"
   sheet="A-200"
   sheetName="Marketing"
@@ -103,12 +107,12 @@ const audiences = [
     <RegistrationMarks />
     <div class="container hero__content">
       <p class="tag hero__kicker">Sheet A-200 &middot; Marketing</p>
-      <h1>An extension of your sales team.</h1>
+      <h1>SkyKPI works as an extension of your sales team.</h1>
       <hr class="dimline" aria-hidden="true" />
       <p class="lede hero__sub">
-        Sales infrastructure for the precast concrete industry and the AEC
-        chain around it. Not campaigns. Not a rebrand every eighteen months.
-        The tools your reps need behind them.
+        The website, email, photography, and social media a precast producer
+        or supplier needs behind its reps, scoped to how the product actually
+        gets specified and bought.
       </p>
     </div>
   </section>
@@ -129,8 +133,10 @@ const audiences = [
           over.
         </p>
         <p>
-          The lookup happens after the handshake. Our job is to make sure it
-          holds.
+          The lookup happens after the handshake, and most of the decisions
+          that put a product on a job are made before the job goes out to
+          bid. Our work is making sure you are known to the people making
+          those decisions while there is still time to shape them.
         </p>
       </div>
     </div>
@@ -179,10 +185,11 @@ const audiences = [
             />
           </div>
           <span class="tag tag--dim">W-2</span>
-          <h3>Email that keeps you in the room</h3>
+          <h3>Email between projects</h3>
           <p class="dim">
-            Specifiers forget vendors between projects. A steady, useful email
-            program keeps your name in front of them without pestering anyone.
+            Email keeps your name in front of the people who will pick a
+            supplier the next time they have a job or a problem, and the
+            report shows who opened it and who called.
           </p>
         </article>
 
@@ -243,7 +250,7 @@ const audiences = [
       quality={72}
     />
     <div class="band__caption">
-      <span class="tag">Built once. Specified for decades.</span>
+      <span class="tag">A website built around what specifiers actually check will keep working for years.</span>
     </div>
   </section>
 
@@ -251,12 +258,55 @@ const audiences = [
   <section class="section sheet who">
     <div class="container">
       <p class="tag reveal">Who it is for</p>
-      <h2 class="reveal">Precast first. The industry around it second.</h2>
+      <h2 class="reveal">We work in precast first and the industry around it second.</h2>
       <hr class="dimline reveal" aria-hidden="true" />
       <p class="reveal who__copy">
         The core of our work is precast producers, the suppliers who sell into
-        them, and associate members across the industry. That fluency extends
-        to the people who design, bid, and build with precast.
+        them, and associate members across the industry. The work changes with
+        the buyer.
+      </p>
+
+      <dl class="who__lanes">
+        <div class="who__lane reveal">
+          <dt>
+            <span class="tag tag--dim">L-1</span>
+            <h3>Producers</h3>
+          </dt>
+          <dd>
+            Producers mostly are not specified by name. They get certified,
+            prequalified, and invited to bid. Our work for producers earns
+            more and better invitations, and a seat in the design conversation
+            while the structure is still being drawn.
+          </dd>
+        </div>
+        <div class="who__lane reveal">
+          <dt>
+            <span class="tag tag--dim">L-2</span>
+            <h3>Suppliers architects choose</h3>
+          </dt>
+          <dd>
+            Formliners, pigments, thin brick, and finishes get picked by
+            architects, so the work produces countable outcomes: spec-ready
+            content, sample requests, and education bookings.
+          </dd>
+        </div>
+        <div class="who__lane reveal">
+          <dt>
+            <span class="tag tag--dim">L-3</span>
+            <h3>Suppliers the plant buys</h3>
+          </dt>
+          <dd>
+            Nobody writes hardware, chemicals, admixtures, or form release
+            into a spec section. The work is being the name the plant already
+            trusts the day the current supplier ships late or a mix goes
+            wrong, and the near-term outcome is earning the trial.
+          </dd>
+        </div>
+      </dl>
+
+      <p class="reveal who__copy">
+        That fluency extends to the people who design, bid, and build with
+        precast.
       </p>
 
       <div class="who__grid">
@@ -282,7 +332,7 @@ const audiences = [
     <div class="container model__grid">
       <div>
         <p class="tag reveal">Engagement model</p>
-        <h2 class="reveal">One retainer. One team.</h2>
+        <h2 class="reveal">One retainer covers everything, and the same team does the work.</h2>
         <hr class="dimline reveal" aria-hidden="true" />
       </div>
       <div class="reveal">
@@ -295,6 +345,29 @@ const audiences = [
         <p>
           Pricing comes from a conversation about scope.
           <a class="model__cta" href="/contact/">Start it here.</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- THE MONTHLY REPORT -->
+  <section class="section sheet report">
+    <div class="container report__grid">
+      <div>
+        <p class="tag reveal">The ledger</p>
+        <h2 class="reveal">Every month you see what the money did.</h2>
+        <hr class="dimline reveal" aria-hidden="true" />
+      </div>
+      <div class="reveal">
+        <p>
+          The monthly report is one page. It says who found you, where they
+          came from, and what it led to: the calls, the sample requests, the
+          plant visits, the invitations to bid.
+        </p>
+        <p>
+          If a month produced nothing worth reporting, the report says that
+          too, and we talk about what changes. You should never have to
+          wonder what the retainer bought.
         </p>
       </div>
     </div>
@@ -321,8 +394,14 @@ const audiences = [
   <section class="section sheet cta">
     <div class="container cta__inner">
       <p class="tag reveal">Sheet A-500</p>
-      <h2 class="reveal">Ready when your reps need backup.</h2>
+      <h2 class="reveal">We are ready when your reps need backup.</h2>
       <hr class="dimline dimline--center reveal" aria-hidden="true" />
+      <p class="dim reveal cta__fit">
+        SkyKPI takes on a few clients at a time, all in industries we know
+        firsthand. If you need a website built once, or a small monthly
+        spend, we're the wrong fit, and we'll give you the name of someone
+        good.
+      </p>
       <div class="reveal">
         <a class="btn" href="/contact/">Start the conversation</a>
       </div>
@@ -372,7 +451,8 @@ const audiences = [
   }
 
   .problem__grid,
-  .model__grid {
+  .model__grid,
+  .report__grid {
     display: grid;
     grid-template-columns: 5fr 6fr;
     gap: clamp(2rem, 5vw, 4.5rem);
@@ -381,7 +461,8 @@ const audiences = [
 
   @media (max-width: 820px) {
     .problem__grid,
-    .model__grid {
+    .model__grid,
+    .report__grid {
       grid-template-columns: 1fr;
     }
   }
@@ -447,6 +528,48 @@ const audiences = [
     max-width: 40rem;
   }
 
+  .who__lanes {
+    margin: 2.25rem 0 2.5rem;
+    max-width: 52rem;
+    border: 1px solid var(--hairline-on-ink);
+    background: var(--surface);
+  }
+
+  .who__lane {
+    display: grid;
+    grid-template-columns: 15rem 1fr;
+    gap: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    border-top: 1px solid var(--hairline-on-ink);
+  }
+
+  .who__lane:first-child {
+    border-top: 0;
+  }
+
+  .who__lane dt {
+    display: flex;
+    align-items: baseline;
+    gap: 0.9rem;
+  }
+
+  .who__lane h3 {
+    margin: 0;
+    font-size: 1.15rem;
+  }
+
+  .who__lane dd {
+    margin: 0;
+    color: var(--text-dim);
+  }
+
+  @media (max-width: 640px) {
+    .who__lane {
+      grid-template-columns: 1fr;
+      gap: 0.4rem;
+    }
+  }
+
   .who__grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -501,5 +624,10 @@ const audiences = [
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  .cta__fit {
+    max-width: 34rem;
+    margin-bottom: 2rem;
   }
 </style>
