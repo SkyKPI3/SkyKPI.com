@@ -63,7 +63,7 @@ export const guides = [
   {
     slug: 'linkedin-for-construction-companies',
     sheet: 'A-708',
-    title: 'LinkedIn for construction companies: a system that survives busy season',
+    title: 'How construction companies make LinkedIn survive busy season',
     line: 'What to post, who posts it, and a cadence that holds up when the work gets heavy.',
     published: '2026-10-05',
   },
@@ -77,14 +77,14 @@ export const guides = [
   {
     slug: 'email-marketing-building-products',
     sheet: 'A-710',
-    title: 'Email for building products: staying in front of specifiers between projects',
+    title: 'Email that keeps building products in front of specifiers between projects',
     line: 'The list, the cadence, and the content that keeps a producer remembered without pestering anyone.',
     published: '2026-10-19',
   },
   {
     slug: 'trade-show-marketing-precast-aec',
     sheet: 'A-711',
-    title: 'Trade show marketing: the six weeks before, the three days there, the week after',
+    title: 'Trade show marketing in the six weeks before, the three days there, and the week after',
     line: 'A timeline for getting paid back on the booth, from pre-show outreach to the follow-up that most exhibitors skip.',
     published: '2026-10-26',
   },
