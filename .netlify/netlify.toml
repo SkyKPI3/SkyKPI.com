@@ -1,0 +1,210 @@
+headersOrigin = "config"
+redirectsOrigin = "config"
+plugins = []
+
+[functions]
+
+[functions."*"]
+
+[build]
+publish = "/Users/joelombard/Documents/GitHub/SkyKPI.com/dist"
+publishOrigin = "config"
+commandOrigin = "config"
+command = "npm run build"
+
+[build.environment]
+NODE_VERSION = "22"
+
+[build.processing]
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]
+
+[[headers]]
+for = "/*"
+
+[headers.values]
+X-Frame-Options = "DENY"
+X-Content-Type-Options = "nosniff"
+Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[headers]]
+for = "/_astro/*"
+
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+
+[[redirects]]
+from = "https://www.skykpi.com/*"
+to = "https://skykpi.com/:splat"
+status = 301.0
+force = true
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/marketing.html"
+to = "/marketing/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/associations.html"
+to = "/associations/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/about.html"
+to = "/about/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/contact.html"
+to = "/contact/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/privacy.html"
+to = "/privacy/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/index.html"
+to = "/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/sitemap.xml"
+to = "/sitemap-index.xml"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/pricing/*"
+to = "/marketing/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/aec-marketing/*"
+to = "/marketing/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/aec-marketing"
+to = "/marketing/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/services-4"
+to = "/marketing/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/insights/*"
+to = "/field-notes/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/insights"
+to = "/field-notes/"
+status = 301.0
+force = false
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
