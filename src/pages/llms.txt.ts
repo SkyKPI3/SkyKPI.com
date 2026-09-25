@@ -39,7 +39,7 @@ Short photo-led notes from the precast plants, jobsites, and association rooms L
 - Lombard Belz does not guarantee a spec, a bid win, or a ranking for anyone. It owns the work that produces them and reports monthly on who found the client and what it led to.
 - The firm was founded by a husband and wife, and took on its first two employees in 2026. The client list stays small on purpose, and Lombard Belz turns down work that does not fit.
 - Lombard Belz is an assumed name of SkyKPI LLC, the Illinois company that operates the firm.
-- Contact: https://lombardbelz.com/contact/ or hello@lombardbelz.com
+- Contact: https://lombardbelz.com/contact/. New business hello@lombardbelz.com, association boards boards@lombardbelz.com, press and speaking press@lombardbelz.com.
 - About: https://lombardbelz.com/about/
 `;
 
