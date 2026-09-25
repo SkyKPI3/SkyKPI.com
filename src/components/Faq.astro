@@ -17,17 +17,15 @@ interface Props {
 const { items, heading = 'Common questions' } = Astro.props;
 ---
 
-<section class="section sheet faq">
+<section class="section faq">
   <div class="container">
     <p class="tag reveal">Questions and answers</p>
     <h2 class="reveal">{heading}</h2>
-    <hr class="dimline reveal" aria-hidden="true" />
     <dl class="faq__list">
       {
-        items.map((item, i) => (
+        items.map((item) => (
           <div class="faq__item reveal">
             <dt>
-              <span class="tag tag--dim">Q{i + 1}</span>
               <h3>{item.q}</h3>
             </dt>
             <dd>
@@ -48,53 +46,23 @@ const { items, heading = 'Common questions' } = Astro.props;
 
   .faq__item {
     padding: 1.4rem 0;
-    border-top: 1px solid var(--hairline-on-ink);
+    border-top: 1px solid var(--hairline);
   }
 
   .faq__item:last-child {
-    border-bottom: 1px solid var(--hairline-on-ink);
-  }
-
-  .faq__item dt {
-    display: grid;
-    grid-template-columns: 3rem 1fr;
-    gap: 1rem;
-    align-items: baseline;
+    border-bottom: 1px solid var(--hairline);
   }
 
   .faq__item h3 {
     margin: 0;
-    font-size: 1.2rem;
   }
 
   .faq__item dd {
-    margin: 0.6rem 0 0;
-    padding-left: 4rem;
+    margin: 0.75rem 0 0;
   }
 
   .faq__item p {
     margin: 0;
-    color: var(--text-on-ink-dim);
-  }
-
-  @media (max-width: 640px) {
-    .faq__item dt {
-      grid-template-columns: 2.4rem 1fr;
-      gap: 0.75rem;
-    }
-
-    .faq__item dd {
-      padding-left: 3.15rem;
-    }
-  }
-
-  /* Paper variant when placed inside a light page */
-  :global(.on-paper) .faq__item,
-  :global(.on-paper) .faq__item:last-child {
-    border-color: var(--hairline-on-paper);
-  }
-
-  :global(.on-paper) .faq__item p {
-    color: var(--text-on-paper-dim);
+    color: var(--graphite);
   }
 </style>

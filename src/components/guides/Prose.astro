@@ -1,7 +1,8 @@
 ---
 /**
- * A prose section of a guide: tag, question-shaped H2, dimension line, and
- * body copy in the default slot. `mist` alternates the sheet tone.
+ * A prose section of a guide: eyebrow, question-shaped H2, and body copy in
+ * the default slot. `mist` and `marks` are accepted for compatibility with
+ * existing guides and no longer change the rendering.
  */
 interface Props {
   tag: string;
@@ -9,16 +10,13 @@ interface Props {
   mist?: boolean;
   marks?: boolean;
 }
-import RegistrationMarks from '../RegistrationMarks.astro';
-const { tag, heading, mist = false, marks = false } = Astro.props;
+const { tag, heading } = Astro.props;
 ---
 
-<section class:list={['section', 'sheet', { 'sheet--mist': mist }]}>
-  {marks && <RegistrationMarks />}
+<section class="section">
   <div class="container prose__inner">
     <p class="tag reveal">{tag}</p>
     <h2 class="reveal">{heading}</h2>
-    <hr class="dimline reveal" aria-hidden="true" />
     <div class="reveal prose__body">
       <slot />
     </div>
@@ -30,11 +28,15 @@ const { tag, heading, mist = false, marks = false } = Astro.props;
     max-width: 46rem;
   }
 
+  .prose__body {
+    margin-top: 2rem;
+  }
+
   .prose__body :global(h3) {
     margin-top: 2rem;
   }
 
   .prose__body :global(strong) {
-    font-weight: 600;
+    font-weight: 500;
   }
 </style>

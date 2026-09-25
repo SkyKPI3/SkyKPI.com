@@ -1,5 +1,5 @@
 {
-  "name": "skykpi-site",
+  "name": "lombard-belz-site",
   "type": "module",
   "version": "0.0.1",
   "engines": {
@@ -13,9 +13,8 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
-    "@fontsource/barlow-semi-condensed": "^5.3.0",
-    "@fontsource/ibm-plex-mono": "^5.3.0",
     "@fontsource/inter": "^5.2.8",
+    "@fontsource/libre-franklin": "^5.3.0",
     "astro": "^7.0.9",
     "sharp": "^0.35.3"
   }

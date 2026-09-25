@@ -1,7 +1,9 @@
 ---
 /**
- * Numbered steps or phases. steps: [{ id, title, copy }]
- * `wide` renders three-up on desktop for phase timelines.
+ * Ordered steps or phases. steps: [{ id, title, copy }]
+ * The id is kept in the data for authors but is not rendered; the list
+ * carries its own order. `wide` renders three-up on desktop for timelines.
+ * `mist` and `marks` are accepted for compatibility and do nothing.
  */
 interface Step {
   id: string;
@@ -18,23 +20,19 @@ interface Props {
   mist?: boolean;
   marks?: boolean;
 }
-import RegistrationMarks from '../RegistrationMarks.astro';
-const { tag, heading, intro, steps, wide = false, mist = false, marks = false } = Astro.props;
+const { tag, heading, intro, steps, wide = false } = Astro.props;
 ---
 
-<section class:list={['section', 'sheet', { 'sheet--mist': mist }]}>
-  {marks && <RegistrationMarks />}
+<section class="section">
   <div class:list={['container', { 'st__inner--narrow': !wide }]}>
     <p class="tag reveal">{tag}</p>
     <h2 class="reveal">{heading}</h2>
-    <hr class="dimline reveal" aria-hidden="true" />
     {intro && <p class="reveal st__intro">{intro}</p>}
 
     <ol class:list={['st__list', { 'st__list--wide': wide }]}>
       {
         steps.map((s) => (
           <li class="reveal">
-            <span class="tag tag--dim">{s.id}</span>
             <h3>{s.title}</h3>
             <p class="dim">{s.copy}</p>
           </li>
@@ -51,25 +49,34 @@ const { tag, heading, intro, steps, wide = false, mist = false, marks = false } 
 
   .st__intro {
     max-width: 42rem;
+    margin-top: 1.5rem;
   }
 
   .st__list {
     list-style: none;
     margin: 2.25rem 0 0;
     padding: 0;
+    counter-reset: step;
   }
 
   .st__list li {
-    border-top: 1px solid var(--hairline-on-ink);
-    padding: 1.25rem 0;
+    counter-increment: step;
+    border-top: 1px solid var(--hairline);
+    padding: 1.25rem 0 1.5rem;
   }
 
-  .st__list li:last-child {
-    border-bottom: 1px solid var(--hairline-on-ink);
+  .st__list li::before {
+    content: counter(step);
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    color: var(--graphite);
+    margin-bottom: 0.75rem;
   }
 
   .st__list h3 {
-    margin: 0.4rem 0 0.5rem;
+    margin: 0 0 0.5rem;
   }
 
   .st__list p {
@@ -82,17 +89,9 @@ const { tag, heading, intro, steps, wide = false, mist = false, marks = false } 
     gap: clamp(1.5rem, 3vw, 2.5rem);
   }
 
-  .st__list--wide li:last-child {
-    border-bottom: 0;
-  }
-
   @media (max-width: 820px) {
     .st__list--wide {
       grid-template-columns: 1fr;
-    }
-
-    .st__list--wide li:last-child {
-      border-bottom: 1px solid var(--hairline-on-ink);
     }
   }
 </style>

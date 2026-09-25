@@ -1,51 +1,35 @@
 /* ==========================================================================
-   SkyKPI — global styles
-   Visual language: an architectural drawing set. Every page is a sheet.
-   Light theme per the August 2026 brand standards: ink on white paper,
-   teal as the only accent, slate for secondary text, mist for surfaces.
+   Lombard Belz global styles
+   Black type on white, graphite for secondary text, one hairline weight.
+   Photographs are the only color. Libre Franklin carries everything.
    ========================================================================== */
 
 :root {
-  /* Brand palette (August 2026 standards) */
-  --ink: #0d1b24;
-  --teal: #2abfb8;
-  --slate: #5c6b75;
-  --mist: #eef2f3;
+  --black: #0a0a0a;
+  --white: #ffffff;
+  --graphite: #6b6b6b;
+  --graphite-on-black: #9a9a9a;
+  --hairline: rgba(10, 10, 10, 0.14);
+  --hairline-on-black: rgba(255, 255, 255, 0.18);
 
-  /* Surfaces */
-  --paper: #ffffff;
-  --surface: #ffffff;
-  --surface-2: #f7fafa;
+  --text: var(--black);
+  --text-dim: var(--graphite);
+  --text-on-photo: var(--white);
+  --text-on-photo-dim: rgba(255, 255, 255, 0.78);
 
-  /* Text */
-  --text: var(--ink);
-  --text-dim: var(--slate);
-  --text-on-photo: #f6f9fa;
-  --text-on-photo-dim: #cfd9dd;
+  --font: 'Libre Franklin', 'Helvetica Neue', Arial, sans-serif;
 
-  /* Compatibility aliases: components written against the original dark
-     theme read these tokens. They now resolve to the light equivalents. */
-  --text-on-ink: var(--ink);
-  --text-on-ink-dim: var(--slate);
-  --text-on-paper: var(--ink);
-  --text-on-paper-dim: var(--slate);
-  --hairline-on-ink: rgba(13, 27, 36, 0.16);
-  --hairline-on-paper: rgba(13, 27, 36, 0.16);
-  --grid-line: rgba(13, 27, 36, 0.045);
+  --space-section: clamp(4.5rem, 10vw, 8rem);
+  --gutter: clamp(1rem, 4vw, 3rem);
+  --measure: 66ch;
 
-  /* Type: Barlow Semi Condensed carries headlines and body per standards.
-     IBM Plex Mono remains for sheet annotations only (tags, title block). */
-  --font-display: 'Barlow Semi Condensed', 'Arial Narrow', sans-serif;
-  --font-mono: 'IBM Plex Mono', 'SF Mono', Menlo, monospace;
-  --font-body: 'Barlow Semi Condensed', 'Helvetica Neue', Arial, sans-serif;
+  --header-h: 84px;
+}
 
-  /* Rhythm */
-  --space-section: clamp(4.5rem, 10vw, 8.5rem);
-  --gutter: clamp(1.25rem, 4vw, 3rem);
-  --measure: 38rem;
-
-  /* Header */
-  --header-h: 4rem;
+@media (max-width: 820px) {
+  :root {
+    --header-h: 64px;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -58,15 +42,27 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: clip;
+}
+
 body {
   margin: 0;
-  background: var(--paper);
+  background: var(--white);
   color: var(--text);
-  font-family: var(--font-body);
-  font-size: 1.05rem;
-  line-height: 1.65;
+  font-family: var(--font);
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 1.55;
+  overflow-x: clip;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+}
+
+@media (min-width: 900px) {
+  body {
+    font-size: 18px;
+  }
 }
 
 img,
@@ -81,8 +77,8 @@ a {
 }
 
 ::selection {
-  background: var(--teal);
-  color: var(--ink);
+  background: var(--black);
+  color: var(--white);
 }
 
 /* --------------------------------------------------------------------------
@@ -93,24 +89,27 @@ h1,
 h2,
 h3,
 h4 {
-  font-family: var(--font-display);
-  font-weight: 600;
+  font-family: var(--font);
+  font-weight: 300;
   line-height: 1.05;
-  letter-spacing: 0.005em;
+  letter-spacing: -0.015em;
   margin: 0 0 1rem;
   text-wrap: balance;
 }
 
 h1 {
-  font-size: clamp(2.6rem, 7vw, 5.25rem);
+  font-size: clamp(2.25rem, 5vw, 4rem);
 }
 
 h2 {
-  font-size: clamp(1.9rem, 4.2vw, 3.1rem);
+  font-size: clamp(1.875rem, 3.4vw, 3rem);
 }
 
 h3 {
-  font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+  font-size: clamp(1.2rem, 1.6vw, 1.4rem);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.005em;
 }
 
 p {
@@ -119,75 +118,50 @@ p {
 }
 
 .lede {
-  font-size: clamp(1.1rem, 1.7vw, 1.3rem);
-  line-height: 1.6;
+  font-size: clamp(1.15rem, 1.6vw, 1.375rem);
+  font-weight: 300;
+  line-height: 1.4;
 }
 
 .dim {
   color: var(--text-dim);
 }
 
-/* Monospace label: sheet numbers, section tags, metadata.
-   Slate on light backgrounds; teal fails contrast as small text on white. */
+/* Eyebrow: small uppercase label above a heading */
 .tag {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
+  font-family: var(--font);
+  font-size: 12px;
   font-weight: 500;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--slate);
+  color: var(--graphite);
+  margin-bottom: 1.25rem;
 }
 
 .tag--dim {
-  color: var(--slate);
-  font-weight: 400;
+  color: var(--graphite);
+}
+
+/* Small meta line under a heading: date, section, reading time */
+.meta {
+  font-size: 15px;
+  color: var(--graphite);
 }
 
 /* --------------------------------------------------------------------------
-   Dimension line: a horizontal line with tick ends, used under headlines.
-   Flat teal; the gradient is reserved for social graphics per standards.
-   -------------------------------------------------------------------------- */
-
-.dimline {
-  position: relative;
-  display: block;
-  width: min(9rem, 30vw);
-  height: 2px;
-  margin: 1.4rem 0 1.6rem;
-  background: var(--teal);
-  border: 0;
-}
-
-.dimline::before,
-.dimline::after {
-  content: '';
-  position: absolute;
-  top: -4px;
-  width: 2px;
-  height: 10px;
-  background: var(--teal);
-}
-
-.dimline::before {
-  left: 0;
-}
-
-.dimline::after {
-  right: 0;
-}
-
-.dimline--center {
-  margin-inline: auto;
-}
-
-/* --------------------------------------------------------------------------
-   Sections. The default sheet is white with a faint drafting grid; the mist
-   variant sets alternating passages apart the way a toned sheet would.
+   Sections: white, generous, separated by one hairline
    -------------------------------------------------------------------------- */
 
 .section {
   position: relative;
   padding: var(--space-section) 0;
+  border-top: 1px solid var(--hairline);
+}
+
+main > .section:first-child,
+.hero + .section,
+.band + .section {
+  border-top: 0;
 }
 
 .container {
@@ -195,59 +169,17 @@ p {
   margin-inline: auto;
 }
 
-.sheet {
-  background-color: var(--paper);
-  background-image:
-    linear-gradient(var(--grid-line) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
-  background-size: 72px 72px;
-}
-
-.sheet--mist {
-  background-color: var(--mist);
-}
-
-/* Legacy alias kept so nothing breaks if a page still carries it */
+/* Legacy section aliases: every section is now the same white ground */
+.sheet,
+.sheet--mist,
 .on-paper {
-  background: var(--paper);
+  background: var(--white);
   color: var(--text);
 }
 
 /* --------------------------------------------------------------------------
-   Corner registration marks: plain drafting crosses. The circled reticle
-   is retired with the old logo and must not reappear.
-   -------------------------------------------------------------------------- */
-
-.regmark {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  color: var(--teal);
-  opacity: 0.75;
-  pointer-events: none;
-}
-
-.regmark--tl { top: 14px; left: 14px; }
-.regmark--tr { top: 14px; right: 14px; }
-.regmark--bl { bottom: 14px; left: 14px; }
-.regmark--br { bottom: 14px; right: 14px; }
-
-@media (max-width: 640px) {
-  .regmark--bl,
-  .regmark--br {
-    display: none;
-  }
-  .regmark {
-    width: 12px;
-    height: 12px;
-    opacity: 0.55;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   Photo treatment: dark overlay, slight desaturation, grain.
-   Photography stays a dark surface per the standards, and anything placed
-   over it uses the reverse palette. Source files are never edited.
+   Photographs: shown as shot. A low black wash at the foot keeps white
+   type legible where copy sits over the image. Source files are never edited.
    -------------------------------------------------------------------------- */
 
 .photo-treat {
@@ -259,7 +191,6 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: saturate(0.82) contrast(1.02);
 }
 
 .photo-treat::before {
@@ -269,37 +200,21 @@ p {
   z-index: 1;
   background: linear-gradient(
     to bottom,
-    rgba(13, 27, 36, 0.5),
-    rgba(13, 27, 36, 0.32) 45%,
-    rgba(13, 27, 36, 0.7)
+    rgba(10, 10, 10, 0.08),
+    rgba(10, 10, 10, 0.18) 45%,
+    rgba(10, 10, 10, 0.62)
   );
   pointer-events: none;
 }
 
-.photo-treat::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 2;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
-  background-size: 160px 160px;
-  opacity: 0.07;
-  mix-blend-mode: overlay;
-  pointer-events: none;
-}
-
-/* Text placed over treated photography uses the reverse palette. */
 .hero,
 .band {
   color: var(--text-on-photo);
 }
 
+.hero .tag,
 .band .tag {
   color: var(--text-on-photo);
-}
-
-.hero .tag {
-  color: var(--teal);
 }
 
 .hero .tag--dim,
@@ -312,41 +227,123 @@ p {
 }
 
 /* --------------------------------------------------------------------------
-   Buttons. Teal carries the action; ink text keeps the contrast honest.
+   Buttons and text links
    -------------------------------------------------------------------------- */
 
 .btn {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  padding: 0.85rem 1.6rem;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
+  padding: 0.85rem 1.5rem;
+  font-family: var(--font);
+  font-size: 15px;
   font-weight: 500;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0.01em;
   text-decoration: none;
-  color: var(--ink);
-  background: var(--teal);
-  border: 0;
+  color: var(--white);
+  background: var(--black);
+  border: 1px solid var(--black);
   cursor: pointer;
-  transition: filter 0.2s ease, transform 0.2s ease;
+  transition: opacity 0.2s ease;
 }
 
 .btn:hover {
-  filter: brightness(1.06);
-  transform: translateY(-1px);
+  opacity: 0.82;
 }
 
 .btn--ghost {
   background: transparent;
-  color: var(--ink);
-  box-shadow: inset 0 0 0 1.5px var(--hairline-on-ink);
+  color: var(--black);
 }
 
 .btn--ghost:hover {
-  box-shadow: inset 0 0 0 1.5px var(--teal);
-  filter: none;
+  opacity: 1;
+  background: var(--black);
+  color: var(--white);
+}
+
+.hero .btn {
+  background: var(--white);
+  color: var(--black);
+  border-color: var(--white);
+}
+
+/* A plain text link with a hairline underline, used for "read more" rows */
+.textlink {
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--black);
+  border-bottom: 1px solid var(--black);
+  padding-bottom: 0.15rem;
+}
+
+.textlink:hover {
+  color: var(--graphite);
+  border-bottom-color: var(--graphite);
+}
+
+/* Inline links inside body copy */
+.prose__body a,
+.privacy__body a,
+.note__caption a {
+  color: var(--black);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  text-decoration-color: var(--hairline);
+}
+
+.prose__body a:hover,
+.privacy__body a:hover,
+.note__caption a:hover {
+  text-decoration-color: var(--black);
+}
+
+/* --------------------------------------------------------------------------
+   Plain columns with hairline top rules (replaces the old bordered tiles)
+   -------------------------------------------------------------------------- */
+
+.cols {
+  display: grid;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  margin-top: 2.5rem;
+  list-style: none;
+  padding: 0;
+}
+
+.cols--2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.cols--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.cols > * {
+  border-top: 1px solid var(--hairline);
+  padding-top: 1.25rem;
+}
+
+@media (max-width: 820px) {
+  .cols--2,
+  .cols--3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* A two-column passage: heading on the left, copy on the right */
+.split {
+  display: grid;
+  grid-template-columns: 5fr 6fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: start;
+}
+
+@media (max-width: 820px) {
+  .split {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -354,7 +351,7 @@ p {
    -------------------------------------------------------------------------- */
 
 :focus-visible {
-  outline: 2px solid var(--teal);
+  outline: 2px solid var(--black);
   outline-offset: 3px;
 }
 
@@ -364,10 +361,10 @@ p {
   top: 0;
   z-index: 100;
   padding: 0.75rem 1.25rem;
-  background: var(--ink);
-  color: #ffffff;
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font);
+  font-size: 15px;
 }
 
 .skip-link:focus {
@@ -375,13 +372,13 @@ p {
 }
 
 /* --------------------------------------------------------------------------
-   Scroll reveal (opt-in via .reveal; activated by tiny script in Sheet layout)
+   Scroll reveal (opt-in via .reveal; activated by a tiny script in the layout)
    -------------------------------------------------------------------------- */
 
 .reveal {
   opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transform: translateY(14px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
 .reveal.is-in {
@@ -402,4 +399,13 @@ p {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* Caption on a full-bleed photo band */
+.band__text {
+  margin: 0 auto;
+  max-width: 44rem;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--white);
 }
