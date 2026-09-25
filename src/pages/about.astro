@@ -1,5 +1,11 @@
 ---
 import Sheet from '../layouts/Sheet.astro';
+
+const people = [
+  { name: 'Joe Lombard', role: 'Principal' },
+  { name: 'Caroline Belz', role: 'Principal' },
+  { name: 'Beth Gaudiano', role: 'Account Manager' },
+];
 ---
 
 <Sheet
@@ -8,20 +14,22 @@ import Sheet from '../layouts/Sheet.astro';
   path="/about/"
   sheetName="About"
 >
-  <!-- QUIET OPEN -->
+  <!-- OPEN: belief first -->
   <section class="section open">
     <div class="container open__inner">
       <p class="tag">About</p>
-      <h1>A small firm, on purpose.</h1>
+      <h1>What we think the work is for.</h1>
       <p class="lede open__identity">
-        Lombard Belz is a boutique marketing and association management firm
-        serving the precast concrete and AEC industries nationwide from its
-        base in Frankfort, Illinois.
+        We think a company should be known to the people who decide what gets
+        built before the drawings are done. That belief is the whole practice.
+        We do the marketing that makes it true for precast producers and
+        suppliers, and we run the associations that hold the industry together,
+        from Frankfort, Illinois, for clients across the country.
       </p>
     </div>
   </section>
 
-  <!-- THE STORY -->
+  <!-- HOW THE FIRM IS BUILT -->
   <section class="section story">
     <div class="container story__grid">
       <div>
@@ -30,11 +38,11 @@ import Sheet from '../layouts/Sheet.astro';
       </div>
       <div class="reveal">
         <p>
-          I built Lombard Belz because of two problems I kept watching from the
-          inside. Trade associations run by one overloaded director, where
-          everything lives in one person's head. And industry marketing handed
-          to outside agencies that learn precast on the client's dime. I had
-          lived both, and the fix looked the same from every angle: a small
+          I built Lombard Belz because of two gaps I kept watching from the
+          inside. Trade associations were run by one overloaded director, with
+          everything in one person's head. Industry marketing was handed to
+          outside agencies that learned precast on the client's dime. I had
+          lived both, and the fix looked the same from either side: a small
           team that already knows the industry.
         </p>
         <p>
@@ -43,15 +51,34 @@ import Sheet from '../layouts/Sheet.astro';
         </p>
         <p>
           I started the firm with my wife, Caroline. She left her career as a
-          nurse to build it with me, and she has become a true professional in
-          this industry in her own right.
+          nurse to build it with me.
         </p>
         <p>
           In 2026 we grew beyond the two of us and brought on our first
-          employees. When you work with Lombard Belz, the people you meet are the
-          people doing the work.
+          employees. When you work with Lombard Belz, the people you meet are
+          the people doing the work.
         </p>
       </div>
+    </div>
+  </section>
+
+  <!-- PEOPLE -->
+  <section class="section people">
+    <div class="container people__grid">
+      <div>
+        <p class="tag reveal">People</p>
+        <h2 class="reveal">Who does the work</h2>
+      </div>
+      <ul class="people__list reveal">
+        {
+          people.map((p) => (
+            <li>
+              <span class="people__name">{p.name}</span>
+              <span class="people__role">{p.role}</span>
+            </li>
+          ))
+        }
+      </ul>
     </div>
   </section>
 
@@ -65,9 +92,8 @@ import Sheet from '../layouts/Sheet.astro';
       <p class="tag tag--dim reveal">My grandfather's rule</p>
       <p class="dim reveal creed__meaning">
         It is an old saying, but he is the reason it stuck with me. Appetite
-        is healthy and greed gets you killed. It still runs this firm. We
-        grow with discipline, take on work we can do well, and turn down the
-        rest.
+        is healthy and greed gets you killed. It still runs this firm. We take
+        on work we can do well and turn down the rest.
       </p>
     </div>
   </section>
@@ -94,20 +120,14 @@ import Sheet from '../layouts/Sheet.astro';
         <li class="reveal">
           <p>
             Relationships come first. In this industry the people are the
-            market, and the model is built on knowing them for decades, not
-            for a campaign.
+            market, and the model is built on knowing them for decades rather
+            than for a campaign.
           </p>
         </li>
         <li class="reveal">
           <p>
-            Quality over quantity, applied to everything: the client list,
-            the work, the pace.
-          </p>
-        </li>
-        <li class="reveal">
-          <p>
-            Client work stays confidential. No names, no case studies, no
-            borrowed credit.
+            Client work stays confidential. We publish no names and no case
+            studies.
           </p>
         </li>
       </ul>
@@ -160,10 +180,11 @@ import Sheet from '../layouts/Sheet.astro';
   }
 
   .open__identity {
-    max-width: 36rem;
+    max-width: 40rem;
   }
 
   .story__grid,
+  .people__grid,
   .where__grid {
     display: grid;
     grid-template-columns: 5fr 6fr;
@@ -173,9 +194,40 @@ import Sheet from '../layouts/Sheet.astro';
 
   @media (max-width: 820px) {
     .story__grid,
+    .people__grid,
     .where__grid {
       grid-template-columns: 1fr;
     }
+  }
+
+  /* People: a plain list, name then role in graphite */
+  .people__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-width: 32rem;
+  }
+
+  .people__list li {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem 1.25rem;
+    align-items: baseline;
+    padding: 0.9rem 0;
+    border-top: 1px solid var(--hairline);
+  }
+
+  .people__list li:last-child {
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  .people__name {
+    font-size: 1.1rem;
+  }
+
+  .people__role {
+    color: var(--graphite);
+    font-size: 15px;
   }
 
   /* The grandfather rule: the page's centerpiece */

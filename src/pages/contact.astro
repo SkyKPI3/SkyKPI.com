@@ -1,18 +1,11 @@
 ---
 import Sheet from '../layouts/Sheet.astro';
-import Faq from '../components/Faq.astro';
-import { faqSchema } from '../lib/schema';
 
-// One question, answered at the point where someone decides whether to send.
-const faqs = [
-  {
-    q: 'What happens after I send this?',
-    a: 'One of us reads it and replies within one business day, usually with questions rather than a pitch. If we are not the right fit, we will say so and point you somewhere better.',
-  },
-  {
-    q: 'Who will I be working with?',
-    a: 'The people who answer are the people who do the work. There is no hand-off to an account team after the first conversation.',
-  },
+// Three routed addresses. No form: rule 8 of the voice standard.
+const routes = [
+  { label: 'New business', email: 'hello@lombardbelz.com', contactType: 'sales' },
+  { label: 'Association boards', email: 'boards@lombardbelz.com', contactType: 'customer service' },
+  { label: 'Press and speaking', email: 'press@lombardbelz.com', contactType: 'public relations' },
 ];
 
 const contactPage = {
@@ -22,6 +15,7 @@ const contactPage = {
   url: 'https://lombardbelz.com/contact/',
   about: {
     '@type': 'Organization',
+    '@id': 'https://lombardbelz.com/#organization',
     name: 'Lombard Belz',
     legalName: 'SkyKPI LLC',
     email: 'hello@lombardbelz.com',
@@ -31,31 +25,32 @@ const contactPage = {
       addressRegion: 'IL',
       addressCountry: 'US',
     },
+    contactPoint: routes.map((r) => ({
+      '@type': 'ContactPoint',
+      contactType: r.contactType,
+      name: r.label,
+      email: r.email,
+      areaServed: 'US',
+      availableLanguage: 'en',
+    })),
   },
 };
 ---
 
 <Sheet
-  title="Contact Lombard Belz | Start the Conversation"
-  description="Contact Lombard Belz about marketing or association management for the precast and AEC industries. We reply within one business day."
+  title="Contact Lombard Belz | Write to Us"
+  description="Write to Lombard Belz about marketing or association management for the precast and AEC industries. Three addresses, one for each kind of note. We answer within two working days."
   path="/contact/"
   sheetName="Contact"
-  jsonLd={[contactPage, faqSchema(faqs)]}
+  jsonLd={[contactPage]}
 >
   <section class="section contact">
     <div class="container contact__grid">
       <div class="contact__intro">
         <p class="tag">Contact</p>
-        <h1>Start the conversation.</h1>
-        <p class="lede">
-          Tell us what you need to sell, or what your board needs handled. We
-          reply within one business day.
-        </p>
+        <h1>Write to the address that fits.</h1>
+        <p class="lede">We answer within two working days.</p>
         <dl class="contact__meta">
-          <div>
-            <dt class="tag">Email</dt>
-            <dd><a href="mailto:hello@lombardbelz.com">hello@lombardbelz.com</a></dd>
-          </div>
           <div>
             <dt class="tag">Base</dt>
             <dd>Frankfort, Illinois</dd>
@@ -67,51 +62,24 @@ const contactPage = {
         </dl>
       </div>
 
-      <form
-        class="contact__form"
-        name="contact"
-        method="POST"
-        action="/contact/thanks/"
-        data-netlify="true"
-        netlify-honeypot="bot-field"
-      >
-        <input type="hidden" name="form-name" value="contact" />
-        <p class="hp" aria-hidden="true">
-          <label>Leave this field empty: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
-        </p>
-
-        <div class="field">
-          <label class="tag" for="f-name">Name</label>
-          <input id="f-name" name="name" type="text" required autocomplete="name" />
-        </div>
-
-        <div class="field">
-          <label class="tag" for="f-company">Company or association</label>
-          <input id="f-company" name="company" type="text" autocomplete="organization" />
-        </div>
-
-        <div class="field">
-          <label class="tag" for="f-email">Email</label>
-          <input id="f-email" name="email" type="email" required autocomplete="email" />
-        </div>
-
-        <div class="field">
-          <label class="tag" for="f-message">What do you need</label>
-          <textarea id="f-message" name="message" rows="6" required></textarea>
-        </div>
-
-        <button class="btn" type="submit">Send it</button>
-      </form>
+      <ul class="routes">
+        {
+          routes.map((r) => (
+            <li class="route">
+              <p class="tag route__label">{r.label}</p>
+              <a class="route__email" href={`mailto:${r.email}`}>{r.email}</a>
+            </li>
+          ))
+        }
+      </ul>
     </div>
   </section>
-
-  <Faq items={faqs} heading="Before you send it" />
 </Sheet>
 
 <style>
   .contact {
     padding-top: var(--space-section);
-    min-height: 80svh;
+    min-height: 70svh;
   }
 
   .contact__grid {
@@ -142,52 +110,44 @@ const contactPage = {
     margin: 0;
   }
 
-  .contact__meta a {
-    color: var(--black);
-    text-underline-offset: 0.15em;
-  }
-
-  .contact__form {
-    display: grid;
-    gap: 1.4rem;
-  }
-
-  .hp {
-    position: absolute;
-    left: -9999px;
-    margin: 0;
-  }
-
-  .field {
-    display: grid;
-    gap: 0.5rem;
-  }
-
-  .field .tag,
   .contact__meta .tag {
     margin-bottom: 0;
   }
 
-  .field input,
-  .field textarea {
-    width: 100%;
-    padding: 0.8rem 0.9rem;
-    font-family: var(--font);
-    font-size: 1rem;
+  .routes {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .route {
+    padding: 1.5rem 0;
+    border-top: 1px solid var(--hairline);
+  }
+
+  .route:last-child {
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  .route__label {
+    margin-bottom: 0.5rem;
+  }
+
+  .route__email {
+    display: inline-block;
+    font-size: clamp(1.25rem, 2vw, 1.75rem);
+    font-weight: 300;
+    letter-spacing: -0.01em;
     color: var(--black);
-    background: var(--white);
-    border: 1px solid var(--black);
-    border-radius: 0;
+    text-decoration: none;
+    border-bottom: 1px solid var(--black);
+    padding-bottom: 0.1rem;
+    user-select: all;
+    overflow-wrap: anywhere;
   }
 
-  .field input:focus,
-  .field textarea:focus {
-    outline: 2px solid var(--black);
-    outline-offset: 0;
-    border-color: transparent;
-  }
-
-  .contact__form .btn {
-    justify-self: start;
+  .route__email:hover {
+    color: var(--graphite);
+    border-bottom-color: var(--graphite);
   }
 </style>
