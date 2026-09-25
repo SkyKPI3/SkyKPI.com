@@ -35,8 +35,8 @@ export function serviceSchema(opts: {
     serviceType: opts.serviceType,
     provider: {
       '@type': 'Organization',
-      name: 'SkyKPI LLC',
-      url: 'https://skykpi.com',
+      name: 'Lombard Belz',
+      url: 'https://lombardbelz.com',
     },
     areaServed: 'United States',
   };

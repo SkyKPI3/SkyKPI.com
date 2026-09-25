@@ -1,11 +1,11 @@
 {
-  "name": "SkyKPI",
-  "short_name": "SkyKPI",
+  "name": "Lombard Belz",
+  "short_name": "Lombard Belz",
   "description": "Marketing and association management for the precast concrete and AEC industries.",
   "start_url": "/",
   "display": "browser",
   "background_color": "#FFFFFF",
-  "theme_color": "#FFFFFF",
+  "theme_color": "#0A0A0A",
   "icons": [
     {
       "src": "/icon-512.png",
