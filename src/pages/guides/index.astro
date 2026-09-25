@@ -1,13 +1,11 @@
 ---
 import Sheet from '../../layouts/Sheet.astro';
-import RegistrationMarks from '../../components/RegistrationMarks.astro';
 import { publishedGuides } from '../../data/guides.mjs';
 
 // Newest first; the registry gates anything future-dated until its Monday.
 const guides = publishedGuides()
   .map((g) => ({
     href: `/guides/${g.slug}/`,
-    sheet: g.sheet,
     title: g.title,
     line: g.line,
     date: g.published,
@@ -17,29 +15,26 @@ const guides = publishedGuides()
 const collectionPage = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
-  name: 'SkyKPI Guides',
-  url: 'https://skykpi.com/guides/',
+  name: 'Lombard Belz Guides',
+  url: 'https://lombardbelz.com/guides/',
   description:
     'Working guides on marketing and association management for the precast concrete and AEC industries, written from inside the industry.',
-  isPartOf: { '@id': 'https://skykpi.com/#website' },
-  publisher: { '@id': 'https://skykpi.com/#organization' },
+  isPartOf: { '@id': 'https://lombardbelz.com/#website' },
+  publisher: { '@id': 'https://lombardbelz.com/#organization' },
 };
 ---
 
 <Sheet
-  title="Guides | Marketing for Precast and AEC | SkyKPI"
+  title="Guides | Marketing for Precast and AEC | Lombard Belz"
   description="Working guides on marketing and association management for precast and AEC: self-audits, checklists, and plain answers, written from inside the industry."
   path="/guides/"
-  sheet="A-700"
   sheetName="Guides"
   jsonLd={[collectionPage]}
 >
-  <section class="section sheet open">
-    <RegistrationMarks />
+  <section class="section open">
     <div class="container">
-      <p class="tag">Sheet A-700 &middot; Guides</p>
+      <p class="tag">Guides</p>
       <h1>Guides.</h1>
-      <hr class="dimline" aria-hidden="true" />
       <p class="lede open__sub">
         The people who specify, buy, and run marketing for this product
         mostly learned it on the job, and these guides fill the gaps. Each
@@ -52,13 +47,10 @@ const collectionPage = {
           guides.map((g) => (
             <li class="reveal">
               <a class="guides__card" href={g.href}>
-                <div class="guides__head">
-                  <span class="tag tag--dim">Sheet {g.sheet}</span>
-                  <span class="tag tag--dim">{g.date}</span>
-                </div>
+                <p class="meta guides__date">{g.date}</p>
                 <h2>{g.title}</h2>
                 <p class="dim">{g.line}</p>
-                <span class="tag guides__open">Open sheet {g.sheet} &rarr;</span>
+                <span class="textlink">Read the guide</span>
               </a>
             </li>
           ))
@@ -70,7 +62,7 @@ const collectionPage = {
 
 <style>
   .open {
-    padding-top: calc(var(--header-h) + var(--space-section));
+    padding-top: var(--space-section);
     min-height: 80svh;
   }
 
@@ -89,34 +81,30 @@ const collectionPage = {
     display: flex;
     flex-direction: column;
     gap: 0.4rem;
-    padding: 1.5rem 1.4rem 1.6rem;
-    border: 1px solid var(--hairline-on-ink);
-    background: var(--surface);
+    padding: 1.75rem 0 2rem;
+    border-top: 1px solid var(--hairline);
     text-decoration: none;
-    transition: border-color 0.25s ease, transform 0.25s ease;
   }
 
-  .guides__card:hover {
-    border-color: var(--teal);
-    transform: translateY(-3px);
+  .guides__list li:last-child .guides__card {
+    border-bottom: 1px solid var(--hairline);
   }
 
-  .guides__head {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 0.6rem;
+  .guides__date {
+    margin: 0 0 0.5rem;
   }
 
   .guides__card h2 {
-    font-size: clamp(1.4rem, 2.6vw, 1.9rem);
-    margin: 0 0 0.4rem;
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
+    margin: 0 0 0.5rem;
   }
 
   .guides__card p {
     margin: 0 0 1rem;
   }
 
-  .guides__open {
-    margin-top: auto;
+  .guides__card .textlink {
+    margin-top: 0.5rem;
+    align-self: flex-start;
   }
 </style>

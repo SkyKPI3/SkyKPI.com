@@ -1,9 +1,8 @@
 ---
 import { Image } from 'astro:assets';
 import Sheet from '../layouts/Sheet.astro';
-import RegistrationMarks from '../components/RegistrationMarks.astro';
 import Faq from '../components/Faq.astro';
-import RefSheets from '../components/RefSheets.astro';
+import Related from '../components/Related.astro';
 import { faqSchema, serviceSchema } from '../lib/schema';
 import heroShot from '../assets/photos/precast/DJI_0010.JPG';
 import bandShot from '../assets/photos/precast/IMG_3965.jpeg';
@@ -52,7 +51,7 @@ const jsonLd = [
     name: 'Precast and AEC Marketing',
     description:
       'Websites, email, photography, and social media that get precast concrete producers and suppliers known to specifiers and buyers before jobs go out to bid, with a monthly report of who found the client and what it led to.',
-    url: 'https://skykpi.com/marketing/',
+    url: 'https://lombardbelz.com/marketing/',
     serviceType: 'Marketing services',
   }),
   faqSchema(faqs),
@@ -61,19 +60,16 @@ const jsonLd = [
 const audiences = [
   {
     href: '/architects/',
-    sheet: 'A-210',
     label: 'Architects',
     copy: 'Portfolio-grade websites and marketing for firms that want their built work seen.',
   },
   {
     href: '/contractors/',
-    sheet: 'A-220',
     label: 'Contractors',
     copy: 'Reputation and proof for general contractors, backing up the estimator after the meeting.',
   },
   {
     href: '/subcontractors/',
-    sheet: 'A-230',
     label: 'Subcontractors',
     copy: 'Getting trade and specialty subs found and prequalified before the bid list closes.',
   },
@@ -81,10 +77,9 @@ const audiences = [
 ---
 
 <Sheet
-  title="Precast Concrete Marketing Agency | SkyKPI"
-  description="SkyKPI gets precast producers and suppliers known to specifiers and buyers before bid day. Websites, email, photography, and a monthly report."
+  title="Precast Concrete Marketing Agency | Lombard Belz"
+  description="Lombard Belz gets precast producers and suppliers known to specifiers and buyers before bid day. Websites, email, photography, and a monthly report."
   path="/marketing/"
-  sheet="A-200"
   sheetName="Marketing"
   jsonLd={jsonLd}
 >
@@ -104,11 +99,9 @@ const audiences = [
         />
       </div>
     </div>
-    <RegistrationMarks />
     <div class="container hero__content">
-      <p class="tag hero__kicker">Sheet A-200 &middot; Marketing</p>
-      <h1>SkyKPI works as an extension of your sales team.</h1>
-      <hr class="dimline" aria-hidden="true" />
+      <p class="tag hero__kicker">Marketing</p>
+      <h1>Lombard Belz works as an extension of your sales team.</h1>
       <p class="lede hero__sub">
         The website, email, photography, and social media a precast producer
         or supplier needs behind its reps, scoped to how the product gets
@@ -118,12 +111,11 @@ const audiences = [
   </section>
 
   <!-- THE PROBLEM -->
-  <section class="section sheet problem">
+  <section class="section problem">
     <div class="container problem__grid">
       <div>
         <p class="tag reveal">The problem</p>
         <h2 class="reveal">Great work does not sell itself.</h2>
-        <hr class="dimline reveal" aria-hidden="true" />
       </div>
       <div class="reveal">
         <p>
@@ -143,12 +135,10 @@ const audiences = [
   </section>
 
   <!-- WHAT WE BUILD -->
-  <section class="section sheet sheet--mist build">
-    <RegistrationMarks />
+  <section class="section build">
     <div class="container">
       <p class="tag reveal">Scope of work</p>
       <h2 class="reveal">What we build</h2>
-      <hr class="dimline reveal" aria-hidden="true" />
 
       <div class="build__grid">
         <article class="build__item reveal">
@@ -163,7 +153,6 @@ const audiences = [
               quality={72}
             />
           </div>
-          <span class="tag tag--dim">W-1</span>
           <h3>The website</h3>
           <p class="dim">
             The site that backs up your reps after they leave the room. Built
@@ -184,7 +173,6 @@ const audiences = [
               quality={72}
             />
           </div>
-          <span class="tag tag--dim">W-2</span>
           <h3>Email between projects</h3>
           <p class="dim">
             Email keeps your name in front of the people who will pick a
@@ -205,7 +193,6 @@ const audiences = [
               quality={72}
             />
           </div>
-          <span class="tag tag--dim">W-3</span>
           <h3>Photography your sales team can use</h3>
           <p class="dim">
             Plant, product, and jobsite photography shot for the way it gets
@@ -226,7 +213,6 @@ const audiences = [
               quality={72}
             />
           </div>
-          <span class="tag tag--dim">W-4</span>
           <h3>A social presence that shows the work</h3>
           <p class="dim">
             LinkedIn first, because that is where your buyers are. Real
@@ -250,16 +236,15 @@ const audiences = [
       quality={72}
     />
     <div class="band__caption">
-      <span class="tag">A website built around what specifiers actually check will keep working for years.</span>
+      <p class="band__text">A website built around what specifiers actually check will keep working for years.</p>
     </div>
   </section>
 
   <!-- WHO IT IS FOR -->
-  <section class="section sheet who">
+  <section class="section who">
     <div class="container">
       <p class="tag reveal">Who it is for</p>
       <h2 class="reveal">We work in precast first and the industry around it second.</h2>
-      <hr class="dimline reveal" aria-hidden="true" />
       <p class="reveal who__copy">
         The core of our work is precast producers, the suppliers who sell into
         them, and associate members across the industry. The work changes with
@@ -269,7 +254,6 @@ const audiences = [
       <dl class="who__lanes">
         <div class="who__lane reveal">
           <dt>
-            <span class="tag tag--dim">L-1</span>
             <h3>Producers</h3>
           </dt>
           <dd>
@@ -281,7 +265,6 @@ const audiences = [
         </div>
         <div class="who__lane reveal">
           <dt>
-            <span class="tag tag--dim">L-2</span>
             <h3>Suppliers architects choose</h3>
           </dt>
           <dd>
@@ -292,7 +275,6 @@ const audiences = [
         </div>
         <div class="who__lane reveal">
           <dt>
-            <span class="tag tag--dim">L-3</span>
             <h3>Suppliers the plant buys</h3>
           </dt>
           <dd>
@@ -313,12 +295,9 @@ const audiences = [
         {
           audiences.map((a) => (
             <a class="who__card reveal" href={a.href}>
-              <div class="who__head">
-                <span class="tag tag--dim">Sheet {a.sheet}</span>
-              </div>
               <h3>{a.label}</h3>
               <p class="dim">{a.copy}</p>
-              <span class="who__link tag">Open sheet {a.sheet} &rarr;</span>
+              <span class="textlink">{a.label}</span>
             </a>
           ))
         }
@@ -327,13 +306,11 @@ const audiences = [
   </section>
 
   <!-- ENGAGEMENT MODEL -->
-  <section class="section sheet sheet--mist model">
-    <RegistrationMarks />
+  <section class="section model">
     <div class="container model__grid">
       <div>
         <p class="tag reveal">Engagement model</p>
         <h2 class="reveal">One retainer covers everything, and the same team does the work.</h2>
-        <hr class="dimline reveal" aria-hidden="true" />
       </div>
       <div class="reveal">
         <p>
@@ -351,12 +328,11 @@ const audiences = [
   </section>
 
   <!-- THE MONTHLY REPORT -->
-  <section class="section sheet report">
+  <section class="section report">
     <div class="container report__grid">
       <div>
         <p class="tag reveal">The ledger</p>
         <h2 class="reveal">Every month you see what the money did.</h2>
-        <hr class="dimline reveal" aria-hidden="true" />
       </div>
       <div class="reveal">
         <p>
@@ -375,29 +351,25 @@ const audiences = [
 
   <Faq items={faqs} heading="What plant owners ask us" />
 
-  <RefSheets
+  <Related
     links={[
       {
         href: '/associations/',
-        sheet: 'A-300',
         label: 'Association management for AEC trade and professional associations',
       },
       {
         href: '/about/',
-        sheet: 'A-400',
-        label: 'How SkyKPI decides which clients to take',
+        label: 'How Lombard Belz decides which clients to take',
       },
     ]}
   />
 
   <!-- CTA -->
-  <section class="section sheet cta">
+  <section class="section cta">
     <div class="container cta__inner">
-      <p class="tag reveal">Sheet A-500</p>
       <h2 class="reveal">We are ready when your reps need backup.</h2>
-      <hr class="dimline dimline--center reveal" aria-hidden="true" />
       <p class="dim reveal cta__fit">
-        SkyKPI takes on a few clients at a time, all in industries we know
+        Lombard Belz takes on a few clients at a time, all in industries we know
         firsthand. If you need a website built once, or a small monthly
         spend, we're the wrong fit, and we'll give you the name of someone
         good.
@@ -439,7 +411,7 @@ const audiences = [
   .hero__content {
     position: relative;
     z-index: 3;
-    padding: calc(var(--header-h) + 3rem) 0 clamp(3rem, 7vw, 5rem);
+    padding: 3rem 0 clamp(3rem, 7vw, 5rem);
   }
 
   .hero__kicker {
@@ -475,7 +447,7 @@ const audiences = [
   }
 
   .build__item {
-    border-top: 1px solid var(--hairline-on-ink);
+    border-top: 1px solid var(--hairline);
     padding-top: 1.25rem;
   }
 
@@ -531,20 +503,18 @@ const audiences = [
   .who__lanes {
     margin: 2.25rem 0 2.5rem;
     max-width: 52rem;
-    border: 1px solid var(--hairline-on-ink);
-    background: var(--surface);
   }
 
   .who__lane {
     display: grid;
     grid-template-columns: 15rem 1fr;
     gap: 1.5rem;
-    padding: 1.25rem 1.5rem;
-    border-top: 1px solid var(--hairline-on-ink);
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--hairline);
   }
 
-  .who__lane:first-child {
-    border-top: 0;
+  .who__lane:last-child {
+    border-bottom: 1px solid var(--hairline);
   }
 
   .who__lane dt {
@@ -555,7 +525,6 @@ const audiences = [
 
   .who__lane h3 {
     margin: 0;
-    font-size: 1.15rem;
   }
 
   .who__lane dd {
@@ -581,20 +550,9 @@ const audiences = [
     display: flex;
     flex-direction: column;
     gap: 0.35rem;
-    padding: 1.4rem 1.25rem 1.5rem;
-    border: 1px solid var(--hairline-on-ink);
-    background: var(--surface);
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--hairline);
     text-decoration: none;
-    transition: border-color 0.25s ease, transform 0.25s ease;
-  }
-
-  .who__card:hover {
-    border-color: var(--teal);
-    transform: translateY(-3px);
-  }
-
-  .who__head {
-    margin-bottom: 0.8rem;
   }
 
   .who__card h3 {
@@ -605,10 +563,6 @@ const audiences = [
     margin: 0 0 1.1rem;
   }
 
-  .who__link {
-    margin-top: auto;
-  }
-
   @media (max-width: 820px) {
     .who__grid {
       grid-template-columns: 1fr;
@@ -616,7 +570,8 @@ const audiences = [
   }
 
   .model__cta {
-    color: var(--teal);
+    color: var(--black);
+    text-underline-offset: 0.15em;
   }
 
   .cta__inner {

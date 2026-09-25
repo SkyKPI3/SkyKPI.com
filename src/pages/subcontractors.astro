@@ -1,9 +1,8 @@
 ---
 import { Image } from 'astro:assets';
 import Sheet from '../layouts/Sheet.astro';
-import RegistrationMarks from '../components/RegistrationMarks.astro';
 import Faq from '../components/Faq.astro';
-import RefSheets from '../components/RefSheets.astro';
+import Related from '../components/Related.astro';
 import { faqSchema } from '../lib/schema';
 import heroShot from '../assets/photos/arch/IMG_4808.jpeg';
 import detailShot from '../assets/photos/precast/IMG_5104.jpeg';
@@ -27,10 +26,9 @@ const jsonLd = [faqSchema(faqs)];
 ---
 
 <Sheet
-  title="Marketing and Websites for Subcontractors | SkyKPI"
-  description="SkyKPI builds websites, marketing, and social media for trade and specialty subcontractors, with core expertise in the precast concrete industry."
+  title="Marketing and Websites for Subcontractors | Lombard Belz"
+  description="Lombard Belz builds websites, marketing, and social media for trade and specialty subcontractors, with core expertise in the precast concrete industry."
   path="/subcontractors/"
-  sheet="A-230"
   sheetName="Subcontractors"
   parent={{ href: "/marketing/", label: "Marketing" }}
   jsonLd={jsonLd}
@@ -48,25 +46,22 @@ const jsonLd = [faqSchema(faqs)];
         quality={78}
       />
     </div>
-    <RegistrationMarks />
     <div class="container hero__content">
-      <p class="tag hero__kicker">Sheet A-230 &middot; Marketing / Subcontractors</p>
+      <p class="tag hero__kicker">Marketing / Subcontractors</p>
       <h1>Get found before the bid list closes.</h1>
-      <hr class="dimline" aria-hidden="true" />
       <p class="lede hero__sub">
-        SkyKPI builds websites, marketing, and social media for trade and
+        Lombard Belz builds websites, marketing, and social media for trade and
         specialty subcontractors, with core expertise in the precast concrete
         industry.
       </p>
     </div>
   </section>
 
-  <section class="section sheet angle">
+  <section class="section angle">
     <div class="container angle__grid">
       <div>
         <p class="tag reveal">Why us</p>
         <h2 class="reveal">Prequalification happens online now.</h2>
-        <hr class="dimline reveal" aria-hidden="true" />
       </div>
       <div class="reveal">
         <p>
@@ -84,16 +79,13 @@ const jsonLd = [faqSchema(faqs)];
     </div>
   </section>
 
-  <section class="section sheet sheet--mist scope">
-    <RegistrationMarks />
+  <section class="section scope">
     <div class="container scope__grid">
       <div class="scope__list">
         <p class="tag reveal">Scope of work</p>
         <h2 class="reveal">What we build for subs</h2>
-        <hr class="dimline reveal" aria-hidden="true" />
         <ul>
           <li class="reveal">
-            <span class="tag tag--dim">W-1</span>
             <h3>Clean capability pages</h3>
             <p class="dim">
               Your scope, your markets, your coverage area, and your crew
@@ -101,7 +93,6 @@ const jsonLd = [faqSchema(faqs)];
             </p>
           </li>
           <li class="reveal">
-            <span class="tag tag--dim">W-2</span>
             <h3>Project proof</h3>
             <p class="dim">
               Finished-work photography and short project writeups that show
@@ -109,7 +100,6 @@ const jsonLd = [faqSchema(faqs)];
             </p>
           </li>
           <li class="reveal">
-            <span class="tag tag--dim">W-3</span>
             <h3>Being easy to find</h3>
             <p class="dim">
               A site that ranks for your trade and your region, so you are on
@@ -134,31 +124,26 @@ const jsonLd = [faqSchema(faqs)];
 
   <Faq items={faqs} heading="What subs ask us" />
 
-  <RefSheets
+  <Related
     links={[
       {
         href: '/marketing/',
-        sheet: 'A-200',
         label: 'The full precast and AEC marketing scope',
       },
       {
         href: '/architects/',
-        sheet: 'A-210',
         label: 'Marketing and websites for architecture firms',
       },
       {
         href: '/contractors/',
-        sheet: 'A-220',
         label: 'Marketing and websites for general contractors',
       },
     ]}
   />
 
-  <section class="section sheet cta">
+  <section class="section cta">
     <div class="container cta__inner">
-      <p class="tag reveal">Sheet A-500</p>
       <h2 class="reveal">Make the next bid list.</h2>
-      <hr class="dimline dimline--center reveal" aria-hidden="true" />
       <div class="reveal">
         <a class="btn" href="/contact/">Start the conversation</a>
       </div>
@@ -189,7 +174,7 @@ const jsonLd = [faqSchema(faqs)];
   .hero__content {
     position: relative;
     z-index: 3;
-    padding: calc(var(--header-h) + 3rem) 0 clamp(3rem, 7vw, 5rem);
+    padding: 3rem 0 clamp(3rem, 7vw, 5rem);
   }
 
   .hero__kicker {
@@ -221,7 +206,7 @@ const jsonLd = [faqSchema(faqs)];
   }
 
   .scope__list li {
-    border-top: 1px solid var(--hairline-on-ink);
+    border-top: 1px solid var(--hairline);
     padding: 1.25rem 0;
   }
 
@@ -236,7 +221,7 @@ const jsonLd = [faqSchema(faqs)];
   .scope__media {
     aspect-ratio: 3 / 4;
     position: sticky;
-    top: calc(var(--header-h) + 2rem);
+    top: 2rem;
   }
 
   .scope__media :global(img) {

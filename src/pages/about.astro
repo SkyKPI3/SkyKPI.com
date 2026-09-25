@@ -1,24 +1,20 @@
 ---
 import Sheet from '../layouts/Sheet.astro';
-import RegistrationMarks from '../components/RegistrationMarks.astro';
 ---
 
 <Sheet
-  title="About SkyKPI | Precast and AEC Marketing and Association Management"
-  description="SkyKPI is a small marketing and association management firm for the precast and AEC world. The client list stays small on purpose."
+  title="About Lombard Belz | Precast and AEC Marketing and Association Management"
+  description="Lombard Belz is a small marketing and association management firm for the precast and AEC world. The client list stays small on purpose."
   path="/about/"
-  sheet="A-400"
   sheetName="About"
 >
   <!-- QUIET OPEN -->
-  <section class="section sheet open">
-    <RegistrationMarks />
+  <section class="section open">
     <div class="container open__inner">
-      <p class="tag">Sheet A-400 &middot; About</p>
+      <p class="tag">About</p>
       <h1>A small firm, on purpose.</h1>
-      <hr class="dimline" aria-hidden="true" />
       <p class="lede open__identity">
-        SkyKPI LLC is a boutique marketing and association management firm
+        Lombard Belz is a boutique marketing and association management firm
         serving the precast concrete and AEC industries nationwide from its
         base in Frankfort, Illinois.
       </p>
@@ -26,16 +22,15 @@ import RegistrationMarks from '../components/RegistrationMarks.astro';
   </section>
 
   <!-- THE STORY -->
-  <section class="section sheet sheet--mist story">
+  <section class="section story">
     <div class="container story__grid">
       <div>
         <p class="tag reveal">The story</p>
         <h2 class="reveal">Why this firm exists</h2>
-        <hr class="dimline reveal" aria-hidden="true" />
       </div>
       <div class="reveal">
         <p>
-          I built SkyKPI because of two problems I kept watching from the
+          I built Lombard Belz because of two problems I kept watching from the
           inside. Trade associations run by one overloaded director, where
           everything lives in one person's head. And industry marketing handed
           to outside agencies that learn precast on the client's dime. I had
@@ -53,7 +48,7 @@ import RegistrationMarks from '../components/RegistrationMarks.astro';
         </p>
         <p>
           In 2026 we grew beyond the two of us and brought on our first
-          employees. When you work with SkyKPI, the people you meet are the
+          employees. When you work with Lombard Belz, the people you meet are the
           people doing the work.
         </p>
       </div>
@@ -61,15 +56,13 @@ import RegistrationMarks from '../components/RegistrationMarks.astro';
   </section>
 
   <!-- THE GRANDFATHER RULE -->
-  <section class="section sheet creed">
-    <RegistrationMarks />
+  <section class="section creed">
     <div class="container creed__inner">
       <p class="tag reveal">Standing rule</p>
       <blockquote class="creed__quote reveal">
         <p>&ldquo;Pigs get fat, hogs get slaughtered.&rdquo;</p>
       </blockquote>
       <p class="tag tag--dim reveal">My grandfather's rule</p>
-      <hr class="dimline dimline--center reveal" aria-hidden="true" />
       <p class="dim reveal creed__meaning">
         It is an old saying, but he is the reason it stuck with me. Appetite
         is healthy and greed gets you killed. It still runs this firm. We
@@ -80,14 +73,12 @@ import RegistrationMarks from '../components/RegistrationMarks.astro';
   </section>
 
   <!-- HOW WE DECIDE -->
-  <section class="section sheet sheet--mist decide">
+  <section class="section decide">
     <div class="container">
-      <p class="tag reveal">General notes</p>
+      <p class="tag reveal">Standing rules</p>
       <h2 class="reveal">How we decide</h2>
-      <hr class="dimline reveal" aria-hidden="true" />
       <ul class="decide__list">
         <li class="reveal">
-          <span class="tag tag--dim">G1</span>
           <p>
             The client list stays small on purpose. We turn down work that
             does not fit, because the right clients matter more than more
@@ -95,14 +86,12 @@ import RegistrationMarks from '../components/RegistrationMarks.astro';
           </p>
         </li>
         <li class="reveal">
-          <span class="tag tag--dim">G2</span>
           <p>
             We embed in a client's business and treat it like our own. We
             decline engagements where marketing is treated as a box to check.
           </p>
         </li>
         <li class="reveal">
-          <span class="tag tag--dim">G3</span>
           <p>
             Relationships come first. In this industry the people are the
             market, and the model is built on knowing them for decades, not
@@ -110,14 +99,12 @@ import RegistrationMarks from '../components/RegistrationMarks.astro';
           </p>
         </li>
         <li class="reveal">
-          <span class="tag tag--dim">G4</span>
           <p>
             Quality over quantity, applied to everything: the client list,
             the work, the pace.
           </p>
         </li>
         <li class="reveal">
-          <span class="tag tag--dim">G5</span>
           <p>
             Client work stays confidential. No names, no case studies, no
             borrowed credit.
@@ -128,12 +115,11 @@ import RegistrationMarks from '../components/RegistrationMarks.astro';
   </section>
 
   <!-- WHERE -->
-  <section class="section sheet where">
+  <section class="section where">
     <div class="container where__grid">
       <div>
         <p class="tag reveal">Location</p>
         <h2 class="reveal">Based in Frankfort. Working nationwide.</h2>
-        <hr class="dimline reveal" aria-hidden="true" />
       </div>
       <div class="reveal">
         <p>
@@ -147,18 +133,16 @@ import RegistrationMarks from '../components/RegistrationMarks.astro';
           on whether we fit.
         </p>
         <p>
-          <a class="where__link" href="mailto:hello@skykpi.com">hello@skykpi.com</a>
+          <a class="where__link" href="mailto:hello@lombardbelz.com">hello@lombardbelz.com</a>
         </p>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="section sheet cta">
+  <section class="section cta">
     <div class="container cta__inner">
-      <p class="tag reveal">Sheet A-500</p>
       <h2 class="reveal">See if we fit.</h2>
-      <hr class="dimline dimline--center reveal" aria-hidden="true" />
       <div class="reveal">
         <a class="btn" href="/contact/">Start the conversation</a>
       </div>
@@ -168,7 +152,7 @@ import RegistrationMarks from '../components/RegistrationMarks.astro';
 
 <style>
   .open {
-    padding-top: calc(var(--header-h) + var(--space-section));
+    padding-top: var(--space-section);
   }
 
   .open__inner {
@@ -209,10 +193,11 @@ import RegistrationMarks from '../components/RegistrationMarks.astro';
 
   .creed__quote p {
     margin: 0;
-    font-family: var(--font-display);
-    font-weight: 600;
+    font-family: var(--font);
+    font-weight: 300;
     font-size: clamp(1.9rem, 4.6vw, 3.4rem);
     line-height: 1.1;
+    letter-spacing: -0.015em;
     text-wrap: balance;
   }
 
@@ -229,15 +214,12 @@ import RegistrationMarks from '../components/RegistrationMarks.astro';
   }
 
   .decide__list li {
-    display: grid;
-    grid-template-columns: 3rem 1fr;
-    gap: 1rem;
     padding: 1.1rem 0;
-    border-top: 1px solid var(--hairline-on-ink);
+    border-top: 1px solid var(--hairline);
   }
 
   .decide__list li:last-child {
-    border-bottom: 1px solid var(--hairline-on-ink);
+    border-bottom: 1px solid var(--hairline);
   }
 
   .decide__list p {
@@ -245,10 +227,8 @@ import RegistrationMarks from '../components/RegistrationMarks.astro';
   }
 
   .where__link {
-    font-family: var(--font-mono);
-    font-size: 0.9rem;
-    letter-spacing: 0.08em;
-    color: var(--teal);
+    color: var(--black);
+    text-underline-offset: 0.15em;
   }
 
   .cta__inner {

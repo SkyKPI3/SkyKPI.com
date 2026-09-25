@@ -1,15 +1,20 @@
 ---
 import { Image } from 'astro:assets';
 import Sheet from '../../layouts/Sheet.astro';
-import RegistrationMarks from '../../components/RegistrationMarks.astro';
 import Faq from '../../components/Faq.astro';
-import RefSheets from '../../components/RefSheets.astro';
+import Related from '../../components/Related.astro';
 import { faqSchema } from '../../lib/schema';
 import heroShot from '../../assets/photos/arch/IMG_1004.jpeg';
 import towerShot from '../../assets/photos/precast/IMG_5828.jpeg';
 import houseShot from '../../assets/photos/arch/dji_fly_20230402_071840_378_1680438501102_photo.jpg';
 
 const published = '2026-08-16';
+const publishedLabel = new Intl.DateTimeFormat('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  timeZone: 'UTC',
+}).format(new Date(`${published}T00:00:00Z`));
 
 const faqs = [
   {
@@ -38,10 +43,10 @@ const article = {
     'Why marketing decides shortlists for architecture firms, a 20-point self-audit with grades, what to build at every firm size, and an honest DIY path.',
   datePublished: published,
   dateModified: published,
-  url: 'https://skykpi.com/guides/marketing-for-architects/',
-  image: 'https://skykpi.com/og-default.png',
-  author: { '@type': 'Organization', name: 'SkyKPI LLC', url: 'https://skykpi.com' },
-  publisher: { '@id': 'https://skykpi.com/#organization' },
+  url: 'https://lombardbelz.com/guides/marketing-for-architects/',
+  image: 'https://lombardbelz.com/og-default.png',
+  author: { '@type': 'Organization', name: 'Lombard Belz', url: 'https://lombardbelz.com' },
+  publisher: { '@id': 'https://lombardbelz.com/#organization' },
   about: ['Marketing for architects', 'Architecture firm marketing', 'Architect website'],
 };
 
@@ -118,17 +123,32 @@ const grades = [
 ---
 
 <Sheet
-  title="Marketing for Architects: Self-Audit, Checklist, and DIY Guide | SkyKPI"
+  title="Marketing for Architects: Self-Audit, Checklist, and DIY Guide | Lombard Belz"
   description="A field guide to marketing for architects: why it decides shortlists, a 20-point self-audit with grades, and what to build at every firm size."
   path="/guides/marketing-for-architects/"
-  sheet="A-701"
   sheetName="Guides / Marketing for Architects"
   parent={{ href: '/guides/', label: 'Guides' }}
   jsonLd={[article, faqSchema(faqs)]}
 >
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero__media photo-treat">
+  <!-- TITLE -->
+  <section class="section gtitle">
+    <div class="container gtitle__inner">
+      <p class="tag">Guides</p>
+      <h1>Marketing for architects, graded like a submittal.</h1>
+      <p class="meta gtitle__meta">
+        Published <time datetime={published}>{publishedLabel}</time>
+      </p>
+      <p class="lede gtitle__lede">
+        Marketing for architects is the work of making sure the right clients
+        can find your firm, judge your work fairly, and remember you when the
+        shortlist is being written. This guide covers why it decides
+        commissions, how to score your own firm in twenty questions, and what
+        to build at your size, including the do-it-yourself path.
+      </p>
+    </div>
+  </section>
+
+  <div class="ghero">
       <Image
         src={heroShot}
         alt="Golden-hour light raking across the upper floors of a dense cluster of city towers."
@@ -139,28 +159,13 @@ const grades = [
         fetchpriority="high"
         quality={78}
       />
-    </div>
-    <RegistrationMarks />
-    <div class="container hero__content">
-      <p class="tag hero__kicker">Sheet A-701 &middot; Guides &middot; Issued {published}</p>
-      <h1>Marketing for architects, graded like a submittal.</h1>
-      <hr class="dimline" aria-hidden="true" />
-      <p class="lede hero__sub">
-        Marketing for architects is the work of making sure the right clients
-        can find your firm, judge your work fairly, and remember you when the
-        shortlist is being written. This guide covers why it decides
-        commissions, how to score your own firm in twenty questions, and what
-        to build at your size, including the do-it-yourself path.
-      </p>
-    </div>
-  </section>
+  </div>
 
   <!-- WHY IT MATTERS -->
-  <section class="section sheet prose">
+  <section class="section prose">
     <div class="container prose__inner">
       <p class="tag reveal">The case</p>
       <h2 class="reveal">Why does marketing matter for an architecture firm?</h2>
-      <hr class="dimline reveal" aria-hidden="true" />
       <div class="reveal">
         <p>
           Because selection happens before the interview. By the time a
@@ -201,17 +206,15 @@ const grades = [
       quality={72}
     />
     <div class="band__caption">
-      <span class="tag">The referral gets checked against the portfolio. Every time.</span>
+      <p class="band__text">The referral gets checked against the portfolio. Every time.</p>
     </div>
   </section>
 
   <!-- SELF-AUDIT -->
-  <section class="section sheet sheet--mist audit">
-    <RegistrationMarks />
+  <section class="section audit">
     <div class="container prose__inner">
       <p class="tag reveal">Punch list</p>
       <h2 class="reveal">The self-audit: score your firm in twenty questions</h2>
-      <hr class="dimline reveal" aria-hidden="true" />
       <p class="reveal">
         Answer honestly, one point for each yes. No partial credit; a half
         yes is a no. It takes ten minutes, and the score tells you exactly
@@ -222,7 +225,6 @@ const grades = [
         audit.map((group, gi) => (
           <div class="audit__group reveal">
             <h3>
-            <span class="tag tag--dim">{`PL-${gi + 1}`}</span>
             {group.cat}
             </h3>
             <ul class="audit__items">
@@ -240,11 +242,10 @@ const grades = [
   </section>
 
   <!-- GRADES -->
-  <section class="section sheet grades">
+  <section class="section grades">
     <div class="container prose__inner">
       <p class="tag reveal">Review stamp</p>
       <h2 class="reveal">What your score means</h2>
-      <hr class="dimline reveal" aria-hidden="true" />
 
       <div class="scale reveal" role="img" aria-label="Score scale from 0 to 20, divided into Rejected from 0 to 5, Revise and resubmit from 6 to 11, Approved as noted from 12 to 16, and Approved from 17 to 20.">
         <div class="scale__bar">
@@ -278,12 +279,10 @@ const grades = [
   </section>
 
   <!-- BY SIZE -->
-  <section class="section sheet sheet--mist prose">
-    <RegistrationMarks />
+  <section class="section prose">
     <div class="container prose__inner">
       <p class="tag reveal">Scope by firm size</p>
       <h2 class="reveal">What should you be doing at your size?</h2>
-      <hr class="dimline reveal" aria-hidden="true" />
       <div class="reveal">
         <h3>Solo practice</h3>
         <p>
@@ -325,11 +324,10 @@ const grades = [
   </section>
 
   <!-- BY GOAL -->
-  <section class="section sheet prose">
+  <section class="section prose">
     <div class="container prose__inner">
       <p class="tag reveal">Scope by goal</p>
       <h2 class="reveal">Match the work to the goal</h2>
-      <hr class="dimline reveal" aria-hidden="true" />
       <div class="reveal">
         <p>
           <strong>Winning first commissions.</strong> Proof and reachability
@@ -369,17 +367,15 @@ const grades = [
       quality={72}
     />
     <div class="band__caption">
-      <span class="tag">Eight strong projects, photographed properly, beat forty thumbnails.</span>
+      <p class="band__text">Eight strong projects, photographed properly, beat forty thumbnails.</p>
     </div>
   </section>
 
   <!-- DIY -->
-  <section class="section sheet sheet--mist prose">
-    <RegistrationMarks />
+  <section class="section prose">
     <div class="container prose__inner">
       <p class="tag reveal">Means and methods</p>
       <h2 class="reveal">Can you build the website yourself?</h2>
-      <hr class="dimline reveal" aria-hidden="true" />
       <div class="reveal">
         <p>
           Yes, if you are a solo practice or a small firm with a clean body
@@ -394,7 +390,6 @@ const grades = [
         </p>
         <ol class="diy__steps">
           <li>
-            <span class="tag tag--dim">01</span>
             <p>
               Start from a portfolio template built for architecture or
               photography: minimal, grid-based, image-first. Resist the
@@ -402,7 +397,6 @@ const grades = [
             </p>
           </li>
           <li>
-            <span class="tag tag--dim">02</span>
             <p>
               Cut the portfolio to your best eight projects or fewer. A
               short portfolio of strong work reads as confidence. A long one
@@ -410,7 +404,6 @@ const grades = [
             </p>
           </li>
           <li>
-            <span class="tag tag--dim">03</span>
             <p>
               Prepare images before uploading: consistent proportions,
               largest edge around 2500 pixels, no phone screenshots. The
@@ -418,7 +411,6 @@ const grades = [
             </p>
           </li>
           <li>
-            <span class="tag tag--dim">04</span>
             <p>
               Write every project page in plain words: building type,
               location, size, your scope, and one problem the design solved.
@@ -426,7 +418,6 @@ const grades = [
             </p>
           </li>
           <li>
-            <span class="tag tag--dim">05</span>
             <p>
               Use the SEO settings on every page: a unique title in plain
               language, a one-sentence description, alt text on every image,
@@ -434,7 +425,6 @@ const grades = [
             </p>
           </li>
           <li>
-            <span class="tag tag--dim">06</span>
             <p>
               Publish, then test the whole site on a phone before telling
               anyone. That is how nearly everyone will meet it.
@@ -457,11 +447,9 @@ const grades = [
   <Faq items={faqs} heading="What architects ask about marketing" />
 
   <!-- CLOSE -->
-  <section class="section sheet cta">
+  <section class="section cta">
     <div class="container cta__inner">
-      <p class="tag reveal">Ref A-210</p>
       <h2 class="reveal">If the stamp came back Revise and resubmit.</h2>
-      <hr class="dimline dimline--center reveal" aria-hidden="true" />
       <p class="dim reveal cta__copy">
         Take the punch list and fix it yourselves; that is what it is for.
         And if you would rather hand it to people who study how architects
@@ -473,21 +461,18 @@ const grades = [
     </div>
   </section>
 
-  <RefSheets
+  <Related
     links={[
       {
         href: '/architects/',
-        sheet: 'A-210',
         label: 'Marketing and websites for architecture firms',
       },
       {
         href: '/guides/',
-        sheet: 'A-700',
         label: 'All guides',
       },
       {
         href: '/contact/',
-        sheet: 'A-500',
         label: 'Start the conversation',
       },
     ]}
@@ -495,37 +480,34 @@ const grades = [
 </Sheet>
 
 <style>
-  .hero {
-    position: relative;
-    min-height: 68svh;
-    display: flex;
-    align-items: flex-end;
+  .gtitle {
+    padding-top: clamp(3rem, 6vw, 5rem);
+    padding-bottom: clamp(3rem, 6vw, 5rem);
+  }
+
+  .gtitle__inner {
+    max-width: 52rem;
+  }
+
+  .gtitle__meta {
+    margin: 0 0 1.75rem;
+  }
+
+  .gtitle__lede {
+    max-width: 44rem;
+  }
+
+  .ghero {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    max-height: 70svh;
     overflow: hidden;
   }
 
-  .hero__media {
-    position: absolute;
-    inset: 0;
-  }
-
-  .hero__media :global(img) {
+  .ghero :global(img) {
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
-
-  .hero__content {
-    position: relative;
-    z-index: 3;
-    padding: calc(var(--header-h) + 3rem) 0 clamp(3rem, 7vw, 5rem);
-  }
-
-  .hero__kicker {
-    margin-bottom: 1.4rem;
-  }
-
-  .hero__sub {
-    max-width: 40rem;
   }
 
   .prose__inner {
@@ -566,12 +548,12 @@ const grades = [
   .scale__bar {
     display: flex;
     height: 2.4rem;
-    border: 1px solid var(--hairline-on-ink);
+    border: 1px solid var(--hairline);
   }
 
   .scale__seg {
     position: relative;
-    border-left: 1px solid var(--hairline-on-ink);
+    border-left: 1px solid var(--hairline);
   }
 
   .scale__seg:first-child {
@@ -582,9 +564,9 @@ const grades = [
     position: absolute;
     top: 0.35rem;
     left: 0.45rem;
-    font-family: var(--font-mono);
-    font-size: 0.65rem;
-    color: var(--text-on-ink-dim);
+    font-family: var(--font);
+    font-size: 12px;
+    color: var(--graphite);
   }
 
   .scale__seg .scale__end {
@@ -597,25 +579,25 @@ const grades = [
       -45deg,
       transparent,
       transparent 6px,
-      rgba(13, 27, 36, 0.12) 6px,
-      rgba(13, 27, 36, 0.12) 7px
+      rgba(10, 10, 10, 0.14) 6px,
+      rgba(10, 10, 10, 0.14) 7px
     );
   }
 
   .scale__seg--rr {
-    background: rgba(13, 27, 36, 0.05);
+    background: rgba(10, 10, 10, 0.05);
   }
 
   .scale__seg--an {
-    background: rgba(42, 191, 184, 0.22);
+    background: rgba(10, 10, 10, 0.22);
   }
 
   .scale__seg--a {
-    background: var(--teal);
+    background: var(--black);
   }
 
   .scale__seg--a span {
-    color: var(--ink);
+    color: var(--white);
     font-weight: 500;
   }
 
@@ -630,18 +612,13 @@ const grades = [
     font-size: 0.6rem;
   }
 
-  /* Review stamps: inked, boxed, slightly off-square */
+  /* Review stamps */
   .grades__stamp {
-    display: inline-block;
-    padding: 0.3rem 0.7rem;
-    border: 2px solid var(--teal);
-    color: var(--ink);
-    font-family: var(--font-mono);
-    font-size: 0.85rem !important;
-    letter-spacing: 0.14em;
+    font-size: 15px !important;
+    font-weight: 500;
+    letter-spacing: 0.16em;
     text-transform: uppercase;
-    transform: rotate(-2deg);
-    align-self: flex-start;
+    color: var(--black);
   }
 
   /* Punch list */
@@ -650,9 +627,6 @@ const grades = [
   }
 
   .audit__group h3 {
-    display: flex;
-    align-items: baseline;
-    gap: 0.9rem;
     margin-bottom: 0.75rem;
   }
 
@@ -667,19 +641,18 @@ const grades = [
     grid-template-columns: 1.6rem 1fr;
     gap: 0.9rem;
     padding: 0.8rem 0;
-    border-top: 1px solid var(--hairline-on-ink);
+    border-top: 1px solid var(--hairline);
   }
 
   .audit__items li:last-child {
-    border-bottom: 1px solid var(--hairline-on-ink);
+    border-bottom: 1px solid var(--hairline);
   }
 
   .audit__box {
     width: 1rem;
     height: 1rem;
-    margin-top: 0.3rem;
-    border: 1.5px solid var(--teal);
-    opacity: 0.8;
+    margin-top: 0.35rem;
+    border: 1px solid var(--black);
   }
 
   .audit__items p {
@@ -689,19 +662,18 @@ const grades = [
   /* Grades */
   .grades__table {
     margin: 2.25rem 0 0;
-    border: 1px solid var(--hairline-on-ink);
   }
 
   .grades__row {
     display: grid;
     grid-template-columns: 14rem 1fr;
     gap: 1.5rem;
-    padding: 1.25rem 1.5rem;
-    border-top: 1px solid var(--hairline-on-ink);
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--hairline);
   }
 
-  .grades__row:first-child {
-    border-top: 0;
+  .grades__row:last-child {
+    border-bottom: 1px solid var(--hairline);
   }
 
   .grades__row dt {
@@ -712,12 +684,11 @@ const grades = [
 
   .grades__row h3 {
     margin: 0;
-    font-size: 1.2rem;
   }
 
   .grades__row dd {
     margin: 0;
-    color: var(--text-on-ink-dim);
+    color: var(--graphite);
   }
 
   @media (max-width: 640px) {
@@ -735,15 +706,12 @@ const grades = [
   }
 
   .diy__steps li {
-    display: grid;
-    grid-template-columns: 3rem 1fr;
-    gap: 1rem;
     padding: 1rem 0;
-    border-top: 1px solid var(--hairline-on-ink);
+    border-top: 1px solid var(--hairline);
   }
 
   .diy__steps li:last-child {
-    border-bottom: 1px solid var(--hairline-on-ink);
+    border-bottom: 1px solid var(--hairline);
   }
 
   .diy__steps p {

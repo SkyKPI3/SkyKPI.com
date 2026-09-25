@@ -1,6 +1,5 @@
 ---
 import Sheet from '../layouts/Sheet.astro';
-import RegistrationMarks from '../components/RegistrationMarks.astro';
 import Faq from '../components/Faq.astro';
 import { faqSchema } from '../lib/schema';
 
@@ -19,12 +18,13 @@ const faqs = [
 const contactPage = {
   '@context': 'https://schema.org',
   '@type': 'ContactPage',
-  name: 'Contact SkyKPI',
-  url: 'https://skykpi.com/contact/',
+  name: 'Contact Lombard Belz',
+  url: 'https://lombardbelz.com/contact/',
   about: {
     '@type': 'Organization',
-    name: 'SkyKPI LLC',
-    email: 'hello@skykpi.com',
+    name: 'Lombard Belz',
+    legalName: 'SkyKPI LLC',
+    email: 'hello@lombardbelz.com',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Frankfort',
@@ -36,35 +36,32 @@ const contactPage = {
 ---
 
 <Sheet
-  title="Contact SkyKPI | Start the Conversation"
-  description="Contact SkyKPI about marketing or association management for the precast and AEC industries. We reply within one business day."
+  title="Contact Lombard Belz | Start the Conversation"
+  description="Contact Lombard Belz about marketing or association management for the precast and AEC industries. We reply within one business day."
   path="/contact/"
-  sheet="A-500"
   sheetName="Contact"
   jsonLd={[contactPage, faqSchema(faqs)]}
 >
-  <section class="section sheet contact">
-    <RegistrationMarks />
+  <section class="section contact">
     <div class="container contact__grid">
       <div class="contact__intro">
-        <p class="tag">Sheet A-500 &middot; Contact</p>
+        <p class="tag">Contact</p>
         <h1>Start the conversation.</h1>
-        <hr class="dimline" aria-hidden="true" />
         <p class="lede">
           Tell us what you need to sell, or what your board needs handled. We
           reply within one business day.
         </p>
         <dl class="contact__meta">
           <div>
-            <dt class="tag tag--dim">Email</dt>
-            <dd><a href="mailto:hello@skykpi.com">hello@skykpi.com</a></dd>
+            <dt class="tag">Email</dt>
+            <dd><a href="mailto:hello@lombardbelz.com">hello@lombardbelz.com</a></dd>
           </div>
           <div>
-            <dt class="tag tag--dim">Base</dt>
+            <dt class="tag">Base</dt>
             <dd>Frankfort, Illinois</dd>
           </div>
           <div>
-            <dt class="tag tag--dim">Service area</dt>
+            <dt class="tag">Service area</dt>
             <dd>United States</dd>
           </div>
         </dl>
@@ -84,22 +81,22 @@ const contactPage = {
         </p>
 
         <div class="field">
-          <label class="tag tag--dim" for="f-name">Name</label>
+          <label class="tag" for="f-name">Name</label>
           <input id="f-name" name="name" type="text" required autocomplete="name" />
         </div>
 
         <div class="field">
-          <label class="tag tag--dim" for="f-company">Company or association</label>
+          <label class="tag" for="f-company">Company or association</label>
           <input id="f-company" name="company" type="text" autocomplete="organization" />
         </div>
 
         <div class="field">
-          <label class="tag tag--dim" for="f-email">Email</label>
+          <label class="tag" for="f-email">Email</label>
           <input id="f-email" name="email" type="email" required autocomplete="email" />
         </div>
 
         <div class="field">
-          <label class="tag tag--dim" for="f-message">What do you need</label>
+          <label class="tag" for="f-message">What do you need</label>
           <textarea id="f-message" name="message" rows="6" required></textarea>
         </div>
 
@@ -113,7 +110,7 @@ const contactPage = {
 
 <style>
   .contact {
-    padding-top: calc(var(--header-h) + var(--space-section));
+    padding-top: var(--space-section);
     min-height: 80svh;
   }
 
@@ -143,25 +140,16 @@ const contactPage = {
 
   .contact__meta dd {
     margin: 0;
-    font-family: var(--font-mono);
-    font-size: 0.9rem;
   }
 
   .contact__meta a {
-    color: var(--teal);
-    text-decoration: none;
-  }
-
-  .contact__meta a:hover {
-    text-decoration: underline;
+    color: var(--black);
+    text-underline-offset: 0.15em;
   }
 
   .contact__form {
     display: grid;
     gap: 1.4rem;
-    padding: clamp(1.5rem, 3vw, 2.25rem);
-    border: 1px solid var(--hairline-on-ink);
-    background: var(--surface);
   }
 
   .hp {
@@ -175,21 +163,26 @@ const contactPage = {
     gap: 0.5rem;
   }
 
+  .field .tag,
+  .contact__meta .tag {
+    margin-bottom: 0;
+  }
+
   .field input,
   .field textarea {
     width: 100%;
     padding: 0.8rem 0.9rem;
-    font-family: var(--font-body);
+    font-family: var(--font);
     font-size: 1rem;
-    color: var(--ink);
-    background: var(--surface);
-    border: 1px solid rgba(13, 27, 36, 0.3);
+    color: var(--black);
+    background: var(--white);
+    border: 1px solid var(--black);
     border-radius: 0;
   }
 
   .field input:focus,
   .field textarea:focus {
-    outline: 2px solid var(--teal);
+    outline: 2px solid var(--black);
     outline-offset: 0;
     border-color: transparent;
   }

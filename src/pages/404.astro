@@ -1,27 +1,23 @@
 ---
 import Sheet from '../layouts/Sheet.astro';
-import RegistrationMarks from '../components/RegistrationMarks.astro';
 ---
 
 <Sheet
-  title="Sheet Not Found | SkyKPI"
-  description="This sheet is not in the current set. Return to A-100."
+  title="Page Not Found | Lombard Belz"
+  description="This page is not on the site. Return to the home page."
   path="/404/"
-  sheet="A-404"
-  sheetName="Not in set"
+  sheetName="Not found"
   noindex={true}
 >
-  <section class="section sheet nf">
-    <RegistrationMarks />
+  <section class="section nf">
     <div class="container nf__inner">
-      <p class="tag">Sheet A-404 &middot; Revision note</p>
-      <h1>Sheet not found.</h1>
-      <hr class="dimline dimline--center" aria-hidden="true" />
+      <p class="tag">Not found</p>
+      <h1>Page not found.</h1>
       <p class="lede">
-        This sheet is not in the current set. It may have been superseded in
-        the last revision. Check the title block and start from the cover.
+        This page is not on the site. It may have moved in the last update.
+        Start again from the home page.
       </p>
-      <a class="btn" href="/">Return to sheet A-100</a>
+      <a class="btn" href="/">Return home</a>
     </div>
   </section>
 </Sheet>

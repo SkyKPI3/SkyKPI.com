@@ -3,17 +3,15 @@ import Sheet from '../layouts/Sheet.astro';
 ---
 
 <Sheet
-  title="Privacy Policy | SkyKPI"
-  description="SkyKPI collects only what the contact form sends, sells no data, and sets no tracking cookies. The full policy, in plain language."
+  title="Privacy Policy | Lombard Belz"
+  description="Lombard Belz collects only what the contact form sends, sells no data, and sets no tracking cookies. The full policy, in plain language."
   path="/privacy/"
-  sheet="G-001"
   sheetName="Privacy"
 >
-  <section class="section sheet privacy">
+  <section class="section privacy">
     <div class="container privacy__inner">
-      <p class="tag">Sheet G-001 &middot; General / Privacy</p>
+      <p class="tag">Privacy</p>
       <h1>Privacy policy</h1>
-      <hr class="dimline" aria-hidden="true" />
       <p class="lede">
         The short version: we collect only what you send us through the
         contact form, we do not sell data, and this site sets no tracking
@@ -50,14 +48,21 @@ import Sheet from '../layouts/Sheet.astro';
           to our email and stored in Netlify's form dashboard.
         </p>
 
+        <h2>Who runs this site</h2>
+        <p>
+          Lombard Belz is an assumed name of SkyKPI LLC, an Illinois limited
+          liability company based in Frankfort, Illinois. Any reference to
+          Lombard Belz in this policy means SkyKPI LLC.
+        </p>
+
         <h2>Your choices</h2>
         <p>
           If you want a copy of what you sent us, or want it deleted, email
-          <a href="mailto:hello@skykpi.com">hello@skykpi.com</a> and we will
+          <a href="mailto:hello@lombardbelz.com">hello@lombardbelz.com</a> and we will
           take care of it.
         </p>
 
-        <p class="privacy__issued tag tag--dim">Issued 2026. Supersedes all previous revisions.</p>
+        <p class="privacy__issued meta">Last updated 2026.</p>
       </div>
     </div>
   </section>
@@ -65,7 +70,7 @@ import Sheet from '../layouts/Sheet.astro';
 
 <style>
   .privacy {
-    padding-top: calc(var(--header-h) + var(--space-section));
+    padding-top: var(--space-section);
   }
 
   .privacy__inner {
@@ -77,12 +82,13 @@ import Sheet from '../layouts/Sheet.astro';
   }
 
   .privacy__body h2 {
-    font-size: 1.35rem;
+    font-size: 1.4rem;
+    font-weight: 400;
     margin: 2.25rem 0 0.6rem;
   }
 
   .privacy__body a {
-    color: var(--teal);
+    color: var(--black);
   }
 
   .privacy__issued {

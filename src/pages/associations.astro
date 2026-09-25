@@ -1,9 +1,8 @@
 ---
 import { Image } from 'astro:assets';
 import Sheet from '../layouts/Sheet.astro';
-import RegistrationMarks from '../components/RegistrationMarks.astro';
 import Faq from '../components/Faq.astro';
-import RefSheets from '../components/RefSheets.astro';
+import Related from '../components/Related.astro';
 import { faqSchema, serviceSchema } from '../lib/schema';
 import bandShot from '../assets/photos/assoc/IMG_5288.jpeg';
 import galaShot from '../assets/photos/assoc/IMG_1976.jpeg';
@@ -32,7 +31,7 @@ const jsonLd = [
     name: 'Association Management',
     description:
       'Full-team association management for AEC trade and professional associations: events, membership, sponsors, communications, and board support for one fee.',
-    url: 'https://skykpi.com/associations/',
+    url: 'https://lombardbelz.com/associations/',
     serviceType: 'Association management',
   }),
   faqSchema(faqs),
@@ -68,41 +67,36 @@ const services = [
 ---
 
 <Sheet
-  title="Association Management Company for AEC Associations | SkyKPI"
+  title="Association Management Company for AEC Associations | Lombard Belz"
   description="Full-team association management for AEC trade associations. Events, membership, sponsors, communications, and board support for one fee."
   path="/associations/"
-  sheet="A-300"
   sheetName="Associations"
   jsonLd={jsonLd}
 >
   <!-- PAPER HERO -->
-  <section class="section on-paper hero">
-    <RegistrationMarks />
+  <section class="section open">
     <div class="container">
-      <p class="tag hero__kicker">Sheet A-300 &middot; Association Management</p>
+      <p class="tag open__kicker">Association Management</p>
       <h1>The single executive director model is breaking.</h1>
-      <hr class="dimline" aria-hidden="true" />
-      <p class="lede hero__sub">
+      <p class="lede open__sub">
         One person cannot run the events, the membership file, the sponsor
         program, the newsletter, and the board packet. When that person
-        leaves, the association's memory leaves with them. SkyKPI gives AEC
+        leaves, the association's memory leaves with them. Lombard Belz gives AEC
         associations a full team for one fee.
       </p>
     </div>
   </section>
 
   <!-- SPEC SHEET -->
-  <section class="section on-paper spec">
+  <section class="section spec">
     <div class="container">
       <p class="tag reveal">Schedule of services</p>
       <h2 class="reveal">What full-team management covers</h2>
-      <hr class="dimline reveal" aria-hidden="true" />
       <dl class="spec__table">
         {
           services.map((s) => (
             <div class="spec__row reveal">
               <dt>
-                <span class="tag tag--dim">{s.id}</span>
                 <h3>{s.name}</h3>
               </dt>
               <dd>{s.copy}</dd>
@@ -127,12 +121,11 @@ const services = [
   </section>
 
   <!-- WHY BOARDS CHOOSE IT -->
-  <section class="section on-paper boards">
+  <section class="section boards">
     <div class="container boards__grid">
       <div>
         <p class="tag reveal">For the board</p>
         <h2 class="reveal">Why boards make the switch</h2>
-        <hr class="dimline reveal" aria-hidden="true" />
       </div>
       <div class="reveal">
         <p>
@@ -154,8 +147,7 @@ const services = [
   </section>
 
   <!-- GALA IMAGE + PULL -->
-  <section class="section sheet gala">
-    <RegistrationMarks />
+  <section class="section gala">
     <div class="container gala__grid">
       <div class="gala__media photo-treat reveal">
         <Image
@@ -171,7 +163,6 @@ const services = [
       <div class="gala__copy">
         <p class="tag reveal">The standard</p>
         <h2 class="reveal">Members should leave the annual meeting proud of their association.</h2>
-        <hr class="dimline reveal" aria-hidden="true" />
         <p class="dim reveal">
           That feeling is the product. It is what keeps members renewing,
           sponsors writing checks, and volunteers raising their hands. Every
@@ -183,27 +174,23 @@ const services = [
 
   <Faq items={faqs} heading="What boards ask us" />
 
-  <RefSheets
+  <Related
     links={[
       {
         href: '/marketing/',
-        sheet: 'A-200',
         label: 'Marketing for precast producers, suppliers, and the AEC firms around them',
       },
       {
         href: '/about/',
-        sheet: 'A-400',
-        label: 'How SkyKPI decides which clients to take',
+        label: 'How Lombard Belz decides which clients to take',
       },
     ]}
   />
 
   <!-- CTA -->
-  <section class="section sheet cta">
+  <section class="section cta">
     <div class="container cta__inner">
-      <p class="tag reveal">Sheet A-500</p>
       <h2 class="reveal">Bring it to your board.</h2>
-      <hr class="dimline dimline--center reveal" aria-hidden="true" />
       <p class="dim reveal cta__copy">
         We will walk your board through what full-team management looks like
         for your association, plainly and without a hard sell.
@@ -216,15 +203,15 @@ const services = [
 </Sheet>
 
 <style>
-  .hero {
-    padding-top: calc(var(--header-h) + var(--space-section));
+  .open {
+    padding-top: var(--space-section);
   }
 
-  .hero__kicker {
+  .open__kicker {
     margin-bottom: 1.4rem;
   }
 
-  .hero__sub {
+  .open__sub {
     max-width: 40rem;
   }
 
@@ -235,19 +222,18 @@ const services = [
   .spec__table {
     margin: 2.25rem 0 0;
     max-width: 52rem;
-    border: 1px solid var(--hairline-on-paper);
   }
 
   .spec__row {
     display: grid;
     grid-template-columns: 15rem 1fr;
     gap: 1.5rem;
-    padding: 1.25rem 1.5rem;
-    border-top: 1px solid var(--hairline-on-paper);
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--hairline);
   }
 
-  .spec__row:first-child {
-    border-top: 0;
+  .spec__row:last-child {
+    border-bottom: 1px solid var(--hairline);
   }
 
   .spec__row dt {
@@ -258,12 +244,11 @@ const services = [
 
   .spec__row h3 {
     margin: 0;
-    font-size: 1.2rem;
   }
 
   .spec__row dd {
     margin: 0;
-    color: var(--text-on-paper-dim);
+    color: var(--graphite);
   }
 
   @media (max-width: 640px) {
