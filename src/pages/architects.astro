@@ -4,7 +4,7 @@ import Sheet from '../layouts/Sheet.astro';
 import Faq from '../components/Faq.astro';
 import Related from '../components/Related.astro';
 import { faqSchema } from '../lib/schema';
-import heroShot from '../assets/photos/precast/DJI_0284.JPG';
+import heroShot from '../assets/photos/precast/IMG_2998.jpeg';
 import detailShot from '../assets/photos/precast/IMG_1379.jpeg';
 
 const faqs = [
@@ -18,7 +18,7 @@ const faqs = [
   },
   {
     q: 'What does it cost?',
-    a: 'One monthly retainer scoped to what the firm needs, with no hourly billing. We set the number in a conversation about scope, not on a rate card.',
+    a: 'One monthly retainer scoped to what the firm needs, with no hourly billing. We set the number in a conversation about scope.',
   },
 ];
 
@@ -37,7 +37,7 @@ const jsonLd = [faqSchema(faqs)];
     <div class="hero__media photo-treat">
       <Image
         src={heroShot}
-        alt="A finished thin-brick precast facade with cast stone banding, receding in strong perspective under a blue sky."
+        alt="A finished building with tan brick, cast stone banding, and dark metal louvers under a clear sky."
         widths={[480, 768, 1280, 1920]}
         width={1920}
         sizes="100vw"
@@ -48,10 +48,9 @@ const jsonLd = [faqSchema(faqs)];
     </div>
     <div class="container hero__content">
       <p class="tag hero__kicker">Marketing / Architects</p>
-      <h1>Your built work should win the next commission.</h1>
+      <h1>Websites and marketing for architecture firms.</h1>
       <p class="lede hero__sub">
-        Lombard Belz builds websites, marketing, and social media for architects,
-        with core expertise in the precast concrete industry.
+        Lombard Belz builds the website, project photography, and LinkedIn presence an architecture firm needs to show its built work to selection committees and clients. Our core work is in precast concrete, so we already know how design firms get evaluated.
       </p>
     </div>
   </section>
@@ -60,7 +59,7 @@ const jsonLd = [faqSchema(faqs)];
     <div class="container angle__grid">
       <div>
         <p class="tag reveal">Why us</p>
-        <h2 class="reveal">We already study how architects choose.</h2>
+        <h2 class="reveal">Why an architecture firm would hire us</h2>
       </div>
       <div class="reveal">
         <p>
@@ -93,8 +92,7 @@ const jsonLd = [faqSchema(faqs)];
           <li class="reveal">
             <h3>Project photography</h3>
             <p class="dim">
-              Finished-work photography that holds up on a conference-room
-              screen, not phone shots from a site visit.
+              Finished-work photography that holds up on a conference-room screen.
             </p>
           </li>
           <li class="reveal">
@@ -145,9 +143,9 @@ const jsonLd = [faqSchema(faqs)];
 
   <section class="section cta">
     <div class="container cta__inner">
-      <h2 class="reveal">Show us the work you want seen.</h2>
+      <h2 class="reveal">Talk to us about your firm.</h2>
       <div class="reveal">
-        <a class="btn" href="/contact/">Start the conversation</a>
+        <a class="btn" href="/contact/">Contact us</a>
       </div>
     </div>
   </section>

@@ -4,8 +4,8 @@ import Sheet from '../layouts/Sheet.astro';
 import Faq from '../components/Faq.astro';
 import Related from '../components/Related.astro';
 import { faqSchema } from '../lib/schema';
-import heroShot from '../assets/photos/arch/IMG_4808.jpeg';
-import detailShot from '../assets/photos/precast/IMG_5104.jpeg';
+import heroShot from '../assets/photos/precast/IMG_5104.jpeg';
+import detailShot from '../assets/photos/precast/IMG_8350.jpeg';
 
 const faqs = [
   {
@@ -37,7 +37,7 @@ const jsonLd = [faqSchema(faqs)];
     <div class="hero__media photo-treat">
       <Image
         src={heroShot}
-        alt="A large empty aircraft hangar with a freshly coated glossy floor and a full-width hangar door."
+        alt="A precast wall panel with dark thin-brick facing being set by crane while a worker steadies its base."
         widths={[480, 768, 1280, 1920]}
         width={1920}
         sizes="100vw"
@@ -48,11 +48,9 @@ const jsonLd = [faqSchema(faqs)];
     </div>
     <div class="container hero__content">
       <p class="tag hero__kicker">Marketing / Subcontractors</p>
-      <h1>Get found before the bid list closes.</h1>
+      <h1>Websites and marketing for trade subcontractors.</h1>
       <p class="lede hero__sub">
-        Lombard Belz builds websites, marketing, and social media for trade and
-        specialty subcontractors, with core expertise in the precast concrete
-        industry.
+        Lombard Belz builds the website, capability pages, and project photography a trade or specialty subcontractor needs to get prequalified and onto bid lists. Our core work is in precast concrete, so we already speak the language of the general contractors who hire the trades.
       </p>
     </div>
   </section>
@@ -61,7 +59,7 @@ const jsonLd = [faqSchema(faqs)];
     <div class="container angle__grid">
       <div>
         <p class="tag reveal">Why us</p>
-        <h2 class="reveal">Prequalification happens online now.</h2>
+        <h2 class="reveal">Why subcontractors hire us</h2>
       </div>
       <div class="reveal">
         <p>
@@ -111,7 +109,7 @@ const jsonLd = [faqSchema(faqs)];
       <div class="scope__media photo-treat reveal">
         <Image
           src={detailShot}
-          alt="A precast wall panel with dark thin-brick facing being set by crane while a worker steadies its base."
+          alt="Precast concrete stair and wall units being erected on a jobsite, seen from above."
           widths={[360, 480, 800, 1200]}
           width={1200}
           sizes="(min-width: 821px) 40vw, 100vw"
@@ -143,9 +141,9 @@ const jsonLd = [faqSchema(faqs)];
 
   <section class="section cta">
     <div class="container cta__inner">
-      <h2 class="reveal">Make the next bid list.</h2>
+      <h2 class="reveal">Talk to us about your company.</h2>
       <div class="reveal">
-        <a class="btn" href="/contact/">Start the conversation</a>
+        <a class="btn" href="/contact/">Contact us</a>
       </div>
     </div>
   </section>

@@ -1,8 +1,8 @@
 ---
 import { Image } from 'astro:assets';
 import Sheet from '../layouts/Sheet.astro';
-import heroShot from '../assets/photos/precast/IMG_2438.jpeg';
-import marketingDoor from '../assets/photos/precast/dji_fly_20260423_122348_0032_1778523760766_photo.jpg';
+import heroShot from '../assets/photos/precast/IMG_4084.jpeg';
+import marketingDoor from '../assets/photos/precast/IMG_2438.jpeg';
 import associationsDoor from '../assets/photos/assoc/IMG_1978.jpeg';
 
 const professionalService = {
@@ -12,7 +12,7 @@ const professionalService = {
   legalName: 'SkyKPI LLC',
   url: 'https://lombardbelz.com',
   description:
-    'Lombard Belz is a marketing and association management firm for the precast concrete and AEC industries, based in Frankfort, Illinois and working nationwide. The marketing work gets precast producers and suppliers known to the people who decide what gets designed in and what gets bought, before jobs go out to bid, with a monthly report of who found the client and what it led to.',
+    'Lombard Belz is a marketing and association management firm for the precast concrete and AEC industries, based in Frankfort, Illinois and working nationwide. The marketing work covers websites, email, photography, and LinkedIn for precast producers and suppliers, with a monthly report of who found the client and what it led to. The association work covers events, membership, sponsors, communications, and board support for AEC trade associations.',
   email: 'hello@lombardbelz.com',
   address: {
     '@type': 'PostalAddress',
@@ -31,8 +31,8 @@ const professionalService = {
 ---
 
 <Sheet
-  title="Lombard Belz | Marketing and Association Management for Precast and AEC"
-  description="By the time a job goes out to bid, the big decisions are already made. Lombard Belz gets precast producers and suppliers known to the people making them."
+  title="Precast Marketing and Association Management | Lombard Belz"
+  description="Lombard Belz provides websites, email, photography, and LinkedIn marketing for precast producers and suppliers, and manages AEC trade associations."
   path="/"
   sheetName="Home"
   jsonLd={[professionalService]}
@@ -42,7 +42,7 @@ const professionalService = {
     <div class="hero__media photo-treat">
       <Image
         src={heroShot}
-        alt="A straddle carrier lifts a long precast wall panel across a muddy plant yard under a clear winter sky."
+        alt="A mobile crane sets a precast concrete bridge girder onto a pier cap at a highway jobsite."
         widths={[480, 768, 1280, 1920, 2400]}
         width={1920}
         sizes="100vw"
@@ -53,15 +53,14 @@ const professionalService = {
     </div>
     <div class="container hero__content">
       <p class="tag hero__label">Lombard Belz</p>
-      <h1>By the time a job goes out to bid, the big decisions are already made.</h1>
+      <h1>Marketing and association management for precast concrete and AEC.</h1>
       <p class="lede hero__identity">
-        Lombard Belz gets precast producers and suppliers known to the architects,
-        engineers, and contractors making those decisions, while there is
-        still time to shape them. Every month you see who found you and what
-        it put on your books.
+        Lombard Belz provides websites, email marketing, photography, and LinkedIn marketing for precast concrete producers and building product suppliers. We also manage trade associations in precast and in architecture, engineering, and construction. We are based in Frankfort, Illinois and work nationwide.
       </p>
       <div class="hero__cta">
-        <a class="btn" href="/contact/">Start the conversation</a>
+        <a class="btn" href="/contact/">Contact us</a>
+        <a class="textlink hero__link" href="/marketing/">Marketing</a>
+        <a class="textlink hero__link" href="/associations/">Association management</a>
       </div>
     </div>
   </section>
@@ -69,10 +68,9 @@ const professionalService = {
   <!-- TWO DOORS -->
   <section class="section doors">
     <div class="container">
-      <p class="tag reveal">Scope of work</p>
+      <p class="tag reveal">Services</p>
       <h2 class="reveal">
-        Lombard Belz does marketing and association management for precast and AEC,
-        from inside the industry.
+        What we do
       </h2>
 
       <div class="cols cols--2">
@@ -80,7 +78,7 @@ const professionalService = {
           <div class="door__media">
             <Image
               src={marketingDoor}
-              alt="Rows of prestressed concrete bridge girders stored in a precast plant yard."
+              alt="A straddle carrier lifts a long precast wall panel across a plant yard."
               widths={[360, 480, 800, 1200]}
               width={1200}
               sizes="(min-width: 821px) 50vw, 100vw"
@@ -89,7 +87,7 @@ const professionalService = {
             />
           </div>
           <p class="tag">Marketing</p>
-          <h3>Lombard Belz works as an extension of your sales team.</h3>
+          <h3>Marketing for precast producers and suppliers</h3>
           <p class="dim">
             Websites, email, photography, and social media for precast
             producers and suppliers, and for the architects, contractors,
@@ -111,11 +109,9 @@ const professionalService = {
             />
           </div>
           <p class="tag">Association management</p>
-          <h3>The association gets a full team for one fee.</h3>
+          <h3>Association management for AEC trade associations</h3>
           <p class="dim">
-            Events, membership, sponsors, communications, and board support
-            for AEC trade and professional associations that have outgrown
-            the single-director model.
+            A full team runs events, membership, sponsors, communications, and board support for AEC trade and professional associations, for one fee.
           </p>
           <span class="textlink">Association management</span>
         </a>
@@ -127,23 +123,17 @@ const professionalService = {
   <section class="section insider">
     <div class="container split">
       <div>
-        <p class="tag reveal">Why it works</p>
+        <p class="tag reveal">Industry experience</p>
         <h2 class="reveal">
-          You should never have to explain your industry to your marketing
-          firm.
+          We already work in precast.
         </h2>
       </div>
       <div class="insider__copy reveal">
         <p>
-          We already know what architects search for and when bid season
-          hits. Nobody spends the first six months
-          learning what a double tee is, and the first draft sounds like your
-          industry because we work in it every day.
+          We manage trade associations in precast and AEC today, so we know the product, the buyers, and the bid calendar before the first meeting. You will not spend the first six months teaching us what a double tee is.
         </p>
         <p>
-          The work is getting you known to the people making the decisions
-          while there is still time to shape them, and the monthly report
-          shows what it produced.
+          Most structural and material decisions get made during design, well before a job is bid. Our work puts your plant in front of architects, engineers, and contractors during that window, and the monthly report shows what it produced.
         </p>
       </div>
     </div>
@@ -153,27 +143,26 @@ const professionalService = {
   <section class="section how">
     <div class="container">
       <p class="tag reveal">How we work</p>
-      <h2 class="reveal">Scope, build, run.</h2>
+      <h2 class="reveal">How an engagement works</h2>
       <ol class="cols cols--3 how__steps">
         <li class="reveal">
-          <h3>Scope</h3>
+          <h3>1. Scope</h3>
           <p class="dim">
             It starts with one conversation about what you need. We tell you
             plainly what we would do and what it costs.
           </p>
         </li>
         <li class="reveal">
-          <h3>Build</h3>
+          <h3>2. Build</h3>
           <p class="dim">
-            One team writes, designs, and shoots. You review real work, not a
-            process deck.
+            One team writes, designs, and shoots the photography. You review finished work.
           </p>
         </li>
         <li class="reveal">
-          <h3>Run</h3>
+          <h3>3. Run</h3>
           <p class="dim">
             The program runs on a single monthly retainer scoped to the work,
-            and the monthly report shows who found you and what it led to.
+            and a one-page monthly report lists the inquiries, sample requests, plant visits, and bid invitations the work produced.
           </p>
         </li>
       </ol>
@@ -187,20 +176,17 @@ const professionalService = {
       <ul class="notes__list">
         <li class="reveal">
           <p>
-            Client work is confidential. We publish no names and no case
-            studies. Your wins are yours.
+            Client work is confidential. We do not publish client names or case studies.
           </p>
         </li>
         <li class="reveal">
           <p>
-            The people you meet do the work. There is no junior account team
-            waiting behind the pitch.
+            The people you meet in the first conversation do the work.
           </p>
         </li>
         <li class="reveal">
           <p>
-            Precast is the flagship. Our work for architects, contractors, and
-            subcontractors is built on that fluency.
+            Precast is our core. The work we do for architects, contractors, and subcontractors builds on it.
           </p>
         </li>
       </ul>
@@ -210,13 +196,13 @@ const professionalService = {
   <!-- CTA -->
   <section class="section cta">
     <div class="container cta__inner">
-      <h2 class="reveal">Tell us what you are working on.</h2>
+      <h2 class="reveal">Contact Lombard Belz</h2>
       <p class="dim reveal cta__copy">
         Send a note about what you need to sell, or what your board needs
-        handled. We will tell you straight whether we are the right fit.
+        handled. We will tell you whether we are the right fit.
       </p>
       <div class="reveal">
-        <a class="btn" href="/contact/">Start the conversation</a>
+        <a class="btn" href="/contact/">Contact us</a>
       </div>
     </div>
   </section>
@@ -254,7 +240,7 @@ const professionalService = {
   }
 
   .hero__content h1 {
-    max-width: 18ch;
+    max-width: 22ch;
   }
 
   .hero__identity {
@@ -262,8 +248,16 @@ const professionalService = {
     margin-top: 1.5rem;
   }
 
-  .hero__cta {
+    .hero__cta {
     margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.75rem;
+  }
+
+  .hero__link {
+    color: inherit;
   }
 
   /* DOORS: two plain columns with a hairline top rule */
