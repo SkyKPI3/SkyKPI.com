@@ -102,7 +102,7 @@ const audiences = [
       <p class="tag hero__kicker">Marketing</p>
       <h1>Marketing for precast concrete producers and suppliers.</h1>
       <p class="lede hero__sub">
-        Lombard Belz is a marketing firm for precast concrete producers and the suppliers who sell to them. We build the website, write and send the email, shoot the plant and jobsite photography, and run the company LinkedIn page. The work runs on a monthly retainer, and a one-page report each month lists the inquiries, sample requests, plant visits, and bid invitations it produced.
+        Lombard Belz is a marketing firm for precast concrete producers and the suppliers who sell to them. We build the website, write and send the email, shoot the plant and jobsite photography, and run the company LinkedIn page. The work runs on a monthly retainer, and a one-page report each month lists the inquiries, sample requests, plant visits, and bid invitations we tracked.
       </p>
     </div>
   </section>
@@ -335,7 +335,7 @@ const audiences = [
           If a month produced nothing worth reporting, the report says that too, and we talk about what changes.
         </p>
         <table class="sample">
-          <caption>Sample monthly report. The format is real and the figures are made up.</caption>
+          <caption><strong>Example report.</strong> These figures are made up to show the format. They are not client results.</caption>
           <tbody>
             <tr><th scope="row">Website inquiries</th><td>6</td><td>Four general contractors and two architects</td></tr>
             <tr><th scope="row">Sample requests</th><td>3</td><td>Two thin brick and one formliner</td></tr>
@@ -446,10 +446,13 @@ const audiences = [
     font-size: 0.95rem;
   }
 
-  .sample caption {
+    .sample caption {
     text-align: left;
     padding-bottom: 0.75rem;
-    color: var(--graphite);
+  }
+
+  .sample caption strong {
+    font-weight: 500;
   }
 
   .sample th,
