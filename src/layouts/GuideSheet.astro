@@ -88,7 +88,7 @@ const article = {
   path={`/guides/${slug}/`}
   sheetName={`Guides / ${h1.split(',')[0].split(':')[0]}`}
   parent={{ href: '/guides/', label: 'Guides' }}
-  jsonLd={[article, faqSchema(faqs)]}
+  jsonLd={[article]}
   noindex={isEmbargoed}
 >
   <section class="section gtitle">

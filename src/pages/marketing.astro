@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: 'What does precast marketing cost?',
-    a: 'A single monthly retainer scoped to the work. One team, no hourly billing. The number comes from a conversation about scope, so pricing starts with what you need.',
+    a: 'Marketing retainers start at $8,500 a month. The retainer is scoped to the work, with one team and no hourly billing. The exact number comes from a conversation about what you need.',
   },
   {
     q: 'Do you show client work or results?',
@@ -42,7 +42,7 @@ const faqs = [
   },
   {
     q: 'Do you replace our marketing person?',
-    a: 'No. Where there is someone in-house, we work alongside them and carry the load they do not have time for. Where there is nobody, we are the department. Either way you deal with the same team, not a rotating account list.',
+    a: 'No. Where there is someone in-house, we work alongside them and carry the load they do not have time for. Where there is nobody, we are the department. Either way you deal with the same team every month.',
   },
 ];
 
@@ -54,7 +54,6 @@ const jsonLd = [
     url: 'https://lombardbelz.com/marketing/',
     serviceType: 'Marketing services',
   }),
-  faqSchema(faqs),
 ];
 
 const audiences = [
@@ -309,12 +308,10 @@ const audiences = [
       </div>
       <div class="reveal">
         <p>
-          A single monthly retainer scoped to the work, with no hourly billing. You
-          get one team that writes, designs, shoots, and ships, and one person
-          to call.
+          Marketing retainers start at $8,500 a month. The retainer is scoped to the work, with no hourly billing. You get one team that writes, designs, and shoots the photography, and one person to call.
         </p>
         <p>
-          Pricing comes from a conversation about scope.
+          The exact number comes from a conversation about scope.
           <a class="model__cta" href="/contact/">Start it here.</a>
         </p>
       </div>
@@ -335,10 +332,19 @@ const audiences = [
           plant visits, the invitations to bid.
         </p>
         <p>
-          If a month produced nothing worth reporting, the report says that
-          too, and we talk about what changes. You should never have to
-          wonder what the retainer bought.
+          If a month produced nothing worth reporting, the report says that too, and we talk about what changes.
         </p>
+        <table class="sample">
+          <caption>Sample monthly report. The format is real and the figures are made up.</caption>
+          <tbody>
+            <tr><th scope="row">Website inquiries</th><td>6</td><td>Four general contractors and two architects</td></tr>
+            <tr><th scope="row">Sample requests</th><td>3</td><td>Two thin brick and one formliner</td></tr>
+            <tr><th scope="row">Plant visits booked</th><td>1</td><td>A design team working on a parking structure</td></tr>
+            <tr><th scope="row">Invitations to bid</th><td>2</td><td>Both from contractors who first replied to the email</td></tr>
+            <tr><th scope="row">Email</th><td>1,240 sent</td><td>41 percent opened and three replied to sales</td></tr>
+            <tr><th scope="row">LinkedIn</th><td>5 posts</td><td>9,800 views and 62 page visitors</td></tr>
+          </tbody>
+        </table>
       </div>
     </div>
   </section>
@@ -431,6 +437,37 @@ const audiences = [
     .report__grid {
       grid-template-columns: 1fr;
     }
+  }
+
+    .sample {
+    width: 100%;
+    margin-top: 2rem;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+
+  .sample caption {
+    text-align: left;
+    padding-bottom: 0.75rem;
+    color: var(--graphite);
+  }
+
+  .sample th,
+  .sample td {
+    text-align: left;
+    vertical-align: top;
+    padding: 0.7rem 0.75rem 0.7rem 0;
+    border-top: 1px solid var(--hairline);
+    font-weight: 400;
+  }
+
+  .sample th {
+    font-weight: 500;
+    white-space: nowrap;
+  }
+
+  .sample td:last-child {
+    color: var(--graphite);
   }
 
   .build__grid {
