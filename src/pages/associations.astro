@@ -5,6 +5,9 @@ import Faq from '../components/Faq.astro';
 import Related from '../components/Related.astro';
 import { faqSchema, serviceSchema } from '../lib/schema';
 import bandShot from '../assets/photos/assoc/IMG_4068.jpeg';
+import workSite from '../assets/work/ala-site.png';
+import workEvents from '../assets/work/ala-events.png';
+import workCeu from '../assets/work/ala-ceu.png';
 import galaShot from '../assets/photos/assoc/IMG_1976.jpeg';
 
 const faqs = [
@@ -140,6 +143,27 @@ const services = [
     </div>
   </section>
 
+  <!-- PLATFORM SCREENS -->
+  <section class="section work">
+    <div class="container">
+      <p class="tag reveal">Built for the Association of Licensed Architects</p>
+      <ul class="work__grid">
+        <li class="reveal">
+          <Image src={workSite} alt="The Association of Licensed Architects home page, with the next events listed under the header." widths={[480, 800, 1200]} width={1200} sizes="(min-width: 821px) 33vw, 100vw" loading="lazy" quality={75} />
+          <p class="dim">The public website</p>
+        </li>
+        <li class="reveal">
+          <Image src={workEvents} alt="The Association of Licensed Architects events page, with an upcoming event and a register button." widths={[480, 800, 1200]} width={1200} sizes="(min-width: 821px) 33vw, 100vw" loading="lazy" quality={75} />
+          <p class="dim">Event listings and registration</p>
+        </li>
+        <li class="reveal">
+          <Image src={workCeu} alt="The member sign-in screen for the continuing education tracker, which emails a six digit code." widths={[480, 800, 1200]} width={1200} sizes="(min-width: 821px) 33vw, 100vw" loading="lazy" quality={75} />
+          <p class="dim">Member sign-in for the continuing education tracker</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
   <!-- PHOTO BAND -->
   <section class="band photo-treat">
     <Image
@@ -232,6 +256,36 @@ const services = [
 </Sheet>
 
 <style>
+  .work {
+    padding-top: 0;
+  }
+
+  .work__grid {
+    list-style: none;
+    margin: 1.5rem 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1rem, 2.5vw, 2rem);
+  }
+
+  .work__grid :global(img) {
+    width: 100%;
+    height: auto;
+    border: 1px solid var(--hairline);
+  }
+
+  .work__grid p {
+    margin: 0.6rem 0 0;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 820px) {
+    .work__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
   .open {
     padding-top: var(--space-section);
   }
