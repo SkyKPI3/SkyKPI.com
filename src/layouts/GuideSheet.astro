@@ -57,7 +57,7 @@ const {
   refs,
 } = Astro.props;
 
-const url = `https://lombardbelz.com/guides/${slug}/`;
+const url = `https://skykpi.com/guides/${slug}/`;
 const isEmbargoed = published > new Date().toISOString().slice(0, 10);
 
 const publishedLabel = new Intl.DateTimeFormat('en-US', {
@@ -75,9 +75,9 @@ const article = {
   datePublished: published,
   dateModified: published,
   url,
-  image: 'https://lombardbelz.com/og-default.png',
-  author: { '@type': 'Organization', name: 'Lombard Belz', url: 'https://lombardbelz.com' },
-  publisher: { '@id': 'https://lombardbelz.com/#organization' },
+  image: 'https://skykpi.com/og-default.png',
+  author: { '@type': 'Organization', name: 'SkyKPI', url: 'https://skykpi.com' },
+  publisher: { '@id': 'https://skykpi.com/#organization' },
   about,
 };
 ---

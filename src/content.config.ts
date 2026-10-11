@@ -2,7 +2,7 @@ import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
 
 /**
- * Field Notes: the short photo-led posts Lombard Belz publishes.
+ * Field Notes: the short photo-led posts SkyKPI publishes.
  * One markdown file per entry, with its image beside it in the same folder.
  * See the README for the file format.
  */

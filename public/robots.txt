@@ -40,4 +40,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://lombardbelz.com/sitemap-index.xml
+Sitemap: https://skykpi.com/sitemap-index.xml

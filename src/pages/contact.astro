@@ -1,24 +1,19 @@
 ---
 import Sheet from '../layouts/Sheet.astro';
 
-// Three routed addresses. No form: rule 8 of the voice standard.
-const routes = [
-  { label: 'New business', email: 'hello@lombardbelz.com', contactType: 'sales' },
-  { label: 'Association boards', email: 'boards@lombardbelz.com', contactType: 'customer service' },
-  { label: 'Press and speaking', email: 'press@lombardbelz.com', contactType: 'public relations' },
-];
+const routes = [{ label: 'Email', email: 'hello@skykpi.com', contactType: 'sales' }];
 
 const contactPage = {
   '@context': 'https://schema.org',
   '@type': 'ContactPage',
-  name: 'Contact Lombard Belz',
-  url: 'https://lombardbelz.com/contact/',
+  name: 'Contact SkyKPI',
+  url: 'https://skykpi.com/contact/',
   about: {
     '@type': 'Organization',
-    '@id': 'https://lombardbelz.com/#organization',
-    name: 'Lombard Belz',
+    '@id': 'https://skykpi.com/#organization',
+    name: 'SkyKPI',
     legalName: 'SkyKPI LLC',
-    email: 'hello@lombardbelz.com',
+    email: 'hello@skykpi.com',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Frankfort',
@@ -38,8 +33,8 @@ const contactPage = {
 ---
 
 <Sheet
-  title="Contact Lombard Belz | Frankfort, Illinois"
-  description="Email Lombard Belz about marketing or association management for precast and AEC. We answer within two working days."
+  title="Contact SkyKPI | Frankfort, Illinois"
+  description="Email SkyKPI about marketing or association management for precast and AEC. We answer within two working days."
   path="/contact/"
   sheetName="Contact"
   jsonLd={[contactPage]}
@@ -48,8 +43,8 @@ const contactPage = {
     <div class="container contact__grid">
       <div class="contact__intro">
         <p class="tag">Contact</p>
-        <h1>Contact Lombard Belz.</h1>
-        <p class="lede">Email the address that fits your question, or use the form below. We answer within two working days.</p>
+        <h1>Contact SkyKPI.</h1>
+        <p class="lede">Email us or use the form below. We answer within two working days.</p>
         <dl class="contact__meta">
           <div>
             <dt class="tag">Base</dt>

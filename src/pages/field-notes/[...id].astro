@@ -30,22 +30,22 @@ const article = {
   '@type': 'Article',
   headline: entry.data.title,
   datePublished: entry.data.date.toISOString().slice(0, 10),
-  url: `https://lombardbelz.com/field-notes/${entry.id}/`,
+  url: `https://skykpi.com/field-notes/${entry.id}/`,
   description: firstSentence,
-  author: { '@type': 'Organization', name: 'Lombard Belz' },
+  author: { '@type': 'Organization', name: 'SkyKPI' },
   publisher: {
     '@type': 'Organization',
-    name: 'Lombard Belz',
+    name: 'SkyKPI',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://lombardbelz.com/icon-512.png',
+      url: 'https://skykpi.com/icon-512.png',
     },
   },
 };
 ---
 
 <Sheet
-  title={`${entry.data.title} | Field Notes | Lombard Belz`}
+  title={`${entry.data.title} | Field Notes | SkyKPI`}
   description={firstSentence}
   path={`/field-notes/${entry.id}/`}
   sheetName="Field Notes"

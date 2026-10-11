@@ -19,7 +19,7 @@ const fieldNoteCount = (() => {
 })();
 
 export default defineConfig({
-  site: 'https://lombardbelz.com',
+  site: 'https://skykpi.com',
   trailingSlash: 'ignore',
   integrations: [
     sitemap({
@@ -31,7 +31,7 @@ export default defineConfig({
       serialize(item) {
         // The sheets are reference pages rather than a news feed. Weight the
         // service sheets above the legal and utility sheets.
-        if (item.url === 'https://lombardbelz.com/') {
+        if (item.url === 'https://skykpi.com/') {
           item.priority = 1.0;
           item.changefreq = 'monthly';
         } else if (/\/(marketing|associations)\/$/.test(item.url)) {
