@@ -8,6 +8,7 @@
   --black: #0a0a0a;
   --white: #ffffff;
   --graphite: #6b6b6b;
+  --teal: #2abfb8;
   --graphite-on-black: #9a9a9a;
   --hairline: rgba(10, 10, 10, 0.14);
   --hairline-on-black: rgba(255, 255, 255, 0.18);
@@ -240,9 +241,9 @@ main > .section:first-child,
   font-weight: 500;
   letter-spacing: 0.01em;
   text-decoration: none;
-  color: var(--white);
-  background: var(--black);
-  border: 1px solid var(--black);
+  color: var(--black);
+  background: var(--teal);
+  border: 1px solid var(--teal);
   cursor: pointer;
   transition: opacity 0.2s ease;
 }
@@ -263,9 +264,9 @@ main > .section:first-child,
 }
 
 .hero .btn {
-  background: var(--white);
+  background: var(--teal);
   color: var(--black);
-  border-color: var(--white);
+  border-color: var(--teal);
 }
 
 /* A plain text link with a hairline underline, used for "read more" rows */
@@ -275,7 +276,7 @@ main > .section:first-child,
   font-weight: 500;
   text-decoration: none;
   color: var(--black);
-  border-bottom: 1px solid var(--black);
+  border-bottom: 2px solid var(--teal);
   padding-bottom: 0.15rem;
 }
 
