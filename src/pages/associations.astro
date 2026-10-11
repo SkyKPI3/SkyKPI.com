@@ -10,11 +10,15 @@ import galaShot from '../assets/photos/assoc/IMG_1976.jpeg';
 const faqs = [
   {
     q: 'What does an association management company handle?',
-    a: 'Everything an executive director and staff would: events, membership, sponsor programs, communications, finances alongside your treasurer, and board support. The association keeps its name, its board, and its identity. We supply the team behind it.',
+    a: 'Everything an executive director and staff would: events, membership, sponsor programs, communications, finances alongside your treasurer, and board support. The association keeps its own name and board. We supply the team and the systems behind it.',
   },
   {
     q: 'What does association management cost?',
     a: 'One fee scoped to the association’s size and calendar, set in a conversation with the board. There is no hourly billing. For many associations the fee compares to a single director’s salary and benefits, and it buys a whole team.',
+  },
+  {
+        q: 'Do we have to use an off-the-shelf membership system?',
+    a: 'No. We build the website, membership system, event registration, and continuing education tracking in house, so they fit how your association works. Your staff and members are not stuck with a template or a workaround, and the association owns its data.',
   },
   {
     q: 'How is this different from hiring an executive director?',
@@ -22,7 +26,7 @@ const faqs = [
   },
   {
     q: 'Do you work with associations outside construction?',
-    a: 'Our focus is trade and professional associations in the precast concrete and AEC world. That focus is the point. Your board should never have to explain the industry to its own staff.',
+    a: 'Our focus is trade and professional associations in precast concrete and AEC. Your board should never have to explain the industry to its own staff.',
   },
 ];
 
@@ -37,6 +41,11 @@ const jsonLd = [
 ];
 
 const services = [
+    {
+    id: 'M-0',
+    name: 'Custom platforms',
+    copy: 'The website, member sign-up and renewals, event registration, and continuing education tracking, built in house for your association.',
+  },
   {
     id: 'M-1',
     name: 'Events',
@@ -67,7 +76,7 @@ const services = [
 
 <Sheet
   title="AEC Association Management Company | Lombard Belz"
-  description="Full-team association management for AEC trade associations. Events, membership, sponsors, communications, and board support for one fee."
+  description="Association management for AEC trade associations, with the website, membership, and event systems built in house around how your association works."
   path="/associations/"
   sheetName="Associations"
   jsonLd={jsonLd}
@@ -78,7 +87,7 @@ const services = [
       <p class="tag open__kicker">Association Management</p>
       <h1>Association management for AEC trade associations.</h1>
       <p class="lede open__sub">
-        Lombard Belz is an association management company serving trade associations in precast concrete and the architecture, engineering, and construction industries. Our team runs your events, membership, sponsor programs, communications, and board meetings for one management fee. The association keeps its own name and board, and its records stay with the organization when staff changes.
+        Lombard Belz is an association management company serving trade associations in precast concrete and the architecture, engineering, and construction industries. We build the website, membership system, and event registration in house, around how your association already works, so you are not tied to a template or a workaround. The same team runs your events, membership, sponsor programs, communications, and board meetings for one management fee.
       </p>
     </div>
   </section>
@@ -103,11 +112,41 @@ const services = [
     </div>
   </section>
 
+    <!-- CUSTOM PLATFORMS -->
+  <section class="section boards">
+    <div class="container boards__grid">
+      <div>
+        <p class="tag reveal">Built in house</p>
+        <h2 class="reveal">Custom platforms for members and events</h2>
+      </div>
+      <div class="reveal">
+        <p>
+          Most associations run on a membership package and a website
+          template, and the staff spends its time working around what the
+          software cannot do. We write the software ourselves, so the system
+          follows your dues structure, your event formats, and your
+          continuing education rules.
+        </p>
+        <p>
+          For the Association of Licensed Architects we built the public
+          website, event registration that needs no account, self-serve firm
+          and partner sign-up, a continuing education tracker, and a
+          fifteen-year design awards archive. When the board wants something
+          changed, we change it. Nobody has to wait on a vendor's roadmap.
+        </p>
+        <p>
+          The association owns its member data and its records, and they stay
+          with the organization.
+        </p>
+      </div>
+    </div>
+  </section>
+
   <!-- PHOTO BAND -->
   <section class="band photo-treat">
     <Image
       src={bandShot}
-      alt="A soaring convention center concourse with a curved white ribbed ceiling and a tall glass wall."
+      alt="Association members seated at long tables with laptops during an education session."
       widths={[480, 768, 1280, 1920]}
         width={1920}
       sizes="100vw"
