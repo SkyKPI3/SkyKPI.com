@@ -1,11 +1,6 @@
 ---
 import Sheet from '../layouts/Sheet.astro';
 
-const people = [
-  { name: 'Joe Lombard', role: 'Principal' },
-  { name: 'Caroline Belz', role: 'Principal' },
-  { name: 'Beth Gaudiano', role: 'Account Manager' },
-];
 ---
 
 <Sheet
@@ -50,25 +45,6 @@ const people = [
     </div>
   </section>
 
-  <!-- PEOPLE -->
-  <section class="section people">
-    <div class="container people__grid">
-      <div>
-        <p class="tag reveal">People</p>
-        <h2 class="reveal">Who does the work</h2>
-      </div>
-      <ul class="people__list reveal">
-        {
-          people.map((p) => (
-            <li>
-              <span class="people__name">{p.name}</span>
-              <span class="people__role">{p.role}</span>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
-  </section>
 
 
   <!-- HOW WE DECIDE -->
