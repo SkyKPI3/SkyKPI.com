@@ -2,23 +2,15 @@
 import Sheet from '../layouts/Sheet.astro';
 
 const people = [
-  {
-    name: 'Joe Lombard',
-    role: 'Principal',
-    bio: 'Joe leads the marketing and association work. He served on the PCI national board of directors from 2015 to 2018 and as president of PCI of Illinois & Wisconsin from 2018 to 2020. He is executive director of the Association of Licensed Architects, which Lombard Belz manages. Separately, he is employed as executive director of PCI of Illinois & Wisconsin.',
-  },
-  {
-    name: 'Caroline Belz',
-    role: 'Principal',
-    bio: 'Caroline co-founded the firm after a career in nursing.',
-  },
-  { name: 'Beth Gaudiano', role: 'Account Manager', bio: '' },
+  { name: 'Joe Lombard', role: 'Principal' },
+  { name: 'Caroline Belz', role: 'Principal' },
+  { name: 'Beth Gaudiano', role: 'Account Manager' },
 ];
 ---
 
 <Sheet
   title="About Lombard Belz | Precast Marketing and Associations"
-  description="Lombard Belz is a marketing and association management firm for precast concrete and AEC, run by Joe Lombard and Caroline Belz in Frankfort, Illinois."
+  description="Lombard Belz is a small marketing and association management firm for precast concrete and AEC, based in Frankfort, Illinois and working nationwide."
   path="/about/"
   sheetName="About"
 >
@@ -28,7 +20,7 @@ const people = [
       <p class="tag">About</p>
       <h1>About Lombard Belz.</h1>
       <p class="lede open__identity">
-        Lombard Belz is a marketing and association management firm for the precast concrete and AEC industries, based in Frankfort, Illinois and working nationwide. Joe Lombard and Caroline Belz run it.
+        Lombard Belz is a marketing and association management firm for the precast concrete and AEC industries, based in Frankfort, Illinois and working nationwide. You work with the same small team every month.
       </p>
     </div>
   </section>
@@ -37,29 +29,24 @@ const people = [
   <section class="section story">
     <div class="container story__grid">
       <div>
-        <p class="tag reveal">The story</p>
-        <h2 class="reveal">Why this firm exists</h2>
+        <p class="tag reveal">What you get</p>
+        <h2 class="reveal">What working with us looks like</h2>
       </div>
       <div class="reveal">
         <p>
-          I built Lombard Belz because of two gaps I kept watching from the
-          inside. Trade associations were run by one overloaded director, with
-          everything in one person's head. Industry marketing was handed to
-          outside agencies that learned precast on the client's dime. I had
-          lived both, and the fix looked the same from either side: a small
-          team that already knows the industry.
+          You get a small team that already knows precast and the building
+          industry, so you do not spend your time explaining the product.
         </p>
         <p>
-          Lombard Belz manages the Association of Licensed Architects today. That daily work in the industry is what the marketing draws on.
+          You deal with the same people every month. The people you meet in
+          the first conversation are the ones who write, design, photograph,
+          and build.
         </p>
         <p>
-          I started the firm with my wife, Caroline. She left her career as a
-          nurse to build it with me.
-        </p>
-        <p>
-          In 2026 we grew beyond the two of us and brought on our first
-          employees. When you work with Lombard Belz, the people you meet are
-          the people doing the work.
+          If you run a company, you get the website, email, photography, and
+          LinkedIn work your sales team needs, and a one-page report each
+          month. If you sit on an association board, you get a full team and
+          systems built around how your association works.
         </p>
       </div>
     </div>
@@ -78,7 +65,6 @@ const people = [
             <li>
               <span class="people__name">{p.name}</span>
               <span class="people__role">{p.role}</span>
-              {p.bio && <p class="people__bio">{p.bio}</p>}
             </li>
           ))
         }
@@ -108,9 +94,7 @@ const people = [
         </li>
         <li class="reveal">
           <p>
-            Relationships come first. In this industry the people are the
-            market, and the model is built on knowing them for decades rather
-            than for a campaign.
+            Relationships come first. In this industry the people are the market, and the model is built on knowing them for decades.
           </p>
         </li>
         <li class="reveal">
