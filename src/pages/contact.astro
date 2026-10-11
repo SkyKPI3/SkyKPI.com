@@ -49,7 +49,7 @@ const contactPage = {
       <div class="contact__intro">
         <p class="tag">Contact</p>
         <h1>Contact Lombard Belz.</h1>
-        <p class="lede">Email the address below that fits your question. We answer within two working days.</p>
+        <p class="lede">Email the address that fits your question, or use the form below. We answer within two working days.</p>
         <dl class="contact__meta">
           <div>
             <dt class="tag">Base</dt>
@@ -74,9 +74,87 @@ const contactPage = {
       </ul>
     </div>
   </section>
+
+  <section class="section send">
+    <div class="container send__inner">
+      <h2>Or send a note here</h2>
+      <form class="send__form" name="contact" method="POST" action="/contact/thanks/" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="contact" />
+        <p class="hp" aria-hidden="true">
+          <label>Leave this field empty: <input name="bot-field" tabindex="-1" autocomplete="off" /></label>
+        </p>
+        <div class="field">
+          <label for="f-name">Name</label>
+          <input id="f-name" name="name" type="text" required autocomplete="name" />
+        </div>
+        <div class="field">
+          <label for="f-company">Company or association</label>
+          <input id="f-company" name="company" type="text" autocomplete="organization" />
+        </div>
+        <div class="field">
+          <label for="f-email">Email</label>
+          <input id="f-email" name="email" type="email" required autocomplete="email" />
+        </div>
+        <div class="field">
+          <label for="f-message">What do you need</label>
+          <textarea id="f-message" name="message" rows="5" required></textarea>
+        </div>
+        <button class="btn" type="submit">Send</button>
+      </form>
+    </div>
+  </section>
 </Sheet>
 
 <style>
+  .send {
+    padding-top: 0;
+  }
+
+  .send__inner {
+    max-width: 40rem;
+  }
+
+  .send__form {
+    margin-top: 1.5rem;
+    display: grid;
+    gap: 1.1rem;
+  }
+
+  .hp {
+    position: absolute;
+    left: -9999px;
+  }
+
+  .field {
+    display: grid;
+    gap: 0.35rem;
+  }
+
+  .field label {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+
+  .field input,
+  .field textarea {
+    width: 100%;
+    padding: 0.7rem 0.8rem;
+    font: inherit;
+    color: inherit;
+    background: #fff;
+    border: 1px solid #6b6b6b;
+    border-radius: 0;
+  }
+
+  .field input:focus,
+  .field textarea:focus {
+    outline: 2px solid #0a0a0a;
+    outline-offset: 1px;
+  }
+
+  .send__form .btn {
+    justify-self: start;
+  }
   .contact {
     padding-top: var(--space-section);
     min-height: 70svh;
