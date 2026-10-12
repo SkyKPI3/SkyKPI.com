@@ -1,0 +1,50 @@
+# Rebuilds skykpi.com every Monday so future-dated guides publish on their
+# date, then tells search engines which pages changed. An empty commit to main
+# is what triggers the Netlify build, so no build hook or secret is needed.
+name: Weekly publish
+
+on:
+  schedule:
+    - cron: '0 12 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Push an empty commit to trigger the Netlify build
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit --allow-empty -m "chore: weekly rebuild to publish dated guides"
+          git push origin main
+
+      - name: Wait for the deploy
+        run: sleep 240
+
+      - name: Submit the sitemap URLs to IndexNow
+        run: |
+          curl -fsS https://skykpi.com/sitemap-0.xml -o sitemap.xml
+          python3 - <<'PY'
+          import json, re, urllib.request
+          urls = re.findall(r"<loc>(.*?)</loc>", open("sitemap.xml").read())
+          if "https://skykpi.com/guides/" not in urls:
+              urls.append("https://skykpi.com/guides/")
+          body = json.dumps({
+              "host": "skykpi.com",
+              "key": "ed2acd4d27ab4d5526099e7450f9cc72",
+              "keyLocation": "https://skykpi.com/ed2acd4d27ab4d5526099e7450f9cc72.txt",
+              "urlList": urls,
+          }).encode()
+          req = urllib.request.Request(
+              "https://api.indexnow.org/indexnow", data=body,
+              headers={"Content-Type": "application/json; charset=utf-8"})
+          print(len(urls), "URLs submitted, status", urllib.request.urlopen(req, timeout=60).status)
+          PY
