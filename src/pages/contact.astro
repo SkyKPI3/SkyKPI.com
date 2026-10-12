@@ -87,23 +87,23 @@ const contactPage = {
         </p>
         <div class="field">
           <label for="f-name">Name</label>
-          <input id="f-name" name="name" type="text" required autocomplete="name" />
+          <input id="f-name" name="name" type="text" required maxlength="120" autocomplete="name" />
         </div>
         <div class="field">
           <label for="f-company">Company or association</label>
-          <input id="f-company" name="company" type="text" autocomplete="organization" />
+          <input id="f-company" name="company" type="text" maxlength="160" autocomplete="organization" />
         </div>
         <div class="field">
           <label for="f-email">Email</label>
-          <input id="f-email" name="email" type="email" required autocomplete="email" />
+          <input id="f-email" name="email" type="email" required maxlength="200" autocomplete="email" />
         </div>
         <div class="field">
           <label for="f-phone">Phone, if you would like us to call you</label>
-          <input id="f-phone" name="phone" type="tel" autocomplete="tel" />
+          <input id="f-phone" name="phone" type="tel" maxlength="40" autocomplete="tel" />
         </div>
         <div class="field">
           <label for="f-message">What do you need</label>
-          <textarea id="f-message" name="message" rows="5" required></textarea>
+          <textarea id="f-message" name="message" rows="5" required maxlength="4000"></textarea>
         </div>
         <button class="btn" type="submit">Send</button>
       </form>
