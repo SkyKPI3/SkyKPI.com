@@ -4,13 +4,13 @@ The SkyKPI website. Built with [Astro](https://astro.build), deployed on Netlify
 
 Everything below is written for the exact toolchain in use: **VS Code, GitHub, and Netlify**.
 
-The site lives in the GitHub repository **SkyKPI3/SkyKPI.com** (the same one the old site used), and that repository is connected to Netlify, which already serves skykpi.com with the custom domain, the www redirect, and HTTPS in place. The working copy on this Mac is at `~/Documents/GitHub/SkyKPI.com`.
+The site lives in the GitHub repository **SkyKPI3/SkyKPI.com** (the same one the old site used), and that repository is connected to Netlify, which already serves skykpi.com with the custom domain, the www redirect, and HTTPS in place. The working copy on this Mac is at `~/Projects/skykpi-redesign` (the older copy at `~/Documents/GitHub/SkyKPI.com` is iCloud-evicted and git hangs there).
 
 ---
 
 ## 1. Publishing a change
 
-1. Open `~/Documents/GitHub/SkyKPI.com` in VS Code: File > Open Folder.
+1. Open `~/Projects/skykpi-redesign` in VS Code: File > Open Folder.
 2. Edit what you need (page copy lives in `src/pages/`, one file per page).
 3. Click the **Source Control** icon in the left sidebar (the branching lines), type a short note about what you changed, and click **Commit**.
 4. Click **Sync Changes** (or use GitHub Desktop: Commit, then Push origin).
@@ -34,7 +34,7 @@ Already configured (skykpi.com is live on Netlify with HTTPS and the www redirec
 
 1. In [Google Search Console](https://search.google.com/search-console), open the skykpi.com property.
 2. Go to **Sitemaps**, remove any old sitemap entry, and submit `https://skykpi.com/sitemap-index.xml`.
-3. Use **URL Inspection** on the homepage and each main page (`/marketing/`, `/associations/`, `/about/`, `/contact/`, `/architects/`, `/contractors/`, `/subcontractors/`) and click **Request indexing** for each.
+3. Use **URL Inspection** on the homepage and each main page (`/manufacturers/`, `/associations/`, `/custom-systems/`, `/pricing/`, `/local/`, `/report/`, `/about/`, `/contact/`, `/architects/`, `/contractors/`, `/subcontractors/`) and click **Request indexing** for each.
 4. Old `.html` addresses from the previous site redirect automatically (see `netlify.toml`), so indexed links keep working.
 
 ## 5. Running the site on your own Mac (optional)
@@ -70,6 +70,15 @@ What this means in practice:
 - **To pull a guide entirely**, delete its file and its registry row, push.
 - The routine lives at claude.ai/code/routines (named `skykpi-monday-publish`).
   Pausing it there stops all future auto-publishes; nothing else breaks.
+
+## Pages added in the November 2026 redesign
+
+- `/manufacturers/` replaced `/marketing/` (old URL redirects).
+- `/pricing/` publishes the retainer floor and levels, the two website packages and care plans.
+- `/custom-systems/` sells member and customer portals, online payments, stores, directories and the association software.
+- `/local/` is the fixed-price website offer for Frankfort, New Lenox, Mokena and Manhattan.
+- `/report/` is the annual State of Precast Marketing report page with a sign-up form named `report` (Netlify Forms; add an email notification for it in the Netlify dashboard like the contact form).
+- Brand files: `src/assets/brand/skykpi-wordmark*.png` (header and footer), `public/brand/skykpi-wordmark.png` (schema logo), icons and `og-default.png` in `public/`. Colors live at the top of `src/styles/global.css`.
 
 ## Project map
 

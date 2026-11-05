@@ -3,22 +3,21 @@ import { Image } from 'astro:assets';
 import Sheet from '../layouts/Sheet.astro';
 import Faq from '../components/Faq.astro';
 import Related from '../components/Related.astro';
-import { faqSchema } from '../lib/schema';
 import heroShot from '../assets/photos/precast/IMG_2998.jpeg';
 import detailShot from '../assets/photos/precast/IMG_1379.jpeg';
 
 const faqs = [
   {
+    q: 'What does a website for an architecture firm cost?',
+    a: 'A Starter site of up to three pages is $1,500, one time, and a Standard site of up to eight pages is $3,000. Both come with a portfolio layout. Care plans are $50 or $100 a month.',
+  },
+  {
     q: 'Why would an architecture firm hire a precast-focused marketing firm?',
-    a: 'Our core expertise is the precast concrete industry, which means we study architects for a living. The producers we serve market to you, so we know how firms are evaluated, what specifiers check, and how built work gets seen. That fluency is exactly what we bring to marketing the firm itself.',
+    a: 'The manufacturers we work for market to architects, so we spend every day on how architects look for products, firms and people. That is the same knowledge a firm needs to show its own work well.',
   },
   {
-    q: 'What does marketing for an architecture firm include?',
-    a: 'A portfolio-grade website, project photography, and a steady presence on the channels where clients and collaborators look. Email when it earns its place. Everything is built so the next selection committee sees the work at its best.',
-  },
-  {
-    q: 'What does it cost?',
-    a: 'One monthly retainer scoped to what the firm needs, with no hourly billing. We set the number in a conversation about scope.',
+    q: 'Can you do more than the website?',
+    a: 'Yes. Project photography and LinkedIn are quoted separately, and larger firms that want a full monthly program can start a marketing retainer.',
   },
 ];
 
@@ -26,11 +25,11 @@ const jsonLd: object[] = [];
 ---
 
 <Sheet
-  title="Marketing and Websites for Architects | SkyKPI"
-  description="SkyKPI builds websites, marketing, and social media for architecture firms, with core expertise in the precast concrete industry."
+  title="Websites for Architecture Firms | SkyKPI"
+  description="Fixed-price portfolio websites for architecture firms: $1,500 for up to three pages or $3,000 for up to eight, with care plans from $50 a month."
   path="/architects/"
   sheetName="Architects"
-  parent={{ href: "/marketing/", label: "Marketing" }}
+  parent={{ href: "/manufacturers/", label: "Marketing" }}
   jsonLd={jsonLd}
 >
   <section class="hero">
@@ -47,31 +46,44 @@ const jsonLd: object[] = [];
       />
     </div>
     <div class="container hero__content">
-      <p class="tag hero__kicker">Marketing / Architects</p>
-      <h1>Websites and marketing for architecture firms.</h1>
+      <p class="tag hero__kicker">Websites for architects</p>
+      <h1>Portfolio websites for architecture firms, at a fixed price.</h1>
       <p class="lede hero__sub">
-        SkyKPI builds the website, project photography, and LinkedIn presence an architecture firm needs to show its built work to selection committees and clients. Our core work is in precast concrete, so we already know how design firms get evaluated.
+        You get a fast portfolio website that shows your built work the way a selection committee reads it, for one fixed price starting at $1,500, and we keep it running from $50 a month.
       </p>
     </div>
   </section>
 
-  <section class="section angle">
+  <section class="section on-navy angle">
     <div class="container angle__grid">
       <div>
-        <p class="tag reveal">Why us</p>
-        <h2 class="reveal">Why an architecture firm would hire us</h2>
+        <span class="rule reveal"></span>
+        <p class="tag reveal">How firms get work</p>
+        <h2 class="reveal">The website is where a referral checks your work.</h2>
       </div>
       <div class="reveal">
+        <p class="stat"><strong>89%</strong> of AIA members surveyed agree that relationships matter more than marketing for winning new business.</p>
         <p>
-          Architects are the audience our precast clients market to. We spend
-          every day studying how firms evaluate products, portfolios, and the
-          people they hire, because that is who we help producers reach.
+          Your work comes from relationships, and before a new client calls, they look you up. The website is where they see the projects, so it should load fast, show the work well and make it easy to reach you.
         </p>
-        <p>
-          That specifier-side fluency now works for the architects themselves.
-          We know what a selection committee reads, what a developer checks,
-          and what makes built work carry a firm's reputation.
-        </p>
+        <p class="source">Source: The American Institute of Architects, Technology, Culture and the Future of the Architectural Firm, 2021. Survey of 329 AIA members.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-mist">
+    <div class="container cols cols--2 packages">
+      <div class="package reveal">
+        <p class="tag">Starter</p>
+        <p class="package__price">$1,500</p>
+        <p class="dim">One time. Up to three pages, portfolio layout.</p>
+        <p class="package__care">Care plan <strong>$50 a month</strong></p>
+      </div>
+      <div class="package reveal">
+        <p class="tag">Standard</p>
+        <p class="package__price">$3,000</p>
+        <p class="dim">One time. Up to eight pages, portfolio layout.</p>
+        <p class="package__care">Care plan <strong>$100 a month</strong>, with up to 30 minutes of edits</p>
       </div>
     </div>
   </section>
@@ -80,7 +92,7 @@ const jsonLd: object[] = [];
     <div class="container scope__grid">
       <div class="scope__list">
         <p class="tag reveal">Scope of work</p>
-        <h2 class="reveal">What we build for firms</h2>
+        <h2 class="reveal">What a firm website includes</h2>
         <ul>
           <li class="reveal">
             <h3>A portfolio-grade website</h3>
@@ -90,16 +102,15 @@ const jsonLd: object[] = [];
             </p>
           </li>
           <li class="reveal">
-            <h3>Project photography</h3>
+            <h3>Project photography, if you want it</h3>
             <p class="dim">
-              Finished-work photography that holds up on a conference-room screen.
+              Finished-work photography that holds up on a conference-room screen, quoted separately.
             </p>
           </li>
           <li class="reveal">
-            <h3>A presence between award cycles</h3>
+            <h3>Care that keeps it current</h3>
             <p class="dim">
-              A steady LinkedIn presence that keeps the firm visible to
-              clients, collaborators, and future hires all year.
+              Hosting, security, backups and search indexing every month, and on the Standard plan, edits when a new project finishes.
             </p>
           </li>
         </ul>
@@ -127,8 +138,8 @@ const jsonLd: object[] = [];
         label: 'Guide: marketing for architects, with a 20-point self-audit',
       },
       {
-        href: '/marketing/',
-        label: 'The full precast and construction marketing scope',
+        href: '/pricing/#websites',
+        label: 'Website packages and care plans side by side',
       },
       {
         href: '/contractors/',
@@ -144,6 +155,7 @@ const jsonLd: object[] = [];
   <section class="section cta">
     <div class="container cta__inner">
       <h2 class="reveal">Talk to us about your firm.</h2>
+      <p class="dim reveal">We answer within one business day.</p>
       <div class="reveal">
         <a class="btn" href="/contact/">Contact us</a>
       </div>
@@ -152,6 +164,57 @@ const jsonLd: object[] = [];
 </Sheet>
 
 <style>
+  .stat {
+    font-size: clamp(1.15rem, 1.6vw, 1.35rem);
+    font-weight: 300;
+    color: var(--white);
+  }
+
+  .stat strong {
+    display: block;
+    font-size: clamp(2.75rem, 5vw, 4rem);
+    font-weight: 400;
+    line-height: 1;
+    color: var(--teal);
+    margin-bottom: 0.5rem;
+  }
+
+  .angle p {
+    color: var(--white);
+  }
+
+  .angle .source {
+    color: var(--graphite-on-black);
+  }
+
+  .packages {
+    margin-top: 0;
+  }
+
+  .package {
+    background: var(--white);
+    padding: 2rem !important;
+    border-top: 4px solid var(--navy) !important;
+  }
+
+  .package__price {
+    margin: 0;
+    font-size: clamp(2.75rem, 5vw, 3.75rem);
+    line-height: 1;
+    color: var(--navy);
+  }
+
+  .package__care {
+    margin: 1.5rem 0 0;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--hairline);
+  }
+
+  .package__care strong {
+    font-weight: 500;
+    color: var(--navy);
+  }
+
   .hero {
     position: relative;
     min-height: 72svh;

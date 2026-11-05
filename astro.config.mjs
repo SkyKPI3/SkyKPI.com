@@ -34,10 +34,10 @@ export default defineConfig({
         if (item.url === 'https://skykpi.com/') {
           item.priority = 1.0;
           item.changefreq = 'monthly';
-        } else if (/\/(marketing|associations)\/$/.test(item.url)) {
+        } else if (/\/(manufacturers|associations|custom-systems|pricing|services)\/$/.test(item.url)) {
           item.priority = 0.9;
           item.changefreq = 'monthly';
-        } else if (/\/(architects|contractors|subcontractors)\/$/.test(item.url)) {
+        } else if (/\/(architects|contractors|subcontractors|local)\/$/.test(item.url)) {
           item.priority = 0.8;
           item.changefreq = 'monthly';
         } else if (/\/field-notes\//.test(item.url)) {
@@ -50,7 +50,6 @@ export default defineConfig({
           item.priority = 0.7;
           item.changefreq = 'monthly';
         }
-        item.lastmod = new Date().toISOString();
         return item;
       },
     }),

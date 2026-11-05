@@ -1,0 +1,190 @@
+---
+import Sheet from '../layouts/Sheet.astro';
+import Faq from '../components/Faq.astro';
+import Related from '../components/Related.astro';
+
+const levels = [
+  {
+    name: 'Core',
+    fee: 'From $8,500 a month',
+    copy: 'Website care and search upkeep, LinkedIn posting written for your buyers, email, and the one-page monthly report.',
+  },
+  {
+    name: 'Growth',
+    fee: '$12,500 to $15,000 a month',
+    copy: 'Everything in Core, plus plant and jobsite photography, new website pages and articles each month.',
+  },
+  {
+    name: 'Market Leadership',
+    fee: '$20,000 to $30,000 a month, quoted',
+    copy: 'Everything in Growth, plus video, original research your industry can cite, and trade press.',
+  },
+];
+
+const faqs = [
+  {
+    q: 'Do you bill by the hour?',
+    a: 'No. Retainers and care plans are flat monthly fees, and websites and custom systems are one fixed price agreed before work starts.',
+  },
+  {
+    q: 'How long is a retainer?',
+    a: 'Retainers start with a six-month term, then run month to month. We raise prices only at annual renewal.',
+  },
+  {
+    q: 'What if my budget is below $8,500 a month?',
+    a: 'Start with a fixed-price website and a care plan. Many small firms and local businesses need a good site more than a monthly program.',
+  },
+  {
+    q: 'Can I cancel the website care plan?',
+    a: 'Yes, at the end of any month. If you leave, we hand over your website files and help move them to your new host.',
+  },
+  {
+    q: 'Who do I contact when something on my site needs fixing?',
+    a: 'Care plan clients write to care@skykpi.com. We answer within one business day.',
+  },
+  {
+    q: 'Why do you publish prices?',
+    a: 'Publishing them lets you tell in a minute whether we fit your budget, before anyone spends time on a call.',
+  },
+];
+---
+
+<Sheet
+  title="Pricing: Marketing, Websites, Associations | SkyKPI"
+  description="Marketing retainers from $8,500 a month. Websites from $1,500 with care from $50 a month. Association management and custom systems quoted per project."
+  path="/pricing/"
+  sheetName="Pricing"
+>
+  <section class="section open">
+    <div class="container">
+      <p class="tag">Pricing</p>
+      <h1>Pricing for marketing, websites and association management.</h1>
+      <p class="lede open__sub">
+        We charge a flat monthly fee or one fixed price. There is no hourly billing and no surprise invoice. Marketing retainers start at $8,500 a month, websites start at $1,500, and association management and custom systems are quoted after one conversation.
+      </p>
+    </div>
+  </section>
+
+  <!-- RETAINERS -->
+  <section class="section" id="retainers">
+    <div class="container">
+      <span class="rule reveal"></span>
+      <p class="tag reveal">Manufacturers, subcontractors and building-product companies</p>
+      <h2 class="reveal">Marketing retainers start at $8,500 a month.</h2>
+      <p class="reveal">The fee is flat and covers a set scope each month. You get one team and one person to call.</p>
+      <table class="table table--stack reveal">
+        <thead>
+          <tr><th scope="col">Level</th><th scope="col">Monthly fee</th><th scope="col">What it covers</th></tr>
+        </thead>
+        <tbody>
+          {
+            levels.map((l) => (
+              <tr>
+                <td data-label="Level"><strong>{l.name}</strong></td>
+                <td data-label="Monthly fee">{l.fee}</td>
+                <td data-label="What it covers">{l.copy}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+      <p class="dim reveal note">Retainers start with a six-month term, then run month to month.</p>
+    </div>
+  </section>
+
+  <!-- WEBSITES -->
+  <section class="section on-mist" id="websites">
+    <div class="container">
+      <span class="rule reveal"></span>
+      <p class="tag reveal">Architecture firms and local businesses</p>
+      <h2 class="reveal">Websites start at $1,500.</h2>
+      <p class="reveal">Two fixed-price packages, each with a monthly care plan. Architecture firms get a portfolio layout in either one.</p>
+      <table class="table reveal">
+        <thead>
+          <tr><th scope="col"></th><th scope="col">Starter</th><th scope="col">Standard</th></tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Website, one time</th><td><strong>$1,500</strong></td><td><strong>$3,000</strong></td></tr>
+          <tr><th scope="row">Pages</th><td>Up to 3</td><td>Up to 8</td></tr>
+          <tr><th scope="row">Care plan</th><td><strong>$50 a month</strong></td><td><strong>$100 a month</strong></td></tr>
+          <tr><th scope="row">Included</th><td>Google Business Profile set up or fixed, one page per service</td><td>The same, with room for more services</td></tr>
+          <tr><th scope="row">Care plan covers</th><td>Hosting, security updates, backups, uptime checks, search indexing, monthly review-reply check</td><td>The same, plus up to 30 minutes of edits a month</td></tr>
+        </tbody>
+      </table>
+      <p class="dim reveal note">
+        Not included in either package: writing from scratch, photography, online stores, bookings and custom features. We quote those separately.
+      </p>
+      <p class="reveal"><a class="textlink" href="/local/">Websites for local businesses</a>&nbsp;&nbsp;&nbsp;<a class="textlink" href="/architects/">Websites for architects</a></p>
+    </div>
+  </section>
+
+  <!-- QUOTED -->
+  <section class="section" id="quoted">
+    <div class="container cols cols--2 quoted">
+      <div class="reveal">
+        <p class="tag">Associations</p>
+        <h2>Association management is quoted per association.</h2>
+        <p>
+          Every association runs differently. We start with a look at how yours runs today, then send one flat monthly fee that covers the team and the systems.
+        </p>
+        <a class="textlink" href="/associations/">Association management</a>
+      </div>
+      <div class="reveal">
+        <p class="tag">Custom systems</p>
+        <h2>Custom systems are quoted per project.</h2>
+        <p>
+          Member and customer portals, online payments and association software get one fixed price for the build after a scoping call, then a flat monthly fee for hosting, security, updates and support.
+        </p>
+        <a class="textlink" href="/custom-systems/">Custom systems</a>
+      </div>
+    </div>
+  </section>
+
+  <Faq items={faqs} heading="Pricing questions" />
+
+  <Related
+    links={[
+      { href: '/manufacturers/', label: 'Marketing for precast producers and building-product manufacturers' },
+      { href: '/contact/', label: 'Contact SkyKPI. We answer within one business day.' },
+    ]}
+  />
+</Sheet>
+
+<style>
+  .open {
+    padding-bottom: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .open h1 {
+    max-width: 22ch;
+  }
+
+  .open__sub {
+    max-width: 44rem;
+  }
+
+  .table th[scope='row'] {
+    font-weight: 400;
+    color: var(--graphite);
+    width: 12rem;
+  }
+
+  .note {
+    margin-top: 1.25rem;
+    font-size: 15px;
+  }
+
+  .quoted {
+    margin-top: 0;
+  }
+
+  .quoted h2 {
+    font-size: clamp(1.5rem, 2.4vw, 2rem);
+  }
+
+  @media (max-width: 640px) {
+    .table th[scope='row'] {
+      width: auto;
+    }
+  }
+</style>

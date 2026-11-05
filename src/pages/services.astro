@@ -1,0 +1,99 @@
+---
+import Sheet from '../layouts/Sheet.astro';
+
+const lanes = [
+  {
+    href: '/manufacturers/',
+    who: 'Precast producers, building-product manufacturers and subcontractors',
+    what: 'Marketing retainers from $8,500 a month: website, search, photography, email and LinkedIn as one program, with a one-page report each month.',
+  },
+  {
+    href: '/associations/',
+    who: 'Trade and professional associations',
+    what: 'Association management for one flat monthly fee: events, membership, sponsors, communications and board support, on software we build and use.',
+  },
+  {
+    href: '/custom-systems/',
+    who: 'Organizations that need more than a website',
+    what: 'Member and customer portals, online payments, stores, directories and association management software. Fixed build price, flat monthly support.',
+  },
+  {
+    href: '/architects/',
+    who: 'Architecture firms',
+    what: 'Portfolio websites at a fixed price, $1,500 or $3,000, with care from $50 a month.',
+  },
+  {
+    href: '/local/',
+    who: 'Businesses in Frankfort, New Lenox, Mokena and Manhattan',
+    what: 'The same fixed-price websites and care plans, built by a team based in Frankfort.',
+  },
+];
+---
+
+<Sheet
+  title="Services | SkyKPI"
+  description="Marketing retainers for manufacturers, association management, custom portals and software, and fixed-price websites for architects and local businesses."
+  path="/services/"
+  sheetName="Services"
+>
+  <section class="section open">
+    <div class="container">
+      <p class="tag">Services</p>
+      <h1>What we do, and for whom.</h1>
+      <p class="lede open__sub">Five kinds of work, one small team. Pick the one that sounds like you.</p>
+      <ul class="lanes">
+        {lanes.map((l) => (
+          <li class="reveal">
+            <a href={l.href}>
+              <h2>{l.who}</h2>
+              <p class="dim">{l.what}</p>
+              <span class="textlink">Read more</span>
+            </a>
+          </li>
+        ))}
+      </ul>
+      <p class="reveal"><a class="textlink" href="/pricing/">All prices on one page</a></p>
+    </div>
+  </section>
+</Sheet>
+
+<style>
+  .open h1 {
+    max-width: 20ch;
+  }
+
+  .lanes {
+    list-style: none;
+    margin: 2.5rem 0 2rem;
+    padding: 0;
+    max-width: 52rem;
+  }
+
+  .lanes li {
+    border-top: 1px solid var(--hairline);
+  }
+
+  .lanes li:last-child {
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  .lanes a {
+    display: block;
+    padding: 1.5rem 0;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .lanes h2 {
+    font-size: clamp(1.35rem, 2.2vw, 1.8rem);
+    margin-bottom: 0.5rem;
+  }
+
+  .lanes a:hover h2 {
+    color: var(--teal-text);
+  }
+
+  .lanes p {
+    margin-bottom: 0.75rem;
+  }
+</style>

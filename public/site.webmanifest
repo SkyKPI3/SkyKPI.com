@@ -1,11 +1,11 @@
 {
   "name": "SkyKPI",
   "short_name": "SkyKPI",
-  "description": "Marketing and association management for the precast concrete and AEC industries.",
+  "description": "Marketing and association management for precast, building products, architecture and construction.",
   "start_url": "/",
   "display": "browser",
   "background_color": "#FFFFFF",
-  "theme_color": "#0A0A0A",
+  "theme_color": "#0D2958",
   "icons": [
     {
       "src": "/icon-512.png",
