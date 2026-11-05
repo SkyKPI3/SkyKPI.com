@@ -131,7 +131,7 @@ const breadcrumb =
 
 const nav = [
   {
-    href: '/manufacturers/',
+    href: '/services/',
     label: 'Services',
     children: [
       { href: '/manufacturers/', label: 'Marketing for manufacturers and subcontractors' },
@@ -391,7 +391,7 @@ const footerLinks = [
           opacity: 0;
           visibility: hidden;
           transform: translateY(6px);
-          transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+          transition: opacity 0.15s ease 0.3s, transform 0.15s ease 0.3s, visibility 0s linear 0.45s;
         }
 
         .has-sub:hover .site-nav__sub,
@@ -399,6 +399,11 @@ const footerLinks = [
           opacity: 1;
           visibility: visible;
           transform: none;
+          transition-delay: 0.3s, 0.3s, 0.3s;
+        }
+
+        .has-sub:focus-within .site-nav__sub {
+          transition-delay: 0s, 0s, 0s;
         }
 
         .site-nav__sub a {

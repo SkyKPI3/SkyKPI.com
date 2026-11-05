@@ -34,7 +34,7 @@ export default defineConfig({
         if (item.url === 'https://skykpi.com/') {
           item.priority = 1.0;
           item.changefreq = 'monthly';
-        } else if (/\/(manufacturers|associations|custom-systems|pricing)\/$/.test(item.url)) {
+        } else if (/\/(manufacturers|associations|custom-systems|pricing|services)\/$/.test(item.url)) {
           item.priority = 0.9;
           item.changefreq = 'monthly';
         } else if (/\/(architects|contractors|subcontractors|local)\/$/.test(item.url)) {
