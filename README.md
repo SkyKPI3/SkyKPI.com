@@ -76,7 +76,7 @@ What this means in practice:
 - `/manufacturers/` replaced `/marketing/` (old URL redirects).
 - `/pricing/` publishes the retainer floor and levels, the two website packages and care plans.
 - `/custom-systems/` sells member and customer portals, online payments, stores, directories and the association software.
-- `/local/` is the fixed-price website offer for Frankfort, New Lenox and Mokena.
+- `/local/` is the fixed-price website offer for Frankfort, New Lenox, Mokena and Manhattan.
 - `/report/` is the annual State of Precast Marketing report page with a sign-up form named `report` (Netlify Forms; add an email notification for it in the Netlify dashboard like the contact form).
 - Brand files: `src/assets/brand/skykpi-wordmark*.png` (header and footer), `public/brand/skykpi-wordmark.png` (schema logo), icons and `og-default.png` in `public/`. Colors live at the top of `src/styles/global.css`.
 

@@ -13,7 +13,7 @@ export const GET: APIRoute = () => {
 
   const body = `# SkyKPI
 
-SkyKPI builds websites, marketing and custom software for precast concrete producers, building-product manufacturers, subcontractors and architects, and manages trade and professional associations. It also builds fixed-price websites for local businesses in Frankfort, New Lenox and Mokena, Illinois. Based in Frankfort, Illinois, USA, working nationwide.
+SkyKPI builds websites, marketing and custom software for precast concrete producers, building-product manufacturers, subcontractors and architects, and manages trade and professional associations. It also builds fixed-price websites for local businesses in Frankfort, New Lenox, Mokena and Manhattan, Illinois. Based in Frankfort, Illinois, USA, working nationwide.
 
 ## Services
 
@@ -23,7 +23,7 @@ SkyKPI builds websites, marketing and custom software for precast concrete produ
 
 3. Custom systems: member and customer portals, online payments, online stores, directories and association management software. One fixed build price plus a flat monthly support fee. Details: https://skykpi.com/custom-systems/
 
-4. Fixed-price websites for architecture firms and local businesses: Starter $1,500 (up to three pages) or Standard $3,000 (up to eight pages), with care plans at $50 or $100 a month. Details: https://skykpi.com/architects/ and https://skykpi.com/local/
+4. Fixed-price websites for architecture firms and local businesses: Starter $1,500 (up to three pages) or Standard $3,000 (up to eight pages), each with Google Business Profile setup and one page per service, with care plans at $50 or $100 a month. Details: https://skykpi.com/architects/ and https://skykpi.com/local/
 
 Pricing for everything: https://skykpi.com/pricing/
 
@@ -39,7 +39,7 @@ Short photo-led notes from the precast plants, jobsites, and association rooms S
 
 ## Facts
 
-- Service area: the United States for marketing, association management and custom systems. Fixed-price local websites serve Frankfort, New Lenox and Mokena, Illinois. The team works from more than one location.
+- Service area: the United States for marketing, association management and custom systems. Fixed-price local websites serve Frankfort, New Lenox, Mokena and Manhattan, Illinois. The team works from more than one location.
 - Client work is confidential. SkyKPI publishes no client names, case studies, or testimonials.
 - Pricing is published at https://skykpi.com/pricing/. No hourly billing.
 - SkyKPI does not guarantee a spec, a bid win, or a ranking for anyone. It owns the work that produces them and reports monthly on who found the client and what it led to.

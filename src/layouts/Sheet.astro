@@ -58,17 +58,20 @@ const organization = {
   image: 'https://skykpi.com/og-default.png',
   email: 'hello@skykpi.com',
   description:
-    'SkyKPI builds websites, marketing and custom software for precast concrete and building-product manufacturers, subcontractors and architects, and manages trade and professional associations. It also builds websites for small businesses in Frankfort, New Lenox and Mokena, Illinois. Based in Frankfort, Illinois, working nationwide.',
+    'SkyKPI builds websites, marketing and custom software for precast concrete and building-product manufacturers, subcontractors and architects, and manages trade and professional associations. It also builds websites for small businesses in Frankfort, New Lenox, Mokena and Manhattan, Illinois. Based in Frankfort, Illinois, working nationwide.',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Frankfort',
     addressRegion: 'IL',
     addressCountry: 'US',
   },
-  areaServed: {
-    '@type': 'Country',
-    name: 'United States',
-  },
+  areaServed: [
+    { '@type': 'Country', name: 'United States' },
+    { '@type': 'City', name: 'Frankfort', containedInPlace: { '@type': 'State', name: 'Illinois' } },
+    { '@type': 'City', name: 'Mokena', containedInPlace: { '@type': 'State', name: 'Illinois' } },
+    { '@type': 'City', name: 'New Lenox', containedInPlace: { '@type': 'State', name: 'Illinois' } },
+    { '@type': 'City', name: 'Manhattan', containedInPlace: { '@type': 'State', name: 'Illinois' } },
+  ],
   knowsAbout: [
     'Precast concrete',
     'Precast concrete marketing',

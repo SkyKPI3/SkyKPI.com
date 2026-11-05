@@ -50,7 +50,6 @@ export default defineConfig({
           item.priority = 0.7;
           item.changefreq = 'monthly';
         }
-        item.lastmod = new Date().toISOString();
         return item;
       },
     }),
