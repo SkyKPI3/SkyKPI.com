@@ -2,40 +2,40 @@
 import { Image } from 'astro:assets';
 import Sheet from '../layouts/Sheet.astro';
 import heroShot from '../assets/photos/precast/IMG_4084.jpeg';
-import marketingDoor from '../assets/photos/precast/dji_fly_20260423_122348_0032_1778523760766_photo.jpg';
-import associationsDoor from '../assets/photos/assoc/IMG_1978.jpeg';
 
-const professionalService = {
-  '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
-  name: 'SkyKPI',
-  legalName: 'SkyKPI LLC',
-  url: 'https://skykpi.com',
-  description:
-    'SkyKPI is a marketing and association management firm for the precast concrete and AEC industries, based in Frankfort, Illinois and working nationwide. The marketing work covers websites, email, photography, and LinkedIn for precast producers and suppliers, with a monthly report of who found the client and what it led to. The association work covers events, membership, sponsors, communications, and board support for AEC trade associations.',
-  email: 'hello@skykpi.com',
-  address: {
-    '@type': 'PostalAddress',
-    addressLocality: 'Frankfort',
-    addressRegion: 'IL',
-    addressCountry: 'US',
+const services = [
+  {
+    href: '/manufacturers/',
+    tag: 'Marketing',
+    title: 'Marketing for manufacturers and subcontractors',
+    copy: 'Your website, search, photography, email and LinkedIn run as one program on a monthly retainer, with a one-page report each month.',
   },
-  areaServed: 'United States',
-  knowsAbout: [
-    'Precast concrete industry',
-    'AEC marketing',
-    'Trade association management',
-  ],
-  sameAs: ['https://www.linkedin.com/company/skykpi/'],
-};
+  {
+    href: '/associations/',
+    tag: 'Association management',
+    title: 'Association management',
+    copy: 'A full team for events, membership, sponsors, communications and board support, running on membership software we build and maintain.',
+  },
+  {
+    href: '/custom-systems/',
+    tag: 'Custom systems',
+    title: 'Online payments, portals and association software',
+    copy: 'When a website is not enough, we build the system behind it: member and customer portals, online payments and association management software.',
+  },
+  {
+    href: '/architects/',
+    tag: 'Fixed-price websites',
+    title: 'Websites for architects and local businesses',
+    copy: 'Fixed-price websites for architecture firms and for businesses in Frankfort, New Lenox and Mokena, with a low monthly care plan.',
+  },
+];
 ---
 
 <Sheet
-  title="Precast Marketing and Association Management | SkyKPI"
-  description="SkyKPI provides websites, email, photography, and LinkedIn marketing for precast producers and suppliers, and manages AEC trade associations."
+  title="Websites and Marketing for Precast and Building-Product Manufacturers | SkyKPI"
+  description="SkyKPI builds websites architects can use, runs marketing for precast and building-product manufacturers, manages associations and builds custom portals."
   path="/"
   sheetName="Home"
-  jsonLd={[professionalService]}
 >
   <!-- HERO -->
   <section class="hero">
@@ -52,89 +52,101 @@ const professionalService = {
       />
     </div>
     <div class="container hero__content">
-      <p class="tag hero__label">SkyKPI</p>
-      <h1>Marketing and association management for precast concrete, architecture, and construction.</h1>
+      <p class="tag hero__label">For precast and building-product manufacturers</p>
+      <h1>Websites architects can use to choose your product.</h1>
       <p class="lede hero__identity">
-        If you make precast or sell building products, you get the website, email, photography, and LinkedIn work that puts your company in front of architects, engineers, and contractors before a job is bid. If you sit on an association board, you get a full team to run your events, membership, and sponsors. SkyKPI does both, from Frankfort, Illinois, for clients nationwide.
+        Architects start with a search and then go to the manufacturer's own website. SkyKPI builds those websites and runs the marketing around them. We also manage associations and build member and customer portals for the industry. Based in Frankfort, Illinois, working nationwide.
       </p>
       <div class="hero__cta">
         <a class="btn" href="/contact/">Contact us</a>
-        <a class="textlink hero__link" href="/marketing/">Marketing</a>
-        <a class="textlink hero__link" href="/associations/">Association management</a>
+        <a class="textlink" href="/pricing/">See pricing</a>
       </div>
     </div>
   </section>
 
-  <!-- TWO DOORS -->
-  <section class="section doors">
+  <!-- WHAT ARCHITECTS DO -->
+  <section class="section on-navy facts">
+    <div class="container">
+      <span class="rule reveal"></span>
+      <p class="tag reveal">What architects told the AIA</p>
+      <h2 class="reveal">The website is where an architect decides whether to keep looking.</h2>
+      <ul class="facts__list">
+        <li class="reveal"><strong>71%</strong><span>start product research by searching for the product or category.</span></li>
+        <li class="reveal"><strong>74%</strong><span>leave a manufacturer's website if they cannot find what they need within a few clicks.</span></li>
+        <li class="reveal"><strong>20%</strong><span>rate manufacturers well on ease of navigation. 87% say it matters.</span></li>
+      </ul>
+      <p class="facts__note reveal">
+        We build a manufacturer's website around the questions an architect asks first: sizes, finishes, details, and who to call.
+      </p>
+      <p class="source reveal">
+        Source: The American Institute of Architects, <a href="https://www.constructconnect.com/hubfs/Architects%20Journey%20to%20Specification/2018%20The%20Architects%20Journey%20to%20Specification%20Full%20Report%202nd%20Edition.pdf" rel="noopener">The Architect's Journey to Specification</a>, 2018. Survey of 400 architects.
+      </p>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="section services">
     <div class="container">
       <p class="tag reveal">Services</p>
-      <h2 class="reveal">
-        What we do
-      </h2>
-
-      <div class="cols cols--2">
-        <a class="door reveal" href="/marketing/">
-          <div class="door__media">
-            <Image
-              src={marketingDoor}
-              alt="Rows of prestressed concrete bridge girders stored in a precast plant yard."
-              widths={[360, 480, 800, 1200]}
-              width={1200}
-              sizes="(min-width: 821px) 50vw, 100vw"
-              loading="lazy"
-              quality={72}
-            />
-          </div>
-          <p class="tag">Marketing</p>
-          <h3>Marketing for precast producers and suppliers</h3>
-          <p class="dim">
-            Websites, email, photography, and social media for precast
-            producers and suppliers, and for the architects, contractors,
-            and subcontractors around them.
-          </p>
-          <span class="textlink">Marketing</span>
-        </a>
-
-        <a class="door reveal" href="/associations/">
-          <div class="door__media">
-            <Image
-              src={associationsDoor}
-              alt="Association members seated at round tables in a historic ballroom while a speaker presents from the stage."
-              widths={[360, 480, 800, 1200]}
-              width={1200}
-              sizes="(min-width: 821px) 50vw, 100vw"
-              loading="lazy"
-              quality={72}
-            />
-          </div>
-          <p class="tag">Association management</p>
-          <h3>Association management for architecture and construction associations</h3>
-          <p class="dim">
-            We build the website, membership, and event systems in house so the association is not tied to a template, and one team runs events, membership, sponsors, communications, and board support for one fee.
-          </p>
-          <span class="textlink">Association management</span>
-        </a>
+      <h2 class="reveal">What we do</h2>
+      <div class="services__grid">
+        {
+          services.map((s) => (
+            <a class="service reveal" href={s.href}>
+              <p class="tag">{s.tag}</p>
+              <h3>{s.title}</h3>
+              <p class="dim">{s.copy}</p>
+              <span class="textlink">Read more</span>
+            </a>
+          ))
+        }
       </div>
     </div>
   </section>
 
-  <!-- INSIDER ANGLE -->
-  <section class="section insider">
+  <!-- WHAT WE RUN -->
+  <section class="section on-mist run">
     <div class="container split">
       <div>
-        <p class="tag reveal">Industry experience</p>
-        <h2 class="reveal">
-          We work in precast every day.
-        </h2>
+        <span class="rule reveal"></span>
+        <p class="tag reveal">What we run</p>
+        <h2 class="reveal">We use what we build, every day.</h2>
       </div>
-      <div class="insider__copy reveal">
-        <p>
-          You will not have to explain what a double tee is or how the bid calendar runs.
-        </p>
-        <p>
-          Most structural and material decisions get made during design, well before a job is bid. Your plant gets in front of architects, engineers, and contractors during that window.
-        </p>
+      <ul class="run__list">
+        <li class="reveal">
+          <h3>A membership system for a professional association</h3>
+          <p class="dim">Sign-in, renewals, event registration, continuing education credits, a job board and membership certificates. Staff and members use it daily.</p>
+        </li>
+        <li class="reveal">
+          <h3>Association management</h3>
+          <p class="dim">Trade and professional associations, from the annual meeting to the weekly email.</p>
+        </li>
+        <li class="reveal">
+          <h3>Marketing programs for manufacturers</h3>
+          <p class="dim">Websites, search, photography and social media for precast and building-product companies.</p>
+        </li>
+        <li class="reveal run__note">
+          <p class="dim">Client work is confidential. We name a client only with its permission.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- HOW WE CHARGE -->
+  <section class="section charge">
+    <div class="container split">
+      <div>
+        <p class="tag reveal">Pricing</p>
+        <h2 class="reveal">How we charge</h2>
+      </div>
+      <div class="reveal">
+        <ul class="charge__list">
+          <li><strong>From $8,500 a month</strong><span>Marketing retainers for manufacturers and subcontractors.</span></li>
+          <li><strong>From $1,500</strong><span>Websites for architecture firms and local businesses, with care from $50 a month.</span></li>
+          <li><strong>Quoted</strong><span>Association management and custom systems, after one conversation.</span></li>
+        </ul>
+        <p class="dim">No hourly billing and no surprise invoices.</p>
+        <a class="textlink" href="/pricing/">See pricing</a>
       </div>
     </div>
   </section>
@@ -155,50 +167,25 @@ const professionalService = {
         <li class="reveal">
           <h3>2. Build</h3>
           <p class="dim">
-            One team writes, designs, and shoots the photography. You review finished work.
+            One team writes, designs, builds and shoots the photography. You review finished work.
           </p>
         </li>
         <li class="reveal">
           <h3>3. Run</h3>
           <p class="dim">
-            The program runs on a single monthly retainer scoped to the work, and you get a one-page report each month.
+            We keep it running for a flat monthly fee, and you get a one-page report each month.
           </p>
         </li>
       </ol>
     </div>
   </section>
 
-  <!-- STANDING RULES -->
-  <section class="section notes">
-    <div class="container">
-      <p class="tag reveal">Standing rules</p>
-      <ul class="notes__list">
-        <li class="reveal">
-          <p>
-            Client work is confidential. We name a client only with its permission.
-          </p>
-        </li>
-        <li class="reveal">
-          <p>
-            The people you meet in the first conversation do the work.
-          </p>
-        </li>
-        <li class="reveal">
-          <p>
-            Precast is our core. The work we do for architects, contractors, and subcontractors builds on it.
-          </p>
-        </li>
-      </ul>
-    </div>
-  </section>
-
   <!-- CTA -->
-  <section class="section cta">
+  <section class="section on-navy cta">
     <div class="container cta__inner">
-      <h2 class="reveal">Contact SkyKPI</h2>
+      <h2 class="reveal">Tell us what you are working on.</h2>
       <p class="dim reveal cta__copy">
-        Send a note about what you need to sell, or what your board needs
-        handled. We will tell you whether we are the right fit.
+        Send a note about what you sell, what your board needs handled, or the system you wish you had. We answer within one business day.
       </p>
       <div class="reveal">
         <a class="btn" href="/contact/">Contact us</a>
@@ -211,7 +198,7 @@ const professionalService = {
   /* HERO */
   .hero {
     position: relative;
-    min-height: calc(100svh - var(--header-h));
+    min-height: calc(92svh - var(--header-h));
     display: flex;
     align-items: flex-end;
     overflow: hidden;
@@ -235,19 +222,20 @@ const professionalService = {
   }
 
   .hero__label {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
   }
 
   .hero__content h1 {
-    max-width: 22ch;
+    max-width: 18ch;
+    font-size: clamp(2.5rem, 5.6vw, 4.5rem);
   }
 
   .hero__identity {
-    max-width: 36rem;
+    max-width: 38rem;
     margin-top: 1.5rem;
   }
 
-    .hero__cta {
+  .hero__cta {
     margin-top: 2rem;
     display: flex;
     flex-wrap: wrap;
@@ -255,40 +243,145 @@ const professionalService = {
     gap: 1rem 1.75rem;
   }
 
-  .hero__link {
+  /* FACTS */
+  .facts h2 {
+    max-width: 24ch;
+  }
+
+  .facts__list {
+    list-style: none;
+    margin: 2.5rem 0 2rem;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+  }
+
+  .facts__list li {
+    border-top: 1px solid var(--hairline-on-black);
+    padding-top: 1.25rem;
+  }
+
+  .facts__list strong {
+    display: block;
+    font-size: clamp(2.75rem, 5vw, 4rem);
+    font-weight: 400;
+    line-height: 1;
+    color: var(--teal);
+    margin-bottom: 0.75rem;
+  }
+
+  .facts__note {
+    color: var(--white);
+    font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+    font-weight: 300;
+    max-width: 40rem;
+  }
+
+  @media (max-width: 820px) {
+    .facts__list {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* SERVICES */
+  .services__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+    margin-top: 2.5rem;
+  }
+
+  .service {
+    display: flex;
+    flex-direction: column;
+    padding: 1.75rem 0 0;
+    border-top: 4px solid var(--navy);
+    text-decoration: none;
     color: inherit;
   }
 
-  /* DOORS: two plain columns with a hairline top rule */
-  .door {
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
+  .service:hover {
+    border-top-color: var(--teal);
   }
 
-  .door__media {
-    aspect-ratio: 16 / 10;
-    overflow: hidden;
-    margin-bottom: 1.5rem;
+  .service .tag {
+    margin-bottom: 0.75rem;
   }
 
-  .door__media :global(img) {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .door h3 {
+  .service h3 {
+    font-size: clamp(1.35rem, 2vw, 1.65rem);
     margin-bottom: 0.6rem;
   }
 
-  .door .dim {
+  .service .textlink {
+    margin-top: auto;
+    align-self: flex-start;
+  }
+
+  .service .dim {
     margin-bottom: 1.25rem;
   }
 
-  .door .textlink {
-    margin-top: auto;
-    align-self: flex-start;
+  @media (max-width: 820px) {
+    .services__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* WHAT WE RUN */
+  .run__list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .run__list li {
+    padding: 1.25rem 0;
+    border-top: 1px solid var(--hairline);
+  }
+
+  .run__list h3 {
+    margin-bottom: 0.4rem;
+  }
+
+  .run__list p {
+    margin: 0;
+  }
+
+  .run__note {
+    font-size: 15px;
+  }
+
+  /* CHARGE */
+  .charge__list {
+    list-style: none;
+    margin: 0 0 1.25rem;
+    padding: 0;
+  }
+
+  .charge__list li {
+    display: grid;
+    grid-template-columns: 12rem 1fr;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-top: 1px solid var(--hairline);
+  }
+
+  .charge__list li:last-child {
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  .charge__list strong {
+    font-weight: 500;
+    color: var(--navy);
+  }
+
+  @media (max-width: 560px) {
+    .charge__list li {
+      grid-template-columns: 1fr;
+      gap: 0.25rem;
+    }
   }
 
   /* HOW */
@@ -297,27 +390,6 @@ const professionalService = {
   }
 
   .how__steps p {
-    margin: 0;
-  }
-
-  /* STANDING RULES */
-  .notes__list {
-    list-style: none;
-    margin: 1rem 0 0;
-    padding: 0;
-    max-width: 44rem;
-  }
-
-  .notes__list li {
-    padding: 1.1rem 0;
-    border-top: 1px solid var(--hairline);
-  }
-
-  .notes__list li:last-child {
-    border-bottom: 1px solid var(--hairline);
-  }
-
-  .notes__list p {
     margin: 0;
   }
 

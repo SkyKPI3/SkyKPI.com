@@ -13,13 +13,19 @@ export const GET: APIRoute = () => {
 
   const body = `# SkyKPI
 
-SkyKPI is a marketing and association management firm for the precast concrete and AEC (architecture, engineering, and construction) industries, based in Frankfort, Illinois, USA. By the time a job goes out to bid, the big decisions are already made. SkyKPI's marketing work gets precast producers and suppliers known to the people making those decisions while there is still time to shape them, with a monthly report of who found the client and what it led to.
+SkyKPI builds websites, marketing and custom software for precast concrete producers, building-product manufacturers, subcontractors and architects, and manages trade and professional associations. It also builds fixed-price websites for local businesses in Frankfort, New Lenox and Mokena, Illinois. Based in Frankfort, Illinois, USA, working nationwide.
 
 ## Services
 
-1. Marketing: websites, email, photography, and social media, built as an extension of the client's sales team and scoped to how precast is specified and bought. Core expertise is the precast concrete industry (producers, suppliers, and associate members), extended to the AEC chain around it: architects (https://skykpi.com/architects/), general contractors (https://skykpi.com/contractors/), and subcontractors (https://skykpi.com/subcontractors/). Details: https://skykpi.com/marketing/
+1. Marketing for manufacturers and subcontractors: website, search, photography, email and LinkedIn as one program on a monthly retainer, with a one-page monthly report of who found the client and what it led to. Retainers start at $8,500 a month. Details: https://skykpi.com/manufacturers/ (also https://skykpi.com/subcontractors/ and https://skykpi.com/contractors/)
 
-2. Association management: a full team for one fee, for AEC trade and professional associations that have outgrown the single executive director model. Covers events, membership, sponsors, communications, and board support. Details: https://skykpi.com/associations/
+2. Association management: a full team for one flat monthly fee for trade and professional associations, covering events, membership, sponsors, communications and board support, running on association software SkyKPI builds and uses. Quoted per association. Details: https://skykpi.com/associations/
+
+3. Custom systems: member and customer portals, online payments, online stores, directories and association management software. One fixed build price plus a flat monthly support fee. Details: https://skykpi.com/custom-systems/
+
+4. Fixed-price websites for architecture firms and local businesses: Starter $1,500 (up to three pages) or Standard $3,000 (up to eight pages), with care plans at $50 or $100 a month. Details: https://skykpi.com/architects/ and https://skykpi.com/local/
+
+Pricing for everything: https://skykpi.com/pricing/
 
 ## Guides
 
@@ -33,11 +39,11 @@ Short photo-led notes from the precast plants, jobsites, and association rooms S
 
 ## Facts
 
-- Service area: the United States. The firm is based in Frankfort, Illinois, and the team works from more than one location. Clients are nationwide, not local.
+- Service area: the United States for marketing, association management and custom systems. Fixed-price local websites serve Frankfort, New Lenox and Mokena, Illinois. The team works from more than one location.
 - Client work is confidential. SkyKPI publishes no client names, case studies, or testimonials.
-- Pricing: a single monthly retainer scoped to the work, no hourly billing. Figures come from a scope conversation, not a rate card.
+- Pricing is published at https://skykpi.com/pricing/. No hourly billing.
 - SkyKPI does not guarantee a spec, a bid win, or a ranking for anyone. It owns the work that produces them and reports monthly on who found the client and what it led to.
-- The firm was founded by a husband and wife, and took on its first two employees in 2026. The client list stays small on purpose, and SkyKPI turns down work that does not fit.
+- The client list stays small on purpose, and SkyKPI turns down work that does not fit.
 - SkyKPI LLC is the Illinois company that operates the firm.
 - Contact: https://skykpi.com/contact/. New business hello@skykpi.com, association boards hello@skykpi.com, press and speaking hello@skykpi.com.
 - About: https://skykpi.com/about/

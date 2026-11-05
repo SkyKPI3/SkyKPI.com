@@ -1,0 +1,337 @@
+---
+import Sheet from '../layouts/Sheet.astro';
+import Faq from '../components/Faq.astro';
+import Related from '../components/Related.astro';
+import { serviceSchema } from '../lib/schema';
+
+const systems = [
+  {
+    id: 'portals',
+    name: 'Member and customer portals',
+    copy: 'A sign-in area where people renew, update their details, register for events, download certificates and see their history. For a manufacturer, the same idea becomes a dealer or customer portal with order history, documents and price sheets behind a sign-in.',
+  },
+  {
+    id: 'payments',
+    name: 'Online payments',
+    copy: 'Card payment for memberships, event tickets, sponsorships, job postings and products, with receipts sent automatically and a clear record for your bookkeeper.',
+  },
+  {
+    id: 'ams',
+    name: 'Association management software',
+    copy: 'Membership, renewals and reminders, events, continuing education credits, a job board, member email and staff tools in one system your staff can run. We run our own association work on it every day.',
+  },
+  {
+    id: 'stores',
+    name: 'Online stores',
+    copy: 'A store for products, samples or literature, built to order around how you sell and ship.',
+  },
+  {
+    id: 'directories',
+    name: 'Directories and databases',
+    copy: 'Searchable listings of members, products, projects or dealers, kept current by the people listed in them.',
+  },
+];
+
+const faqs = [
+  {
+    q: 'Why custom instead of an off-the-shelf system?',
+    a: 'Packaged systems make your staff and members work around what the software cannot do. We build around your dues, your events and your rules, and the same team that built it makes the changes you ask for.',
+  },
+  {
+    q: 'Who owns the data?',
+    a: 'You do. Your organization owns its domain, its member and customer data and its records. If you ever leave, we export everything in standard formats and help with the move.',
+  },
+  {
+    q: 'How is it priced?',
+    a: 'One fixed price for the build, agreed after a scoping call, then a flat monthly fee for hosting, security, updates and support. No hourly billing.',
+  },
+  {
+    q: 'Is it secure?',
+    a: 'Sign-in uses one-time codes sent by email, card payments are handled by the payment processor so card numbers never touch our servers, data is backed up nightly, and we review the code for security before each release.',
+  },
+];
+
+const jsonLd = [
+  serviceSchema({
+    name: 'Custom systems and portals',
+    description:
+      'Member and customer portals, online payments, online stores, directories and association management software, built to fit how the organization works, with a fixed build price and a flat monthly support fee.',
+    url: 'https://skykpi.com/custom-systems/',
+    serviceType: 'Custom software development',
+  }),
+];
+---
+
+<Sheet
+  title="Custom Member Portals, Online Payments and Association Software | SkyKPI"
+  description="SkyKPI builds member and customer portals, online payments, stores, directories and association management software for associations and manufacturers."
+  path="/custom-systems/"
+  sheetName="Custom systems"
+  jsonLd={jsonLd}
+>
+  <section class="section open">
+    <div class="container open__grid">
+      <div>
+        <p class="tag">Custom systems</p>
+        <h1>Member portals, online payments and association software for associations and manufacturers.</h1>
+        <p class="lede">
+          When a website is not enough, we build the system behind it. Your members or customers sign in, pay, register and find what they need, and your staff runs it without working around a packaged product.
+        </p>
+        <div class="open__cta">
+          <a class="btn" href="/contact/">Talk to us about a system</a>
+          <a class="textlink" href="/pricing/#quoted">How it is priced</a>
+        </div>
+      </div>
+
+      <figure class="mock" aria-label="Example member portal screen with sample data">
+        <div class="mock__bar">
+          <span></span><span></span><span></span>
+          <p>members.example-association.org</p>
+        </div>
+        <div class="mock__body">
+          <p class="mock__hello">Welcome back, Alex</p>
+          <div class="mock__card">
+            <p class="mock__label">Membership</p>
+            <p class="mock__value">Active through June 30</p>
+            <p class="mock__btn">Renew now</p>
+          </div>
+          <div class="mock__card">
+            <p class="mock__label">Continuing education</p>
+            <p class="mock__value">18 of 24 hours this cycle</p>
+            <div class="mock__meter"><span style="width: 75%"></span></div>
+          </div>
+          <div class="mock__card">
+            <p class="mock__label">Next event</p>
+            <p class="mock__value">Spring Education Day</p>
+            <p class="mock__small">Registered. Receipt sent.</p>
+          </div>
+        </div>
+        <figcaption>Example screen with sample data.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <span class="rule reveal"></span>
+      <p class="tag reveal">What we build</p>
+      <h2 class="reveal">Systems we build and support</h2>
+      <dl class="spec">
+        {
+          systems.map((s) => (
+            <div class="spec__row reveal" id={s.id}>
+              <dt><h3>{s.name}</h3></dt>
+              <dd>{s.copy}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+  </section>
+
+  <section class="section on-navy proof">
+    <div class="container split">
+      <div>
+        <span class="rule reveal"></span>
+        <p class="tag reveal">Built and used</p>
+        <h2 class="reveal">Our association software runs a professional association every day.</h2>
+      </div>
+      <div class="reveal">
+        <p>
+          The same system we offer handles sign-in, renewals and reminders, event registration without an account, continuing education credits, a job board, firm plans and membership certificates. Real staff and real members have tested every screen.
+        </p>
+        <p>
+          That is the difference between buying from us and buying from a software company. When something needs to change, you talk to the team that runs the work and wrote the code.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <Faq items={faqs} heading="Questions about custom systems" />
+
+  <Related
+    links={[
+      { href: '/associations/', label: 'Association management for trade and professional associations' },
+      { href: '/manufacturers/', label: 'Marketing for precast producers and building-product manufacturers' },
+      { href: '/pricing/', label: 'How SkyKPI charges for builds and support' },
+    ]}
+  />
+
+  <section class="section cta">
+    <div class="container cta__inner">
+      <h2 class="reveal">Tell us how your organization works.</h2>
+      <p class="dim reveal cta__copy">We will tell you what we would build and what it costs. We answer within one business day.</p>
+      <div class="reveal">
+        <a class="btn" href="/contact/">Contact us</a>
+      </div>
+    </div>
+  </section>
+</Sheet>
+
+<style>
+  .open__grid {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    gap: clamp(2rem, 5vw, 4.5rem);
+    align-items: center;
+  }
+
+  .open h1 {
+    font-size: clamp(2.1rem, 4.2vw, 3.4rem);
+  }
+
+  .open__cta {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.75rem;
+  }
+
+  /* Example portal screen, drawn in CSS with sample data */
+  .mock {
+    margin: 0;
+    border: 1px solid var(--hairline);
+    box-shadow: 0 24px 48px -24px rgba(13, 41, 88, 0.35);
+    background: var(--white);
+  }
+
+  .mock__bar {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.6rem 0.9rem;
+    background: var(--navy);
+  }
+
+  .mock__bar span {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.35);
+  }
+
+  .mock__bar p {
+    margin: 0 0 0 0.6rem;
+    font-size: 12px;
+    color: var(--graphite-on-black);
+  }
+
+  .mock__body {
+    padding: 1.25rem;
+    background: var(--mist);
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .mock__hello {
+    margin: 0 0 0.25rem;
+    font-size: 1.15rem;
+    color: var(--navy);
+  }
+
+  .mock__card {
+    background: var(--white);
+    border-left: 4px solid var(--teal);
+    padding: 0.85rem 1rem;
+  }
+
+  .mock__label {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--graphite);
+  }
+
+  .mock__value {
+    margin: 0.2rem 0 0;
+    font-size: 16px;
+    color: var(--navy);
+  }
+
+  .mock__small {
+    margin: 0.2rem 0 0;
+    font-size: 13px;
+    color: var(--graphite);
+  }
+
+  .mock__btn {
+    display: inline-block;
+    margin: 0.6rem 0 0;
+    padding: 0.35rem 0.8rem;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--white);
+    background: var(--navy);
+  }
+
+  .mock__meter {
+    margin-top: 0.5rem;
+    height: 6px;
+    background: var(--mist);
+  }
+
+  .mock__meter span {
+    display: block;
+    height: 100%;
+    background: var(--teal);
+  }
+
+  .mock figcaption {
+    padding: 0.6rem 1rem;
+    font-size: 12px;
+    color: var(--graphite);
+    border-top: 1px solid var(--hairline);
+  }
+
+  /* Spec list */
+  .spec {
+    margin: 2.25rem 0 0;
+  }
+
+  .spec__row {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: 1.5rem;
+    padding: 1.4rem 0;
+    border-top: 1px solid var(--hairline);
+  }
+
+  .spec__row:last-child {
+    border-bottom: 1px solid var(--hairline);
+  }
+
+  .spec__row h3 {
+    margin: 0;
+  }
+
+  .spec__row dd {
+    margin: 0;
+    color: var(--graphite);
+  }
+
+  .proof p {
+    color: var(--white);
+  }
+
+  .cta__inner {
+    max-width: 44rem;
+  }
+
+  .cta__copy {
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: 820px) {
+    .open__grid,
+    .spec__row {
+      grid-template-columns: 1fr;
+    }
+
+    .spec__row {
+      gap: 0.5rem;
+    }
+  }
+</style>

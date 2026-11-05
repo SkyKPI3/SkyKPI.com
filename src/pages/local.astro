@@ -1,0 +1,192 @@
+---
+import Sheet from '../layouts/Sheet.astro';
+import Faq from '../components/Faq.astro';
+import Related from '../components/Related.astro';
+import { serviceSchema } from '../lib/schema';
+
+const faqs = [
+  {
+    q: 'What does a website cost?',
+    a: 'A Starter site of up to three pages is $1,500, one time. A Standard site of up to eight pages is $3,000. Care plans are $50 or $100 a month and cover hosting, security, backups and search indexing.',
+  },
+  {
+    q: 'Do I own my website?',
+    a: 'Yes. Your domain and your content are yours. If you cancel the care plan, we hand over the website files and help move them to your new host.',
+  },
+  {
+    q: 'Can you write the words and take the photos?',
+    a: 'Yes, quoted separately. Most owners send us their own text and photos, and we edit and place them.',
+  },
+  {
+    q: 'Will my business show up on Google?',
+    a: 'Every site is built so search engines can read it, with your hours, address and services on the page, and we submit it for indexing when it launches. We do not promise a ranking.',
+  },
+  {
+    q: 'Do you meet in person?',
+    a: 'Yes. We are based in Frankfort and happy to meet at your business.',
+  },
+];
+
+const jsonLd = [
+  serviceSchema({
+    name: 'Websites for local businesses',
+    description:
+      'Fixed-price websites for small businesses in Frankfort, New Lenox and Mokena, Illinois: $1,500 for up to three pages or $3,000 for up to eight, with care plans from $50 a month.',
+    url: 'https://skykpi.com/local/',
+    serviceType: 'Website design',
+  }),
+];
+---
+
+<Sheet
+  title="Websites for Frankfort, New Lenox and Mokena Businesses | SkyKPI"
+  description="Fixed-price websites for local businesses in Frankfort, New Lenox and Mokena. $1,500 for up to three pages, with care plans from $50 a month."
+  path="/local/"
+  sheetName="Local businesses"
+  jsonLd={jsonLd}
+>
+  <section class="section open">
+    <div class="container">
+      <p class="tag">Websites for local businesses</p>
+      <h1>Websites for businesses in Frankfort, New Lenox and Mokena.</h1>
+      <p class="lede open__sub">
+        You get a fast, clean website for one fixed price, starting at $1,500, and we keep it running for $50 a month. The same team builds websites and marketing for manufacturers across the country, and we are based right here in Frankfort.
+      </p>
+      <div class="open__cta">
+        <a class="btn" href="/contact/">Get a website</a>
+        <a class="textlink" href="/pricing/#websites">Compare the two packages</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section on-mist">
+    <div class="container cols cols--2 packages">
+      <div class="package reveal">
+        <p class="tag">Starter</p>
+        <p class="package__price">$1,500</p>
+        <p class="dim">One time. Up to three pages.</p>
+        <p class="package__care">Care plan <strong>$50 a month</strong></p>
+        <p class="dim">Hosting, security updates, backups, uptime checks and search indexing.</p>
+      </div>
+      <div class="package reveal">
+        <p class="tag">Standard</p>
+        <p class="package__price">$3,000</p>
+        <p class="dim">One time. Up to eight pages.</p>
+        <p class="package__care">Care plan <strong>$100 a month</strong></p>
+        <p class="dim">The same, plus up to 30 minutes of edits each month.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div>
+        <span class="rule reveal"></span>
+        <p class="tag reveal">What you get</p>
+        <h2 class="reveal">What every site includes</h2>
+      </div>
+      <ul class="includes reveal">
+        <li>A layout built for phones first, then desktops.</li>
+        <li>Your hours, address, phone and services written so Google and AI assistants can read them.</li>
+        <li>A contact form that sends straight to your email.</li>
+        <li>Fast loading, with no page builder slowing it down.</li>
+        <li>Your text and photos edited and placed by us.</li>
+      </ul>
+    </div>
+  </section>
+
+  <Faq items={faqs} heading="Questions from local owners" />
+
+  <Related
+    links={[
+      { href: '/pricing/#websites', label: 'Website packages and care plans side by side' },
+      { href: '/architects/', label: 'Websites for architecture firms' },
+    ]}
+  />
+
+  <section class="section on-navy cta">
+    <div class="container cta__inner">
+      <h2 class="reveal">Tell us about your business.</h2>
+      <p class="dim reveal cta__copy">We answer within one business day.</p>
+      <div class="reveal">
+        <a class="btn" href="/contact/">Contact us</a>
+      </div>
+    </div>
+  </section>
+</Sheet>
+
+<style>
+  .open h1 {
+    max-width: 20ch;
+  }
+
+  .open__sub {
+    max-width: 42rem;
+  }
+
+  .open__cta {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.75rem;
+  }
+
+  .packages {
+    margin-top: 0;
+  }
+
+  .package {
+    background: var(--white);
+    padding: 2rem !important;
+    border-top: 4px solid var(--navy) !important;
+  }
+
+  .package__price {
+    margin: 0;
+    font-size: clamp(2.75rem, 5vw, 3.75rem);
+    line-height: 1;
+    color: var(--navy);
+  }
+
+  .package__care {
+    margin: 1.5rem 0 0.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--hairline);
+  }
+
+  .package__care strong {
+    font-weight: 500;
+    color: var(--navy);
+  }
+
+  .includes {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .includes li {
+    padding: 1rem 0 1rem 1.75rem;
+    border-top: 1px solid var(--hairline);
+    position: relative;
+  }
+
+  .includes li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 1.55rem;
+    width: 0.75rem;
+    height: 3px;
+    background: var(--teal);
+  }
+
+  .cta__inner {
+    max-width: 44rem;
+  }
+
+  .cta__copy {
+    margin-bottom: 2rem;
+  }
+</style>

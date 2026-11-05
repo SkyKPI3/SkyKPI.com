@@ -18,7 +18,18 @@
 # index, marketing, associations, about, contact, privacy).
 [[redirects]]
   from = "/marketing.html"
-  to = "/marketing/"
+  to = "/manufacturers/"
+  status = 301
+
+# The Marketing page became the Manufacturers page in the November 2026 redesign.
+[[redirects]]
+  from = "/marketing"
+  to = "/manufacturers/"
+  status = 301
+
+[[redirects]]
+  from = "/marketing/"
+  to = "/manufacturers/"
   status = 301
 
 [[redirects]]
@@ -77,24 +88,19 @@
 # These predate the previous repo, so they are mapped by closest subject match
 # rather than guessed at the homepage.
 [[redirects]]
-  from = "/pricing/*"
-  to = "/marketing/"
-  status = 301
-
-[[redirects]]
   from = "/aec-marketing/*"
-  to = "/marketing/"
+  to = "/manufacturers/"
   status = 301
 
 [[redirects]]
   from = "/aec-marketing"
-  to = "/marketing/"
+  to = "/manufacturers/"
   status = 301
 
 # Wix-era services page (found in the Wayback index for 2023)
 [[redirects]]
   from = "/services-4"
-  to = "/marketing/"
+  to = "/manufacturers/"
   status = 301
 
 # Old content hub, still crawled by Google as of June 2026. Field Notes is its
