@@ -1,11 +1,11 @@
 /* ==========================================================================
-   SkyKPI global styles
+   Lombard Belz global styles
    Black type on white, graphite for secondary text, one hairline weight.
    Photographs are the only color. Libre Franklin carries everything.
    ========================================================================== */
 
 :root {
-  /* Brand colors come from the SkyKPI wordmark: navy Sky, teal KPI. */
+  /* Brand colors come from the Lombard Belz wordmark: navy Sky, teal KPI. */
   --navy: #0d2958;
   --teal: #0c97a0;
   --teal-text: #0a7f87; /* teal dark enough for small text on white (4.8:1) */

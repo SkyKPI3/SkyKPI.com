@@ -1,4 +1,4 @@
-# Netlify configuration for skykpi.com
+# Netlify configuration for lombardbelz.com
 
 [build]
   command = "npm run build"
@@ -7,10 +7,35 @@
 [build.environment]
   NODE_VERSION = "22"
 
-# www redirects to the apex domain (canonical is https://skykpi.com)
+# Old and alternate domains point here once they are attached to this site.
+[[redirects]]
+  from = "https://skykpi.com/*"
+  to = "https://lombardbelz.com/:splat"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "https://www.skykpi.com/*"
-  to = "https://skykpi.com/:splat"
+  to = "https://lombardbelz.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://belzlombard.com/*"
+  to = "https://lombardbelz.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.belzlombard.com/*"
+  to = "https://lombardbelz.com/:splat"
+  status = 301
+  force = true
+
+# www redirects to the apex domain (canonical is https://lombardbelz.com)
+[[redirects]]
+  from = "https://www.lombardbelz.com/*"
+  to = "https://lombardbelz.com/:splat"
   status = 301
   force = true
 
