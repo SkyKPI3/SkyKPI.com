@@ -15,7 +15,7 @@
     "@astrojs/sitemap": "^3.7.3",
     "@fontsource/inter": "^5.2.8",
     "@fontsource/libre-franklin": "^5.3.0",
-    "astro": "^7.0.9",
+    "astro": "^7.4.7",
     "sharp": "^0.35.3"
   }
 }
